@@ -1,0 +1,4709 @@
+[
+  {
+    "module": "common",
+    "name": "Querying Async Task Results API",
+    "unique_sign": "common_query_async_task_result",
+    "method": "GET",
+    "path": "/api/common/query-async-task-result",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [],
+    "query_params": [
+      {
+        "name": "task_id",
+        "label": "task_id",
+        "type": "string",
+        "required": true,
+        "desc": "The task_id returned by the asynchronous API."
+      }
+    ],
+    "response_fields": [
+      {
+        "name": "task_status",
+        "type": "integer",
+        "desc": "Asynchronous task status. 0: The task is queued. 1: Asynchronous processing. 2: Processing was successful."
+      }
+    ]
+  },
+  {
+    "module": "common",
+    "name": "Querying Credits API",
+    "unique_sign": "common_query_credits",
+    "method": "GET",
+    "path": "/api/common/query-credits",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "array",
+        "desc": ""
+      },
+      {
+        "name": "unique_sign",
+        "type": "string",
+        "desc": "Unique identification."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "desc": "Name."
+      },
+      {
+        "name": "balance",
+        "type": "float",
+        "desc": "Credit Balance."
+      },
+      {
+        "name": "total",
+        "type": "float",
+        "desc": "Total Credits."
+      },
+      {
+        "name": "last_recharge_balance",
+        "type": "float",
+        "desc": "Balance after last purchase."
+      },
+      {
+        "name": "balance_warning",
+        "type": "float",
+        "desc": "Credit Balance Early Warning Value."
+      },
+      {
+        "name": "first_buy_time",
+        "type": "integer",
+        "desc": "Time of first purchase."
+      },
+      {
+        "name": "last_update_time",
+        "type": "integer",
+        "desc": "Last update time."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Costume Background Removal API",
+    "unique_sign": "cutout_apparel_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/general/apparel-background-removal",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "out_mode",
+        "label": "out_mode",
+        "type": "integer",
+        "required": false,
+        "desc": "0"
+      },
+      {
+        "name": "cloth_class",
+        "label": "cloth_class",
+        "type": "string",
+        "required": false,
+        "desc": "Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat."
+      },
+      {
+        "name": "return_form",
+        "label": "return_form",
+        "type": "string",
+        "required": false,
+        "desc": "Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "elements",
+        "type": "array",
+        "desc": "Returns an array of elements."
+      },
+      {
+        "name": "0",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Returns the keying result image URL address."
+      },
+      {
+        "name": "1",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "class_url",
+        "type": "object",
+        "desc": "Return the URL corresponding to the clothing category based on the input cloth_class."
+      },
+      {
+        "name": "tops",
+        "type": "string",
+        "desc": "Tops URL."
+      },
+      {
+        "name": "coat",
+        "type": "string",
+        "desc": "Coat URL."
+      },
+      {
+        "name": "skirt",
+        "type": "string",
+        "desc": "Skirt URL."
+      },
+      {
+        "name": "pants",
+        "type": "string",
+        "desc": "Pants URL."
+      },
+      {
+        "name": "bag",
+        "type": "string",
+        "desc": "Bag URL."
+      },
+      {
+        "name": "shoes",
+        "type": "string",
+        "desc": "Shoes URL."
+      },
+      {
+        "name": "hat",
+        "type": "string",
+        "desc": "Hat URL."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Product Background Removal API",
+    "unique_sign": "cutout_commodity_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/general/commodity-background-removal",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "return_form",
+        "label": "return_form",
+        "type": "string",
+        "required": false,
+        "desc": "Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges)."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Food Background Removal API",
+    "unique_sign": "cutout_food_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/general/food-background-removal",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "return_form",
+        "label": "return_form",
+        "type": "string",
+        "required": false,
+        "desc": "Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Universal Background Removal API",
+    "unique_sign": "cutout_universal_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/general/universal-background-removal",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "return_form",
+        "label": "return_form",
+        "type": "string",
+        "required": false,
+        "desc": "Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges)."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Head Extraction API",
+    "unique_sign": "cutout_avatar_extraction",
+    "method": "POST",
+    "path": "/api/cutout/portrait/avatar-extraction",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "return_form",
+        "label": "return_form",
+        "type": "string",
+        "required": false,
+        "desc": "Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "elements",
+        "type": "array",
+        "desc": "The keying result of each child element."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      },
+      {
+        "name": "width",
+        "type": "integer",
+        "desc": "The width of the result map."
+      },
+      {
+        "name": "height",
+        "type": "integer",
+        "desc": "The height of the resultant graph."
+      },
+      {
+        "name": "x",
+        "type": "integer",
+        "desc": "Top left x-coordinate."
+      },
+      {
+        "name": "y",
+        "type": "integer",
+        "desc": "Top left y-coordinate."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Hairstyle Extraction API",
+    "unique_sign": "cutout_hairstyle_extraction",
+    "method": "POST",
+    "path": "/api/cutout/portrait/hairstyle-extraction",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "elements",
+        "type": "array",
+        "desc": "The keying result of each child element."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      },
+      {
+        "name": "width",
+        "type": "integer",
+        "desc": "The width of the result map."
+      },
+      {
+        "name": "height",
+        "type": "integer",
+        "desc": "The height of the resultant graph."
+      },
+      {
+        "name": "x",
+        "type": "integer",
+        "desc": "Top left x-coordinate."
+      },
+      {
+        "name": "y",
+        "type": "integer",
+        "desc": "Top left y-coordinate."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "Human Background Removal API",
+    "unique_sign": "cutout_portrait_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/portrait/portrait-background-removal",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "return_form",
+        "label": "return_form",
+        "type": "string",
+        "required": false,
+        "desc": "Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges)."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Querying Async Task Results API",
+    "unique_sign": "image_asyn_task_results",
+    "method": "GET",
+    "path": "/api/image/asyn-task-results",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [],
+    "query_params": [
+      {
+        "name": "job_id",
+        "label": "job_id",
+        "type": "string",
+        "required": true,
+        "desc": "The request_id returned by the asynchronous API."
+      },
+      {
+        "name": "type",
+        "label": "type",
+        "type": "string",
+        "required": true,
+        "desc": "Asynchronous task type. HD_COLOUR_MIGRATION: HD Color Migration GENERATE_CARTOONIZED_IMAGE: AI Cartoon Generator"
+      }
+    ],
+    "response_fields": []
+  },
+  {
+    "module": "image",
+    "name": "AI Image Extender API",
+    "unique_sign": "image_ai_image_extender",
+    "method": "POST",
+    "path": "/api/image/editing/ai-image-extender",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "custom_prompt",
+        "label": "custom_prompt",
+        "type": "string",
+        "required": false,
+        "desc": "Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process."
+      },
+      {
+        "name": "steps",
+        "label": "steps",
+        "type": "integer",
+        "required": false,
+        "desc": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time."
+      },
+      {
+        "name": "strength",
+        "label": "strength",
+        "type": "float",
+        "required": false,
+        "desc": "The smaller the value, the closer it is to the original image."
+      },
+      {
+        "name": "scale",
+        "label": "scale",
+        "type": "float",
+        "required": false,
+        "desc": "The degree to which the text description influences the output."
+      },
+      {
+        "name": "seed",
+        "label": "seed",
+        "type": "integer",
+        "required": false,
+        "desc": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent."
+      },
+      {
+        "name": "max_height",
+        "label": "max_height",
+        "type": "integer",
+        "required": false,
+        "desc": "Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process."
+      },
+      {
+        "name": "max_width",
+        "label": "max_width",
+        "type": "integer",
+        "required": false,
+        "desc": "Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process."
+      },
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image."
+      },
+      {
+        "name": "top",
+        "label": "top",
+        "type": "float",
+        "required": false,
+        "desc": "Upward expansion ratio."
+      },
+      {
+        "name": "bottom",
+        "label": "bottom",
+        "type": "float",
+        "required": false,
+        "desc": "Downward expansion ratio."
+      },
+      {
+        "name": "left",
+        "label": "left",
+        "type": "float",
+        "required": false,
+        "desc": "Leftward expansion ratio."
+      },
+      {
+        "name": "right",
+        "label": "right",
+        "type": "float",
+        "required": false,
+        "desc": "Rightward expansion ratio."
+      },
+      {
+        "name": "mask",
+        "label": "mask",
+        "type": "file",
+        "required": false,
+        "desc": "Mask image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "binary_data_base64",
+        "type": "array of string",
+        "desc": "Output the processed image as a Base64 array (single image)."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Object Replacer API",
+    "unique_sign": "image_ai_object_replacer",
+    "method": "POST",
+    "path": "/api/image/editing/ai-object-replacer",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image."
+      },
+      {
+        "name": "mask",
+        "label": "mask",
+        "type": "file",
+        "required": true,
+        "desc": "Mask image."
+      },
+      {
+        "name": "custom_prompt",
+        "label": "custom_prompt",
+        "type": "string",
+        "required": false,
+        "desc": "Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process."
+      },
+      {
+        "name": "steps",
+        "label": "steps",
+        "type": "integer",
+        "required": false,
+        "desc": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time."
+      },
+      {
+        "name": "scale",
+        "label": "scale",
+        "type": "float",
+        "required": false,
+        "desc": "The degree to which the text description influences the output."
+      },
+      {
+        "name": "seed",
+        "label": "seed",
+        "type": "integer",
+        "required": false,
+        "desc": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "binary_data_base64",
+        "type": "array of string",
+        "desc": "Output the processed image as a Base64 array (single image)."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Image Cropping API",
+    "unique_sign": "image_image_cropping",
+    "method": "POST",
+    "path": "/api/image/editing/image-cropping",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "width",
+        "label": "width",
+        "type": "integer",
+        "required": true,
+        "desc": "The width of the target. Unit: px."
+      },
+      {
+        "name": "height",
+        "label": "height",
+        "type": "integer",
+        "required": true,
+        "desc": "The height of the target. Unit: px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "desc": "The URL address of the image after size transformation."
+      },
+      {
+        "name": "retain_location",
+        "type": "object",
+        "desc": "The coordinate information of the original image data in the generated image."
+      },
+      {
+        "name": "width",
+        "type": "integer",
+        "desc": "Outputs the width of the original image after isoscaling according to the specified width. Unit: px."
+      },
+      {
+        "name": "height",
+        "type": "integer",
+        "desc": "Outputs the height of the original image after isoscaling according to the specified height. Unit: px."
+      },
+      {
+        "name": "y",
+        "type": "integer",
+        "desc": "The y-coordinate of the upper-left corner of the original figure."
+      },
+      {
+        "name": "x",
+        "type": "integer",
+        "desc": "The x coordinate of the upper left corner of the original figure."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Erasure API",
+    "unique_sign": "image_image_erase",
+    "method": "POST",
+    "path": "/api/image/editing/image-erase",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "The image to be erased."
+      },
+      {
+        "name": "user_mask",
+        "label": "user_mask",
+        "type": "file",
+        "required": true,
+        "desc": "Mask image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "The URL of the image after erasing."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Invisible Picture Watermark API",
+    "unique_sign": "image_image_invisible_image_watermark",
+    "method": "POST",
+    "path": "/api/image/editing/image-invisible-image-watermark",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "function_type",
+        "label": "function_type",
+        "type": "string",
+        "required": true,
+        "desc": "Specifies the calling function. encode_pic: Add image watermark using the old model. encode_pic_plus: Add image watermark with new version model 1. encode_pic_bold: Add image watermark with new version model 2. decode_pic: Use the old model to decode the image watermark in the image. decode_pic_plus: Use the new version Model 1 to decode the image watermark in the image. decode_pic_bold: Use the new version Model 2 to decode the image watermark in the image."
+      },
+      {
+        "name": "origin_image",
+        "label": "origin_image",
+        "type": "file",
+        "required": false,
+        "desc": "Original image."
+      },
+      {
+        "name": "logo",
+        "label": "logo",
+        "type": "file",
+        "required": false,
+        "desc": "Watermark image."
+      },
+      {
+        "name": "watermark_image",
+        "label": "watermark_image",
+        "type": "file",
+        "required": false,
+        "desc": "Composite image with watermark."
+      },
+      {
+        "name": "output_file_type",
+        "label": "output_file_type",
+        "type": "string",
+        "required": false,
+        "desc": "Output format."
+      },
+      {
+        "name": "quality_factor",
+        "label": "quality_factor",
+        "type": "integer",
+        "required": false,
+        "desc": "Quality factor for jpg output."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "watermark_image_url",
+        "type": "string",
+        "desc": "The URL address after adding the watermark."
+      },
+      {
+        "name": "logo_url",
+        "type": "string",
+        "desc": "Watermark URL address after decoding."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Invisible Text Watermark API",
+    "unique_sign": "image_image_invisible_text_watermarking",
+    "method": "POST",
+    "path": "/api/image/editing/image-invisible-text-watermarking",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "function_type",
+        "label": "function_type",
+        "type": "string",
+        "required": true,
+        "desc": "Specifies the calling function. encode_text: Add text watermark using the old version model. encode_text_plus: Add text watermark using the new version model 1. encode_text_bold: Add text watermark using the new version model 2. decode_text: Use the old model to decode the text watermark in the image. decode_text_plus: Use the new version of Model 1 to decode text watermarks in images. decode_text_bold: Use the new version Model 2 to decode the image watermark in the image."
+      },
+      {
+        "name": "origin_image",
+        "label": "origin_image",
+        "type": "file",
+        "required": false,
+        "desc": "Original image."
+      },
+      {
+        "name": "text",
+        "label": "text",
+        "type": "string",
+        "required": false,
+        "desc": "Watermark text."
+      },
+      {
+        "name": "watermark_image",
+        "label": "watermark_image",
+        "type": "file",
+        "required": false,
+        "desc": "Composite image with watermark."
+      },
+      {
+        "name": "output_file_type",
+        "label": "output_file_type",
+        "type": "string",
+        "required": false,
+        "desc": "Output format."
+      },
+      {
+        "name": "quality_factor",
+        "label": "quality_factor",
+        "type": "integer",
+        "required": false,
+        "desc": "Quality factor for jpg output."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "watermark_image_url",
+        "type": "string",
+        "desc": "The URL address after adding the watermark."
+      },
+      {
+        "name": "text_image_url",
+        "type": "string",
+        "desc": "Watermark URL address after decoding."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Intelligent Composition API",
+    "unique_sign": "image_intelligent_composition",
+    "method": "POST",
+    "path": "/api/image/editing/intelligent-composition",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "num_boxes",
+        "label": "num_boxes",
+        "type": "integer",
+        "required": false,
+        "desc": "The number of output boxes."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "elements",
+        "type": "array",
+        "desc": "Intelligent composition results."
+      },
+      {
+        "name": "min_x",
+        "type": "integer",
+        "desc": "The horizontal coordinate of the upper-left corner of the output box."
+      },
+      {
+        "name": "max_x",
+        "type": "integer",
+        "desc": "The horizontal coordinate of the lower-right corner of the output box."
+      },
+      {
+        "name": "min_y",
+        "type": "integer",
+        "desc": "The vertical coordinate of the upper-left corner of the output box."
+      },
+      {
+        "name": "max_y",
+        "type": "integer",
+        "desc": "The lower-right vertical coordinate of the output box."
+      },
+      {
+        "name": "score",
+        "type": "float",
+        "desc": "The higher the score, the better the composition. 3.8 or above is recommended as a better composition score."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Photo Retouch API",
+    "unique_sign": "image_photo_retouching",
+    "method": "POST",
+    "path": "/api/image/editing/photo-retouching",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Images that require a style transformation."
+      },
+      {
+        "name": "style",
+        "label": "style",
+        "type": "file",
+        "required": true,
+        "desc": "Reference image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "The resulting image after performing the style transformation."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Remove Objects API",
+    "unique_sign": "image_remove_objects",
+    "method": "POST",
+    "path": "/api/image/editing/remove-objects",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image."
+      },
+      {
+        "name": "mask",
+        "label": "mask",
+        "type": "file",
+        "required": true,
+        "desc": "Mask image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "The URL of the image after erasing."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Remove Objects Advanced API",
+    "unique_sign": "image_remove_objects_advanced",
+    "method": "POST",
+    "path": "/api/image/editing/remove-objects-advanced",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image."
+      },
+      {
+        "name": "mask",
+        "label": "mask",
+        "type": "file",
+        "required": true,
+        "desc": "Mask image."
+      },
+      {
+        "name": "steps",
+        "label": "steps",
+        "type": "integer",
+        "required": false,
+        "desc": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time."
+      },
+      {
+        "name": "strength",
+        "label": "strength",
+        "type": "float",
+        "required": false,
+        "desc": "The smaller the value, the closer it is to the original image."
+      },
+      {
+        "name": "scale",
+        "label": "scale",
+        "type": "float",
+        "required": false,
+        "desc": "The degree to which the text description influences the output."
+      },
+      {
+        "name": "seed",
+        "label": "seed",
+        "type": "integer",
+        "required": false,
+        "desc": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent."
+      },
+      {
+        "name": "dilate_size",
+        "label": "dilate_size",
+        "type": "integer",
+        "required": false,
+        "desc": "Mask Dilation Radius. The mask used for object removal should fully encompass the target object. When users manually draw the mask, it often extends beyond the object's boundary. However, if the mask is generated by a segmentation algorithm, it typically adheres closely to the object's edges, which might leave parts of the object uncovered. This can lead to incomplete removal or unexpected artifacts during generation. To avoid such issues, it's recommended to appropriately increase the dilate_size parameter to ensure the mask fully covers the object."
+      },
+      {
+        "name": "quality",
+        "label": "quality",
+        "type": "string",
+        "required": false,
+        "desc": "Quality Parameter. H: High quality — best output quality, but slightly slower processing. M: Medium quality — balanced in both quality and speed. L: Low quality — fastest processing, suitable for scenarios where speed is prioritized."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "binary_data_base64",
+        "type": "array of string",
+        "desc": "Output the processed image as a Base64 array (single image)."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Remove Objects Pro API",
+    "unique_sign": "image_remove_objects_pro",
+    "method": "POST",
+    "path": "/api/image/editing/remove-objects-pro",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image."
+      },
+      {
+        "name": "mask",
+        "label": "mask",
+        "type": "file",
+        "required": true,
+        "desc": "Mask image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "The URL of the image after erasing."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Cartoon Generator API",
+    "unique_sign": "image_ai_anime_generator",
+    "method": "POST",
+    "path": "/api/image/effects/ai-anime-generator",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": true,
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "type",
+        "label": "type",
+        "type": "string",
+        "required": true,
+        "desc": "Style. Range of values"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.**"
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Photo Colorize API",
+    "unique_sign": "image_image_colorization",
+    "method": "POST",
+    "path": "/api/image/effects/image-colorization",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "base64 encoded image."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Photo to Painting API",
+    "unique_sign": "image_image_style_conversion",
+    "method": "POST",
+    "path": "/api/image/effects/image-style-conversion",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "option",
+        "label": "option",
+        "type": "string",
+        "required": true,
+        "desc": "cartoon: Cartoon style. pencil: Pencil style. color_pencil: Color pencil drawing style. warm: The style of colorful sugar cube oil painting. wave: Oil painting style in surfing in Kanagawa. lavender: Lavender oil painting style. mononoke: Strange oil painting style. scream: Scream oil painting style. gothic: Gothic oil painting style."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "base64 encoded image."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Style Transfer API",
+    "unique_sign": "image_image_style_migration",
+    "method": "POST",
+    "path": "/api/image/effects/image-style-migration",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "style",
+        "label": "style",
+        "type": "file",
+        "required": true,
+        "desc": "style image."
+      },
+      {
+        "name": "major",
+        "label": "major",
+        "type": "file",
+        "required": true,
+        "desc": "Content image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "desc": "URL address of the result image for stylization, image format: PNG."
+      },
+      {
+        "name": "major_url",
+        "type": "string",
+        "desc": "The result of keeping the portrait unchanged and stylizing the rest. If there is no figure in the input major content map, the empty string is returned here."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Color Enhancement API",
+    "unique_sign": "image_image_color_enhancement",
+    "method": "POST",
+    "path": "/api/image/enhance/image-color-enhancement",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "output_format",
+        "label": "output_format",
+        "type": "string",
+        "required": true,
+        "desc": "The format of the output image."
+      },
+      {
+        "name": "mode",
+        "label": "mode",
+        "type": "string",
+        "required": true,
+        "desc": "Color mixing mode. LogC: Suitable for gray film (low contrast raw map) input, adjust the image color perception substantially to restore the color texture of the SDR domain. Rec709: Suitable for images taken under general conditions, appropriate to enhance the image brightness, saturation, etc., the adjustment range is more conservative. ln17_256: Suitable for images taken under general conditions, drastically adjusts image brightness, saturation, contrast, and improves color quality."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Returns the URL address of the processed image."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Contrast Enhancement API",
+    "unique_sign": "image_image_contrast_enhancement",
+    "method": "POST",
+    "path": "/api/image/enhance/image-contrast-enhancement",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "base64 encoded image."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Dehaze API",
+    "unique_sign": "image_image_defogging",
+    "method": "POST",
+    "path": "/api/image/enhance/image-defogging",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "base64 encoded image."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Upscaler API",
+    "unique_sign": "image_image_lossless_enlargement",
+    "method": "POST",
+    "path": "/api/image/enhance/image-lossless-enlargement",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "upscale_factor",
+        "label": "upscale_factor",
+        "type": "integer",
+        "required": false,
+        "desc": "Magnification."
+      },
+      {
+        "name": "mode",
+        "label": "mode",
+        "type": "string",
+        "required": false,
+        "desc": "Image output mode. base: Normal mode, i.e. stable super-resolution effect. enhancement: Enhancement mode, which has a more prominent enhancement effect than the normal mode, further improving the clarity and sharpness of the output image."
+      },
+      {
+        "name": "output_format",
+        "label": "output_format",
+        "type": "string",
+        "required": false,
+        "desc": "Output image format. **Note:** If the input image is in RGBA format, the output will be forced to png to preserve both RGBA format and alpha channel accuracy. If the output image resolution exceeds 3840x2160, the output format will be automatically set to jpg."
+      },
+      {
+        "name": "output_quality",
+        "label": "output_quality",
+        "type": "integer",
+        "required": false,
+        "desc": "Quality factor of the output image, where a higher value corresponds to higher quality. Only applicable when output_format=jpg."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "url",
+        "type": "string",
+        "desc": "URL address of the image after resolution enlargement, image format is PNG."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Sharpness Enhancement API",
+    "unique_sign": "image_image_sharpness_enhancement",
+    "method": "POST",
+    "path": "/api/image/enhance/image-sharpness-enhancement",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "base64 encoded image."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Stretched Image Restoration API",
+    "unique_sign": "image_stretch_image_recovery",
+    "method": "POST",
+    "path": "/api/image/enhance/stretch-image-recovery",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "base64 encoded image."
+      },
+      {
+        "name": "ratio",
+        "type": "float",
+        "desc": "Recover ratio."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Composition Aesthetics Score API",
+    "unique_sign": "image_image_composition_aesthetics_scoring",
+    "method": "POST",
+    "path": "/api/image/rating/image-composition-aesthetics-scoring",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "score",
+        "type": "float",
+        "desc": "The higher the score, the better the composition, with a recommended score of 3.8 or higher being the better composition score."
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Image Exposure Score API",
+    "unique_sign": "image_image_exposure_score",
+    "method": "POST",
+    "path": "/api/image/rating/image-exposure-score",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "exposure",
+        "type": "float",
+        "desc": "Image exposure score, the value range is 0~1. The higher the score, the greater the exposure."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Analyzer API",
+    "unique_sign": "portrait_face_analyzer",
+    "method": "POST",
+    "path": "/api/portrait/analysis/face-analyzer",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "max_face_num",
+        "label": "max_face_num",
+        "type": "integer",
+        "required": false,
+        "desc": "The maximum number of faces processed. When set to 1, only the largest face in the image is detected. A smaller value leads to faster processing speed."
+      },
+      {
+        "name": "face_attributes_type",
+        "label": "face_attributes_type",
+        "type": "string",
+        "required": false,
+        "desc": "Whether to return attributes such as age, gender, mood, etc. AttributesInfo is returned for up to 5 faces with the largest area, and AttributesInfo for more than 5 faces (the 6th and later faces) are not referenced."
+      },
+      {
+        "name": "need_rotate_detection",
+        "label": "need_rotate_detection",
+        "type": "integer",
+        "required": false,
+        "desc": "Whether to enable image rotation recognition support. When the face in the picture is rotated and there is no exif information in the picture, if you don't turn on the picture rotation recognition support, you can't detect and recognize the face in the picture correctly. If you are sure that the picture contains exif information or you are sure that the face in the input picture will not be rotated, please do not turn on this parameter. If this parameter is turned on, the overall time required may increase by hundreds of milliseconds. 0: Close. 1: Open."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "image_width",
+        "type": "integer",
+        "desc": "Image width."
+      },
+      {
+        "name": "image_height",
+        "type": "integer",
+        "desc": "Image height."
+      },
+      {
+        "name": "face_detail_infos",
+        "type": "array",
+        "desc": "List of face information."
+      },
+      {
+        "name": "face_rect",
+        "type": "object",
+        "desc": "Face frame position."
+      },
+      {
+        "name": "x",
+        "type": "integer",
+        "desc": "The horizontal coordinate of the upper left corner of the face frame.The face frame contains the positions of the five senses of the face and expands on them, if the face frame is out of the range of the picture, it will lead to negative coordinates.If you need to intercept the complete face, you can take the negative coordinate to 0 if the complete subcompletess meets the demand."
+      },
+      {
+        "name": "y",
+        "type": "integer",
+        "desc": "The vertical coordinate of the upper left corner of the face frame. The face frame contains the positions of the five senses of the face and expands them to a certain extent. If the face frame exceeds the range of the picture, it will lead to negative coordinates. If you need to intercept the complete face, you can take the negative coordinate to 0 if the complete subcompletess meets the demand."
+      },
+      {
+        "name": "width",
+        "type": "integer",
+        "desc": "Face width."
+      },
+      {
+        "name": "height",
+        "type": "integer",
+        "desc": "Face height."
+      },
+      {
+        "name": "face_detail_attributes_info",
+        "type": "object",
+        "desc": "Face attribute information."
+      },
+      {
+        "name": "age",
+        "type": "integer",
+        "desc": "Age. 65: 65 years old and above. When face_attributes_type does not contain Age or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "beauty",
+        "type": "integer",
+        "desc": "Beauty Score. When face_attributes_type does not contain Beauty or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "emotion",
+        "type": "object",
+        "desc": "Emotional information. When face_attributes_type does not contain Emotion or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Neutral. 1: Happy. 2: Surprised. 3: Angry. 4: Sad. 5: Disgusted. 6: Fearful."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eye",
+        "type": "object",
+        "desc": "Eye-related information. face_attributes_type does not contain Eye or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "glass",
+        "type": "object",
+        "desc": "Wearing glasses."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No glasses. 1: Regular glasses. 2: Sunglasses."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eye_open",
+        "type": "object",
+        "desc": "Closed eyes."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No. 1: Yes."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eyelid_type",
+        "type": "object",
+        "desc": "Double eyelids."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No. 1: Yes."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eye_size",
+        "type": "object",
+        "desc": "Eye size."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Small eyes. 1: Regular eyes. 2: Large eyes."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eyebrow",
+        "type": "object",
+        "desc": "Eyebrow information. face_attributes_type does not contain Eyebrow or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "eyebrow_density",
+        "type": "object",
+        "desc": "Thick eyebrows."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Sparse eyebrows. 1: Thick eyebrows."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eyebrow_curve",
+        "type": "object",
+        "desc": "Curved eyebrows."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Not curved. 1: Curved eyebrows."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "eyebrow_length",
+        "type": "object",
+        "desc": "Eyebrow length."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Short eyebrows. 1: Long eyebrows."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "gender",
+        "type": "object",
+        "desc": "Gender information. face_attributes_type does not contain Gender or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Male. 1: Female."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "hair",
+        "type": "object",
+        "desc": "Hair information. face_attributes_type does not contain Hair or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "length",
+        "type": "object",
+        "desc": "Hair length information."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Bald. 1: Short hair. 2: Medium-length hair. 3: Long hair. 4: Tied hair."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "bang",
+        "type": "object",
+        "desc": "Fringe (bangs) information."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No fringe (bangs). 1: Has fringe (bangs)."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "color",
+        "type": "object",
+        "desc": "Hair color information."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Black. 1: Blonde. 2: Brown. 3: Gray/White."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "hat",
+        "type": "object",
+        "desc": "Hat information. face_attributes_type does not contain Hat or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "style",
+        "type": "object",
+        "desc": "Hat wearing status information."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No hat. 1: Regular hat. 2: Helmet. 3: Security hat."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "color",
+        "type": "object",
+        "desc": "Hat color."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No hat. 1: Red shades. 2: Yellow shades. 3: Blue shades. 4: Black shades. 5: Gray/White shades. 6: Mixed colors."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "head_pose",
+        "type": "object",
+        "desc": "Face offset information. face_attributes_type does not contain HeadPose or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "pitch",
+        "type": "integer",
+        "desc": "Vertical Offset."
+      },
+      {
+        "name": "yaw",
+        "type": "integer",
+        "desc": "Horizontal Offset."
+      },
+      {
+        "name": "pitch",
+        "type": "integer",
+        "desc": "Planar Rotation."
+      },
+      {
+        "name": "mask",
+        "type": "object",
+        "desc": "Mask wearing information. face_attributes_type does not contain Mask or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No mask. 1: Mask without covering face. 2: Mask covering chin. 3: Mask covering mouth. 4: Correctly worn mask."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "mouth",
+        "type": "object",
+        "desc": "Mouth information. face_attributes_type does not contain Mouth or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "mouth_open",
+        "type": "object",
+        "desc": "Mouth open."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No. 1: Yes."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "moustache",
+        "type": "object",
+        "desc": "Facial hair information. face_attributes_type does not contain Moustache or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: No facial hair. 1: Facial hair."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "nose",
+        "type": "object",
+        "desc": "Nose information. face_attributes_type does not contain Nose or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Upturned nose. 1: Hooked nose. 2: Normal. 3: Round-tipped nose."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "shape",
+        "type": "object",
+        "desc": "Face shape information. face_attributes_type does not contain Shape or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Square face. 1: Triangular face. 2: Oval face. 3: Heart-shaped face. 4: Round face."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "skin",
+        "type": "object",
+        "desc": "Skin color information. face_attributes_type does not contain Skin or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      },
+      {
+        "name": "type",
+        "type": "integer",
+        "desc": "0: Yellow skin. 1: Brown skin. 2: Black skin. 3: White skin."
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Probability of being correct."
+      },
+      {
+        "name": "smile",
+        "type": "integer",
+        "desc": "Smile Rating. face_attributes_type does not contain Smile or when more than 5 faces are detected, this parameter is still returned but is not informative."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Analyzer Advanced API",
+    "unique_sign": "portrait_face_analyzer_advanced",
+    "method": "POST",
+    "path": "/api/portrait/analysis/face-analyzer-advanced",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "pupils",
+        "type": "array of float",
+        "desc": "The center point coordinates and radius of the left and right pupils, with 6 floating-point values per face, in the order of [left_iris_cenpt.x, left_iris_cenpt.y, left_iris_radius, right_iris_cenpt.x, right_iris_cenpt.y, right_iris_radius]. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "gender_list",
+        "type": "array of integer",
+        "desc": "Gender. If multiple faces are detected, results are returned in order. 0: Female. 1: Male."
+      },
+      {
+        "name": "expressions",
+        "type": "array of integer",
+        "desc": "Expression. If multiple faces are detected, results are returned in order. 0: Neutral. 1: Smile."
+      },
+      {
+        "name": "face_count",
+        "type": "integer",
+        "desc": "Number of faces."
+      },
+      {
+        "name": "landmarks",
+        "type": "array of float",
+        "desc": "Facial landmark detection results. A set of landmark coordinates is returned for each face, represented as (x0, y0, x1, y1, …). If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "landmark_count",
+        "type": "integer",
+        "desc": "Number of facial landmarks. distributed as follows: Eyebrows: 24 points Eyes: 32 points Nose: 6 points Mouth: 34 points Outer contour: 9 points"
+      },
+      {
+        "name": "beauty_list",
+        "type": "array of float",
+        "desc": "Attractiveness score. A higher score indicates a higher level of attractiveness. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "hat_list",
+        "type": "array of integer",
+        "desc": "Whether wearing a hat. If multiple faces are detected, results are returned in order. 0: No. 1: Yes."
+      },
+      {
+        "name": "face_probability_list",
+        "type": "array of float",
+        "desc": "Probability of a face. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "glasses",
+        "type": "array of integer",
+        "desc": "Whether wearing glasses. If multiple faces are detected, results are returned in order. 0: No glasses. 1: Wearing regular glasses. 2: Wearing sunglasses."
+      },
+      {
+        "name": "face_rectangles",
+        "type": "array of integer",
+        "desc": "Face bounding box, represented as [left, top, width, height]. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "pose_list",
+        "type": "array of float",
+        "desc": "Face pose, in the format [yaw, pitch, roll]. If multiple faces are detected, results are returned in order. yaw: left-right angle. Range: [-90, 90]. pitch: up-down angle. Range: [-90, 90]. roll: in-plane rotation angle. Range: [-180, 180]."
+      },
+      {
+        "name": "age_list",
+        "type": "array of integer",
+        "desc": "Age. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "dense_feature_length",
+        "type": "integer",
+        "desc": "The feature dimension returned by face recognition."
+      },
+      {
+        "name": "masks",
+        "type": "array of integer",
+        "desc": "Whether wearing a mask. If multiple faces are detected, results are returned in order. 0: No. 1: Yes. 2: Mask worn incorrectly."
+      },
+      {
+        "name": "qualities",
+        "type": "object",
+        "desc": "Face quality score, where a higher score indicates better suitability for recognition."
+      },
+      {
+        "name": "score_list",
+        "type": "array of float",
+        "desc": "Overall quality score, where a higher score indicates better suitability for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates high overall image quality, while a score below 85 indicates lower overall image quality. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "blur_list",
+        "type": "array of float",
+        "desc": "Face blur score indicating the impact of blurriness on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower likelihood of the image being blurry, while a score below 85 indicates a higher likelihood of blurriness. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "fnf_list",
+        "type": "array of float",
+        "desc": "Score indicating whether the target is a face and its impact on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability that the image is a face, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "glass_list",
+        "type": "array of float",
+        "desc": "Score indicating the impact of upper-face occlusion (e.g., glasses) on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of wearing glasses, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "illu_list",
+        "type": "array of float",
+        "desc": "Score indicating the impact of lighting on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability that the image has good lighting, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "mask_list",
+        "type": "array of float",
+        "desc": "Score indicating the impact of lower-face occlusion (e.g., mask) on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of wearing a mask, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "noise_list",
+        "type": "array of float",
+        "desc": "Score indicating the impact of image noise on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of image noise, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order."
+      },
+      {
+        "name": "pose_list",
+        "type": "array of float",
+        "desc": "Score indicating the impact of face pose on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability of the face being frontal, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Facial Landmarks API",
+    "unique_sign": "portrait_face_key_points",
+    "method": "POST",
+    "path": "/api/portrait/analysis/face-key-points",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "max_face_num",
+        "label": "max_face_num",
+        "type": "integer",
+        "required": false,
+        "desc": "The maximum number of faces to process. The default value is 1 (only the face with the largest area in the image is detected)."
+      },
+      {
+        "name": "face_field",
+        "label": "face_field",
+        "type": "string",
+        "required": false,
+        "desc": "Returns more information about the face (by default only face_token, face frame, probability and rotation angle are returned). age: Age information. gender: Gender information. landmark4: 4 feature points. landmark72: 72 feature points. landmark150: 150 feature points. landmark201: 201 feature points."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "result",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "face_num",
+        "type": "integer",
+        "desc": "The number of faces in the picture."
+      },
+      {
+        "name": "face_list",
+        "type": "array",
+        "desc": "List of face information."
+      },
+      {
+        "name": "face_token",
+        "type": "string",
+        "desc": "Face Token."
+      },
+      {
+        "name": "location",
+        "type": "object",
+        "desc": "The position of the face in the picture."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The distance of the face area from the left border."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The distance of the face area from the upper boundary."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "The width of the face area."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "The height of the face area."
+      },
+      {
+        "name": "rotation",
+        "type": "integer",
+        "desc": "The clockwise rotation angle of the face frame with respect to the vertical direction."
+      },
+      {
+        "name": "face_probability",
+        "type": "float",
+        "desc": "Face confidence."
+      },
+      {
+        "name": "angle",
+        "type": "object",
+        "desc": "Face rotation parameters, refer to Face Spatial Pose Angle Reference for detailed description."
+      },
+      {
+        "name": "yaw",
+        "type": "float",
+        "desc": "The left and right rotation angle of 3D rotation."
+      },
+      {
+        "name": "pitch",
+        "type": "float",
+        "desc": "Three-dimensional rotation of the pitch angle."
+      },
+      {
+        "name": "roll",
+        "type": "float",
+        "desc": "In-plane rotation angle."
+      },
+      {
+        "name": "age",
+        "type": "float",
+        "desc": "Age."
+      },
+      {
+        "name": "gender",
+        "type": "object",
+        "desc": "Gender information."
+      },
+      {
+        "name": "type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "probability",
+        "type": "float",
+        "desc": "Gender confidence."
+      },
+      {
+        "name": "landmark4",
+        "type": "array",
+        "desc": "4 feature points."
+      },
+      {
+        "name": "landmark72",
+        "type": "array",
+        "desc": "72 feature points. Refer to 72 feature points for details."
+      },
+      {
+        "name": "landmark150",
+        "type": "object",
+        "desc": "150 feature points. Refer to 150 feature points for details."
+      },
+      {
+        "name": "landmark201",
+        "type": "object",
+        "desc": "201 feature points. Refer to 201 feature points for details."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Skin Analyze API",
+    "unique_sign": "portrait_skin_analysis",
+    "method": "POST",
+    "path": "/api/portrait/analysis/skin-analysis",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "warning",
+        "type": "array",
+        "desc": "Interference factors affecting the calculation results. imporper_headpose: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45])."
+      },
+      {
+        "name": "face_rectangle",
+        "type": "object",
+        "desc": "The position of the face rectangle box."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The vertical coordinate of the pixel point in the upper-left corner of the rectangle box."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The horizontal coordinate of the pixel point in the upper-left corner of the rectangle."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "The width of the rectangle box."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "The height of the rectangle box."
+      },
+      {
+        "name": "result",
+        "type": "object",
+        "desc": "Results of face skin analysis."
+      },
+      {
+        "name": "left_eyelids",
+        "type": "object",
+        "desc": "Results of the double eyelid test on the left eye."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Type. 0: Single eyelids 1: Parallel Double Eyelids 2: Scalloped Double Eyelids"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "right_eyelids",
+        "type": "object",
+        "desc": "Results of the double eyelid test on the right eye."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Type. 0: Single eyelids 1: Parallel Double Eyelids 2: Scalloped Double Eyelids"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "eye_pouch",
+        "type": "object",
+        "desc": "Eye bag test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without eye bags. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "dark_circle",
+        "type": "object",
+        "desc": "Dark circles test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without dark circles under the eyes. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "forehead_wrinkle",
+        "type": "object",
+        "desc": "Results of the head-lift test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without headlines. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "crows_feet",
+        "type": "object",
+        "desc": "Fishtail test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without crow's feet. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "eye_finelines",
+        "type": "object",
+        "desc": "Results of the eye fine lines test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "The presence or absence of fine lines under the eyes. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "glabella_wrinkle",
+        "type": "object",
+        "desc": "Results of the interbrow line test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without interbrow lines. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "nasolabial_fold",
+        "type": "object",
+        "desc": "Results of the forehead line test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without lines. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "skin_type",
+        "type": "object",
+        "desc": "Skin texture test results."
+      },
+      {
+        "name": "skin_type",
+        "type": "integer",
+        "desc": "Type. 0: Oily skin. 1: Dry skin. 2: Neutral skin. 3: Combination skin."
+      },
+      {
+        "name": "details",
+        "type": "object",
+        "desc": "The confidence level of each classification."
+      },
+      {
+        "name": "0",
+        "type": "object",
+        "desc": "Oily skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Oily skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "1",
+        "type": "object",
+        "desc": "Dry skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Dry skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "2",
+        "type": "object",
+        "desc": "Neutral skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Neutral skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "3",
+        "type": "object",
+        "desc": "Combination skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Combination skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_forehead",
+        "type": "object",
+        "desc": "Forehead pore test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_left_cheek",
+        "type": "object",
+        "desc": "Results of the left cheek pore test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_right_cheek",
+        "type": "object",
+        "desc": "Results of the right cheek pore test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_jaw",
+        "type": "object",
+        "desc": "Chin pore test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "blackhead",
+        "type": "object",
+        "desc": "Blackhead test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without blackheads. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "acne",
+        "type": "object",
+        "desc": "Acne test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without Acne. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "mole",
+        "type": "object",
+        "desc": "Mole test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without moles. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "skin_spot",
+        "type": "object",
+        "desc": "Spot detection results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without spotting. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Skin Analyze Advanced API",
+    "unique_sign": "portrait_skin_analysis_advanced",
+    "method": "POST",
+    "path": "/api/portrait/analysis/skin-analysis-advanced",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "face_quality_control",
+        "label": "face_quality_control",
+        "type": "integer",
+        "required": false,
+        "desc": "Whether to restrict the quality of faces in incoming images. 0: No face quality control is performed, and skin measurement results are returned as long as the face can be detected. 1: Perform face quality control, if the face quality does not pass it will prompt an error."
+      },
+      {
+        "name": "return_rect_confidence",
+        "label": "return_rect_confidence",
+        "type": "integer",
+        "required": false,
+        "desc": "The confidence level of the area whether to return acne, occlusion, blemishes and moles. 0: No regional confidence is returned. 1: Returns the regional confidence."
+      },
+      {
+        "name": "return_maps",
+        "label": "return_maps",
+        "type": "string",
+        "required": false,
+        "desc": "Enter a comma-separated string containing the type of skin chromatography image to be returned. More Details"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "warning",
+        "type": "array",
+        "desc": "Interference factors affecting the calculation results. imporper_headpose: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45])."
+      },
+      {
+        "name": "face_rectangle",
+        "type": "object",
+        "desc": "The position of the face rectangle box."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The vertical coordinate of the pixel point in the upper-left corner of the rectangle box."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The horizontal coordinate of the pixel point in the upper-left corner of the rectangle."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "The width of the rectangle box."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "The height of the rectangle box."
+      },
+      {
+        "name": "result",
+        "type": "object",
+        "desc": "Results of face skin analysis."
+      },
+      {
+        "name": "skin_color",
+        "type": "object",
+        "desc": "Skin color test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Skin color. 0: Transparent white. 1: White. 2: Naturally. 3: Wheat. 4: Dark."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "skintone_ita",
+        "type": "object",
+        "desc": "Returns skin color classification information based on the ITA (Individual Typology Angle) standard. **NOTE**"
+      },
+      {
+        "name": "ITA",
+        "type": "float",
+        "desc": "Angle value."
+      },
+      {
+        "name": "skintone",
+        "type": "integer",
+        "desc": "Classified according to the skin tone of ITA. 0: Very light. 1: Light. 2: Intermediate. 3: Tan. 4: Brown. 5: Dark. 6: Abnormal color values that may be caused by weak lighting conditions or overexposure."
+      },
+      {
+        "name": "skin_hue_ha",
+        "type": "object",
+        "desc": "Returns skin tone classification information based on HA (Hue Angle). **NOTE**"
+      },
+      {
+        "name": "HA",
+        "type": "float",
+        "desc": "HA angle value."
+      },
+      {
+        "name": "skintone",
+        "type": "integer",
+        "desc": "Classified according to HA's skin tone hue. 0: Yellowish. 1: Neutral. 2: Reddish. 3: Abnormal hue values may be caused by abnormal ambient light tones or weak light environment or overexposure."
+      },
+      {
+        "name": "skin_age",
+        "type": "object",
+        "desc": "Skin age test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Face skin age value."
+      },
+      {
+        "name": "left_eyelids",
+        "type": "object",
+        "desc": "Results of the double eyelid test on the left eye."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Type. 0: Single eyelids 1: Parallel Double Eyelids 2: Scalloped Double Eyelids"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "right_eyelids",
+        "type": "object",
+        "desc": "Results of the double eyelid test on the right eye."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Type. 0: Single eyelids 1: Parallel Double Eyelids 2: Scalloped Double Eyelids"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "eye_pouch",
+        "type": "object",
+        "desc": "Eye bag test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without eye bags. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "eye_pouch_severity",
+        "type": "object",
+        "desc": "Severity of puffiness under the eyes (return when puffiness test result is 1)"
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Severity. 0: Mild. 1: Moderate. 2: Severe."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "dark_circle",
+        "type": "object",
+        "desc": "Dark circles test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Type of dark circles under the eyes. 0: No dark circles under the eyes. 1: Pigmented dark circles. 2: Vascular type dark circles under the eyes. 3: Shadow-type dark circles under the eyes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "forehead_wrinkle",
+        "type": "object",
+        "desc": "Results of the head-lift test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without headlines. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "crows_feet",
+        "type": "object",
+        "desc": "Fishtail test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without crow's feet. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "eye_finelines",
+        "type": "object",
+        "desc": "Results of the eye fine lines test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "The presence or absence of fine lines under the eyes. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "glabella_wrinkle",
+        "type": "object",
+        "desc": "Results of the interbrow line test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without interbrow lines. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "nasolabial_fold",
+        "type": "object",
+        "desc": "Results of the forehead line test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without lines. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "nasolabial_fold_severity",
+        "type": "object",
+        "desc": "Severity of the forehead lines (returned when the result of the forehead line test is 1)"
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Severity. 0: Mild. 1: Moderate. 1: Severe."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "skin_type",
+        "type": "object",
+        "desc": "Skin texture test results."
+      },
+      {
+        "name": "skin_type",
+        "type": "integer",
+        "desc": "Type. 0: Oily skin. 1: Dry skin. 2: Neutral skin. 3: Combination skin."
+      },
+      {
+        "name": "details",
+        "type": "object",
+        "desc": "The confidence level of each classification."
+      },
+      {
+        "name": "0",
+        "type": "object",
+        "desc": "Oily skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Oily skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "1",
+        "type": "object",
+        "desc": "Dry skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Dry skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "2",
+        "type": "object",
+        "desc": "Neutral skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Neutral skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "3",
+        "type": "object",
+        "desc": "Combination skin information."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Combination skin. 0: No. 1: Yes."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_forehead",
+        "type": "object",
+        "desc": "Forehead pore test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_left_cheek",
+        "type": "object",
+        "desc": "Results of the left cheek pore test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_right_cheek",
+        "type": "object",
+        "desc": "Results of the right cheek pore test."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "pores_jaw",
+        "type": "object",
+        "desc": "Chin pore test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "With or without enlarged pores. 0: No 1: Yes"
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "blackhead",
+        "type": "object",
+        "desc": "Blackhead test results."
+      },
+      {
+        "name": "value",
+        "type": "integer",
+        "desc": "Severity. 0: No blackheads. 1: Mild. 2: Moderate. 3: Severe."
+      },
+      {
+        "name": "confidence",
+        "type": "float",
+        "desc": "Confidence."
+      },
+      {
+        "name": "acne",
+        "type": "object",
+        "desc": "Acne test results."
+      },
+      {
+        "name": "rectangle",
+        "type": "array",
+        "desc": "The location of each pimple box."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "Width."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "Height."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The distance from the leftmost part of the picture."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The distance from the topmost edge of the image."
+      },
+      {
+        "name": "confidence",
+        "type": "array",
+        "desc": "If return_rect_confidence is 1, the confidence that each rectangular region is discriminated as a positive case is returned."
+      },
+      {
+        "name": "mole",
+        "type": "object",
+        "desc": "Mole test results."
+      },
+      {
+        "name": "rectangle",
+        "type": "array",
+        "desc": "The position of each mole frame."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "Width."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "Height."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The distance from the leftmost part of the picture."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The distance from the topmost edge of the image."
+      },
+      {
+        "name": "confidence",
+        "type": "array",
+        "desc": "If return_rect_confidence is 1, the confidence that each rectangular region is discriminated as a positive case is returned."
+      },
+      {
+        "name": "closed_comedones",
+        "type": "object",
+        "desc": "Closure returns the result."
+      },
+      {
+        "name": "rectangle",
+        "type": "array",
+        "desc": "The position of each closure frame."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "Width."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "Height."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The distance from the leftmost part of the picture."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The distance from the topmost edge of the image."
+      },
+      {
+        "name": "confidence",
+        "type": "array",
+        "desc": "If return_rect_confidence is 1, the confidence that each rectangular region is discriminated as a positive case is returned."
+      },
+      {
+        "name": "skin_spot",
+        "type": "object",
+        "desc": "Spot detection results."
+      },
+      {
+        "name": "rectangle",
+        "type": "array",
+        "desc": "The position of each spot box."
+      },
+      {
+        "name": "width",
+        "type": "float",
+        "desc": "Width."
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "desc": "Height."
+      },
+      {
+        "name": "left",
+        "type": "float",
+        "desc": "The distance from the leftmost part of the picture."
+      },
+      {
+        "name": "top",
+        "type": "float",
+        "desc": "The distance from the topmost edge of the image."
+      },
+      {
+        "name": "confidence",
+        "type": "array",
+        "desc": "If return_rect_confidence is 1, the confidence that each rectangular region is discriminated as a positive case is returned."
+      },
+      {
+        "name": "face_maps",
+        "type": "object",
+        "desc": "Returns the skin chromatography visualization image set in the entry (return_maps)."
+      },
+      {
+        "name": "red_area",
+        "type": "base64",
+        "desc": "Red zone map. jpeg images for base64."
+      },
+      {
+        "name": "sensitivity",
+        "type": "object",
+        "desc": "The sensitivity of the human face within the photo. This return value must be used with the red area map, you need to set the return red area map (\"red_area\") in the input parameter return_maps first."
+      },
+      {
+        "name": "sensitivity_area",
+        "type": "float",
+        "desc": "Sensitive redness areas account for the proportion of cheeks and T-zone."
+      },
+      {
+        "name": "sensitivity_intensity",
+        "type": "float",
+        "desc": "The intensity of redness in sensitive areas."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Skin Analyze Pro API",
+    "unique_sign": "portrait_skin_analysis_pro",
+    "method": "POST",
+    "path": "/api/portrait/analysis/skin-analysis-pro",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Main Image."
+      },
+      {
+        "name": "left_side_image",
+        "label": "left_side_image",
+        "type": "file",
+        "required": false,
+        "desc": "Side face picture.(Left)"
+      },
+      {
+        "name": "right_side_image",
+        "label": "right_side_image",
+        "type": "file",
+        "required": false,
+        "desc": "Side face picture.(Right)"
+      },
+      {
+        "name": "return_maps",
+        "label": "return_maps",
+        "type": "string",
+        "required": false,
+        "desc": "The type of skin problem detection mapping image to be returned. If the corresponding element parameter is passed in, the interface will return an image of the original size, which you can subsequently overlay with the original image to see the results. Use commas to separate multiple types. More Details"
+      },
+      {
+        "name": "return_marks",
+        "label": "return_marks",
+        "type": "string",
+        "required": false,
+        "desc": "The type of skin problem detection mapping image to be returned. Use commas to separate multiple types. More Details"
+      },
+      {
+        "name": "roi_outline_color",
+        "label": "roi_outline_color",
+        "type": "json string",
+        "required": false,
+        "desc": "Customize the color. More Details"
+      },
+      {
+        "name": "return_side_results",
+        "label": "return_side_results",
+        "type": "string",
+        "required": false,
+        "desc": "The side face information that needs to be returned. Use commas to separate multiple types. More Details"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "left_side_result",
+        "type": "json string",
+        "desc": "Results of side face analysis. More Details"
+      },
+      {
+        "name": "right_side_result",
+        "type": "json string",
+        "desc": "Results of side face analysis. More Details"
+      },
+      {
+        "name": "face_rectangle",
+        "type": "object",
+        "desc": "Face position. More Details"
+      },
+      {
+        "name": "result",
+        "type": "object",
+        "desc": "Results of face skin analysis. More Details"
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Detect Skin Disease API",
+    "unique_sign": "portrait_skin_disease_detection",
+    "method": "POST",
+    "path": "/api/portrait/analysis/skin-disease-detection",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "body_part",
+        "type": "string",
+        "desc": "Skin lesion site identification. scalp: Scalp. face: Face. neck: Neck. arm: Arm. chest: Chest. abdomen: Abdomen. oxter: Axilla. back: Back. waist: Lumbar region. hand: Hand. genitals: External genitalia. cruris: Groin / Inguinal region. leg: Leg. foot: Foot. unknown: Unknown."
+      },
+      {
+        "name": "image_quality",
+        "type": "float",
+        "desc": "Image quality score."
+      },
+      {
+        "name": "image_type",
+        "type": "string",
+        "desc": "Image classification."
+      },
+      {
+        "name": "results_english",
+        "type": "object",
+        "desc": "【English】The predicted results. Contains Key-Value pairs, where Key is the disease name and Value is the probability."
+      },
+      {
+        "name": "acne",
+        "type": "float",
+        "desc": "Acne"
+      },
+      {
+        "name": "actinic_keratosis",
+        "type": "float",
+        "desc": "Actinic Keratosis"
+      },
+      {
+        "name": "alopecia_androgenetica",
+        "type": "float",
+        "desc": "Alopecia Androgenetica"
+      },
+      {
+        "name": "alopecia_areata",
+        "type": "float",
+        "desc": "Alopecia Areata"
+      },
+      {
+        "name": "bullous_dermatosis",
+        "type": "float",
+        "desc": "Bullous Dermatosis"
+      },
+      {
+        "name": "chloasma",
+        "type": "float",
+        "desc": "Chloasma"
+      },
+      {
+        "name": "corn",
+        "type": "float",
+        "desc": "Corn"
+      },
+      {
+        "name": "dermatofibroma",
+        "type": "float",
+        "desc": "Dermatofibroma"
+      },
+      {
+        "name": "eczema_dermatitis",
+        "type": "float",
+        "desc": "Eczema Dermatitis"
+      },
+      {
+        "name": "erysipelas",
+        "type": "float",
+        "desc": "Erysipelas"
+      },
+      {
+        "name": "erythema_multiforme",
+        "type": "float",
+        "desc": "Erythema Multiforme"
+      },
+      {
+        "name": "folliculitis",
+        "type": "float",
+        "desc": "Folliculitis"
+      },
+      {
+        "name": "furuncle",
+        "type": "float",
+        "desc": "Furuncle"
+      },
+      {
+        "name": "haemangioma",
+        "type": "float",
+        "desc": "Haemangioma"
+      },
+      {
+        "name": "herpes",
+        "type": "float",
+        "desc": "Herpes"
+      },
+      {
+        "name": "herpes_simplex",
+        "type": "float",
+        "desc": "Herpes Simplex"
+      },
+      {
+        "name": "iga_vasculitis",
+        "type": "float",
+        "desc": "Iga Vasculitis"
+      },
+      {
+        "name": "keloid",
+        "type": "float",
+        "desc": "Keloid"
+      },
+      {
+        "name": "keratosis_follicularism",
+        "type": "float",
+        "desc": "Keratosis Follicularism"
+      },
+      {
+        "name": "lichen_planus",
+        "type": "float",
+        "desc": "Lichen Planus"
+      },
+      {
+        "name": "lupus_erythematosus",
+        "type": "float",
+        "desc": "Lupus Erythematosus"
+      },
+      {
+        "name": "molluscum_contagiosum",
+        "type": "float",
+        "desc": "Molluscum Contagiosum"
+      },
+      {
+        "name": "nevus",
+        "type": "float",
+        "desc": "Nevus"
+      },
+      {
+        "name": "paronychia",
+        "type": "float",
+        "desc": "Paronychia"
+      },
+      {
+        "name": "pityriasis_alba",
+        "type": "float",
+        "desc": "Pityriasis Alba"
+      },
+      {
+        "name": "pityriasis_rosea",
+        "type": "float",
+        "desc": "Pityriasis Rosea"
+      },
+      {
+        "name": "prurigo_nodularis",
+        "type": "float",
+        "desc": "Prurigo Nodularis"
+      },
+      {
+        "name": "psoriasis",
+        "type": "float",
+        "desc": "Psoriasis"
+      },
+      {
+        "name": "rosacea",
+        "type": "float",
+        "desc": "Rosacea"
+      },
+      {
+        "name": "sebaceous_cyst",
+        "type": "float",
+        "desc": "Sebaceous Cyst"
+      },
+      {
+        "name": "sebaceousnevus",
+        "type": "float",
+        "desc": "Sebaceousnevus"
+      },
+      {
+        "name": "seborrheic_dermatitis",
+        "type": "float",
+        "desc": "Seborrheic Dermatitis"
+      },
+      {
+        "name": "seborrheic_keratosis",
+        "type": "float",
+        "desc": "Seborrheic Keratosis"
+      },
+      {
+        "name": "skin_tag",
+        "type": "float",
+        "desc": "Skin Tag"
+      },
+      {
+        "name": "stasis_dermatitis",
+        "type": "float",
+        "desc": "Stasis Dermatitis"
+      },
+      {
+        "name": "syringoma",
+        "type": "float",
+        "desc": "Syringoma"
+      },
+      {
+        "name": "tinea_capitis",
+        "type": "float",
+        "desc": "Tinea Capitis"
+      },
+      {
+        "name": "tinea_corporis",
+        "type": "float",
+        "desc": "Tinea Corporis"
+      },
+      {
+        "name": "tinea_cruris",
+        "type": "float",
+        "desc": "Tinea Cruris"
+      },
+      {
+        "name": "tinea_manuum",
+        "type": "float",
+        "desc": "Tinea Manuum"
+      },
+      {
+        "name": "tinea_pedis",
+        "type": "float",
+        "desc": "Tinea Pedis"
+      },
+      {
+        "name": "tinea_unguium",
+        "type": "float",
+        "desc": "Tinea Unguium"
+      },
+      {
+        "name": "tinea_versicolor",
+        "type": "float",
+        "desc": "Tinea Versicolor"
+      },
+      {
+        "name": "urticaria",
+        "type": "float",
+        "desc": "Urticaria"
+      },
+      {
+        "name": "urticaria_papular",
+        "type": "float",
+        "desc": "Urticaria Papular"
+      },
+      {
+        "name": "varicella",
+        "type": "float",
+        "desc": "Varicella"
+      },
+      {
+        "name": "verruca_plana",
+        "type": "float",
+        "desc": "Verruca Plana"
+      },
+      {
+        "name": "verruca_vulgaris",
+        "type": "float",
+        "desc": "Verruca Vulgaris"
+      },
+      {
+        "name": "vitiligo",
+        "type": "float",
+        "desc": "Vitiligo"
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Try on Clothes API",
+    "unique_sign": "portrait_try_on_clothes",
+    "method": "POST",
+    "path": "/api/portrait/editing/try-on-clothes",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": true,
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "person_image",
+        "label": "person_image",
+        "type": "file",
+        "required": true,
+        "desc": "Portrait image."
+      },
+      {
+        "name": "clothes_image",
+        "label": "clothes_image",
+        "type": "file",
+        "required": true,
+        "desc": "Clothing image."
+      },
+      {
+        "name": "clothes_type",
+        "label": "clothes_type",
+        "type": "string",
+        "required": true,
+        "desc": "Clothing Types. upper_body: Upper body clothing. lower_body: Lower body clothing. full_body: Full body clothing."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.**"
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Try on Clothes Pro API",
+    "unique_sign": "portrait_try_on_clothes_pro",
+    "method": "POST",
+    "path": "/api/portrait/editing/try-on-clothes-pro",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": true,
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "person_image",
+        "label": "person_image",
+        "type": "file",
+        "required": true,
+        "desc": "Portrait Image."
+      },
+      {
+        "name": "top_garment",
+        "label": "top_garment",
+        "type": "file",
+        "required": true,
+        "desc": "Upper Body Clothing Image."
+      },
+      {
+        "name": "bottom_garment",
+        "label": "bottom_garment",
+        "type": "file",
+        "required": false,
+        "desc": "Lower Body Clothing Image. If no lower body clothing image is provided, the lower body clothing effect will be randomly generated. If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty."
+      },
+      {
+        "name": "resolution",
+        "label": "resolution",
+        "type": "integer",
+        "required": false,
+        "desc": "Output Image Resolution. If you need to call **Try on Clothes Refiner** in the future, select -1. -1: Original image resolution. 1024: 576x1024px. 1280: 720x1280px."
+      },
+      {
+        "name": "restore_face",
+        "label": "restore_face",
+        "type": "boolean",
+        "required": false,
+        "desc": "Whether to Keep the Model’s Face. If you need to call **Try on Clothes Refiner** in the future, select true. true: Keep the model’s original face. false: Regenerate the model’s face."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.**"
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Blur API",
+    "unique_sign": "portrait_blurred_faces",
+    "method": "POST",
+    "path": "/api/portrait/effects/blurred-faces",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Change Facial Expressions API",
+    "unique_sign": "portrait_emotion_editor",
+    "method": "POST",
+    "path": "/api/portrait/effects/emotion-editor",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image_target",
+        "label": "image_target",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "service_choice",
+        "label": "service_choice",
+        "type": "integer",
+        "required": true,
+        "desc": "Expression type. 0: Big laugh. 1: Pouting. 2: Feel sad. 3: Smile. 100: Opening eyes."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "The result image, returning the Base64 encoding of the image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Face Enhancer API",
+    "unique_sign": "portrait_enhance_face",
+    "method": "POST",
+    "path": "/api/portrait/effects/enhance-face",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Age & Gender Swap API",
+    "unique_sign": "portrait_face_attribute_editing",
+    "method": "POST",
+    "path": "/api/portrait/effects/face-attribute-editing",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "action_type",
+        "label": "action_type",
+        "type": "string",
+        "required": true,
+        "desc": "Face editing method. TO_KID: V1 version becomes a child. TO_OLD: V1 version becomes old man. TO_FEMALE: V1 version becomes girls. TO_MALE: V1 version becomes boys. V2_AGE: V2 version age change. V2_GENDER: v2 version gender shift."
+      },
+      {
+        "name": "quality_control",
+        "label": "quality_control",
+        "type": "string",
+        "required": false,
+        "desc": "Image quality (image field image quality). Please select the appropriate option based on quality information such as masking, lighting, blurriness, and integrity of the face. If selecting a higher quality causes the image to be unprocessable, please select a lower quality to try. NONE: No control is performed. LOW: Lower quality requirements. NORMAL: General quality requirements. HIGH: Higher quality requirements. More Details"
+      },
+      {
+        "name": "face_location",
+        "label": "face_location",
+        "type": "json string",
+        "required": false,
+        "desc": "When multiple faces are detected in the image, use this parameter to specify the position of the face to be edited in the image, or default to the largest face in the image if not specified. More Details"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "result",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "The BASE64 value of the edited image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Beauty API",
+    "unique_sign": "portrait_face_beauty",
+    "method": "POST",
+    "path": "/api/portrait/effects/face-beauty",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "sharp",
+        "label": "sharp",
+        "type": "float",
+        "required": true,
+        "desc": "Sharpness level. A higher value indicates a greater degree of sharpness."
+      },
+      {
+        "name": "smooth",
+        "label": "smooth",
+        "type": "float",
+        "required": true,
+        "desc": "Smoothness level. A higher value results in a smoother appearance."
+      },
+      {
+        "name": "white",
+        "label": "white",
+        "type": "float",
+        "required": true,
+        "desc": "Whitening level. A higher value leads to lighter skin."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Beauty Advanced API",
+    "unique_sign": "portrait_face_beauty_advanced",
+    "method": "POST",
+    "path": "/api/portrait/effects/face-beauty-advanced",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "whitening",
+        "label": "whitening",
+        "type": "integer",
+        "required": false,
+        "desc": "Whitening level: 0 means no whitening, 100 represents the highest level."
+      },
+      {
+        "name": "smoothing",
+        "label": "smoothing",
+        "type": "integer",
+        "required": false,
+        "desc": "Skin smoothing level: 0 means no skin smoothing, 100 represents the highest level."
+      },
+      {
+        "name": "face_lifting",
+        "label": "face_lifting",
+        "type": "integer",
+        "required": false,
+        "desc": "Face slimming level: 0 means no face slimming, 100 represents the highest level."
+      },
+      {
+        "name": "eye_enlarging",
+        "label": "eye_enlarging",
+        "type": "integer",
+        "required": false,
+        "desc": "Eye enlargement level: 0 means no eye enlargement, 100 represents the highest level."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "result_image",
+        "type": "string",
+        "desc": "Returns the base64 data of the processed image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Beauty Pro API",
+    "unique_sign": "portrait_face_beauty_pro",
+    "method": "POST",
+    "path": "/api/portrait/effects/face-beauty-pro",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "whitening",
+        "label": "whitening",
+        "type": "integer",
+        "required": false,
+        "desc": "Whitening Degree. 0 means no whitening effect, 100 represents the highest degree."
+      },
+      {
+        "name": "smoothing",
+        "label": "smoothing",
+        "type": "integer",
+        "required": false,
+        "desc": "Smoothing Degree. 0 means no smoothing effect, 100 represents the highest degree."
+      },
+      {
+        "name": "thinface",
+        "label": "thinface",
+        "type": "integer",
+        "required": false,
+        "desc": "Face Slimming Degree. 0 means no face slimming effect, 100 represents the highest degree."
+      },
+      {
+        "name": "shrink_face",
+        "label": "shrink_face",
+        "type": "integer",
+        "required": false,
+        "desc": "Small Face Degree. 0 means no small face effect, 100 represents the highest degree."
+      },
+      {
+        "name": "enlarge_eye",
+        "label": "enlarge_eye",
+        "type": "integer",
+        "required": false,
+        "desc": "Big Eyes Degree. 0 means no big eyes effect, 100 represents the highest degree."
+      },
+      {
+        "name": "remove_eyebrow",
+        "label": "remove_eyebrow",
+        "type": "integer",
+        "required": false,
+        "desc": "Eyebrow Removal Degree. 0 means no eyebrow removal effect, 100 represents the highest degree."
+      },
+      {
+        "name": "filter_type",
+        "label": "filter_type",
+        "type": "integer",
+        "required": false,
+        "desc": "Filter Effects. 1: Black and White. 2: Calm. 3: Sunny Day. 4: Journey. 5: Beautify Skin. 6: Hong Kong Style. 7: Aesthetic. 8: Lovely. 9: New York. 10: Sakura. 11: Seventeen. 12: Soft Light. 13: Afternoon Tea. 14: Brighten Skin. 15: Chaplin. 16: Floral. 17: Memories. 18: Ice Beauty. 19: Paris. 20: Time. 21: LOMO. 22: Old Times. 23: Early Spring. 24: Story. 25: Abao Color. 26: Fill Light. 27: Warm. 28: Gorgeous. 29: Lavender. 30: Chanel. 31: Prague. 32: Old Dreams. 33: Peach Blossom. 34: Pink. 35: Misty Rain."
+      },
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": false,
+        "desc": "Task Type. sync: Synchronous tasks."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. sync: Synchronous tasks."
+      },
+      {
+        "name": "result",
+        "type": "string",
+        "desc": "Returns the base64 data of the processed image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Face Filters API",
+    "unique_sign": "portrait_face_filter",
+    "method": "POST",
+    "path": "/api/portrait/effects/face-filter",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "resource_type",
+        "label": "resource_type",
+        "type": "string",
+        "required": true,
+        "desc": "Picture style. More Details"
+      },
+      {
+        "name": "strength",
+        "label": "strength",
+        "type": "float",
+        "required": true,
+        "desc": "Filter intensity."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Merge Portraits API",
+    "unique_sign": "portrait_face_fusion",
+    "method": "POST",
+    "path": "/api/portrait/effects/face-fusion",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image_target",
+        "label": "image_target",
+        "type": "file",
+        "required": true,
+        "desc": "Target image."
+      },
+      {
+        "name": "image_template",
+        "label": "image_template",
+        "type": "file",
+        "required": true,
+        "desc": "Template images."
+      },
+      {
+        "name": "source_similarity",
+        "label": "source_similarity",
+        "type": "float",
+        "required": false,
+        "desc": "Face similarity, where a higher numerical value indicates greater similarity. 0: Consistent with the original template. 1: Maximum similarity with the target image."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "The result image, returning the Base64 encoding of the image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Hairstyle Changer API",
+    "unique_sign": "portrait_hairstyle_editor",
+    "method": "POST",
+    "path": "/api/portrait/effects/hairstyle-editor",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image_target",
+        "label": "image_target",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "hair_type",
+        "label": "hair_type",
+        "type": "integer",
+        "required": false,
+        "desc": "Hairstyle type. 0: Bangs. 1: Long hair. 2: Bangs with long hair. 3: Increase the number of hair. 901: Straight hair."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "The result image, returning the Base64 encoding of the image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Hairstyle Changer Pro API",
+    "unique_sign": "portrait_hairstyle_editor_pro",
+    "method": "POST",
+    "path": "/api/portrait/effects/hairstyle-editor-pro",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": true,
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Main image."
+      },
+      {
+        "name": "hair_style",
+        "label": "hair_style",
+        "type": "string",
+        "required": true,
+        "desc": "Hairstyle. More Details"
+      },
+      {
+        "name": "color",
+        "label": "color",
+        "type": "string",
+        "required": false,
+        "desc": "Color. More Details"
+      },
+      {
+        "name": "image_size",
+        "label": "image_size",
+        "type": "integer",
+        "required": false,
+        "desc": "Returns the number of images."
+      },
+      {
+        "name": "mask",
+        "label": "mask",
+        "type": "file",
+        "required": false,
+        "desc": "Masked Image. If left blank, a masked image will be generated automatically. The white portion of the masked image is the editable area, while the black portion remains unchanged. For example, by using the white area of the mask to cover a person's face, the face will remain unaltered, and other parts will be generated automatically."
+      },
+      {
+        "name": "bangs",
+        "label": "bangs",
+        "type": "integer",
+        "required": false,
+        "desc": "Whether to add bangs to the resulting image. This parameter is ineffective when the hairstyle has no bangs or when bangs are mandatory. Parameter Validity Explanation 0: No. 1: Yes. Parameter Effect Comparison"
+      },
+      {
+        "name": "mode",
+        "label": "mode",
+        "type": "integer",
+        "required": false,
+        "desc": "Generation mode. Please enable this parameter based on the original hairstyle. 1: Head-only mode. More suitable for short hair. 2: Full-image generation mode. More suitable for long hair; use this mode when the original image features shoulder-length or longer hair. Parameter Effect Comparison"
+      },
+      {
+        "name": "reference",
+        "label": "reference",
+        "type": "integer",
+        "required": false,
+        "desc": "Reference Original Hairstyle. Enabling this parameter will make changes to the hairstyle based on the original hairstyle, resulting in minor alterations. Please do not enable this parameter if changing from short hair to long hair or from long hair to short hair. 0: No. 1: Yes. Parameter Effect Comparison"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.**"
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Lips Color Changer API",
+    "unique_sign": "portrait_lips_color_changer",
+    "method": "POST",
+    "path": "/api/portrait/effects/lips-color-changer",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "lip_color_infos",
+        "label": "lip_color_infos",
+        "type": "json string",
+        "required": true,
+        "desc": "Lip Color Info. You can enter up to 3 lip_color_info to enable changing the lip color for up to 3 faces in a graph. Description"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "result_image",
+        "type": "string",
+        "desc": "Returns the base64 data of the processed image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Live Photos API",
+    "unique_sign": "portrait_live_photo",
+    "method": "POST",
+    "path": "/api/portrait/effects/live-photo",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image_target",
+        "label": "image_target",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "type",
+        "label": "type",
+        "type": "integer",
+        "required": false,
+        "desc": "Live photo type. 0: Avatar version. 1: Full body version."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "video",
+        "type": "string",
+        "desc": "Returns the base64 encoded string of the generated video."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Cartoon Yourself API",
+    "unique_sign": "portrait_portrait_animation",
+    "method": "POST",
+    "path": "/api/portrait/effects/portrait-animation",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "type",
+        "label": "type",
+        "type": "string",
+        "required": true,
+        "desc": "Cartoon effect. pixar: Pixar pixar_plus: Pixar Pro 3d_cartoon: 3D cartoon angel: Angel angel_plus: Angel Pro demon: Demon ukiyoe_cartoon: Ukiyo-e amcartoon: American Manga western: Western avatar: Avatar jpcartoon: Japanese Manga (I) jpcartoon_head: Japanese Manga (portrait) hkcartoon: China Comics classic_cartoon: Retro Cartoon tccartoon: Moe Manga anime: Japanese Manga (II) handdrawn: hand-painted sketch: Pencil drawing (I) artstyle: Artistic effects head: Pencil drawing (head) full: Pencil drawing (II) 3d_game: 3D game effects"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Smart Beauty API",
+    "unique_sign": "portrait_smart_beauty",
+    "method": "POST",
+    "path": "/api/portrait/effects/smart-beauty",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image_target",
+        "label": "image_target",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "multi_face",
+        "label": "multi_face",
+        "type": "string",
+        "required": false,
+        "desc": "Multiple-face beauty strategy. When set to 1, beauty enhancement is applied to all faces (it is recommended that the number of faces in the image be less than 18, as too many faces may lead to instability). When set to any other value or not specified, only the largest face is processed."
+      },
+      {
+        "name": "beauty_level",
+        "label": "beauty_level",
+        "type": "float",
+        "required": false,
+        "desc": "Beauty level."
+      },
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": false,
+        "desc": "Task Type. sync: Synchronous tasks."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. sync: Synchronous tasks."
+      },
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "desc": "The result image, returning the Base64 encoding of the image."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Face Slimming API",
+    "unique_sign": "portrait_smart_face_slimming",
+    "method": "POST",
+    "path": "/api/portrait/effects/smart-face-slimming",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "slim_degree",
+        "label": "slim_degree",
+        "type": "float",
+        "required": false,
+        "desc": "Standard strength. The higher the value, the more pronounced the face slimming effect."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Skin Beauty API",
+    "unique_sign": "portrait_smart_skin",
+    "method": "POST",
+    "path": "/api/portrait/effects/smart-skin",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      },
+      {
+        "name": "retouch_degree",
+        "label": "retouch_degree",
+        "type": "float",
+        "required": false,
+        "desc": "Dermabrasion intensity. The higher the value, the less visible the skin texture."
+      },
+      {
+        "name": "whitening_degree",
+        "label": "whitening_degree",
+        "type": "float",
+        "required": false,
+        "desc": "Whitening strength. The higher the value, the whiter the skin."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "data",
+        "type": "object",
+        "desc": "The content of the result data returned."
+      },
+      {
+        "name": "image_url",
+        "type": "string",
+        "desc": "Resulting image URL address."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Try on Clothes Refiner API",
+    "unique_sign": "portrait_try_on_clothes_refiner",
+    "method": "POST",
+    "path": "/api/portrait/enhance/try-on-clothes-refiner",
+    "doc": "",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": true,
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "person_image",
+        "label": "person_image",
+        "type": "file",
+        "required": true,
+        "desc": "Model image for calling the Try on Clothes API."
+      },
+      {
+        "name": "top_garment",
+        "label": "top_garment",
+        "type": "file",
+        "required": true,
+        "desc": "Top clothing image for calling the Try on Clothes API."
+      },
+      {
+        "name": "coarse_image",
+        "label": "coarse_image",
+        "type": "file",
+        "required": true,
+        "desc": "Result image obtained from calling the Try on Clothes API."
+      },
+      {
+        "name": "gender",
+        "label": "gender",
+        "type": "string",
+        "required": true,
+        "desc": "Gender of the person_image. woman: Female. man: Male."
+      },
+      {
+        "name": "bottom_garment",
+        "label": "bottom_garment",
+        "type": "file",
+        "required": false,
+        "desc": "Bottom clothing image for calling the Try on Clothes API."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": "Task Type. async: Asynchronous tasks."
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.**"
+      }
+    ]
+  }
+]
