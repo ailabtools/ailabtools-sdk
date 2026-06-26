@@ -1,11 +1,12 @@
-# AILabTools SDK - AI Image API for Node.js and Python
+# AILabTools SDK - AI Image API for Node.js, Python, and Go
 
-Official Node.js, TypeScript, and async Python SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, and Go SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 - Node.js / TypeScript SDK: `npm install ailabtools`
 - Python async SDK: `pip install ailabtools-sdk`
+- Go SDK: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - 60+ active AI image, cutout, and portrait APIs
 - Supports file uploads, URL input, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -31,6 +32,12 @@ npm install ailabtools
 
 ```bash
 pip install ailabtools-sdk
+```
+
+### Go
+
+```bash
+go get github.com/ailabtools/ailabtools-sdk/packages/go
 ```
 
 Import it in Python as `ailabtools`:
@@ -91,6 +98,34 @@ async def main():
     await client.aclose()
 
 asyncio.run(main())
+```
+
+#### Go
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    ailabtools "github.com/ailabtools/ailabtools-sdk/packages/go"
+)
+
+func main() {
+    client := ailabtools.NewClient(os.Getenv("AILAB_API_KEY"))
+
+    result, err := client.Background.Remove(context.Background(), ailabtools.CutoutUniversalBackgroundRemovalParams{
+        Image:      ailabtools.FileFromPath("./photo.jpg"),
+        ReturnForm: "whiteBK",
+    })
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(result.Data.ImageURL)
+}
 ```
 
 The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale-factor`, and `returnForm` maps to `return_form`.
@@ -178,6 +213,7 @@ try {
 - [AILabTools API Documentation](https://www.ailabtools.com/docs)
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
+- [Go SDK module](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/go)
 - [SDK API reference](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

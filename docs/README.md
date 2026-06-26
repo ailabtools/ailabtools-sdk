@@ -1,6 +1,6 @@
 # AILabTools SDK Documentation
 
-Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript and async Python examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, and Go examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
@@ -37,6 +37,12 @@ Python:
 
 ```bash
 pip install ailabtools-sdk
+```
+
+Go:
+
+```bash
+go get github.com/ailabtools/ailabtools-sdk/packages/go
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
@@ -81,6 +87,34 @@ async def main():
     await client.aclose()
 
 asyncio.run(main())
+```
+
+#### Go
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    ailabtools "github.com/ailabtools/ailabtools-sdk/packages/go"
+)
+
+func main() {
+    client := ailabtools.NewClient(os.Getenv("AILAB_API_KEY"))
+
+    result, err := client.Background.Remove(context.Background(), ailabtools.CutoutUniversalBackgroundRemovalParams{
+        Image:      ailabtools.FileFromPath("./photo.jpg"),
+        ReturnForm: "whiteBK",
+    })
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Println(result.Data.ImageURL)
+}
 ```
 
 The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale-factor`, and `returnForm` maps to `return_form`.
@@ -195,6 +229,7 @@ print(result.get("data"))
 
 - Node.js file fields support `Buffer | ArrayBuffer | Uint8Array`.
 - Python file fields support file-like objects with `read`, or `bytes` / `bytearray`.
+- Go file fields support `FileFromPath`, `FileFromBytes`, or `FileFromReader`.
 
 
 ## Examples
@@ -213,6 +248,7 @@ Copy-ready Node.js and Python examples are available in [`examples/`](../example
 - [AILabTools API Documentation](https://www.ailabtools.com/docs)
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
+- [Go SDK module](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/go)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

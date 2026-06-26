@@ -4,6 +4,7 @@ Copy these examples into your application after installing the SDK.
 
 - Node.js / TypeScript: `npm install ailabtools`
 - Python async: `pip install ailabtools-sdk`
+- Go: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - API key: [AILabTools Developer Console](https://www.ailabtools.com/developer)
 - API docs: [AILabTools API Documentation](https://www.ailabtools.com/docs)
 
@@ -15,6 +16,10 @@ Copy these examples into your application after installing the SDK.
 - `node/hairstyle-pro-async.ts` - submit and wait for an async hairstyle task
 - `node/nextjs-api-route.ts` - Next.js upload API route
 - `node/batch-process-folder.ts` - process a folder of images
+
+## Go
+
+- `go/background-removal/main.go` - remove image backgrounds
 
 ## Python
 
