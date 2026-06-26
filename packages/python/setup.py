@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name="ailabtools",
+    name="ailabtools-sdk",
     version="0.1.0",
     description="AILabTools SDK for Python (async)",
     long_description=open("README.md", encoding="utf-8").read(),

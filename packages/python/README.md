@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-pip install ailabtools
+pip install ailabtools-sdk
 ```
 
 ## Quick Start

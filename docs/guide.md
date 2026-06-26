@@ -13,7 +13,7 @@ npm install ailabtools
 ### Python
 
 ```bash
-pip install ailabtools
+pip install ailabtools-sdk
 ```
 
 ## Authentication and Initialization
