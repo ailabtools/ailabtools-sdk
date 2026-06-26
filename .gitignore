@@ -1,0 +1,32 @@
+# OS/editor
+.DS_Store
+.vscode/
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Node
+node_modules/
+packages/node/node_modules/
+packages/node/dist/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+packages/python/build/
+packages/python/dist/
+packages/python/*.egg-info/
+
+# Local integration assets and generated reports
+test-assets/
+image.jpg
