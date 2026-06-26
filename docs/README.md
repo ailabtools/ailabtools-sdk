@@ -13,7 +13,39 @@ This directory contains usage guides, API references, and examples for the Node.
 
 ## Quick Start
 
-### Node.js
+### 1. Get your API key
+
+Create or copy your API key from the AILabTools developer console:
+
+https://www.ailabtools.com/developer
+
+Official API documentation is available at:
+
+https://www.ailabtools.com/docs
+
+### 2. Install the SDK
+
+Node.js:
+
+```bash
+npm install ailabtools
+```
+
+Python:
+
+```bash
+pip install ailabtools-sdk
+```
+
+### 3. Configure your environment
+
+```bash
+export AILAB_API_KEY="your_api_key_here"
+```
+
+### 4. Call the API
+
+#### Node.js
 
 ```ts
 import { AILabClient } from "ailabtools";
@@ -22,7 +54,7 @@ const credits = await client.common.commonQueryCredits({});
 console.log(credits.data);
 ```
 
-### Python (async)
+#### Python (async)
 
 ```py
 import os, asyncio

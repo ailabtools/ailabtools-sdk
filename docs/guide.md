@@ -2,21 +2,39 @@
 
 This guide covers installation, authentication, request patterns, async tasks, file uploads, error handling, and API references.
 
-## Installation
+## Quick Start
 
-### Node.js
+### 1. Get your API key
+
+Create or copy your API key from the AILabTools developer console:
+
+https://www.ailabtools.com/developer
+
+Official API documentation is available at:
+
+https://www.ailabtools.com/docs
+
+### 2. Install the SDK
+
+Node.js:
 
 ```bash
 npm install ailabtools
 ```
 
-### Python
+Python:
 
 ```bash
 pip install ailabtools-sdk
 ```
 
-## Authentication and Initialization
+### 3. Configure your environment
+
+```bash
+export AILAB_API_KEY="your_api_key_here"
+```
+
+### 4. Initialize the client
 
 ```ts
 import { AILabClient } from "ailabtools";
@@ -24,8 +42,9 @@ const client = new AILabClient({ apiKey: process.env.AILAB_API_KEY! });
 ```
 
 ```py
+import os
 from ailabtools import AILabClient
-client = AILabClient(api_key="YOUR_KEY")
+client = AILabClient(api_key=os.environ["AILAB_API_KEY"])
 ```
 
 ## File Uploads
