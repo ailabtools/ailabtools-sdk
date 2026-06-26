@@ -1,6 +1,6 @@
 {
   "name": "ailabtools",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "AILabTools SDK for Node.js (TypeScript)",
   "type": "commonjs",
   "main": "dist/index.js",

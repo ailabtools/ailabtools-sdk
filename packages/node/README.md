@@ -2,9 +2,9 @@
 
 Official Node.js TypeScript SDK for AILabTools APIs.
 
-- Get an API key: https://www.ailabtools.com/developer
-- Official API documentation: https://www.ailabtools.com/docs
-- Repository: https://github.com/ailabtools/ailabtools-sdk
+- Get an API key: [AILabTools Developer Console](https://www.ailabtools.com/developer)
+- Official API documentation: [AILabTools API Docs](https://www.ailabtools.com/docs)
+- Repository: [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 
 ## Installation
 
@@ -18,7 +18,7 @@ npm install ailabtools
 
 Create or copy your API key from the AILabTools developer console:
 
-https://www.ailabtools.com/developer
+[Get your AILabTools API key](https://www.ailabtools.com/developer)
 
 ### 2. Configure your environment
 
@@ -67,8 +67,8 @@ Async APIs return `task_id`. Poll results with `commonQueryAsyncTaskResult({ tas
 
 ## API Reference
 
-- Official API docs: https://www.ailabtools.com/docs
-- SDK API docs: https://github.com/ailabtools/ailabtools-sdk/tree/main/docs
+- Official API docs: [AILabTools API Documentation](https://www.ailabtools.com/docs)
+- SDK API docs: [AILabTools SDK Documentation](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 
 ## Error Handling
 

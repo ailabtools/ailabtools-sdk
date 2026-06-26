@@ -17,11 +17,11 @@ This directory contains usage guides, API references, and examples for the Node.
 
 Create or copy your API key from the AILabTools developer console:
 
-https://www.ailabtools.com/developer
+[Get your AILabTools API key](https://www.ailabtools.com/developer)
 
 Official API documentation is available at:
 
-https://www.ailabtools.com/docs
+[AILabTools API Documentation](https://www.ailabtools.com/docs)
 
 ### 2. Install the SDK
 
