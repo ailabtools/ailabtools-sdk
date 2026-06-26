@@ -1,27 +1,27 @@
 # AILabTools SDK Documentation
 
-This directory contains usage guides, API references, and examples for the Node.js TypeScript SDK and the Python async SDK.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript and async Python examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
 - [Quick Start](#quick-start)
+- [Popular Use Cases](#popular-use-cases)
 - [Authentication and Configuration](#authentication-and-configuration)
 - [Error Handling](#error-handling)
 - [Async Task Polling](#async-task-polling)
 - [File Uploads and URL Inputs](#file-uploads-and-url-inputs)
+- [Documentation](#documentation)
 - [API Index](#api-index)
 
 ## Quick Start
 
 ### 1. Get your API key
 
-Create or copy your API key from the AILabTools developer console:
+Create or copy your API key from the [AILabTools Developer Console](https://www.ailabtools.com/developer).
 
-[Get your AILabTools API key](https://www.ailabtools.com/developer)
-
-Official API documentation is available at:
-
-[AILabTools API Documentation](https://www.ailabtools.com/docs)
+```bash
+export AILAB_API_KEY="your_api_key_here"
+```
 
 ### 2. Install the SDK
 
@@ -37,37 +37,64 @@ Python:
 pip install ailabtools-sdk
 ```
 
-### 3. Configure your environment
+> Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
 
-```bash
-export AILAB_API_KEY="your_api_key_here"
-```
-
-### 4. Call the API
+### 3. Remove an image background
 
 #### Node.js
 
 ```ts
+import { readFileSync } from "node:fs";
 import { AILabClient } from "ailabtools";
-const client = new AILabClient({ apiKey: process.env.AILAB_API_KEY! });
-const credits = await client.common.commonQueryCredits({});
-console.log(credits.data);
+
+const client = new AILabClient({
+  apiKey: process.env.AILAB_API_KEY!,
+});
+
+const result = await client.cutout.cutoutUniversalBackgroundRemoval({
+  image: readFileSync("./photo.jpg"),
+  returnForm: "whiteBK",
+});
+
+console.log(result.data?.image_url);
 ```
 
 #### Python (async)
 
 ```py
-import os, asyncio
+import os
+import asyncio
 from ailabtools import AILabClient
 
 async def main():
     client = AILabClient(api_key=os.environ["AILAB_API_KEY"])
-    credits = await client.common.commonQueryCredits({})
-    print(credits.get("data"))
+
+    with open("./photo.jpg", "rb") as image:
+        result = await client.cutout.cutoutUniversalBackgroundRemoval({
+            "image": image,
+            "returnForm": "whiteBK",
+        })
+
+    print(result["data"]["image_url"])
     await client.aclose()
 
 asyncio.run(main())
 ```
+
+The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale-factor`, and `returnForm` maps to `return_form`.
+
+## Popular Use Cases
+
+| Use case | API | SDK method |
+| --- | --- | --- |
+| Remove image background | Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` |
+| Upscale image 2x / 4x | Image Upscaler | `client.image.imageLosslessEnlargement()` |
+| Change hairstyle | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` |
+| Retouch portrait | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` |
+| Remove objects | Image Erasure | `client.image.imageErasure()` |
+| Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
+| Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
+| Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
 
 ## Authentication and Configuration
 
@@ -87,6 +114,14 @@ Async APIs return `task_id`. Poll the result with `commonQueryAsyncTaskResult({ 
 
 - Node.js file fields support `Buffer | ArrayBuffer | Uint8Array`.
 - Python file fields support file-like objects with `read`, or `bytes` / `bytearray`.
+
+## Documentation
+
+- [Get your AILabTools API key](https://www.ailabtools.com/developer)
+- [AILabTools API Documentation](https://www.ailabtools.com/docs)
+- [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
+- [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
+- [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 
 ## API Index
 

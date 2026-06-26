@@ -1,34 +1,57 @@
-# AILabTools SDK Full Usage Guide
+# AILabTools SDK - AI Image API for Node.js and Python
 
-This guide helps developers use the AILabTools SDKs to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official Node.js, TypeScript, and async Python SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
-## Quick Start
+Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
-### 1. Get your API key
+- Node.js / TypeScript SDK: `npm install ailabtools`
+- Python async SDK: `pip install ailabtools-sdk`
+- 60+ active AI image, cutout, and portrait APIs
+- Supports file uploads, URL input, async tasks, and temporary result URLs
+- Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
 
-Create or copy your API key from the [AILabTools Developer Console](https://www.ailabtools.com/developer). Read the full [AILabTools API Documentation](https://www.ailabtools.com/docs) for endpoint-specific parameters and response fields.
+## Features
 
-```bash
-export AILAB_API_KEY="your_api_key_here"
-```
+- Background removal API for products, portraits, food, clothing, and general images
+- Image upscaler API for 2x / 4x lossless enlargement
+- AI photo editing API for object removal, image erasure, cropping, retouching, and watermarking
+- AI portrait API for face retouching, hairstyle changer, cartoon avatar generation, skin analysis, and virtual try-on
+- Node.js SDK with TypeScript definitions
+- Async Python SDK for modern Python applications
 
-### 2. Install the SDK
+## Installation
 
-Node.js:
+### Node.js / TypeScript
 
 ```bash
 npm install ailabtools
 ```
 
-Python:
+### Python
 
 ```bash
 pip install ailabtools-sdk
 ```
 
-> Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
+Import it in Python as `ailabtools`:
 
-### 3. Remove an image background
+```py
+from ailabtools import AILabClient
+```
+
+> Note: The PyPI package name is `ailabtools-sdk`, while the Python import name is `ailabtools`.
+
+## Quick Start
+
+### 1. Get your API key
+
+Create or copy your API key from the [AILabTools Developer Console](https://www.ailabtools.com/developer).
+
+```bash
+export AILAB_API_KEY="your_api_key_here"
+```
+
+### 2. Remove an image background
 
 #### Node.js
 
@@ -48,7 +71,7 @@ const result = await client.cutout.cutoutUniversalBackgroundRemoval({
 console.log(result.data?.image_url);
 ```
 
-#### Python (async)
+#### Python
 
 ```py
 import os
@@ -85,29 +108,14 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 | Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
 | Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
 
-## File Uploads
-
-- Node.js: `Buffer | ArrayBuffer | Uint8Array`
-- Python: file-like objects, `bytes`, or `bytearray`
-
-## Async Tasks
-
-- Async APIs return `task_id`.
-- Poll results with `commonQueryAsyncTaskResult({ taskId })`.
-
-## Error Handling
-
-- Node.js: catch `AILabApiError`.
-- Python: catch `AILabApiError`.
-
 ## Documentation
 
 - [Get your AILabTools API key](https://www.ailabtools.com/developer)
 - [AILabTools API Documentation](https://www.ailabtools.com/docs)
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
-- [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
+- [SDK API reference](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 
-## API Index
+## License
 
-See `docs/common.md`, `docs/image.md`, `docs/portrait.md`, and `docs/cutout.md` for the full API reference.
+MIT
