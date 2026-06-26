@@ -1,7 +1,9 @@
-# 类型待完善清单
+# Type Improvement TODO
 
-## Node (ResponseData 含 any)
+## Node.js
 
+- No pending `any` response fields are currently listed.
 
-## Python (ResponseData 含 Any)
+## Python
 
+- No pending `Any` response fields are currently listed.

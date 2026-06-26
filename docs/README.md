@@ -1,17 +1,17 @@
-# AILabTools SDK 文档
+# AILabTools SDK Documentation
 
-本目录包含 Node.js(TypeScript) 与 Python(async) SDK 的完整使用说明、API 索引与示例。
+This directory contains usage guides, API references, and examples for the Node.js TypeScript SDK and the Python async SDK.
 
-## 目录
+## Contents
 
-- [快速开始](#快速开始)
-- [认证与基础配置](#认证与基础配置)
-- [错误处理](#错误处理)
-- [异步任务轮询](#异步任务轮询)
-- [文件上传与 URL 输入](#文件上传与-url-输入)
-- [API 索引](#api-索引)
+- [Quick Start](#quick-start)
+- [Authentication and Configuration](#authentication-and-configuration)
+- [Error Handling](#error-handling)
+- [Async Task Polling](#async-task-polling)
+- [File Uploads and URL Inputs](#file-uploads-and-url-inputs)
+- [API Index](#api-index)
 
-## 快速开始
+## Quick Start
 
 ### Node.js
 
@@ -37,28 +37,28 @@ async def main():
 asyncio.run(main())
 ```
 
-## 认证与基础配置
+## Authentication and Configuration
 
-- Header：`ailabapi-api-key: <API_KEY>`
-- Base URL：`https://www.ailabapi.com` (默认)
+- Header: `ailabapi-api-key: <API_KEY>`
+- Base URL: `https://www.ailabapi.com` by default
 
-## 错误处理
+## Error Handling
 
-- Node：抛出 `AILabApiError`，包含 `requestId`/`logId` 等
-- Python：抛出 `AILabApiError`
+- Node.js: SDK calls throw `AILabApiError`, including fields such as `requestId` and `logId`.
+- Python: SDK calls raise `AILabApiError`.
 
-## 异步任务轮询
+## Async Task Polling
 
-异步接口返回 `task_id`，可使用 `commonQueryAsyncTaskResult({ taskId })` 轮询结果。
+Async APIs return `task_id`. Poll the result with `commonQueryAsyncTaskResult({ taskId })`.
 
-## 文件上传与 URL 输入
+## File Uploads and URL Inputs
 
-- Node：文件字段支持 `Buffer | ArrayBuffer | Uint8Array`
-- Python：文件字段支持 file-like 对象（含 `read`）或 `bytes/bytearray`
+- Node.js file fields support `Buffer | ArrayBuffer | Uint8Array`.
+- Python file fields support file-like objects with `read`, or `bytes` / `bytearray`.
 
-## API 索引
+## API Index
 
-当前 active 接口共 `60` 个；平台停用接口未纳入 SDK 文档。
+The current SDK documents `60` active endpoints. Disabled platform endpoints are not included.
 
 ### Common
 
@@ -132,15 +132,15 @@ asyncio.run(main())
 - `cutout.cutoutHairExtraction()`  (POST /api/cutout/portrait/hairstyle-extraction)  - Hairstyle Extraction API
 - `cutout.cutoutHumanBackgroundRemoval()`  (POST /api/cutout/portrait/portrait-background-removal)  - Human Background Removal API
 
-## 参考文档
+## Reference Documents
 
 - [Common](common.md)
 - [Image](image.md)
 - [Portrait](portrait.md)
 - [Cutout](cutout.md)
 
-## 其他
+## Additional Guides
 
-- [错误码与排障](errors.md)
-- [完整使用手册](guide.md)
-- [最佳实践与性能优化](best-practices.md)
+- [Error Codes and Troubleshooting](errors.md)
+- [Full Usage Guide](guide.md)
+- [Best Practices and Performance](best-practices.md)

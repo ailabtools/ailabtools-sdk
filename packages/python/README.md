@@ -1,12 +1,12 @@
 # AILabTools Python SDK (async)
 
-## 安装
+## Installation
 
 ```bash
 pip install ailabtools
 ```
 
-## 快速开始
+## Quick Start
 
 ```py
 import os
@@ -22,19 +22,19 @@ async def main():
 asyncio.run(main())
 ```
 
-## 参数映射
+## Parameter Mapping
 
-SDK 对外使用 camelCase，例如 `upscaleFactor`，内部会自动映射到接口字段 `upscale-factor`。
+The SDK exposes camelCase parameters, for example `upscaleFactor`, and maps them to API field names such as `upscale-factor` internally.
 
-## 文件上传
+## File Uploads
 
-文件参数支持文件对象（带 `read` 方法）或 `bytes/bytearray`。
+File parameters support file-like objects with a `read` method, or `bytes` / `bytearray`.
 
-## 异步任务
+## Async Tasks
 
-异步任务接口会返回 `task_id`，请使用 `commonQueryAsyncTaskResult({"taskId": ...})` 轮询获取结果。
+Async APIs return `task_id`. Poll results with `commonQueryAsyncTaskResult({"taskId": ...})`.
 
-## 测试
+## Testing
 
 ```bash
 AILAB_API_KEY=xxx pytest -q

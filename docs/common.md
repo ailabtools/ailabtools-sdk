@@ -1,52 +1,52 @@
-# Common API 参考
+# Common API Reference
 
-> 本文档按当前 `packages/spec.json` 的 active 接口生成，已移除平台停用接口。
+> This document is generated from the active endpoints in `packages/spec.json`. Disabled platform endpoints are intentionally excluded.
 
 ## Querying Async Task Results API
 
-- SDK 方法：`common.commonQueryAsyncTaskResult()`
-- HTTP：`GET /api/common/query-async-task-result`
+- SDK method: `common.commonQueryAsyncTaskResult()`
+- HTTP: `GET /api/common/query-async-task-result`
 
-### Query 参数
+### Query Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_id | string | 是 | The task_id returned by the asynchronous API. |
+| task_id | string | Yes | The task_id returned by the asynchronous API. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/common/query-async-task-result
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_status | integer | Asynchronous task status. 0: The task is queued. 1: Asynchronous processing. 2: Processing was successful. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CommonQueryAsyncTaskResultResponseData>`
 
 ## Querying Credits API
 
-- SDK 方法：`common.commonQueryCredits()`
-- HTTP：`GET /api/common/query-credits`
+- SDK method: `common.commonQueryCredits()`
+- HTTP: `GET /api/common/query-credits`
 
-### 参数
+### Parameters
 
-无
+None.
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/common/query-credits
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | array |  |
 | unique_sign | string | Unique identification. |
@@ -58,6 +58,6 @@ https://www.ailabapi.com/api/common/query-credits
 | first_buy_time | integer | Time of first purchase. |
 | last_update_time | integer | Last update time. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CommonQueryCreditsResponseData[]>`

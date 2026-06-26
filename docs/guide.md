@@ -1,20 +1,22 @@
-# AILabTools SDK 完整使用手册
+# AILabTools SDK Full Usage Guide
 
-包含安装、认证、调用方式、异步任务、上传、错误处理与常见问题。
+This guide covers installation, authentication, request patterns, async tasks, file uploads, error handling, and API references.
 
-## 安装
+## Installation
 
 ### Node.js
+
 ```bash
 npm install ailabtools
 ```
 
 ### Python
+
 ```bash
 pip install ailabtools
 ```
 
-## 认证与初始化
+## Authentication and Initialization
 
 ```ts
 import { AILabClient } from "ailabtools";
@@ -26,21 +28,21 @@ from ailabtools import AILabClient
 client = AILabClient(api_key="YOUR_KEY")
 ```
 
-## 文件上传
+## File Uploads
 
-- Node: `Buffer | ArrayBuffer | Uint8Array`
-- Python: file-like / bytes / bytearray
+- Node.js: `Buffer | ArrayBuffer | Uint8Array`
+- Python: file-like objects, `bytes`, or `bytearray`
 
-## 异步任务
+## Async Tasks
 
-- 异步 API 返回 `task_id`
-- 使用 `commonQueryAsyncTaskResult({ taskId })` 轮询
+- Async APIs return `task_id`.
+- Poll results with `commonQueryAsyncTaskResult({ taskId })`.
 
-## 错误处理
+## Error Handling
 
-- Node: 捕获 `AILabApiError`
-- Python: 捕获 `AILabApiError`
+- Node.js: catch `AILabApiError`.
+- Python: catch `AILabApiError`.
 
-## API 索引
+## API Index
 
-- 详见 `docs/common.md` / `docs/image.md` / `docs/portrait.md` / `docs/cutout.md`
+See `docs/common.md`, `docs/image.md`, `docs/portrait.md`, and `docs/cutout.md` for the full API reference.

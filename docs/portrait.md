@@ -1,30 +1,30 @@
-# Portrait API 参考
+# Portrait API Reference
 
-> 本文档按当前 `packages/spec.json` 的 active 接口生成，已移除平台停用接口。
+> This document is generated from the active endpoints in `packages/spec.json`. Disabled platform endpoints are intentionally excluded.
 
 ## Face Analyzer API
 
-- SDK 方法：`portrait.portraitFaceAnalyzer()`
-- HTTP：`POST /api/portrait/analysis/face-analyzer`
+- SDK method: `portrait.portraitFaceAnalyzer()`
+- HTTP: `POST /api/portrait/analysis/face-analyzer`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| max_face_num | integer | 否 | The maximum number of faces processed. When set to 1, only the largest face in the image is detected. A smaller value leads to faster processing speed. |
-| face_attributes_type | string | 否 | Whether to return attributes such as age, gender, mood, etc. AttributesInfo is returned for up to 5 faces with the largest area, and AttributesInfo for more than 5 faces (the 6th and later faces) are not referenced. |
-| need_rotate_detection | integer | 否 | Whether to enable image rotation recognition support. When the face in the picture is rotated and there is no exif information in the picture, if you don't turn on the picture rotation recognition support, you can't detect and recognize the face in the picture correctly. If you are sure that the picture contains exif information or you are sure that the face in the input picture will not be rotated, please do not turn on this parameter. If this parameter is turned on, the overall time required may increase by hundreds of milliseconds. 0: Close. 1: Open. |
+| image | file | Yes |  |
+| max_face_num | integer | No | The maximum number of faces processed. When set to 1, only the largest face in the image is detected. A smaller value leads to faster processing speed. |
+| face_attributes_type | string | No | Whether to return attributes such as age, gender, mood, etc. AttributesInfo is returned for up to 5 faces with the largest area, and AttributesInfo for more than 5 faces (the 6th and later faces) are not referenced. |
+| need_rotate_detection | integer | No | Whether to enable image rotation recognition support. When the face in the picture is rotated and there is no exif information in the picture, if you don't turn on the picture rotation recognition support, you can't detect and recognize the face in the picture correctly. If you are sure that the picture contains exif information or you are sure that the face in the input picture will not be rotated, please do not turn on this parameter. If this parameter is turned on, the overall time required may increase by hundreds of milliseconds. 0: Close. 1: Open. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/face-analyzer
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image_width | integer | Image width. |
 | image_height | integer | Image height. |
@@ -87,30 +87,30 @@ https://www.ailabapi.com/api/portrait/analysis/face-analyzer
 | type | integer | 0: Yellow skin. 1: Brown skin. 2: Black skin. 3: White skin. |
 | smile | integer | Smile Rating. face_attributes_type does not contain Smile or when more than 5 faces are detected, this parameter is still returned but is not informative. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFaceAnalyzerResponseData>`
 
 ## Face Analyzer Advanced API
 
-- SDK 方法：`portrait.portraitFaceAnalyzerAdvanced()`
-- HTTP：`POST /api/portrait/analysis/face-analyzer-advanced`
+- SDK method: `portrait.portraitFaceAnalyzerAdvanced()`
+- HTTP: `POST /api/portrait/analysis/face-analyzer-advanced`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/face-analyzer-advanced
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object |  |
 | pupils | array of float | The center point coordinates and radius of the left and right pupils, with 6 floating-point values per face, in the order of [left_iris_cenpt.x, left_iris_cenpt.y, left_iris_radius, right_iris_cenpt.x, right_iris_cenpt.y, right_iris_radius]. If multiple faces are detected, results are returned in order. |
@@ -138,32 +138,32 @@ https://www.ailabapi.com/api/portrait/analysis/face-analyzer-advanced
 | noise_list | array of float | Score indicating the impact of image noise on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of image noise, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order. |
 | pose_list | array of float | Score indicating the impact of face pose on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability of the face being frontal, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFaceAnalyzerAdvancedResponseData>`
 
 ## Facial Landmarks API
 
-- SDK 方法：`portrait.portraitFacialLandmarks()`
-- HTTP：`POST /api/portrait/analysis/face-key-points`
+- SDK method: `portrait.portraitFacialLandmarks()`
+- HTTP: `POST /api/portrait/analysis/face-key-points`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| max_face_num | integer | 否 | The maximum number of faces to process. The default value is 1 (only the face with the largest area in the image is detected). |
-| face_field | string | 否 | Returns more information about the face (by default only face_token, face frame, probability and rotation angle are returned). age: Age information. gender: Gender information. landmark4: 4 feature points. landmark72: 72 feature points. landmark150: 150 feature points. landmark201: 201 feature points. |
+| image | file | Yes |  |
+| max_face_num | integer | No | The maximum number of faces to process. The default value is 1 (only the face with the largest area in the image is detected). |
+| face_field | string | No | Returns more information about the face (by default only face_token, face frame, probability and rotation angle are returned). age: Age information. gender: Gender information. landmark4: 4 feature points. landmark72: 72 feature points. landmark150: 150 feature points. landmark201: 201 feature points. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/face-key-points
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result | object | The content of the result data returned. |
 | face_num | integer | The number of faces in the picture. |
@@ -189,30 +189,30 @@ https://www.ailabapi.com/api/portrait/analysis/face-key-points
 | landmark150 | object | 150 feature points. Refer to 150 feature points for details. |
 | landmark201 | object | 201 feature points. Refer to 201 feature points for details. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFacialLandmarksResponseData>`
 
 ## Skin Analyze API
 
-- SDK 方法：`portrait.portraitSkinAnalysisBasic()`
-- HTTP：`POST /api/portrait/analysis/skin-analysis`
+- SDK method: `portrait.portraitSkinAnalysisBasic()`
+- HTTP: `POST /api/portrait/analysis/skin-analysis`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/skin-analysis
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | warning | array | Interference factors affecting the calculation results. imporper_headpose: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45]). |
 | face_rectangle | object | The position of the face rectangle box. |
@@ -264,33 +264,33 @@ https://www.ailabapi.com/api/portrait/analysis/skin-analysis
 | skin_spot | object | Spot detection results. |
 | value | integer | With or without spotting. 0: No 1: Yes |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitSkinAnalysisBasicResponseData>`
 
 ## Skin Analyze Advanced API
 
-- SDK 方法：`portrait.portraitSkinAnalysisAdvanced()`
-- HTTP：`POST /api/portrait/analysis/skin-analysis-advanced`
+- SDK method: `portrait.portraitSkinAnalysisAdvanced()`
+- HTTP: `POST /api/portrait/analysis/skin-analysis-advanced`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| face_quality_control | integer | 否 | Whether to restrict the quality of faces in incoming images. 0: No face quality control is performed, and skin measurement results are returned as long as the face can be detected. 1: Perform face quality control, if the face quality does not pass it will prompt an error. |
-| return_rect_confidence | integer | 否 | The confidence level of the area whether to return acne, occlusion, blemishes and moles. 0: No regional confidence is returned. 1: Returns the regional confidence. |
-| return_maps | string | 否 | Enter a comma-separated string containing the type of skin chromatography image to be returned. More Details |
+| image | file | Yes |  |
+| face_quality_control | integer | No | Whether to restrict the quality of faces in incoming images. 0: No face quality control is performed, and skin measurement results are returned as long as the face can be detected. 1: Perform face quality control, if the face quality does not pass it will prompt an error. |
+| return_rect_confidence | integer | No | The confidence level of the area whether to return acne, occlusion, blemishes and moles. 0: No regional confidence is returned. 1: Returns the regional confidence. |
+| return_maps | string | No | Enter a comma-separated string containing the type of skin chromatography image to be returned. More Details |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/skin-analysis-advanced
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | warning | array | Interference factors affecting the calculation results. imporper_headpose: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45]). |
 | face_rectangle | object | The position of the face rectangle box. |
@@ -368,66 +368,66 @@ https://www.ailabapi.com/api/portrait/analysis/skin-analysis-advanced
 | sensitivity_area | float | Sensitive redness areas account for the proportion of cheeks and T-zone. |
 | sensitivity_intensity | float | The intensity of redness in sensitive areas. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitSkinAnalysisAdvancedResponseData>`
 
 ## Skin Analyze Pro API
 
-- SDK 方法：`portrait.portraitSkinAnalysisProfessional()`
-- HTTP：`POST /api/portrait/analysis/skin-analysis-pro`
+- SDK method: `portrait.portraitSkinAnalysisProfessional()`
+- HTTP: `POST /api/portrait/analysis/skin-analysis-pro`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Main Image. |
-| left_side_image | file | 否 | Side face picture.(Left) |
-| right_side_image | file | 否 | Side face picture.(Right) |
-| return_maps | string | 否 | The type of skin problem detection mapping image to be returned. If the corresponding element parameter is passed in, the interface will return an image of the original size, which you can subsequently overlay with the original image to see the results. Use commas to separate multiple types. More Details |
-| return_marks | string | 否 | The type of skin problem detection mapping image to be returned. Use commas to separate multiple types. More Details |
-| roi_outline_color | json string | 否 | Customize the color. More Details |
-| return_side_results | string | 否 | The side face information that needs to be returned. Use commas to separate multiple types. More Details |
+| image | file | Yes | Main Image. |
+| left_side_image | file | No | Side face picture.(Left) |
+| right_side_image | file | No | Side face picture.(Right) |
+| return_maps | string | No | The type of skin problem detection mapping image to be returned. If the corresponding element parameter is passed in, the interface will return an image of the original size, which you can subsequently overlay with the original image to see the results. Use commas to separate multiple types. More Details |
+| return_marks | string | No | The type of skin problem detection mapping image to be returned. Use commas to separate multiple types. More Details |
+| roi_outline_color | json string | No | Customize the color. More Details |
+| return_side_results | string | No | The side face information that needs to be returned. Use commas to separate multiple types. More Details |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/skin-analysis-pro
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | left_side_result | json string | Results of side face analysis. More Details |
 | right_side_result | json string | Results of side face analysis. More Details |
 | face_rectangle | object | Face position. More Details |
 | result | object | Results of face skin analysis. More Details |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitSkinAnalysisProfessionalResponseData>`
 
 ## Detect Skin Disease API
 
-- SDK 方法：`portrait.portraitSkinDiseaseDetection()`
-- HTTP：`POST /api/portrait/analysis/skin-disease-detection`
+- SDK method: `portrait.portraitSkinDiseaseDetection()`
+- HTTP: `POST /api/portrait/analysis/skin-disease-detection`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/analysis/skin-disease-detection
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | body_part | string | Skin lesion site identification. scalp: Scalp. face: Face. neck: Neck. arm: Arm. chest: Chest. abdomen: Abdomen. oxter: Axilla. back: Back. waist: Lumbar region. hand: Hand. genitals: External genitalia. cruris: Groin / Inguinal region. leg: Leg. foot: Foot. unknown: Unknown. |
@@ -484,619 +484,619 @@ https://www.ailabapi.com/api/portrait/analysis/skin-disease-detection
 | verruca_vulgaris | float | Verruca Vulgaris |
 | vitiligo | float | Vitiligo |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitSkinDiseaseDetectionResponseData>`
 
 ## Try on Clothes API
 
-- SDK 方法：`portrait.portraitTryOnClothes()`
-- HTTP：`POST /api/portrait/editing/try-on-clothes`
+- SDK method: `portrait.portraitTryOnClothes()`
+- HTTP: `POST /api/portrait/editing/try-on-clothes`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| person_image | file | 是 | Portrait image. |
-| clothes_image | file | 是 | Clothing image. |
-| clothes_type | string | 是 | Clothing Types. upper_body: Upper body clothing. lower_body: Lower body clothing. full_body: Full body clothing. |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| person_image | file | Yes | Portrait image. |
+| clothes_image | file | Yes | Clothing image. |
+| clothes_type | string | Yes | Clothing Types. upper_body: Upper body clothing. lower_body: Lower body clothing. full_body: Full body clothing. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/editing/try-on-clothes
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitTryOnClothesResponseData>`
 
 ## Try on Clothes Pro API
 
-- SDK 方法：`portrait.portraitTryOnClothesPro()`
-- HTTP：`POST /api/portrait/editing/try-on-clothes-pro`
+- SDK method: `portrait.portraitTryOnClothesPro()`
+- HTTP: `POST /api/portrait/editing/try-on-clothes-pro`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| person_image | file | 是 | Portrait Image. |
-| top_garment | file | 是 | Upper Body Clothing Image. |
-| bottom_garment | file | 否 | Lower Body Clothing Image. If no lower body clothing image is provided, the lower body clothing effect will be randomly generated. If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty. |
-| resolution | integer | 否 | Output Image Resolution. If you need to call **Try on Clothes Refiner** in the future, select -1. -1: Original image resolution. 1024: 576x1024px. 1280: 720x1280px. |
-| restore_face | boolean | 否 | Whether to Keep the Model’s Face. If you need to call **Try on Clothes Refiner** in the future, select true. true: Keep the model’s original face. false: Regenerate the model’s face. |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| person_image | file | Yes | Portrait Image. |
+| top_garment | file | Yes | Upper Body Clothing Image. |
+| bottom_garment | file | No | Lower Body Clothing Image. If no lower body clothing image is provided, the lower body clothing effect will be randomly generated. If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty. |
+| resolution | integer | No | Output Image Resolution. If you need to call **Try on Clothes Refiner** in the future, select -1. -1: Original image resolution. 1024: 576x1024px. 1280: 720x1280px. |
+| restore_face | boolean | No | Whether to Keep the Model’s Face. If you need to call **Try on Clothes Refiner** in the future, select true. true: Keep the model’s original face. false: Regenerate the model’s face. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/editing/try-on-clothes-pro
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitTryOnClothesProResponseData>`
 
 ## Face Blur API
 
-- SDK 方法：`portrait.portraitFacialBlurring()`
-- HTTP：`POST /api/portrait/effects/blurred-faces`
+- SDK method: `portrait.portraitFacialBlurring()`
+- HTTP: `POST /api/portrait/effects/blurred-faces`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/blurred-faces
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFacialBlurringResponseData>`
 
 ## Change Facial Expressions API
 
-- SDK 方法：`portrait.portraitExpressionEditing()`
-- HTTP：`POST /api/portrait/effects/emotion-editor`
+- SDK method: `portrait.portraitExpressionEditing()`
+- HTTP: `POST /api/portrait/effects/emotion-editor`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| service_choice | integer | 是 | Expression type. 0: Big laugh. 1: Pouting. 2: Feel sad. 3: Smile. 100: Opening eyes. |
+| image_target | file | Yes |  |
+| service_choice | integer | Yes | Expression type. 0: Big laugh. 1: Pouting. 2: Feel sad. 3: Smile. 100: Opening eyes. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/emotion-editor
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitExpressionEditingResponseData>`
 
 ## AI Face Enhancer API
 
-- SDK 方法：`portrait.portraitFaceRestorationEnhancement()`
-- HTTP：`POST /api/portrait/effects/enhance-face`
+- SDK method: `portrait.portraitFaceRestorationEnhancement()`
+- HTTP: `POST /api/portrait/effects/enhance-face`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/enhance-face
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFaceRestorationEnhancementResponseData>`
 
 ## Age & Gender Swap API
 
-- SDK 方法：`portrait.portraitFaceAttributeEditing()`
-- HTTP：`POST /api/portrait/effects/face-attribute-editing`
+- SDK method: `portrait.portraitFaceAttributeEditing()`
+- HTTP: `POST /api/portrait/effects/face-attribute-editing`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| action_type | string | 是 | Face editing method. TO_KID: V1 version becomes a child. TO_OLD: V1 version becomes old man. TO_FEMALE: V1 version becomes girls. TO_MALE: V1 version becomes boys. V2_AGE: V2 version age change. V2_GENDER: v2 version gender shift. |
-| quality_control | string | 否 | Image quality (image field image quality). Please select the appropriate option based on quality information such as masking, lighting, blurriness, and integrity of the face. If selecting a higher quality causes the image to be unprocessable, please select a lower quality to try. NONE: No control is performed. LOW: Lower quality requirements. NORMAL: General quality requirements. HIGH: Higher quality requirements. More Details |
-| face_location | json string | 否 | When multiple faces are detected in the image, use this parameter to specify the position of the face to be edited in the image, or default to the largest face in the image if not specified. More Details |
+| image | file | Yes |  |
+| action_type | string | Yes | Face editing method. TO_KID: V1 version becomes a child. TO_OLD: V1 version becomes old man. TO_FEMALE: V1 version becomes girls. TO_MALE: V1 version becomes boys. V2_AGE: V2 version age change. V2_GENDER: v2 version gender shift. |
+| quality_control | string | No | Image quality (image field image quality). Please select the appropriate option based on quality information such as masking, lighting, blurriness, and integrity of the face. If selecting a higher quality causes the image to be unprocessable, please select a lower quality to try. NONE: No control is performed. LOW: Lower quality requirements. NORMAL: General quality requirements. HIGH: Higher quality requirements. More Details |
+| face_location | json string | No | When multiple faces are detected in the image, use this parameter to specify the position of the face to be edited in the image, or default to the largest face in the image if not specified. More Details |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/face-attribute-editing
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result | object | The content of the result data returned. |
 | image | string | The BASE64 value of the edited image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFaceAttributeEditingResponseData>`
 
 ## Face Beauty API
 
-- SDK 方法：`portrait.portraitFacialBeautification()`
-- HTTP：`POST /api/portrait/effects/face-beauty`
+- SDK method: `portrait.portraitFacialBeautification()`
+- HTTP: `POST /api/portrait/effects/face-beauty`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| sharp | float | 是 | Sharpness level. A higher value indicates a greater degree of sharpness. |
-| smooth | float | 是 | Smoothness level. A higher value results in a smoother appearance. |
-| white | float | 是 | Whitening level. A higher value leads to lighter skin. |
+| image | file | Yes |  |
+| sharp | float | Yes | Sharpness level. A higher value indicates a greater degree of sharpness. |
+| smooth | float | Yes | Smoothness level. A higher value results in a smoother appearance. |
+| white | float | Yes | Whitening level. A higher value leads to lighter skin. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/face-beauty
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFacialBeautificationResponseData>`
 
 ## Face Beauty Advanced API
 
-- SDK 方法：`portrait.portraitFacialBeautificationAdvanced()`
-- HTTP：`POST /api/portrait/effects/face-beauty-advanced`
+- SDK method: `portrait.portraitFacialBeautificationAdvanced()`
+- HTTP: `POST /api/portrait/effects/face-beauty-advanced`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| whitening | integer | 否 | Whitening level: 0 means no whitening, 100 represents the highest level. |
-| smoothing | integer | 否 | Skin smoothing level: 0 means no skin smoothing, 100 represents the highest level. |
-| face_lifting | integer | 否 | Face slimming level: 0 means no face slimming, 100 represents the highest level. |
-| eye_enlarging | integer | 否 | Eye enlargement level: 0 means no eye enlargement, 100 represents the highest level. |
+| image | file | Yes |  |
+| whitening | integer | No | Whitening level: 0 means no whitening, 100 represents the highest level. |
+| smoothing | integer | No | Skin smoothing level: 0 means no skin smoothing, 100 represents the highest level. |
+| face_lifting | integer | No | Face slimming level: 0 means no face slimming, 100 represents the highest level. |
+| eye_enlarging | integer | No | Eye enlargement level: 0 means no eye enlargement, 100 represents the highest level. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/face-beauty-advanced
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result_image | string | Returns the base64 data of the processed image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFacialBeautificationAdvancedResponseData>`
 
 ## Face Beauty Pro API
 
-- SDK 方法：`portrait.portraitFacialBeautificationPro()`
-- HTTP：`POST /api/portrait/effects/face-beauty-pro`
+- SDK method: `portrait.portraitFacialBeautificationPro()`
+- HTTP: `POST /api/portrait/effects/face-beauty-pro`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| whitening | integer | 否 | Whitening Degree. 0 means no whitening effect, 100 represents the highest degree. |
-| smoothing | integer | 否 | Smoothing Degree. 0 means no smoothing effect, 100 represents the highest degree. |
-| thinface | integer | 否 | Face Slimming Degree. 0 means no face slimming effect, 100 represents the highest degree. |
-| shrink_face | integer | 否 | Small Face Degree. 0 means no small face effect, 100 represents the highest degree. |
-| enlarge_eye | integer | 否 | Big Eyes Degree. 0 means no big eyes effect, 100 represents the highest degree. |
-| remove_eyebrow | integer | 否 | Eyebrow Removal Degree. 0 means no eyebrow removal effect, 100 represents the highest degree. |
-| filter_type | integer | 否 | Filter Effects. 1: Black and White. 2: Calm. 3: Sunny Day. 4: Journey. 5: Beautify Skin. 6: Hong Kong Style. 7: Aesthetic. 8: Lovely. 9: New York. 10: Sakura. 11: Seventeen. 12: Soft Light. 13: Afternoon Tea. 14: Brighten Skin. 15: Chaplin. 16: Floral. 17: Memories. 18: Ice Beauty. 19: Paris. 20: Time. 21: LOMO. 22: Old Times. 23: Early Spring. 24: Story. 25: Abao Color. 26: Fill Light. 27: Warm. 28: Gorgeous. 29: Lavender. 30: Chanel. 31: Prague. 32: Old Dreams. 33: Peach Blossom. 34: Pink. 35: Misty Rain. |
-| task_type | string | 否 | Task Type. sync: Synchronous tasks. |
+| image | file | Yes |  |
+| whitening | integer | No | Whitening Degree. 0 means no whitening effect, 100 represents the highest degree. |
+| smoothing | integer | No | Smoothing Degree. 0 means no smoothing effect, 100 represents the highest degree. |
+| thinface | integer | No | Face Slimming Degree. 0 means no face slimming effect, 100 represents the highest degree. |
+| shrink_face | integer | No | Small Face Degree. 0 means no small face effect, 100 represents the highest degree. |
+| enlarge_eye | integer | No | Big Eyes Degree. 0 means no big eyes effect, 100 represents the highest degree. |
+| remove_eyebrow | integer | No | Eyebrow Removal Degree. 0 means no eyebrow removal effect, 100 represents the highest degree. |
+| filter_type | integer | No | Filter Effects. 1: Black and White. 2: Calm. 3: Sunny Day. 4: Journey. 5: Beautify Skin. 6: Hong Kong Style. 7: Aesthetic. 8: Lovely. 9: New York. 10: Sakura. 11: Seventeen. 12: Soft Light. 13: Afternoon Tea. 14: Brighten Skin. 15: Chaplin. 16: Floral. 17: Memories. 18: Ice Beauty. 19: Paris. 20: Time. 21: LOMO. 22: Old Times. 23: Early Spring. 24: Story. 25: Abao Color. 26: Fill Light. 27: Warm. 28: Gorgeous. 29: Lavender. 30: Chanel. 31: Prague. 32: Old Dreams. 33: Peach Blossom. 34: Pink. 35: Misty Rain. |
+| task_type | string | No | Task Type. sync: Synchronous tasks. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/face-beauty-pro
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. sync: Synchronous tasks. |
 | result | string | Returns the base64 data of the processed image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFacialBeautificationProResponseData>`
 
 ## Face Filters API
 
-- SDK 方法：`portrait.portraitFacialFilters()`
-- HTTP：`POST /api/portrait/effects/face-filter`
+- SDK method: `portrait.portraitFacialFilters()`
+- HTTP: `POST /api/portrait/effects/face-filter`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| resource_type | string | 是 | Picture style. More Details |
-| strength | float | 是 | Filter intensity. |
+| image | file | Yes |  |
+| resource_type | string | Yes | Picture style. More Details |
+| strength | float | Yes | Filter intensity. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/face-filter
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFacialFiltersResponseData>`
 
 ## Merge Portraits API
 
-- SDK 方法：`portrait.portraitFaceFusion()`
-- HTTP：`POST /api/portrait/effects/face-fusion`
+- SDK method: `portrait.portraitFaceFusion()`
+- HTTP: `POST /api/portrait/effects/face-fusion`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 | Target image. |
-| image_template | file | 是 | Template images. |
-| source_similarity | float | 否 | Face similarity, where a higher numerical value indicates greater similarity. 0: Consistent with the original template. 1: Maximum similarity with the target image. |
+| image_target | file | Yes | Target image. |
+| image_template | file | Yes | Template images. |
+| source_similarity | float | No | Face similarity, where a higher numerical value indicates greater similarity. 0: Consistent with the original template. 1: Maximum similarity with the target image. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/face-fusion
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitFaceFusionResponseData>`
 
 ## Hairstyle Changer API
 
-- SDK 方法：`portrait.portraitHairstyleEditing()`
-- HTTP：`POST /api/portrait/effects/hairstyle-editor`
+- SDK method: `portrait.portraitHairstyleEditing()`
+- HTTP: `POST /api/portrait/effects/hairstyle-editor`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| hair_type | integer | 否 | Hairstyle type. 0: Bangs. 1: Long hair. 2: Bangs with long hair. 3: Increase the number of hair. 901: Straight hair. |
+| image_target | file | Yes |  |
+| hair_type | integer | No | Hairstyle type. 0: Bangs. 1: Long hair. 2: Bangs with long hair. 3: Increase the number of hair. 901: Straight hair. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/hairstyle-editor
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitHairstyleEditingResponseData>`
 
 ## Hairstyle Changer Pro API
 
-- SDK 方法：`portrait.portraitHairstyleEditingPro()`
-- HTTP：`POST /api/portrait/effects/hairstyle-editor-pro`
+- SDK method: `portrait.portraitHairstyleEditingPro()`
+- HTTP: `POST /api/portrait/effects/hairstyle-editor-pro`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| image | file | 是 | Main image. |
-| hair_style | string | 是 | Hairstyle. More Details |
-| color | string | 否 | Color. More Details |
-| image_size | integer | 否 | Returns the number of images. |
-| mask | file | 否 | Masked Image. If left blank, a masked image will be generated automatically. The white portion of the masked image is the editable area, while the black portion remains unchanged. For example, by using the white area of the mask to cover a person's face, the face will remain unaltered, and other parts will be generated automatically. |
-| bangs | integer | 否 | Whether to add bangs to the resulting image. This parameter is ineffective when the hairstyle has no bangs or when bangs are mandatory. Parameter Validity Explanation 0: No. 1: Yes. Parameter Effect Comparison |
-| mode | integer | 否 | Generation mode. Please enable this parameter based on the original hairstyle. 1: Head-only mode. More suitable for short hair. 2: Full-image generation mode. More suitable for long hair; use this mode when the original image features shoulder-length or longer hair. Parameter Effect Comparison |
-| reference | integer | 否 | Reference Original Hairstyle. Enabling this parameter will make changes to the hairstyle based on the original hairstyle, resulting in minor alterations. Please do not enable this parameter if changing from short hair to long hair or from long hair to short hair. 0: No. 1: Yes. Parameter Effect Comparison |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| image | file | Yes | Main image. |
+| hair_style | string | Yes | Hairstyle. More Details |
+| color | string | No | Color. More Details |
+| image_size | integer | No | Returns the number of images. |
+| mask | file | No | Masked Image. If left blank, a masked image will be generated automatically. The white portion of the masked image is the editable area, while the black portion remains unchanged. For example, by using the white area of the mask to cover a person's face, the face will remain unaltered, and other parts will be generated automatically. |
+| bangs | integer | No | Whether to add bangs to the resulting image. This parameter is ineffective when the hairstyle has no bangs or when bangs are mandatory. Parameter Validity Explanation 0: No. 1: Yes. Parameter Effect Comparison |
+| mode | integer | No | Generation mode. Please enable this parameter based on the original hairstyle. 1: Head-only mode. More suitable for short hair. 2: Full-image generation mode. More suitable for long hair; use this mode when the original image features shoulder-length or longer hair. Parameter Effect Comparison |
+| reference | integer | No | Reference Original Hairstyle. Enabling this parameter will make changes to the hairstyle based on the original hairstyle, resulting in minor alterations. Please do not enable this parameter if changing from short hair to long hair or from long hair to short hair. 0: No. 1: Yes. Parameter Effect Comparison |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitHairstyleEditingProResponseData>`
 
 ## Lips Color Changer API
 
-- SDK 方法：`portrait.portraitLipsColorChanger()`
-- HTTP：`POST /api/portrait/effects/lips-color-changer`
+- SDK method: `portrait.portraitLipsColorChanger()`
+- HTTP: `POST /api/portrait/effects/lips-color-changer`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| lip_color_infos | json string | 是 | Lip Color Info. You can enter up to 3 lip_color_info to enable changing the lip color for up to 3 faces in a graph. Description |
+| image | file | Yes |  |
+| lip_color_infos | json string | Yes | Lip Color Info. You can enter up to 3 lip_color_info to enable changing the lip color for up to 3 faces in a graph. Description |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/lips-color-changer
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result_image | string | Returns the base64 data of the processed image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitLipsColorChangerResponseData>`
 
 ## Live Photos API
 
-- SDK 方法：`portrait.portraitLivePhotos()`
-- HTTP：`POST /api/portrait/effects/live-photo`
+- SDK method: `portrait.portraitLivePhotos()`
+- HTTP: `POST /api/portrait/effects/live-photo`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| type | integer | 否 | Live photo type. 0: Avatar version. 1: Full body version. |
+| image_target | file | Yes |  |
+| type | integer | No | Live photo type. 0: Avatar version. 1: Full body version. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/live-photo
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | video | string | Returns the base64 encoded string of the generated video. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitLivePhotosResponseData>`
 
 ## Cartoon Yourself API
 
-- SDK 方法：`portrait.portraitCartoonYourself()`
-- HTTP：`POST /api/portrait/effects/portrait-animation`
+- SDK method: `portrait.portraitCartoonYourself()`
+- HTTP: `POST /api/portrait/effects/portrait-animation`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| type | string | 是 | Cartoon effect. pixar: Pixar pixar_plus: Pixar Pro 3d_cartoon: 3D cartoon angel: Angel angel_plus: Angel Pro demon: Demon ukiyoe_cartoon: Ukiyo-e amcartoon: American Manga western: Western avatar: Avatar jpcartoon: Japanese Manga (I) jpcartoon_head: Japanese Manga (portrait) hkcartoon: China Comics classic_cartoon: Retro Cartoon tccartoon: Moe Manga anime: Japanese Manga (II) handdrawn: hand-painted sketch: Pencil drawing (I) artstyle: Artistic effects head: Pencil drawing (head) full: Pencil drawing (II) 3d_game: 3D game effects |
+| image | file | Yes |  |
+| type | string | Yes | Cartoon effect. pixar: Pixar pixar_plus: Pixar Pro 3d_cartoon: 3D cartoon angel: Angel angel_plus: Angel Pro demon: Demon ukiyoe_cartoon: Ukiyo-e amcartoon: American Manga western: Western avatar: Avatar jpcartoon: Japanese Manga (I) jpcartoon_head: Japanese Manga (portrait) hkcartoon: China Comics classic_cartoon: Retro Cartoon tccartoon: Moe Manga anime: Japanese Manga (II) handdrawn: hand-painted sketch: Pencil drawing (I) artstyle: Artistic effects head: Pencil drawing (head) full: Pencil drawing (II) 3d_game: 3D game effects |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/portrait-animation
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitCartoonYourselfResponseData>`
 
 ## Smart Beauty API
 
-- SDK 方法：`portrait.portraitIntelligentBeautification()`
-- HTTP：`POST /api/portrait/effects/smart-beauty`
+- SDK method: `portrait.portraitIntelligentBeautification()`
+- HTTP: `POST /api/portrait/effects/smart-beauty`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| multi_face | string | 否 | Multiple-face beauty strategy. When set to 1, beauty enhancement is applied to all faces (it is recommended that the number of faces in the image be less than 18, as too many faces may lead to instability). When set to any other value or not specified, only the largest face is processed. |
-| beauty_level | float | 否 | Beauty level. |
-| task_type | string | 否 | Task Type. sync: Synchronous tasks. |
+| image_target | file | Yes |  |
+| multi_face | string | No | Multiple-face beauty strategy. When set to 1, beauty enhancement is applied to all faces (it is recommended that the number of faces in the image be less than 18, as too many faces may lead to instability). When set to any other value or not specified, only the largest face is processed. |
+| beauty_level | float | No | Beauty level. |
+| task_type | string | No | Task Type. sync: Synchronous tasks. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/smart-beauty
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. sync: Synchronous tasks. |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitIntelligentBeautificationResponseData>`
 
 ## AI Face Slimming API
 
-- SDK 方法：`portrait.portraitIntelligentFaceSlimming()`
-- HTTP：`POST /api/portrait/effects/smart-face-slimming`
+- SDK method: `portrait.portraitIntelligentFaceSlimming()`
+- HTTP: `POST /api/portrait/effects/smart-face-slimming`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| slim_degree | float | 否 | Standard strength. The higher the value, the more pronounced the face slimming effect. |
+| image | file | Yes |  |
+| slim_degree | float | No | Standard strength. The higher the value, the more pronounced the face slimming effect. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/smart-face-slimming
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitIntelligentFaceSlimmingResponseData>`
 
 ## AI Skin Beauty API
 
-- SDK 方法：`portrait.portraitIntelligentSkinRetouching()`
-- HTTP：`POST /api/portrait/effects/smart-skin`
+- SDK method: `portrait.portraitIntelligentSkinRetouching()`
+- HTTP: `POST /api/portrait/effects/smart-skin`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| retouch_degree | float | 否 | Dermabrasion intensity. The higher the value, the less visible the skin texture. |
-| whitening_degree | float | 否 | Whitening strength. The higher the value, the whiter the skin. |
+| image | file | Yes |  |
+| retouch_degree | float | No | Dermabrasion intensity. The higher the value, the less visible the skin texture. |
+| whitening_degree | float | No | Whitening strength. The higher the value, the whiter the skin. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/effects/smart-skin
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitIntelligentSkinRetouchingResponseData>`
 
 ## Try on Clothes Refiner API
 
-- SDK 方法：`portrait.portraitTryOnClothesRefiner()`
-- HTTP：`POST /api/portrait/enhance/try-on-clothes-refiner`
+- SDK method: `portrait.portraitTryOnClothesRefiner()`
+- HTTP: `POST /api/portrait/enhance/try-on-clothes-refiner`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| person_image | file | 是 | Model image for calling the Try on Clothes API. |
-| top_garment | file | 是 | Top clothing image for calling the Try on Clothes API. |
-| coarse_image | file | 是 | Result image obtained from calling the Try on Clothes API. |
-| gender | string | 是 | Gender of the person_image. woman: Female. man: Male. |
-| bottom_garment | file | 否 | Bottom clothing image for calling the Try on Clothes API. |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| person_image | file | Yes | Model image for calling the Try on Clothes API. |
+| top_garment | file | Yes | Top clothing image for calling the Try on Clothes API. |
+| coarse_image | file | Yes | Result image obtained from calling the Try on Clothes API. |
+| gender | string | Yes | Gender of the person_image. woman: Female. man: Male. |
+| bottom_garment | file | No | Bottom clothing image for calling the Try on Clothes API. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/portrait/enhance/try-on-clothes-refiner
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<PortraitTryOnClothesRefinerResponseData>`

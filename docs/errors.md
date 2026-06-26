@@ -1,8 +1,8 @@
-# 错误码与排障
+# Error Codes and Troubleshooting
 
-## 错误码
+## Error Codes
 
-| 错误码 | 说明 |
+| Code | Description |
 | --- | --- |
 | request_id | YES |
 | log_id | YES |
@@ -139,8 +139,8 @@
 | 504 | ERROR_FILE_DOWNLOAD_TIMEOUT |
 | 504 | AI_SERVICE_TIMEOUT |
 
-## 排障建议
+## Troubleshooting
 
-- 确认 API Key 是否有效，Header 是否为 `ailabapi-api-key`
-- 检查参数是否缺失或类型错误
-- 使用 `request_id` / `log_id` 联系支持
+- Verify that the API key is valid and that the request uses the `ailabapi-api-key` header.
+- Check for missing parameters, invalid parameter names, and type mismatches.
+- Use `request_id` and `log_id` when contacting support.

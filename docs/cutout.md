@@ -1,30 +1,30 @@
-# Cutout API 参考
+# Cutout API Reference
 
-> 本文档按当前 `packages/spec.json` 的 active 接口生成，已移除平台停用接口。
+> This document is generated from the active endpoints in `packages/spec.json`. Disabled platform endpoints are intentionally excluded.
 
 ## Costume Background Removal API
 
-- SDK 方法：`cutout.cutoutClothingBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/apparel-background-removal`
+- SDK method: `cutout.cutoutClothingBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/apparel-background-removal`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| out_mode | integer | 否 | 0 |
-| cloth_class | string | 否 | Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat. |
-| return_form | string | 否 | Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned. |
+| image | file | Yes |  |
+| out_mode | integer | No | 0 |
+| cloth_class | string | No | Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat. |
+| return_form | string | No | Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/general/apparel-background-removal
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | Returns an array of elements. |
@@ -40,118 +40,118 @@ https://www.ailabapi.com/api/cutout/general/apparel-background-removal
 | shoes | string | Shoes URL. |
 | hat | string | Hat URL. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutClothingBackgroundRemovalResponseData>`
 
 ## Product Background Removal API
 
-- SDK 方法：`cutout.cutoutProductBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/commodity-background-removal`
+- SDK method: `cutout.cutoutProductBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/commodity-background-removal`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/general/commodity-background-removal
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutProductBackgroundRemovalResponseData>`
 
 ## Food Background Removal API
 
-- SDK 方法：`cutout.cutoutFoodBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/food-background-removal`
+- SDK method: `cutout.cutoutFoodBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/food-background-removal`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/general/food-background-removal
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutFoodBackgroundRemovalResponseData>`
 
 ## Universal Background Removal API
 
-- SDK 方法：`cutout.cutoutUniversalBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/universal-background-removal`
+- SDK method: `cutout.cutoutUniversalBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/universal-background-removal`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/general/universal-background-removal
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutUniversalBackgroundRemovalResponseData>`
 
 ## Head Extraction API
 
-- SDK 方法：`cutout.cutoutAvatarExtraction()`
-- HTTP：`POST /api/cutout/portrait/avatar-extraction`
+- SDK method: `cutout.cutoutAvatarExtraction()`
+- HTTP: `POST /api/cutout/portrait/avatar-extraction`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/portrait/avatar-extraction
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | The keying result of each child element. |
@@ -161,30 +161,30 @@ https://www.ailabapi.com/api/cutout/portrait/avatar-extraction
 | x | integer | Top left x-coordinate. |
 | y | integer | Top left y-coordinate. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutAvatarExtractionResponseData>`
 
 ## Hairstyle Extraction API
 
-- SDK 方法：`cutout.cutoutHairExtraction()`
-- HTTP：`POST /api/cutout/portrait/hairstyle-extraction`
+- SDK method: `cutout.cutoutHairExtraction()`
+- HTTP: `POST /api/cutout/portrait/hairstyle-extraction`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/portrait/hairstyle-extraction
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | The keying result of each child element. |
@@ -194,35 +194,35 @@ https://www.ailabapi.com/api/cutout/portrait/hairstyle-extraction
 | x | integer | Top left x-coordinate. |
 | y | integer | Top left y-coordinate. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutHairExtractionResponseData>`
 
 ## Human Background Removal API
 
-- SDK 方法：`cutout.cutoutHumanBackgroundRemoval()`
-- HTTP：`POST /api/cutout/portrait/portrait-background-removal`
+- SDK method: `cutout.cutoutHumanBackgroundRemoval()`
+- HTTP: `POST /api/cutout/portrait/portrait-background-removal`
 
-### Body 参数
+### Body Parameters
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
-### 请求地址
+### Request URL
 
 ```text
 https://www.ailabapi.com/api/cutout/portrait/portrait-background-removal
 ```
 
-### 响应字段
+### Response Fields
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
-### 返回类型
+### SDK Return Type
 
 - `BaseResponse<CutoutHumanBackgroundRemovalResponseData>`

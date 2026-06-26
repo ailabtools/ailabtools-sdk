@@ -1,29 +1,29 @@
-# AILabTools SDK 方案（Node.js TS + Python async）
+# AILabTools SDK Plan (Node.js TypeScript + Python async)
 
-本文档按当前 `packages/spec.json` 的 active 接口生成，已移除平台停用接口。
+This document is generated from the active endpoints in `packages/spec.json`. Disabled platform endpoints are intentionally excluded.
 
-## 基础约定
+## Base Conventions
 
-- Base URL：`https://www.ailabapi.com`
-- 认证 Header：`ailabapi-api-key: <API_KEY>`
-- 成功判定：HTTP 200 且 `error_code = 0`
-- 异步任务：接口返回 `task_id` 后，使用异步任务查询接口轮询结果。
+- Base URL: `https://www.ailabapi.com`
+- Authentication header: `ailabapi-api-key: <API_KEY>`
+- Success condition: HTTP 200 and `error_code = 0`
+- Async tasks: APIs return `task_id`; poll with the async task result endpoint.
 
-## 参数命名与映射
+## Parameter Naming and Mapping
 
-- 文档原始字段可能包含中划线或下划线；SDK 对外优先使用 camelCase，内部映射回平台字段名。
-- 文件字段使用 multipart/form-data 上传。Node 支持 `Buffer | ArrayBuffer | Uint8Array`，Python 支持 file-like 或 `bytes/bytearray/memoryview`。
+- API field names may use hyphens or underscores. SDK methods expose camelCase parameters and map them back to platform field names internally.
+- File fields are uploaded as `multipart/form-data`. Node.js supports `Buffer | ArrayBuffer | Uint8Array`; Python supports file-like objects or `bytes` / `bytearray` / `memoryview`.
 
-## 模块命名
+## Module Naming
 
-- `common`：余额与异步任务查询。
-- `image`：AI Image 的增强、特效、编辑、评分能力。
-- `portrait`：AI Portrait 的人像分析、特效、编辑、增强能力。
-- `cutout`：AI Cutout 的通用与人像抠图能力。
+- `common`: credits and async task result queries.
+- `image`: AI Image enhancement, effects, editing, and scoring APIs.
+- `portrait`: AI Portrait analysis, effects, editing, and enhancement APIs.
+- `cutout`: AI Cutout general and portrait cutout APIs.
 
-## 接口清单
+## Endpoint List
 
-| 模块 | SDK 方法 | 接口名 | unique_sign | 方法 | 路径 | 文档 |
+| Module | SDK Method | API Name | unique_sign | Method | Path | Documentation |
 | --- | --- | --- | --- | --- | --- | --- |
 | common | `common.commonQueryAsyncTaskResult()` | Querying Async Task Results API | `common_query_async_task_result` | GET | `/api/common/query-async-task-result` | `` |
 | common | `common.commonQueryCredits()` | Querying Credits API | `common_query_credits` | GET | `/api/common/query-credits` | `` |
@@ -86,45 +86,45 @@
 | portrait | `portrait.portraitIntelligentSkinRetouching()` | AI Skin Beauty API | `portrait_smart_skin` | POST | `/api/portrait/effects/smart-skin` | `` |
 | portrait | `portrait.portraitTryOnClothesRefiner()` | Try on Clothes Refiner API | `portrait_try_on_clothes_refiner` | POST | `/api/portrait/enhance/try-on-clothes-refiner` | `` |
 
-## 参数与响应结构
+## Parameters and Response Shapes
 
 ### Querying Async Task Results API (`common_query_async_task_result`)
 
-- SDK 方法：`common.commonQueryAsyncTaskResult()`
-- HTTP：`GET /api/common/query-async-task-result`
+- SDK method: `common.commonQueryAsyncTaskResult()`
+- HTTP: `GET /api/common/query-async-task-result`
 
 **Query**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_id | string | 是 | The task_id returned by the asynchronous API. |
+| task_id | string | Yes | The task_id returned by the asynchronous API. |
 
 **Body**
 
-无
+None.
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_status | integer | Asynchronous task status. 0: The task is queued. 1: Asynchronous processing. 2: Processing was successful. |
 
 ### Querying Credits API (`common_query_credits`)
 
-- SDK 方法：`common.commonQueryCredits()`
-- HTTP：`GET /api/common/query-credits`
+- SDK method: `common.commonQueryCredits()`
+- HTTP: `GET /api/common/query-credits`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-无
+None.
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | array |  |
 | unique_sign | string | Unique identification. |
@@ -138,25 +138,25 @@
 
 ### Costume Background Removal API (`cutout_apparel_background_removal`)
 
-- SDK 方法：`cutout.cutoutClothingBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/apparel-background-removal`
+- SDK method: `cutout.cutoutClothingBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/apparel-background-removal`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| out_mode | integer | 否 | 0 |
-| cloth_class | string | 否 | Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat. |
-| return_form | string | 否 | Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned. |
+| image | file | Yes |  |
+| out_mode | integer | No | 0 |
+| cloth_class | string | No | Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat. |
+| return_form | string | No | Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | Returns an array of elements. |
@@ -174,92 +174,92 @@
 
 ### Product Background Removal API (`cutout_commodity_background_removal`)
 
-- SDK 方法：`cutout.cutoutProductBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/commodity-background-removal`
+- SDK method: `cutout.cutoutProductBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/commodity-background-removal`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Food Background Removal API (`cutout_food_background_removal`)
 
-- SDK 方法：`cutout.cutoutFoodBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/food-background-removal`
+- SDK method: `cutout.cutoutFoodBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/food-background-removal`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Universal Background Removal API (`cutout_universal_background_removal`)
 
-- SDK 方法：`cutout.cutoutUniversalBackgroundRemoval()`
-- HTTP：`POST /api/cutout/general/universal-background-removal`
+- SDK method: `cutout.cutoutUniversalBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/universal-background-removal`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Head Extraction API (`cutout_avatar_extraction`)
 
-- SDK 方法：`cutout.cutoutAvatarExtraction()`
-- HTTP：`POST /api/cutout/portrait/avatar-extraction`
+- SDK method: `cutout.cutoutAvatarExtraction()`
+- HTTP: `POST /api/cutout/portrait/avatar-extraction`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | The keying result of each child element. |
@@ -271,22 +271,22 @@
 
 ### Hairstyle Extraction API (`cutout_hairstyle_extraction`)
 
-- SDK 方法：`cutout.cutoutHairExtraction()`
-- HTTP：`POST /api/cutout/portrait/hairstyle-extraction`
+- SDK method: `cutout.cutoutHairExtraction()`
+- HTTP: `POST /api/cutout/portrait/hairstyle-extraction`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | The keying result of each child element. |
@@ -298,128 +298,128 @@
 
 ### Human Background Removal API (`cutout_portrait_background_removal`)
 
-- SDK 方法：`cutout.cutoutHumanBackgroundRemoval()`
-- HTTP：`POST /api/cutout/portrait/portrait-background-removal`
+- SDK method: `cutout.cutoutHumanBackgroundRemoval()`
+- HTTP: `POST /api/cutout/portrait/portrait-background-removal`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| return_form | string | 否 | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| image | file | Yes |  |
+| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Querying Async Task Results API (`image_asyn_task_results`)
 
-- SDK 方法：`image.imageQueryingAsyncTaskResults()`
-- HTTP：`GET /api/image/asyn-task-results`
+- SDK method: `image.imageQueryingAsyncTaskResults()`
+- HTTP: `GET /api/image/asyn-task-results`
 
 **Query**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| job_id | string | 是 | The request_id returned by the asynchronous API. |
-| type | string | 是 | Asynchronous task type. HD_COLOUR_MIGRATION: HD Color Migration GENERATE_CARTOONIZED_IMAGE: AI Cartoon Generator |
+| job_id | string | Yes | The request_id returned by the asynchronous API. |
+| type | string | Yes | Asynchronous task type. HD_COLOUR_MIGRATION: HD Color Migration GENERATE_CARTOONIZED_IMAGE: AI Cartoon Generator |
 
 **Body**
 
-无
+None.
 
 **Response**
 
-以平台异步任务查询返回结构为准。
+Use the platform async-task result response shape.
 
 ### AI Image Extender API (`image_ai_image_extender`)
 
-- SDK 方法：`image.imageAiImageExtender()`
-- HTTP：`POST /api/image/editing/ai-image-extender`
+- SDK method: `image.imageAiImageExtender()`
+- HTTP: `POST /api/image/editing/ai-image-extender`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| custom_prompt | string | 否 | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process. |
-| steps | integer | 否 | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time. |
-| strength | float | 否 | The smaller the value, the closer it is to the original image. |
-| scale | float | 否 | The degree to which the text description influences the output. |
-| seed | integer | 否 | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
-| max_height | integer | 否 | Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process. |
-| max_width | integer | 否 | Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process. |
-| image | file | 是 | Original image. |
-| top | float | 否 | Upward expansion ratio. |
-| bottom | float | 否 | Downward expansion ratio. |
-| left | float | 否 | Leftward expansion ratio. |
-| right | float | 否 | Rightward expansion ratio. |
-| mask | file | 否 | Mask image. |
+| custom_prompt | string | No | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process. |
+| steps | integer | No | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time. |
+| strength | float | No | The smaller the value, the closer it is to the original image. |
+| scale | float | No | The degree to which the text description influences the output. |
+| seed | integer | No | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
+| max_height | integer | No | Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process. |
+| max_width | integer | No | Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process. |
+| image | file | Yes | Original image. |
+| top | float | No | Upward expansion ratio. |
+| bottom | float | No | Downward expansion ratio. |
+| left | float | No | Leftward expansion ratio. |
+| right | float | No | Rightward expansion ratio. |
+| mask | file | No | Mask image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | binary_data_base64 | array of string | Output the processed image as a Base64 array (single image). |
 
 ### AI Object Replacer API (`image_ai_object_replacer`)
 
-- SDK 方法：`image.imageAiObjectReplacer()`
-- HTTP：`POST /api/image/editing/ai-object-replacer`
+- SDK method: `image.imageAiObjectReplacer()`
+- HTTP: `POST /api/image/editing/ai-object-replacer`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Original image. |
-| mask | file | 是 | Mask image. |
-| custom_prompt | string | 否 | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process. |
-| steps | integer | 否 | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time. |
-| scale | float | 否 | The degree to which the text description influences the output. |
-| seed | integer | 否 | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
+| image | file | Yes | Original image. |
+| mask | file | Yes | Mask image. |
+| custom_prompt | string | No | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process. |
+| steps | integer | No | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time. |
+| scale | float | No | The degree to which the text description influences the output. |
+| seed | integer | No | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | binary_data_base64 | array of string | Output the processed image as a Base64 array (single image). |
 
 ### AI Image Cropping API (`image_image_cropping`)
 
-- SDK 方法：`image.imageAIImageCropping()`
-- HTTP：`POST /api/image/editing/image-cropping`
+- SDK method: `image.imageAIImageCropping()`
+- HTTP: `POST /api/image/editing/image-cropping`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| width | integer | 是 | The width of the target. Unit: px. |
-| height | integer | 是 | The height of the target. Unit: px. |
+| image | file | Yes |  |
+| width | integer | Yes | The width of the target. Unit: px. |
+| height | integer | Yes | The height of the target. Unit: px. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | url | string | The URL address of the image after size transformation. |
@@ -431,50 +431,50 @@
 
 ### Image Erasure API (`image_image_erase`)
 
-- SDK 方法：`image.imageErasure()`
-- HTTP：`POST /api/image/editing/image-erase`
+- SDK method: `image.imageErasure()`
+- HTTP: `POST /api/image/editing/image-erase`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | The image to be erased. |
-| user_mask | file | 是 | Mask image. |
+| image | file | Yes | The image to be erased. |
+| user_mask | file | Yes | Mask image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | The URL of the image after erasing. |
 
 ### Image Invisible Picture Watermark API (`image_image_invisible_image_watermark`)
 
-- SDK 方法：`image.imageInvisibleImageWatermark()`
-- HTTP：`POST /api/image/editing/image-invisible-image-watermark`
+- SDK method: `image.imageInvisibleImageWatermark()`
+- HTTP: `POST /api/image/editing/image-invisible-image-watermark`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| function_type | string | 是 | Specifies the calling function. encode_pic: Add image watermark using the old model. encode_pic_plus: Add image watermark with new version model 1. encode_pic_bold: Add image watermark with new version model 2. decode_pic: Use the old model to decode the image watermark in the image. decode_pic_plus: Use the new version Model 1 to decode the image watermark in the image. decode_pic_bold: Use the new version Model 2 to decode the image watermark in the image. |
-| origin_image | file | 否 | Original image. |
-| logo | file | 否 | Watermark image. |
-| watermark_image | file | 否 | Composite image with watermark. |
-| output_file_type | string | 否 | Output format. |
-| quality_factor | integer | 否 | Quality factor for jpg output. |
+| function_type | string | Yes | Specifies the calling function. encode_pic: Add image watermark using the old model. encode_pic_plus: Add image watermark with new version model 1. encode_pic_bold: Add image watermark with new version model 2. decode_pic: Use the old model to decode the image watermark in the image. decode_pic_plus: Use the new version Model 1 to decode the image watermark in the image. decode_pic_bold: Use the new version Model 2 to decode the image watermark in the image. |
+| origin_image | file | No | Original image. |
+| logo | file | No | Watermark image. |
+| watermark_image | file | No | Composite image with watermark. |
+| output_file_type | string | No | Output format. |
+| quality_factor | integer | No | Quality factor for jpg output. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | watermark_image_url | string | The URL address after adding the watermark. |
@@ -482,27 +482,27 @@
 
 ### Image Invisible Text Watermark API (`image_image_invisible_text_watermarking`)
 
-- SDK 方法：`image.imageInvisibleTextWatermark()`
-- HTTP：`POST /api/image/editing/image-invisible-text-watermarking`
+- SDK method: `image.imageInvisibleTextWatermark()`
+- HTTP: `POST /api/image/editing/image-invisible-text-watermarking`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| function_type | string | 是 | Specifies the calling function. encode_text: Add text watermark using the old version model. encode_text_plus: Add text watermark using the new version model 1. encode_text_bold: Add text watermark using the new version model 2. decode_text: Use the old model to decode the text watermark in the image. decode_text_plus: Use the new version of Model 1 to decode text watermarks in images. decode_text_bold: Use the new version Model 2 to decode the image watermark in the image. |
-| origin_image | file | 否 | Original image. |
-| text | string | 否 | Watermark text. |
-| watermark_image | file | 否 | Composite image with watermark. |
-| output_file_type | string | 否 | Output format. |
-| quality_factor | integer | 否 | Quality factor for jpg output. |
+| function_type | string | Yes | Specifies the calling function. encode_text: Add text watermark using the old version model. encode_text_plus: Add text watermark using the new version model 1. encode_text_bold: Add text watermark using the new version model 2. decode_text: Use the old model to decode the text watermark in the image. decode_text_plus: Use the new version of Model 1 to decode text watermarks in images. decode_text_bold: Use the new version Model 2 to decode the image watermark in the image. |
+| origin_image | file | No | Original image. |
+| text | string | No | Watermark text. |
+| watermark_image | file | No | Composite image with watermark. |
+| output_file_type | string | No | Output format. |
+| quality_factor | integer | No | Quality factor for jpg output. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | watermark_image_url | string | The URL address after adding the watermark. |
@@ -510,23 +510,23 @@
 
 ### Intelligent Composition API (`image_intelligent_composition`)
 
-- SDK 方法：`image.imageIntelligentComposition()`
-- HTTP：`POST /api/image/editing/intelligent-composition`
+- SDK method: `image.imageIntelligentComposition()`
+- HTTP: `POST /api/image/editing/intelligent-composition`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| num_boxes | integer | 否 | The number of output boxes. |
+| image | file | Yes |  |
+| num_boxes | integer | No | The number of output boxes. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | elements | array | Intelligent composition results. |
@@ -538,188 +538,188 @@
 
 ### Photo Retouch API (`image_photo_retouching`)
 
-- SDK 方法：`image.imagePhotoEditing()`
-- HTTP：`POST /api/image/editing/photo-retouching`
+- SDK method: `image.imagePhotoEditing()`
+- HTTP: `POST /api/image/editing/photo-retouching`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Images that require a style transformation. |
-| style | file | 是 | Reference image. |
+| image | file | Yes | Images that require a style transformation. |
+| style | file | Yes | Reference image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | The resulting image after performing the style transformation. |
 
 ### Remove Objects API (`image_remove_objects`)
 
-- SDK 方法：`image.imageRemoveObjects()`
-- HTTP：`POST /api/image/editing/remove-objects`
+- SDK method: `image.imageRemoveObjects()`
+- HTTP: `POST /api/image/editing/remove-objects`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Original image. |
-| mask | file | 是 | Mask image. |
+| image | file | Yes | Original image. |
+| mask | file | Yes | Mask image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | The URL of the image after erasing. |
 
 ### Remove Objects Advanced API (`image_remove_objects_advanced`)
 
-- SDK 方法：`image.imageRemoveObjectsAdvanced()`
-- HTTP：`POST /api/image/editing/remove-objects-advanced`
+- SDK method: `image.imageRemoveObjectsAdvanced()`
+- HTTP: `POST /api/image/editing/remove-objects-advanced`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Original image. |
-| mask | file | 是 | Mask image. |
-| steps | integer | 否 | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time. |
-| strength | float | 否 | The smaller the value, the closer it is to the original image. |
-| scale | float | 否 | The degree to which the text description influences the output. |
-| seed | integer | 否 | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
-| dilate_size | integer | 否 | Mask Dilation Radius. The mask used for object removal should fully encompass the target object. When users manually draw the mask, it often extends beyond the object's boundary. However, if the mask is generated by a segmentation algorithm, it typically adheres closely to the object's edges, which might leave parts of the object uncovered. This can lead to incomplete removal or unexpected artifacts during generation. To avoid such issues, it's recommended to appropriately increase the dilate_size parameter to ensure the mask fully covers the object. |
-| quality | string | 否 | Quality Parameter. H: High quality — best output quality, but slightly slower processing. M: Medium quality — balanced in both quality and speed. L: Low quality — fastest processing, suitable for scenarios where speed is prioritized. |
+| image | file | Yes | Original image. |
+| mask | file | Yes | Mask image. |
+| steps | integer | No | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time. |
+| strength | float | No | The smaller the value, the closer it is to the original image. |
+| scale | float | No | The degree to which the text description influences the output. |
+| seed | integer | No | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (-1 represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
+| dilate_size | integer | No | Mask Dilation Radius. The mask used for object removal should fully encompass the target object. When users manually draw the mask, it often extends beyond the object's boundary. However, if the mask is generated by a segmentation algorithm, it typically adheres closely to the object's edges, which might leave parts of the object uncovered. This can lead to incomplete removal or unexpected artifacts during generation. To avoid such issues, it's recommended to appropriately increase the dilate_size parameter to ensure the mask fully covers the object. |
+| quality | string | No | Quality Parameter. H: High quality — best output quality, but slightly slower processing. M: Medium quality — balanced in both quality and speed. L: Low quality — fastest processing, suitable for scenarios where speed is prioritized. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | binary_data_base64 | array of string | Output the processed image as a Base64 array (single image). |
 
 ### Remove Objects Pro API (`image_remove_objects_pro`)
 
-- SDK 方法：`image.imageRemoveObjectsPro()`
-- HTTP：`POST /api/image/editing/remove-objects-pro`
+- SDK method: `image.imageRemoveObjectsPro()`
+- HTTP: `POST /api/image/editing/remove-objects-pro`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Original image. |
-| mask | file | 是 | Mask image. |
+| image | file | Yes | Original image. |
+| mask | file | Yes | Mask image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | The URL of the image after erasing. |
 
 ### AI Cartoon Generator API (`image_ai_anime_generator`)
 
-- SDK 方法：`image.imageAICartoonGenerator()`
-- HTTP：`POST /api/image/effects/ai-anime-generator`
+- SDK method: `image.imageAICartoonGenerator()`
+- HTTP: `POST /api/image/effects/ai-anime-generator`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| image | file | 是 |  |
-| type | string | 是 | Style. Range of values |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| image | file | Yes |  |
+| type | string | Yes | Style. Range of values |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
 ### AI Photo Colorize API (`image_image_colorization`)
 
-- SDK 方法：`image.imageColoring()`
-- HTTP：`POST /api/image/effects/image-colorization`
+- SDK method: `image.imageColoring()`
+- HTTP: `POST /api/image/effects/image-colorization`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image | string | base64 encoded image. |
 
 ### Photo to Painting API (`image_image_style_conversion`)
 
-- SDK 方法：`image.imageStyleTransfer()`
-- HTTP：`POST /api/image/effects/image-style-conversion`
+- SDK method: `image.imageStyleTransfer()`
+- HTTP: `POST /api/image/effects/image-style-conversion`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| option | string | 是 | cartoon: Cartoon style. pencil: Pencil style. color_pencil: Color pencil drawing style. warm: The style of colorful sugar cube oil painting. wave: Oil painting style in surfing in Kanagawa. lavender: Lavender oil painting style. mononoke: Strange oil painting style. scream: Scream oil painting style. gothic: Gothic oil painting style. |
+| image | file | Yes |  |
+| option | string | Yes | cartoon: Cartoon style. pencil: Pencil style. color_pencil: Color pencil drawing style. warm: The style of colorful sugar cube oil painting. wave: Oil painting style in surfing in Kanagawa. lavender: Lavender oil painting style. mononoke: Strange oil painting style. scream: Scream oil painting style. gothic: Gothic oil painting style. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image | string | base64 encoded image. |
 
 ### Style Transfer API (`image_image_style_migration`)
 
-- SDK 方法：`image.imageStyleMigration()`
-- HTTP：`POST /api/image/effects/image-style-migration`
+- SDK method: `image.imageStyleMigration()`
+- HTTP: `POST /api/image/effects/image-style-migration`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| style | file | 是 | style image. |
-| major | file | 是 | Content image. |
+| style | file | Yes | style image. |
+| major | file | Yes | Content image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | url | string | URL address of the result image for stylization, image format: PNG. |
@@ -727,204 +727,204 @@
 
 ### Image Color Enhancement API (`image_image_color_enhancement`)
 
-- SDK 方法：`image.imageColorEnhancement()`
-- HTTP：`POST /api/image/enhance/image-color-enhancement`
+- SDK method: `image.imageColorEnhancement()`
+- HTTP: `POST /api/image/enhance/image-color-enhancement`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| output_format | string | 是 | The format of the output image. |
-| mode | string | 是 | Color mixing mode. LogC: Suitable for gray film (low contrast raw map) input, adjust the image color perception substantially to restore the color texture of the SDR domain. Rec709: Suitable for images taken under general conditions, appropriate to enhance the image brightness, saturation, etc., the adjustment range is more conservative. ln17_256: Suitable for images taken under general conditions, drastically adjusts image brightness, saturation, contrast, and improves color quality. |
+| image | file | Yes |  |
+| output_format | string | Yes | The format of the output image. |
+| mode | string | Yes | Color mixing mode. LogC: Suitable for gray film (low contrast raw map) input, adjust the image color perception substantially to restore the color texture of the SDR domain. Rec709: Suitable for images taken under general conditions, appropriate to enhance the image brightness, saturation, etc., the adjustment range is more conservative. ln17_256: Suitable for images taken under general conditions, drastically adjusts image brightness, saturation, contrast, and improves color quality. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Returns the URL address of the processed image. |
 
 ### Image Contrast Enhancement API (`image_image_contrast_enhancement`)
 
-- SDK 方法：`image.imageContrastEnhancement()`
-- HTTP：`POST /api/image/enhance/image-contrast-enhancement`
+- SDK method: `image.imageContrastEnhancement()`
+- HTTP: `POST /api/image/enhance/image-contrast-enhancement`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image | string | base64 encoded image. |
 
 ### Image Dehaze API (`image_image_defogging`)
 
-- SDK 方法：`image.imageDehaze()`
-- HTTP：`POST /api/image/enhance/image-defogging`
+- SDK method: `image.imageDehaze()`
+- HTTP: `POST /api/image/enhance/image-defogging`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image | string | base64 encoded image. |
 
 ### Image Upscaler API (`image_image_lossless_enlargement`)
 
-- SDK 方法：`image.imageLosslessEnlargement()`
-- HTTP：`POST /api/image/enhance/image-lossless-enlargement`
+- SDK method: `image.imageLosslessEnlargement()`
+- HTTP: `POST /api/image/enhance/image-lossless-enlargement`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| upscale_factor | integer | 否 | Magnification. |
-| mode | string | 否 | Image output mode. base: Normal mode, i.e. stable super-resolution effect. enhancement: Enhancement mode, which has a more prominent enhancement effect than the normal mode, further improving the clarity and sharpness of the output image. |
-| output_format | string | 否 | Output image format. **Note:** If the input image is in RGBA format, the output will be forced to png to preserve both RGBA format and alpha channel accuracy. If the output image resolution exceeds 3840x2160, the output format will be automatically set to jpg. |
-| output_quality | integer | 否 | Quality factor of the output image, where a higher value corresponds to higher quality. Only applicable when output_format=jpg. |
+| image | file | Yes |  |
+| upscale_factor | integer | No | Magnification. |
+| mode | string | No | Image output mode. base: Normal mode, i.e. stable super-resolution effect. enhancement: Enhancement mode, which has a more prominent enhancement effect than the normal mode, further improving the clarity and sharpness of the output image. |
+| output_format | string | No | Output image format. **Note:** If the input image is in RGBA format, the output will be forced to png to preserve both RGBA format and alpha channel accuracy. If the output image resolution exceeds 3840x2160, the output format will be automatically set to jpg. |
+| output_quality | integer | No | Quality factor of the output image, where a higher value corresponds to higher quality. Only applicable when output_format=jpg. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | url | string | URL address of the image after resolution enlargement, image format is PNG. |
 
 ### Image Sharpness Enhancement API (`image_image_sharpness_enhancement`)
 
-- SDK 方法：`image.imageClarityEnhancement()`
-- HTTP：`POST /api/image/enhance/image-sharpness-enhancement`
+- SDK method: `image.imageClarityEnhancement()`
+- HTTP: `POST /api/image/enhance/image-sharpness-enhancement`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image | string | base64 encoded image. |
 
 ### Stretched Image Restoration API (`image_stretch_image_recovery`)
 
-- SDK 方法：`image.imageDistortionCorrection()`
-- HTTP：`POST /api/image/enhance/stretch-image-recovery`
+- SDK method: `image.imageDistortionCorrection()`
+- HTTP: `POST /api/image/enhance/stretch-image-recovery`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image | string | base64 encoded image. |
 | ratio | float | Recover ratio. |
 
 ### Image Composition Aesthetics Score API (`image_image_composition_aesthetics_scoring`)
 
-- SDK 方法：`image.imageCompositionAestheticsScore()`
-- HTTP：`POST /api/image/rating/image-composition-aesthetics-scoring`
+- SDK method: `image.imageCompositionAestheticsScore()`
+- HTTP: `POST /api/image/rating/image-composition-aesthetics-scoring`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | score | float | The higher the score, the better the composition, with a recommended score of 3.8 or higher being the better composition score. |
 
 ### Image Exposure Score API (`image_image_exposure_score`)
 
-- SDK 方法：`image.imageExposureRating()`
-- HTTP：`POST /api/image/rating/image-exposure-score`
+- SDK method: `image.imageExposureRating()`
+- HTTP: `POST /api/image/rating/image-exposure-score`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | exposure | float | Image exposure score, the value range is 0~1. The higher the score, the greater the exposure. |
 
 ### Face Analyzer API (`portrait_face_analyzer`)
 
-- SDK 方法：`portrait.portraitFaceAnalyzer()`
-- HTTP：`POST /api/portrait/analysis/face-analyzer`
+- SDK method: `portrait.portraitFaceAnalyzer()`
+- HTTP: `POST /api/portrait/analysis/face-analyzer`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| max_face_num | integer | 否 | The maximum number of faces processed. When set to 1, only the largest face in the image is detected. A smaller value leads to faster processing speed. |
-| face_attributes_type | string | 否 | Whether to return attributes such as age, gender, mood, etc. AttributesInfo is returned for up to 5 faces with the largest area, and AttributesInfo for more than 5 faces (the 6th and later faces) are not referenced. |
-| need_rotate_detection | integer | 否 | Whether to enable image rotation recognition support. When the face in the picture is rotated and there is no exif information in the picture, if you don't turn on the picture rotation recognition support, you can't detect and recognize the face in the picture correctly. If you are sure that the picture contains exif information or you are sure that the face in the input picture will not be rotated, please do not turn on this parameter. If this parameter is turned on, the overall time required may increase by hundreds of milliseconds. 0: Close. 1: Open. |
+| image | file | Yes |  |
+| max_face_num | integer | No | The maximum number of faces processed. When set to 1, only the largest face in the image is detected. A smaller value leads to faster processing speed. |
+| face_attributes_type | string | No | Whether to return attributes such as age, gender, mood, etc. AttributesInfo is returned for up to 5 faces with the largest area, and AttributesInfo for more than 5 faces (the 6th and later faces) are not referenced. |
+| need_rotate_detection | integer | No | Whether to enable image rotation recognition support. When the face in the picture is rotated and there is no exif information in the picture, if you don't turn on the picture rotation recognition support, you can't detect and recognize the face in the picture correctly. If you are sure that the picture contains exif information or you are sure that the face in the input picture will not be rotated, please do not turn on this parameter. If this parameter is turned on, the overall time required may increase by hundreds of milliseconds. 0: Close. 1: Open. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | image_width | integer | Image width. |
 | image_height | integer | Image height. |
@@ -989,22 +989,22 @@
 
 ### Face Analyzer Advanced API (`portrait_face_analyzer_advanced`)
 
-- SDK 方法：`portrait.portraitFaceAnalyzerAdvanced()`
-- HTTP：`POST /api/portrait/analysis/face-analyzer-advanced`
+- SDK method: `portrait.portraitFaceAnalyzerAdvanced()`
+- HTTP: `POST /api/portrait/analysis/face-analyzer-advanced`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object |  |
 | pupils | array of float | The center point coordinates and radius of the left and right pupils, with 6 floating-point values per face, in the order of [left_iris_cenpt.x, left_iris_cenpt.y, left_iris_radius, right_iris_cenpt.x, right_iris_cenpt.y, right_iris_radius]. If multiple faces are detected, results are returned in order. |
@@ -1034,24 +1034,24 @@
 
 ### Facial Landmarks API (`portrait_face_key_points`)
 
-- SDK 方法：`portrait.portraitFacialLandmarks()`
-- HTTP：`POST /api/portrait/analysis/face-key-points`
+- SDK method: `portrait.portraitFacialLandmarks()`
+- HTTP: `POST /api/portrait/analysis/face-key-points`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| max_face_num | integer | 否 | The maximum number of faces to process. The default value is 1 (only the face with the largest area in the image is detected). |
-| face_field | string | 否 | Returns more information about the face (by default only face_token, face frame, probability and rotation angle are returned). age: Age information. gender: Gender information. landmark4: 4 feature points. landmark72: 72 feature points. landmark150: 150 feature points. landmark201: 201 feature points. |
+| image | file | Yes |  |
+| max_face_num | integer | No | The maximum number of faces to process. The default value is 1 (only the face with the largest area in the image is detected). |
+| face_field | string | No | Returns more information about the face (by default only face_token, face frame, probability and rotation angle are returned). age: Age information. gender: Gender information. landmark4: 4 feature points. landmark72: 72 feature points. landmark150: 150 feature points. landmark201: 201 feature points. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result | object | The content of the result data returned. |
 | face_num | integer | The number of faces in the picture. |
@@ -1079,22 +1079,22 @@
 
 ### Skin Analyze API (`portrait_skin_analysis`)
 
-- SDK 方法：`portrait.portraitSkinAnalysisBasic()`
-- HTTP：`POST /api/portrait/analysis/skin-analysis`
+- SDK method: `portrait.portraitSkinAnalysisBasic()`
+- HTTP: `POST /api/portrait/analysis/skin-analysis`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | warning | array | Interference factors affecting the calculation results. imporper_headpose: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45]). |
 | face_rectangle | object | The position of the face rectangle box. |
@@ -1148,25 +1148,25 @@
 
 ### Skin Analyze Advanced API (`portrait_skin_analysis_advanced`)
 
-- SDK 方法：`portrait.portraitSkinAnalysisAdvanced()`
-- HTTP：`POST /api/portrait/analysis/skin-analysis-advanced`
+- SDK method: `portrait.portraitSkinAnalysisAdvanced()`
+- HTTP: `POST /api/portrait/analysis/skin-analysis-advanced`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| face_quality_control | integer | 否 | Whether to restrict the quality of faces in incoming images. 0: No face quality control is performed, and skin measurement results are returned as long as the face can be detected. 1: Perform face quality control, if the face quality does not pass it will prompt an error. |
-| return_rect_confidence | integer | 否 | The confidence level of the area whether to return acne, occlusion, blemishes and moles. 0: No regional confidence is returned. 1: Returns the regional confidence. |
-| return_maps | string | 否 | Enter a comma-separated string containing the type of skin chromatography image to be returned. More Details |
+| image | file | Yes |  |
+| face_quality_control | integer | No | Whether to restrict the quality of faces in incoming images. 0: No face quality control is performed, and skin measurement results are returned as long as the face can be detected. 1: Perform face quality control, if the face quality does not pass it will prompt an error. |
+| return_rect_confidence | integer | No | The confidence level of the area whether to return acne, occlusion, blemishes and moles. 0: No regional confidence is returned. 1: Returns the regional confidence. |
+| return_maps | string | No | Enter a comma-separated string containing the type of skin chromatography image to be returned. More Details |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | warning | array | Interference factors affecting the calculation results. imporper_headpose: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45]). |
 | face_rectangle | object | The position of the face rectangle box. |
@@ -1246,28 +1246,28 @@
 
 ### Skin Analyze Pro API (`portrait_skin_analysis_pro`)
 
-- SDK 方法：`portrait.portraitSkinAnalysisProfessional()`
-- HTTP：`POST /api/portrait/analysis/skin-analysis-pro`
+- SDK method: `portrait.portraitSkinAnalysisProfessional()`
+- HTTP: `POST /api/portrait/analysis/skin-analysis-pro`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 | Main Image. |
-| left_side_image | file | 否 | Side face picture.(Left) |
-| right_side_image | file | 否 | Side face picture.(Right) |
-| return_maps | string | 否 | The type of skin problem detection mapping image to be returned. If the corresponding element parameter is passed in, the interface will return an image of the original size, which you can subsequently overlay with the original image to see the results. Use commas to separate multiple types. More Details |
-| return_marks | string | 否 | The type of skin problem detection mapping image to be returned. Use commas to separate multiple types. More Details |
-| roi_outline_color | json string | 否 | Customize the color. More Details |
-| return_side_results | string | 否 | The side face information that needs to be returned. Use commas to separate multiple types. More Details |
+| image | file | Yes | Main Image. |
+| left_side_image | file | No | Side face picture.(Left) |
+| right_side_image | file | No | Side face picture.(Right) |
+| return_maps | string | No | The type of skin problem detection mapping image to be returned. If the corresponding element parameter is passed in, the interface will return an image of the original size, which you can subsequently overlay with the original image to see the results. Use commas to separate multiple types. More Details |
+| return_marks | string | No | The type of skin problem detection mapping image to be returned. Use commas to separate multiple types. More Details |
+| roi_outline_color | json string | No | Customize the color. More Details |
+| return_side_results | string | No | The side face information that needs to be returned. Use commas to separate multiple types. More Details |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | left_side_result | json string | Results of side face analysis. More Details |
 | right_side_result | json string | Results of side face analysis. More Details |
@@ -1276,22 +1276,22 @@
 
 ### Detect Skin Disease API (`portrait_skin_disease_detection`)
 
-- SDK 方法：`portrait.portraitSkinDiseaseDetection()`
-- HTTP：`POST /api/portrait/analysis/skin-disease-detection`
+- SDK method: `portrait.portraitSkinDiseaseDetection()`
+- HTTP: `POST /api/portrait/analysis/skin-disease-detection`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | body_part | string | Skin lesion site identification. scalp: Scalp. face: Face. neck: Neck. arm: Arm. chest: Chest. abdomen: Abdomen. oxter: Axilla. back: Back. waist: Lumbar region. hand: Hand. genitals: External genitalia. cruris: Groin / Inguinal region. leg: Leg. foot: Foot. unknown: Unknown. |
@@ -1350,418 +1350,418 @@
 
 ### Try on Clothes API (`portrait_try_on_clothes`)
 
-- SDK 方法：`portrait.portraitTryOnClothes()`
-- HTTP：`POST /api/portrait/editing/try-on-clothes`
+- SDK method: `portrait.portraitTryOnClothes()`
+- HTTP: `POST /api/portrait/editing/try-on-clothes`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| person_image | file | 是 | Portrait image. |
-| clothes_image | file | 是 | Clothing image. |
-| clothes_type | string | 是 | Clothing Types. upper_body: Upper body clothing. lower_body: Lower body clothing. full_body: Full body clothing. |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| person_image | file | Yes | Portrait image. |
+| clothes_image | file | Yes | Clothing image. |
+| clothes_type | string | Yes | Clothing Types. upper_body: Upper body clothing. lower_body: Lower body clothing. full_body: Full body clothing. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
 ### Try on Clothes Pro API (`portrait_try_on_clothes_pro`)
 
-- SDK 方法：`portrait.portraitTryOnClothesPro()`
-- HTTP：`POST /api/portrait/editing/try-on-clothes-pro`
+- SDK method: `portrait.portraitTryOnClothesPro()`
+- HTTP: `POST /api/portrait/editing/try-on-clothes-pro`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| person_image | file | 是 | Portrait Image. |
-| top_garment | file | 是 | Upper Body Clothing Image. |
-| bottom_garment | file | 否 | Lower Body Clothing Image. If no lower body clothing image is provided, the lower body clothing effect will be randomly generated. If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty. |
-| resolution | integer | 否 | Output Image Resolution. If you need to call **Try on Clothes Refiner** in the future, select -1. -1: Original image resolution. 1024: 576x1024px. 1280: 720x1280px. |
-| restore_face | boolean | 否 | Whether to Keep the Model’s Face. If you need to call **Try on Clothes Refiner** in the future, select true. true: Keep the model’s original face. false: Regenerate the model’s face. |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| person_image | file | Yes | Portrait Image. |
+| top_garment | file | Yes | Upper Body Clothing Image. |
+| bottom_garment | file | No | Lower Body Clothing Image. If no lower body clothing image is provided, the lower body clothing effect will be randomly generated. If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty. |
+| resolution | integer | No | Output Image Resolution. If you need to call **Try on Clothes Refiner** in the future, select -1. -1: Original image resolution. 1024: 576x1024px. 1280: 720x1280px. |
+| restore_face | boolean | No | Whether to Keep the Model’s Face. If you need to call **Try on Clothes Refiner** in the future, select true. true: Keep the model’s original face. false: Regenerate the model’s face. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
 ### Face Blur API (`portrait_blurred_faces`)
 
-- SDK 方法：`portrait.portraitFacialBlurring()`
-- HTTP：`POST /api/portrait/effects/blurred-faces`
+- SDK method: `portrait.portraitFacialBlurring()`
+- HTTP: `POST /api/portrait/effects/blurred-faces`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Change Facial Expressions API (`portrait_emotion_editor`)
 
-- SDK 方法：`portrait.portraitExpressionEditing()`
-- HTTP：`POST /api/portrait/effects/emotion-editor`
+- SDK method: `portrait.portraitExpressionEditing()`
+- HTTP: `POST /api/portrait/effects/emotion-editor`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| service_choice | integer | 是 | Expression type. 0: Big laugh. 1: Pouting. 2: Feel sad. 3: Smile. 100: Opening eyes. |
+| image_target | file | Yes |  |
+| service_choice | integer | Yes | Expression type. 0: Big laugh. 1: Pouting. 2: Feel sad. 3: Smile. 100: Opening eyes. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
 ### AI Face Enhancer API (`portrait_enhance_face`)
 
-- SDK 方法：`portrait.portraitFaceRestorationEnhancement()`
-- HTTP：`POST /api/portrait/effects/enhance-face`
+- SDK method: `portrait.portraitFaceRestorationEnhancement()`
+- HTTP: `POST /api/portrait/effects/enhance-face`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
+| image | file | Yes |  |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Age & Gender Swap API (`portrait_face_attribute_editing`)
 
-- SDK 方法：`portrait.portraitFaceAttributeEditing()`
-- HTTP：`POST /api/portrait/effects/face-attribute-editing`
+- SDK method: `portrait.portraitFaceAttributeEditing()`
+- HTTP: `POST /api/portrait/effects/face-attribute-editing`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| action_type | string | 是 | Face editing method. TO_KID: V1 version becomes a child. TO_OLD: V1 version becomes old man. TO_FEMALE: V1 version becomes girls. TO_MALE: V1 version becomes boys. V2_AGE: V2 version age change. V2_GENDER: v2 version gender shift. |
-| quality_control | string | 否 | Image quality (image field image quality). Please select the appropriate option based on quality information such as masking, lighting, blurriness, and integrity of the face. If selecting a higher quality causes the image to be unprocessable, please select a lower quality to try. NONE: No control is performed. LOW: Lower quality requirements. NORMAL: General quality requirements. HIGH: Higher quality requirements. More Details |
-| face_location | json string | 否 | When multiple faces are detected in the image, use this parameter to specify the position of the face to be edited in the image, or default to the largest face in the image if not specified. More Details |
+| image | file | Yes |  |
+| action_type | string | Yes | Face editing method. TO_KID: V1 version becomes a child. TO_OLD: V1 version becomes old man. TO_FEMALE: V1 version becomes girls. TO_MALE: V1 version becomes boys. V2_AGE: V2 version age change. V2_GENDER: v2 version gender shift. |
+| quality_control | string | No | Image quality (image field image quality). Please select the appropriate option based on quality information such as masking, lighting, blurriness, and integrity of the face. If selecting a higher quality causes the image to be unprocessable, please select a lower quality to try. NONE: No control is performed. LOW: Lower quality requirements. NORMAL: General quality requirements. HIGH: Higher quality requirements. More Details |
+| face_location | json string | No | When multiple faces are detected in the image, use this parameter to specify the position of the face to be edited in the image, or default to the largest face in the image if not specified. More Details |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result | object | The content of the result data returned. |
 | image | string | The BASE64 value of the edited image. |
 
 ### Face Beauty API (`portrait_face_beauty`)
 
-- SDK 方法：`portrait.portraitFacialBeautification()`
-- HTTP：`POST /api/portrait/effects/face-beauty`
+- SDK method: `portrait.portraitFacialBeautification()`
+- HTTP: `POST /api/portrait/effects/face-beauty`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| sharp | float | 是 | Sharpness level. A higher value indicates a greater degree of sharpness. |
-| smooth | float | 是 | Smoothness level. A higher value results in a smoother appearance. |
-| white | float | 是 | Whitening level. A higher value leads to lighter skin. |
+| image | file | Yes |  |
+| sharp | float | Yes | Sharpness level. A higher value indicates a greater degree of sharpness. |
+| smooth | float | Yes | Smoothness level. A higher value results in a smoother appearance. |
+| white | float | Yes | Whitening level. A higher value leads to lighter skin. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Face Beauty Advanced API (`portrait_face_beauty_advanced`)
 
-- SDK 方法：`portrait.portraitFacialBeautificationAdvanced()`
-- HTTP：`POST /api/portrait/effects/face-beauty-advanced`
+- SDK method: `portrait.portraitFacialBeautificationAdvanced()`
+- HTTP: `POST /api/portrait/effects/face-beauty-advanced`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| whitening | integer | 否 | Whitening level: 0 means no whitening, 100 represents the highest level. |
-| smoothing | integer | 否 | Skin smoothing level: 0 means no skin smoothing, 100 represents the highest level. |
-| face_lifting | integer | 否 | Face slimming level: 0 means no face slimming, 100 represents the highest level. |
-| eye_enlarging | integer | 否 | Eye enlargement level: 0 means no eye enlargement, 100 represents the highest level. |
+| image | file | Yes |  |
+| whitening | integer | No | Whitening level: 0 means no whitening, 100 represents the highest level. |
+| smoothing | integer | No | Skin smoothing level: 0 means no skin smoothing, 100 represents the highest level. |
+| face_lifting | integer | No | Face slimming level: 0 means no face slimming, 100 represents the highest level. |
+| eye_enlarging | integer | No | Eye enlargement level: 0 means no eye enlargement, 100 represents the highest level. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result_image | string | Returns the base64 data of the processed image. |
 
 ### Face Beauty Pro API (`portrait_face_beauty_pro`)
 
-- SDK 方法：`portrait.portraitFacialBeautificationPro()`
-- HTTP：`POST /api/portrait/effects/face-beauty-pro`
+- SDK method: `portrait.portraitFacialBeautificationPro()`
+- HTTP: `POST /api/portrait/effects/face-beauty-pro`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| whitening | integer | 否 | Whitening Degree. 0 means no whitening effect, 100 represents the highest degree. |
-| smoothing | integer | 否 | Smoothing Degree. 0 means no smoothing effect, 100 represents the highest degree. |
-| thinface | integer | 否 | Face Slimming Degree. 0 means no face slimming effect, 100 represents the highest degree. |
-| shrink_face | integer | 否 | Small Face Degree. 0 means no small face effect, 100 represents the highest degree. |
-| enlarge_eye | integer | 否 | Big Eyes Degree. 0 means no big eyes effect, 100 represents the highest degree. |
-| remove_eyebrow | integer | 否 | Eyebrow Removal Degree. 0 means no eyebrow removal effect, 100 represents the highest degree. |
-| filter_type | integer | 否 | Filter Effects. 1: Black and White. 2: Calm. 3: Sunny Day. 4: Journey. 5: Beautify Skin. 6: Hong Kong Style. 7: Aesthetic. 8: Lovely. 9: New York. 10: Sakura. 11: Seventeen. 12: Soft Light. 13: Afternoon Tea. 14: Brighten Skin. 15: Chaplin. 16: Floral. 17: Memories. 18: Ice Beauty. 19: Paris. 20: Time. 21: LOMO. 22: Old Times. 23: Early Spring. 24: Story. 25: Abao Color. 26: Fill Light. 27: Warm. 28: Gorgeous. 29: Lavender. 30: Chanel. 31: Prague. 32: Old Dreams. 33: Peach Blossom. 34: Pink. 35: Misty Rain. |
-| task_type | string | 否 | Task Type. sync: Synchronous tasks. |
+| image | file | Yes |  |
+| whitening | integer | No | Whitening Degree. 0 means no whitening effect, 100 represents the highest degree. |
+| smoothing | integer | No | Smoothing Degree. 0 means no smoothing effect, 100 represents the highest degree. |
+| thinface | integer | No | Face Slimming Degree. 0 means no face slimming effect, 100 represents the highest degree. |
+| shrink_face | integer | No | Small Face Degree. 0 means no small face effect, 100 represents the highest degree. |
+| enlarge_eye | integer | No | Big Eyes Degree. 0 means no big eyes effect, 100 represents the highest degree. |
+| remove_eyebrow | integer | No | Eyebrow Removal Degree. 0 means no eyebrow removal effect, 100 represents the highest degree. |
+| filter_type | integer | No | Filter Effects. 1: Black and White. 2: Calm. 3: Sunny Day. 4: Journey. 5: Beautify Skin. 6: Hong Kong Style. 7: Aesthetic. 8: Lovely. 9: New York. 10: Sakura. 11: Seventeen. 12: Soft Light. 13: Afternoon Tea. 14: Brighten Skin. 15: Chaplin. 16: Floral. 17: Memories. 18: Ice Beauty. 19: Paris. 20: Time. 21: LOMO. 22: Old Times. 23: Early Spring. 24: Story. 25: Abao Color. 26: Fill Light. 27: Warm. 28: Gorgeous. 29: Lavender. 30: Chanel. 31: Prague. 32: Old Dreams. 33: Peach Blossom. 34: Pink. 35: Misty Rain. |
+| task_type | string | No | Task Type. sync: Synchronous tasks. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. sync: Synchronous tasks. |
 | result | string | Returns the base64 data of the processed image. |
 
 ### Face Filters API (`portrait_face_filter`)
 
-- SDK 方法：`portrait.portraitFacialFilters()`
-- HTTP：`POST /api/portrait/effects/face-filter`
+- SDK method: `portrait.portraitFacialFilters()`
+- HTTP: `POST /api/portrait/effects/face-filter`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| resource_type | string | 是 | Picture style. More Details |
-| strength | float | 是 | Filter intensity. |
+| image | file | Yes |  |
+| resource_type | string | Yes | Picture style. More Details |
+| strength | float | Yes | Filter intensity. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Merge Portraits API (`portrait_face_fusion`)
 
-- SDK 方法：`portrait.portraitFaceFusion()`
-- HTTP：`POST /api/portrait/effects/face-fusion`
+- SDK method: `portrait.portraitFaceFusion()`
+- HTTP: `POST /api/portrait/effects/face-fusion`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 | Target image. |
-| image_template | file | 是 | Template images. |
-| source_similarity | float | 否 | Face similarity, where a higher numerical value indicates greater similarity. 0: Consistent with the original template. 1: Maximum similarity with the target image. |
+| image_target | file | Yes | Target image. |
+| image_template | file | Yes | Template images. |
+| source_similarity | float | No | Face similarity, where a higher numerical value indicates greater similarity. 0: Consistent with the original template. 1: Maximum similarity with the target image. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
 ### Hairstyle Changer API (`portrait_hairstyle_editor`)
 
-- SDK 方法：`portrait.portraitHairstyleEditing()`
-- HTTP：`POST /api/portrait/effects/hairstyle-editor`
+- SDK method: `portrait.portraitHairstyleEditing()`
+- HTTP: `POST /api/portrait/effects/hairstyle-editor`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| hair_type | integer | 否 | Hairstyle type. 0: Bangs. 1: Long hair. 2: Bangs with long hair. 3: Increase the number of hair. 901: Straight hair. |
+| image_target | file | Yes |  |
+| hair_type | integer | No | Hairstyle type. 0: Bangs. 1: Long hair. 2: Bangs with long hair. 3: Increase the number of hair. 901: Straight hair. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image | string | The result image, returning the Base64 encoding of the image. |
 
 ### Hairstyle Changer Pro API (`portrait_hairstyle_editor_pro`)
 
-- SDK 方法：`portrait.portraitHairstyleEditingPro()`
-- HTTP：`POST /api/portrait/effects/hairstyle-editor-pro`
+- SDK method: `portrait.portraitHairstyleEditingPro()`
+- HTTP: `POST /api/portrait/effects/hairstyle-editor-pro`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| image | file | 是 | Main image. |
-| hair_style | string | 是 | Hairstyle. More Details |
-| color | string | 否 | Color. More Details |
-| image_size | integer | 否 | Returns the number of images. |
-| mask | file | 否 | Masked Image. If left blank, a masked image will be generated automatically. The white portion of the masked image is the editable area, while the black portion remains unchanged. For example, by using the white area of the mask to cover a person's face, the face will remain unaltered, and other parts will be generated automatically. |
-| bangs | integer | 否 | Whether to add bangs to the resulting image. This parameter is ineffective when the hairstyle has no bangs or when bangs are mandatory. Parameter Validity Explanation 0: No. 1: Yes. Parameter Effect Comparison |
-| mode | integer | 否 | Generation mode. Please enable this parameter based on the original hairstyle. 1: Head-only mode. More suitable for short hair. 2: Full-image generation mode. More suitable for long hair; use this mode when the original image features shoulder-length or longer hair. Parameter Effect Comparison |
-| reference | integer | 否 | Reference Original Hairstyle. Enabling this parameter will make changes to the hairstyle based on the original hairstyle, resulting in minor alterations. Please do not enable this parameter if changing from short hair to long hair or from long hair to short hair. 0: No. 1: Yes. Parameter Effect Comparison |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| image | file | Yes | Main image. |
+| hair_style | string | Yes | Hairstyle. More Details |
+| color | string | No | Color. More Details |
+| image_size | integer | No | Returns the number of images. |
+| mask | file | No | Masked Image. If left blank, a masked image will be generated automatically. The white portion of the masked image is the editable area, while the black portion remains unchanged. For example, by using the white area of the mask to cover a person's face, the face will remain unaltered, and other parts will be generated automatically. |
+| bangs | integer | No | Whether to add bangs to the resulting image. This parameter is ineffective when the hairstyle has no bangs or when bangs are mandatory. Parameter Validity Explanation 0: No. 1: Yes. Parameter Effect Comparison |
+| mode | integer | No | Generation mode. Please enable this parameter based on the original hairstyle. 1: Head-only mode. More suitable for short hair. 2: Full-image generation mode. More suitable for long hair; use this mode when the original image features shoulder-length or longer hair. Parameter Effect Comparison |
+| reference | integer | No | Reference Original Hairstyle. Enabling this parameter will make changes to the hairstyle based on the original hairstyle, resulting in minor alterations. Please do not enable this parameter if changing from short hair to long hair or from long hair to short hair. 0: No. 1: Yes. Parameter Effect Comparison |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
 
 ### Lips Color Changer API (`portrait_lips_color_changer`)
 
-- SDK 方法：`portrait.portraitLipsColorChanger()`
-- HTTP：`POST /api/portrait/effects/lips-color-changer`
+- SDK method: `portrait.portraitLipsColorChanger()`
+- HTTP: `POST /api/portrait/effects/lips-color-changer`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| lip_color_infos | json string | 是 | Lip Color Info. You can enter up to 3 lip_color_info to enable changing the lip color for up to 3 faces in a graph. Description |
+| image | file | Yes |  |
+| lip_color_infos | json string | Yes | Lip Color Info. You can enter up to 3 lip_color_info to enable changing the lip color for up to 3 faces in a graph. Description |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | result_image | string | Returns the base64 data of the processed image. |
 
 ### Live Photos API (`portrait_live_photo`)
 
-- SDK 方法：`portrait.portraitLivePhotos()`
-- HTTP：`POST /api/portrait/effects/live-photo`
+- SDK method: `portrait.portraitLivePhotos()`
+- HTTP: `POST /api/portrait/effects/live-photo`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| type | integer | 否 | Live photo type. 0: Avatar version. 1: Full body version. |
+| image_target | file | Yes |  |
+| type | integer | No | Live photo type. 0: Avatar version. 1: Full body version. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | video | string | Returns the base64 encoded string of the generated video. |
 
 ### Cartoon Yourself API (`portrait_portrait_animation`)
 
-- SDK 方法：`portrait.portraitCartoonYourself()`
-- HTTP：`POST /api/portrait/effects/portrait-animation`
+- SDK method: `portrait.portraitCartoonYourself()`
+- HTTP: `POST /api/portrait/effects/portrait-animation`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| type | string | 是 | Cartoon effect. pixar: Pixar pixar_plus: Pixar Pro 3d_cartoon: 3D cartoon angel: Angel angel_plus: Angel Pro demon: Demon ukiyoe_cartoon: Ukiyo-e amcartoon: American Manga western: Western avatar: Avatar jpcartoon: Japanese Manga (I) jpcartoon_head: Japanese Manga (portrait) hkcartoon: China Comics classic_cartoon: Retro Cartoon tccartoon: Moe Manga anime: Japanese Manga (II) handdrawn: hand-painted sketch: Pencil drawing (I) artstyle: Artistic effects head: Pencil drawing (head) full: Pencil drawing (II) 3d_game: 3D game effects |
+| image | file | Yes |  |
+| type | string | Yes | Cartoon effect. pixar: Pixar pixar_plus: Pixar Pro 3d_cartoon: 3D cartoon angel: Angel angel_plus: Angel Pro demon: Demon ukiyoe_cartoon: Ukiyo-e amcartoon: American Manga western: Western avatar: Avatar jpcartoon: Japanese Manga (I) jpcartoon_head: Japanese Manga (portrait) hkcartoon: China Comics classic_cartoon: Retro Cartoon tccartoon: Moe Manga anime: Japanese Manga (II) handdrawn: hand-painted sketch: Pencil drawing (I) artstyle: Artistic effects head: Pencil drawing (head) full: Pencil drawing (II) 3d_game: 3D game effects |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Smart Beauty API (`portrait_smart_beauty`)
 
-- SDK 方法：`portrait.portraitIntelligentBeautification()`
-- HTTP：`POST /api/portrait/effects/smart-beauty`
+- SDK method: `portrait.portraitIntelligentBeautification()`
+- HTTP: `POST /api/portrait/effects/smart-beauty`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image_target | file | 是 |  |
-| multi_face | string | 否 | Multiple-face beauty strategy. When set to 1, beauty enhancement is applied to all faces (it is recommended that the number of faces in the image be less than 18, as too many faces may lead to instability). When set to any other value or not specified, only the largest face is processed. |
-| beauty_level | float | 否 | Beauty level. |
-| task_type | string | 否 | Task Type. sync: Synchronous tasks. |
+| image_target | file | Yes |  |
+| multi_face | string | No | Multiple-face beauty strategy. When set to 1, beauty enhancement is applied to all faces (it is recommended that the number of faces in the image be less than 18, as too many faces may lead to instability). When set to any other value or not specified, only the largest face is processed. |
+| beauty_level | float | No | Beauty level. |
+| task_type | string | No | Task Type. sync: Synchronous tasks. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. sync: Synchronous tasks. |
 | data | object | The content of the result data returned. |
@@ -1769,74 +1769,74 @@
 
 ### AI Face Slimming API (`portrait_smart_face_slimming`)
 
-- SDK 方法：`portrait.portraitIntelligentFaceSlimming()`
-- HTTP：`POST /api/portrait/effects/smart-face-slimming`
+- SDK method: `portrait.portraitIntelligentFaceSlimming()`
+- HTTP: `POST /api/portrait/effects/smart-face-slimming`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| slim_degree | float | 否 | Standard strength. The higher the value, the more pronounced the face slimming effect. |
+| image | file | Yes |  |
+| slim_degree | float | No | Standard strength. The higher the value, the more pronounced the face slimming effect. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### AI Skin Beauty API (`portrait_smart_skin`)
 
-- SDK 方法：`portrait.portraitIntelligentSkinRetouching()`
-- HTTP：`POST /api/portrait/effects/smart-skin`
+- SDK method: `portrait.portraitIntelligentSkinRetouching()`
+- HTTP: `POST /api/portrait/effects/smart-skin`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | 是 |  |
-| retouch_degree | float | 否 | Dermabrasion intensity. The higher the value, the less visible the skin texture. |
-| whitening_degree | float | 否 | Whitening strength. The higher the value, the whiter the skin. |
+| image | file | Yes |  |
+| retouch_degree | float | No | Dermabrasion intensity. The higher the value, the less visible the skin texture. |
+| whitening_degree | float | No | Whitening strength. The higher the value, the whiter the skin. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | data | object | The content of the result data returned. |
 | image_url | string | Resulting image URL address. |
 
 ### Try on Clothes Refiner API (`portrait_try_on_clothes_refiner`)
 
-- SDK 方法：`portrait.portraitTryOnClothesRefiner()`
-- HTTP：`POST /api/portrait/enhance/try-on-clothes-refiner`
+- SDK method: `portrait.portraitTryOnClothesRefiner()`
+- HTTP: `POST /api/portrait/enhance/try-on-clothes-refiner`
 
 **Query**
 
-无
+None.
 
 **Body**
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| task_type | string | 是 | Task Type. async: Asynchronous tasks. |
-| person_image | file | 是 | Model image for calling the Try on Clothes API. |
-| top_garment | file | 是 | Top clothing image for calling the Try on Clothes API. |
-| coarse_image | file | 是 | Result image obtained from calling the Try on Clothes API. |
-| gender | string | 是 | Gender of the person_image. woman: Female. man: Male. |
-| bottom_garment | file | 否 | Bottom clothing image for calling the Try on Clothes API. |
+| task_type | string | Yes | Task Type. async: Asynchronous tasks. |
+| person_image | file | Yes | Model image for calling the Try on Clothes API. |
+| top_garment | file | Yes | Top clothing image for calling the Try on Clothes API. |
+| coarse_image | file | Yes | Result image obtained from calling the Try on Clothes API. |
+| gender | string | Yes | Gender of the person_image. woman: Female. man: Male. |
+| bottom_garment | file | No | Bottom clothing image for calling the Try on Clothes API. |
 
 **Response**
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 | --- | --- | --- |
 | task_type | string | Task Type. async: Asynchronous tasks. |
 | task_id | string | Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.** |
