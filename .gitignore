@@ -30,3 +30,6 @@ packages/python/*.egg-info/
 # Local integration assets and generated reports
 test-assets/
 image.jpg
+
+# Internal development scripts
+scripts/
