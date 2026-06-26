@@ -1,7 +1,7 @@
 {
   "name": "ailabtools",
-  "version": "0.5.2",
-  "description": "AILabTools SDK for Node.js (TypeScript)",
+  "version": "0.5.3",
+  "description": "Official Node.js and TypeScript SDK for AILabTools AI image APIs: background removal, image upscaling, hairstyle changer, face retouching, object removal, and more.",
   "type": "commonjs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,8 @@
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "npm run build && node tests/credits.test.js"
+    "test": "npm run build && node tests/aliases.test.js && node tests/credits.test.js",
+    "test:unit": "npm run build && node tests/aliases.test.js"
   },
   "dependencies": {
     "axios": "^1.6.0",
@@ -21,13 +22,35 @@
     "typescript": "^5.0.0",
     "@types/node": "^18.0.0"
   },
-  "homepage": "https://www.ailabtools.com/",
+  "homepage": "https://www.ailabtools.com/docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ailabtools/ailabtools-sdk.git"
+    "url": "git+https://github.com/ailabtools/ailabtools-sdk.git",
+    "directory": "packages/node"
   },
   "bugs": {
     "url": "https://github.com/ailabtools/ailabtools-sdk/issues"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "ailabtools",
+    "ai image api",
+    "ai photo editing api",
+    "image editing api",
+    "image processing api",
+    "background removal",
+    "background removal api",
+    "image upscaler",
+    "image upscaler api",
+    "object removal",
+    "face retouch",
+    "hairstyle changer",
+    "cartoon avatar",
+    "virtual try-on",
+    "typescript sdk",
+    "nodejs sdk"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
 }

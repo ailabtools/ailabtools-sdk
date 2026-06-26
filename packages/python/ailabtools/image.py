@@ -153,6 +153,9 @@ class ImageAPI:
         mapped = map_params(params, ImageRemoveObjectsParamMap)
         return await self._requester.request('POST', '/api/image/editing/remove-objects', body=mapped, multipart=True)
 
+    async def remove_objects(self, params: ImageRemoveObjectsParams) -> ImageRemoveObjectsResponse:
+        return await self.imageRemoveObjects(params)
+
     async def imageRemoveObjectsAdvanced(self, params: ImageRemoveObjectsAdvancedParams) -> ImageRemoveObjectsAdvancedResponse:
         validate_imageRemoveObjectsAdvanced_params(params)
         mapped = map_params(params, ImageRemoveObjectsAdvancedParamMap)
@@ -202,6 +205,9 @@ class ImageAPI:
         validate_imageLosslessEnlargement_params(params)
         mapped = map_params(params, ImageLosslessEnlargementParamMap)
         return await self._requester.request('POST', '/api/image/enhance/image-lossless-enlargement', body=mapped, multipart=True)
+
+    async def upscale(self, params: ImageLosslessEnlargementParams) -> ImageLosslessEnlargementResponse:
+        return await self.imageLosslessEnlargement(params)
 
     async def imageClarityEnhancement(self, params: ImageClarityEnhancementParams) -> ImageClarityEnhancementResponse:
         validate_imageClarityEnhancement_params(params)

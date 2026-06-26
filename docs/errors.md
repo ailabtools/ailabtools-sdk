@@ -1,146 +1,68 @@
 # Error Codes and Troubleshooting
 
-## Error Codes
+Use `request_id` and `log_id` when contacting AILabTools support. They identify the exact API request and make issue diagnosis faster.
 
-| Code | Description |
-| --- | --- |
-| request_id | YES |
-| log_id | YES |
-| error_code | YES |
-| error_detail | YES |
-| +status_code | YES |
-| +code | YES |
-| +code_message | YES |
-| +message | YES |
-| 400 | ERROR_PARAMETERS |
-| 400 | MISSING_PARAMETERS |
-| 400 | ERROR_INVALID_PARAMETER |
-| 400 | PARAMETERS_CANNOT_EMPTY |
-| 400 | ERROR_MISSING_LIMIT_PARAMETER |
-| 400 | ERROR_MISSING_TASKS_PARAMETER |
-| 400 | ERROR_MISSING_ASSURE_DIRECTION_PARAMETER |
-| 400 | ERROR_MISSING_MIN_HEIGHT_PARAMETER |
-| 400 | ERROR_INVALID_SIDE_PARAMETER |
-| 400 | ERROR_INVALID_URL |
-| 400 | ERROR_UNSUPPORTED_RESPONSE_FORMAT |
-| 400 | ERROR_INVALID_OUTPUT_FORMAT |
-| 400 | ERROR_MISSING_OUTPUT_FORMAT |
-| 400 | UNSUPPORTED_PARAMETER_VALUES |
-| 400 | ERROR_INVALID_PARAMETER_FORMAT |
-| 400 | ERROR_PARAMETER_CONVERSION_FAILED |
-| 400 | ERROR_MASK_IMAGE_RESOLUTION_MISMATCH |
-| 400 | ERROR_QUALITY_CONTROL_ERROR |
-| 400 | ERROR_LIVENESS_CONTROL_ERROR |
-| 400 | ERROR_TOO_MANY_GROUPS_IN_GROUP_LIST |
-| 400 | ERROR_TOO_MANY_UIDS_IN_UID_LIST |
-| 400 | ERROR_TOO_MANY_APPS_IN_APP_LIST |
-| 400 | ERROR_INVALID_FACE_BOX_PARAMETER |
-| 400 | ERROR_INVALID_BIG_EYES_PARAMETER |
-| 400 | ERROR_INVALID_FACE_SLIMMING_PARAMETER |
-| 400 | ERROR_INVALID_SMOOTHING_PARAMETER |
-| 400 | ERROR_INVALID_SKIN_WHITENING_PARAMETER |
-| 401 | ERROR_USER_NOT_EXISTS |
-| 401 | ERROR_APPLICATIONS_NOT_EXISTS |
-| 403 | ERROR_USER_LOCKED |
-| 403 | ERROR_ILLEGAL_OPERATION |
-| 404 | ERROR_AI_NOT_EXISTS |
-| 404 | ERROR_FILE_NOT_FOUND |
-| 404 | ERROR_FACE_NOT_FOUND |
-| 404 | ERROR_USER_GROUP_NOT_FOUND |
-| 404 | ERROR_USER_NOT_FOUND |
-| 404 | ERROR_FACE_TOKEN_NOT_FOUND |
-| 404 | ERROR_CONTENT_NOT_FOUND |
-| 404 | ERROR_RESOURCE_NOT_FOUND |
-| 406 | ERROR_INVALID_RESPONSE_FORMAT |
-| 409 | ERROR_FACE_ALREADY_EXISTS |
-| 409 | ERROR_DATA_ALREADY_EXISTS |
-| 409 | ERROR_USER_GROUP_ALREADY_EXISTS |
-| 409 | ERROR_USER_ALREADY_EXISTS |
-| 409 | ERROR_DUPLICATE_GROUP_NAME |
-| 409 | ERROR_RESOURCE_IN_USE |
-| 409 | ERROR_TASK_CONFLICT |
-| 409 | ERROR_TASK_STOPPED_PROCESSING |
-| 409 | ERROR_TASK_REVOCATION_FAILED |
-| 410 | ERROR_TASK_REVOKED |
-| 410 | ERROR_RESOURCE_RECLAIMED |
-| 413 | ERROR_TOO_MANY_FILES |
-| 413 | FILE_SIZE_EXCEEDS_LIMIT |
-| 413 | FILE_RESOLUTION_EXCEEDS_LIMITS |
-| 413 | ERROR_HIGH_RESOLUTION |
-| 413 | ERROR_REQUEST_BODY_TOO_LARGE |
-| 415 | UNSUPPORTED_FILE_TYPES |
-| 415 | ERROR_UNSUPPORTED_GRAYSCALE_IMAGE |
-| 422 | FILE_DECODING_FAILURE |
-| 422 | ERROR_ILLEGAL_FILE |
-| 422 | ERROR_INVALID_FILE |
-| 422 | ERROR_LOW_RESOLUTION |
-| 422 | FILE_CONTENT_NON_COMPLIANCE |
-| 422 | ERROR_CONTENT_NON_COMPLIANCE |
-| 422 | ERROR_CONTENT_TOO_LONG |
-| 422 | ERROR_VIDEO_DURATION_EXCEEDED |
-| 422 | ERROR_INCORRECT_FILE_COUNT |
-| 422 | ERROR_NO_FACE_IN_FILE |
-| 422 | ERROR_FACE_SIZE_NOT_MEET_REQUIREMENTS |
-| 422 | ERROR_FACE_SIZE_RATIO_NOT_MET |
-| 422 | ERROR_SMALL_FACE_SIZE |
-| 422 | ERROR_FACE_COPY_SCENE_MISMATCH |
-| 422 | ERROR_FACE_UNRECOGNIZABLE |
-| 422 | ERROR_POOR_FACE_QUALITY |
-| 422 | ERROR_BLURRY_FACE |
-| 422 | ERROR_OBSTRUCTED_FACE |
-| 422 | ERROR_POOR_FACE_LIGHTING |
-| 422 | ERROR_INCOMPLETE_FACE |
-| 422 | ERROR_FACE_NOT_FACING_FORWARD |
-| 422 | ERROR_QUALITY_SCORE_NOT_MEET_REQUIREMENTS |
-| 422 | ERROR_SCENE_TYPE_MISMATCH |
-| 422 | ERROR_CARTOON_FACE_NOT_SUPPORTED |
-| 422 | ERROR_TEMPLATE_IMAGE_QUALITY_TOO_LOW |
-| 422 | ERROR_ACTION_VERIFICATION_FAILED |
-| 422 | ERROR_LEFT_EYE_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_RIGHT_EYE_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_LEFT_FACE_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_RIGHT_FACE_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_CHIN_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_NOSE_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_MOUTH_OCCLUSION_TOO_HIGH |
-| 422 | ERROR_SYNTHESIS_DETECTION_FAILED |
-| 422 | ERROR_LIVENESS_DETECTION_FAILED |
-| 422 | ERROR_NO_RECOGNITION_TARGET_DETECTED |
-| 422 | ERROR_IMAGE_RECOGNITION_FAILED |
-| 422 | ERROR_POSE_NOT_ENOUGH_KEYPOINTS |
-| 422 | ERROR_FACE_COUNT_INVALID |
-| 429 | ERROR_NOT_ENOUGH_CREDITS |
-| 429 | ERROR_FACE_TRACE_LIMIT_EXCEEDED |
-| 429 | ERROR_DATABASE_LIMIT_EXCEEDED |
-| 429 | ERROR_BATCH_TASK_LIMIT_EXCEEDED |
-| 429 | EXCEEDING_LIMITS |
-| 500 | PROCESSING_FAILURE |
-| 500 | ERROR_RESPONSE_BODY_TOO_LARGE |
-| 500 | UNKNOWN_ERROR |
-| 500 | SERVICE_INTERNAL_ERROR |
-| 501 | ERROR_IMAGE_STORAGE_NOT_SUPPORTED |
-| 502 | ERROR_FILE_DOWNLOAD_FAILED |
-| 502 | ERROR_FILE_UPLOAD_FAILED |
-| 502 | ERROR_DATA_TRANSFER_FAILED |
-| 502 | ERROR_GET_FACE_IMAGE_FAILED |
-| 502 | ERROR_FACE_IMAGE_ADDITION_FAILED |
-| 502 | ERROR_FACE_BLENDING_FAILED |
-| 502 | FILE_SERVICE_ERROR |
-| 502 | AI_SERVICE_ERROR |
-| 502 | AI_SERVICE_INTERNAL_ERROR |
-| 502 | AI_SERVICE_UNAUTHORIZED |
-| 502 | AI_SERVICE_NOT_FOUND |
-| 502 | ERROR_GATEWAY |
-| 503 | ERROR_CLEANING_USER_GROUP_DATA |
-| 503 | ERROR_INSUFFICIENT_RESOURCES |
-| 503 | ERROR_RESOURCE_IN_TRANSIT |
-| 503 | ERROR_RESOURCE_UNAVAILABLE |
-| 503 | AI_SERVICE_FLOW_RESTRICTION |
-| 504 | ERROR_FILE_DOWNLOAD_TIMEOUT |
-| 504 | AI_SERVICE_TIMEOUT |
+## Common Errors
 
-## Troubleshooting
+| HTTP Status | Error | Meaning | How to fix |
+| --- | --- | --- | --- |
+| 400 | MISSING_PARAMETERS | Required parameters are missing. | Check the SDK params object and make sure required file and option fields are provided. |
+| 400 | ERROR_INVALID_PARAMETER | A parameter value is invalid. | Check enum values, numeric ranges, and camelCase-to-API field mapping. |
+| 401 | ERROR_USER_NOT_EXISTS | Invalid or unknown API key. | Check `AILAB_API_KEY` and make sure the request uses the `ailabapi-api-key` header. |
+| 403 | ERROR_USER_LOCKED | Account is locked or access is restricted. | Contact support with `request_id` and `log_id`. |
+| 404 | ERROR_AI_NOT_EXISTS | The API path or capability is unavailable. | Confirm the endpoint in the [AILabTools API Documentation](https://www.ailabtools.com/docs). |
+| 413 | FILE_SIZE_EXCEEDS_LIMIT | Uploaded file is too large. | Compress the image or use a smaller input file. |
+| 413 | FILE_RESOLUTION_EXCEEDS_LIMITS | Uploaded image resolution is too high. | Resize the image before upload. |
+| 415 | UNSUPPORTED_FILE_TYPES | The uploaded file type is unsupported. | Use a supported image format such as JPG, PNG, WebP, or BMP. |
+| 422 | FILE_DECODING_FAILURE | The uploaded file cannot be decoded as an image. | Re-export or convert the image, then upload again. |
+| 422 | ERROR_NO_FACE_IN_FILE | No face was detected. | Use a clear frontal portrait with visible facial features. |
+| 422 | ERROR_FACE_SIZE_RATIO_NOT_MET | The detected face is too small. | Crop the image so the face takes up more of the frame. |
+| 422 | ERROR_BLURRY_FACE | The face is too blurry. | Use a sharper image with better lighting. |
+| 422 | ERROR_CONTENT_NON_COMPLIANCE | The input or generated content failed safety review. | Use compliant source material and avoid restricted content. |
+| 429 | ERROR_NOT_ENOUGH_CREDITS | The account does not have enough credits. | Add credits in the [AILabTools Developer Console](https://www.ailabtools.com/developer). |
+| 429 | EXCEEDING_LIMITS | Request or concurrency limits were exceeded. | Reduce concurrency and retry with exponential backoff. |
+| 500 | PROCESSING_FAILURE | The service failed while processing the request. | Retry once. If it persists, contact support with `request_id` and `log_id`. |
+| 502 | AI_SERVICE_ERROR | Upstream AI service error. | Retry with backoff or try again later. |
+| 503 | ERROR_INSUFFICIENT_RESOURCES | Temporary resource shortage. | Retry later or reduce request volume. |
+| 504 | AI_SERVICE_TIMEOUT | Processing timed out. | Retry or use an async API when available. |
 
-- Verify that the API key is valid and that the request uses the `ailabapi-api-key` header.
-- Check for missing parameters, invalid parameter names, and type mismatches.
-- Use `request_id` and `log_id` when contacting support.
+## Retry Guidance
+
+| Scenario | Retry? | Recommendation |
+| --- | --- | --- |
+| Missing or invalid parameters | No | Fix the request before retrying. |
+| Authentication errors | No | Check the API key and account status. |
+| Content or face quality errors | No | Use a better input image. |
+| Rate limit errors | Yes | Retry with exponential backoff and lower concurrency. |
+| 5xx or timeout errors | Yes | Retry a small number of times with backoff. |
+
+## Node.js Example
+
+```ts
+try {
+  const result = await client.cutout.cutoutUniversalBackgroundRemoval({
+    image: readFileSync("./photo.jpg"),
+    returnForm: "whiteBK",
+  });
+
+  console.log(result.data?.image_url);
+} catch (error) {
+  console.error("AILabTools API Error:", error);
+  // Send request_id and log_id to support if you need help.
+}
+```
+
+## Python Example
+
+```py
+try:
+    with open("./photo.jpg", "rb") as image:
+        result = await client.cutout.cutoutUniversalBackgroundRemoval({
+            "image": image,
+            "returnForm": "whiteBK",
+        })
+    print(result["data"]["image_url"])
+except Exception as error:
+    print("AILabTools API Error:", error)
+    # Send request_id and log_id to support if you need help.
+```

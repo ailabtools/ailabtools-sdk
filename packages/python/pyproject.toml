@@ -4,16 +4,41 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ailabtools-sdk"
-version = "0.5.2"
-description = "AILabTools SDK for Python (async)"
+version = "0.5.3"
+description = "Official async Python SDK for AILabTools AI image APIs: background removal, image upscaling, hairstyle changer, face retouching, object removal, and more."
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = ["httpx>=0.27"]
+keywords = [
+  "ailabtools",
+  "ai image api",
+  "ai photo editing api",
+  "image processing",
+  "background removal",
+  "image upscaler",
+  "object removal",
+  "face retouch",
+  "hairstyle changer",
+  "cartoon avatar",
+  "virtual try-on",
+  "async sdk",
+]
 license = "MIT"
 license-files = ["LICENSE"]
 classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Framework :: AsyncIO",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
 ]
 
 [project.urls]

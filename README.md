@@ -63,7 +63,7 @@ const client = new AILabClient({
   apiKey: process.env.AILAB_API_KEY!,
 });
 
-const result = await client.cutout.cutoutUniversalBackgroundRemoval({
+const result = await client.background.remove({
   image: readFileSync("./photo.jpg"),
   returnForm: "whiteBK",
 });
@@ -82,7 +82,7 @@ async def main():
     client = AILabClient(api_key=os.environ["AILAB_API_KEY"])
 
     with open("./photo.jpg", "rb") as image:
-        result = await client.cutout.cutoutUniversalBackgroundRemoval({
+        result = await client.background.remove({
             "image": image,
             "returnForm": "whiteBK",
         })
@@ -99,14 +99,78 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 | Use case | API | SDK method |
 | --- | --- | --- |
-| Remove image background | Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` |
-| Upscale image 2x / 4x | Image Upscaler | `client.image.imageLosslessEnlargement()` |
-| Change hairstyle | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` |
-| Retouch portrait | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` |
-| Remove objects | Image Erasure | `client.image.imageErasure()` |
+| Remove image background | Universal Background Removal | `client.background.remove()` |
+| Upscale image 2x / 4x | Image Upscaler | `client.image.upscale()` |
+| Change hairstyle | Hairstyle Changer Pro | `client.portrait.changeHairstyle()` |
+| Retouch portrait | Smart Beauty | `client.portrait.retouch()` |
+| Remove objects | Remove Objects | `client.image.removeObjects()` |
 | Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
 | Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
 | Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
+
+## Developer-Friendly Aliases
+
+Both full API method names and short aliases are supported. The full names map directly to the official API docs, while aliases are easier to use in application code.
+
+| API | Full method | Alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` | `client.background.remove()` |
+| Image Upscaler | `client.image.imageLosslessEnlargement()` | `client.image.upscale()` |
+| Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` / `client.image.remove_objects()` |
+| Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` / `client.portrait.change_hairstyle()` |
+| Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
+
+## Async Task Example
+
+Some APIs return `task_id` for long-running image generation or enhancement jobs. Use `waitForTask` to poll until the task succeeds, fails, or times out.
+
+```ts
+const task = await client.portrait.changeHairstyle({
+  image: readFileSync("./portrait.jpg"),
+  hairStyle: "BuzzCut",
+  color: "blonde",
+});
+
+const taskId = task.task_id || task.data?.task_id;
+const result = await client.waitForTask(taskId!, {
+  intervalMs: 5000,
+  timeoutMs: 300000,
+  throwOnFailed: true,
+});
+
+console.log(result.data);
+```
+Python async:
+
+```py
+task = await client.portrait.change_hairstyle({
+    "image": image,
+    "hairStyle": "BuzzCut",
+    "color": "blonde",
+})
+
+task_id = task.get("task_id") or task.get("data", {}).get("task_id")
+result = await client.wait_for_task(task_id, interval=5, timeout=300)
+print(result.get("data"))
+```
+
+## Error Handling
+
+API errors throw `AILabApiError`, which includes troubleshooting fields such as `requestId` and `logId`.
+
+```ts
+try {
+  const result = await client.background.remove({
+    image: readFileSync("./photo.jpg"),
+    returnForm: "whiteBK",
+  });
+
+  console.log(result.data?.image_url);
+} catch (error) {
+  console.error("AILabTools API Error:", error);
+  // Send request_id and log_id to support if you need help.
+}
+```
 
 ## Documentation
 
@@ -115,6 +179,7 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
 - [SDK API reference](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
+- [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 
 ## License
 

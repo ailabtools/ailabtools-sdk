@@ -35,7 +35,7 @@ const client = new AILabClient({
   apiKey: process.env.AILAB_API_KEY!,
 });
 
-const result = await client.cutout.cutoutUniversalBackgroundRemoval({
+const result = await client.background.remove({
   image: readFileSync("./photo.jpg"),
   returnForm: "whiteBK",
 });
@@ -49,22 +49,51 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 | Use case | API | SDK method |
 | --- | --- | --- |
-| Remove image background | Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` |
-| Upscale image 2x / 4x | Image Upscaler | `client.image.imageLosslessEnlargement()` |
-| Change hairstyle | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` |
-| Retouch portrait | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` |
-| Remove objects | Image Erasure | `client.image.imageErasure()` |
+| Remove image background | Universal Background Removal | `client.background.remove()` |
+| Upscale image 2x / 4x | Image Upscaler | `client.image.upscale()` |
+| Change hairstyle | Hairstyle Changer Pro | `client.portrait.changeHairstyle()` |
+| Retouch portrait | Smart Beauty | `client.portrait.retouch()` |
+| Remove objects | Remove Objects | `client.image.removeObjects()` |
 | Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
 | Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
 | Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
+
+## Developer-Friendly Aliases
+
+Both full API method names and short aliases are supported. For example, `client.background.remove()` calls the same Universal Background Removal API as `client.cutout.cutoutUniversalBackgroundRemoval()`.
+
+| API | Full method | Alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` | `client.background.remove()` |
+| Image Upscaler | `client.image.imageLosslessEnlargement()` | `client.image.upscale()` |
+| Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` |
+| Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` |
+| Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
 
 ## File Uploads
 
 `FileInput` supports `Buffer | ArrayBuffer | Uint8Array`.
 
-## Async Tasks
+## Async Task Example
 
-Async APIs return `task_id`. Poll results with `commonQueryAsyncTaskResult({ taskId })`.
+Some APIs return `task_id` for long-running image generation or enhancement jobs. Use `waitForTask` to poll until the task succeeds, fails, or times out.
+
+```ts
+const task = await client.portrait.changeHairstyle({
+  image: readFileSync("./portrait.jpg"),
+  hairStyle: "BuzzCut",
+  color: "blonde",
+});
+
+const taskId = task.task_id || task.data?.task_id;
+const result = await client.waitForTask(taskId!, {
+  intervalMs: 5000,
+  timeoutMs: 300000,
+  throwOnFailed: true,
+});
+
+console.log(result.data);
+```
 
 ## API Reference
 
@@ -73,10 +102,25 @@ Async APIs return `task_id`. Poll results with `commonQueryAsyncTaskResult({ tas
 - [AILabTools SDK Documentation](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
+- [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 
 ## Error Handling
 
 API errors throw `AILabApiError`, which includes troubleshooting fields such as `requestId` and `logId`.
+
+```ts
+try {
+  const result = await client.background.remove({
+    image: readFileSync("./photo.jpg"),
+    returnForm: "whiteBK",
+  });
+
+  console.log(result.data?.image_url);
+} catch (error) {
+  console.error("AILabTools API Error:", error);
+  // Send request_id and log_id to support if you need help.
+}
+```
 
 ## Testing
 

@@ -186,6 +186,10 @@ export class ImageAPI {
     return this.request.request<ImageRemoveObjectsResponseData>("POST", "/api/image/editing/remove-objects", { body: mapped, multipart: true });
   }
 
+  async removeObjects(params: ImageRemoveObjectsParams): Promise<ImageRemoveObjectsResponse> {
+    return this.imageRemoveObjects(params);
+  }
+
   async imageRemoveObjectsAdvanced(params: ImageRemoveObjectsAdvancedParams): Promise<ImageRemoveObjectsAdvancedResponse> {
     validateImageRemoveObjectsAdvancedParams(params);
     const mapped = mapParams(params, ImageRemoveObjectsAdvancedParamMap);
@@ -244,6 +248,10 @@ export class ImageAPI {
     validateImageLosslessEnlargementParams(params);
     const mapped = mapParams(params, ImageLosslessEnlargementParamMap);
     return this.request.request<ImageLosslessEnlargementResponseData>("POST", "/api/image/enhance/image-lossless-enlargement", { body: mapped, multipart: true });
+  }
+
+  async upscale(params: ImageLosslessEnlargementParams): Promise<ImageLosslessEnlargementResponse> {
+    return this.imageLosslessEnlargement(params);
   }
 
   async imageClarityEnhancement(params: ImageClarityEnhancementParams): Promise<ImageClarityEnhancementResponse> {

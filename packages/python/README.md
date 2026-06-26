@@ -47,7 +47,7 @@ async def main():
     client = AILabClient(api_key=os.environ["AILAB_API_KEY"])
 
     with open("./photo.jpg", "rb") as image:
-        result = await client.cutout.cutoutUniversalBackgroundRemoval({
+        result = await client.background.remove({
             "image": image,
             "returnForm": "whiteBK",
         })
@@ -64,22 +64,52 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 | Use case | API | SDK method |
 | --- | --- | --- |
-| Remove image background | Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` |
-| Upscale image 2x / 4x | Image Upscaler | `client.image.imageLosslessEnlargement()` |
-| Change hairstyle | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` |
-| Retouch portrait | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` |
-| Remove objects | Image Erasure | `client.image.imageErasure()` |
+| Remove image background | Universal Background Removal | `client.background.remove()` |
+| Upscale image 2x / 4x | Image Upscaler | `client.image.upscale()` |
+| Change hairstyle | Hairstyle Changer Pro | `client.portrait.change_hairstyle()` |
+| Retouch portrait | Smart Beauty | `client.portrait.retouch()` |
+| Remove objects | Remove Objects | `client.image.remove_objects()` |
 | Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
 | Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
 | Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
+
+## Developer-Friendly Aliases
+
+Both full API method names and short aliases are supported. For example, `client.background.remove()` calls the same Universal Background Removal API as `client.cutout.cutoutUniversalBackgroundRemoval()`.
+
+| API | Full method | Alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` | `client.background.remove()` |
+| Image Upscaler | `client.image.imageLosslessEnlargement()` | `client.image.upscale()` |
+| Remove Objects | `client.image.imageRemoveObjects()` | `client.image.remove_objects()` |
+| Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.change_hairstyle()` |
+| Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
 
 ## File Uploads
 
 File parameters support file-like objects with a `read` method, or `bytes` / `bytearray`.
 
-## Async Tasks
+## Async Task Example
 
-Async APIs return `task_id`. Poll results with `commonQueryAsyncTaskResult({"taskId": ...})`.
+Some APIs return `task_id` for long-running image generation or enhancement jobs. Use `wait_for_task` to poll until the task succeeds, fails, or times out.
+
+```py
+task = await client.portrait.change_hairstyle({
+    "image": image,
+    "hairStyle": "BuzzCut",
+    "color": "blonde",
+})
+
+task_id = task.get("task_id") or task.get("data", {}).get("task_id")
+result = await client.wait_for_task(
+    task_id,
+    interval=5,
+    timeout=300,
+    raise_on_failed=True,
+)
+
+print(result.get("data"))
+```
 
 ## API Reference
 
@@ -88,6 +118,24 @@ Async APIs return `task_id`. Poll results with `commonQueryAsyncTaskResult({"tas
 - [AILabTools SDK Documentation](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
+- [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
+
+## Error Handling
+
+API errors raise `AILabApiError`, which includes troubleshooting fields such as `request_id` and `log_id`.
+
+```py
+try:
+    with open("./photo.jpg", "rb") as image:
+        result = await client.background.remove({
+            "image": image,
+            "returnForm": "whiteBK",
+        })
+    print(result["data"]["image_url"])
+except Exception as error:
+    print("AILabTools API Error:", error)
+    # Send request_id and log_id to support if you need help.
+```
 
 ## Testing
 

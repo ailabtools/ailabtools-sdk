@@ -10,6 +10,8 @@ Official SDK documentation for AILabTools AI image and portrait APIs, including 
 - [Error Handling](#error-handling)
 - [Async Task Polling](#async-task-polling)
 - [File Uploads and URL Inputs](#file-uploads-and-url-inputs)
+- [Examples](#examples)
+- [Tutorials](#tutorials)
 - [Documentation](#documentation)
 - [API Index](#api-index)
 
@@ -51,7 +53,7 @@ const client = new AILabClient({
   apiKey: process.env.AILAB_API_KEY!,
 });
 
-const result = await client.cutout.cutoutUniversalBackgroundRemoval({
+const result = await client.background.remove({
   image: readFileSync("./photo.jpg"),
   returnForm: "whiteBK",
 });
@@ -70,7 +72,7 @@ async def main():
     client = AILabClient(api_key=os.environ["AILAB_API_KEY"])
 
     with open("./photo.jpg", "rb") as image:
-        result = await client.cutout.cutoutUniversalBackgroundRemoval({
+        result = await client.background.remove({
             "image": image,
             "returnForm": "whiteBK",
         })
@@ -87,14 +89,26 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 | Use case | API | SDK method |
 | --- | --- | --- |
-| Remove image background | Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` |
-| Upscale image 2x / 4x | Image Upscaler | `client.image.imageLosslessEnlargement()` |
-| Change hairstyle | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` |
-| Retouch portrait | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` |
-| Remove objects | Image Erasure | `client.image.imageErasure()` |
+| Remove image background | Universal Background Removal | `client.background.remove()` |
+| Upscale image 2x / 4x | Image Upscaler | `client.image.upscale()` |
+| Change hairstyle | Hairstyle Changer Pro | `client.portrait.changeHairstyle()` |
+| Retouch portrait | Smart Beauty | `client.portrait.retouch()` |
+| Remove objects | Remove Objects | `client.image.removeObjects()` |
 | Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
 | Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
 | Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
+
+## Developer-Friendly Aliases
+
+Both full API method names and short aliases are supported. The full names map directly to the official API docs, while aliases are easier to use in application code.
+
+| API | Full method | Alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` | `client.background.remove()` |
+| Image Upscaler | `client.image.imageLosslessEnlargement()` | `client.image.upscale()` |
+| Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` / `client.image.remove_objects()` |
+| Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` / `client.portrait.change_hairstyle()` |
+| Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
 
 ## Authentication and Configuration
 
@@ -103,17 +117,95 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 ## Error Handling
 
-- Node.js: SDK calls throw `AILabApiError`, including fields such as `requestId` and `logId`.
-- Python: SDK calls raise `AILabApiError`.
+API errors throw `AILabApiError`, which includes troubleshooting fields such as `requestId` and `logId`.
 
-## Async Task Polling
+```ts
+try {
+  const result = await client.background.remove({
+    image: readFileSync("./photo.jpg"),
+    returnForm: "whiteBK",
+  });
 
-Async APIs return `task_id`. Poll the result with `commonQueryAsyncTaskResult({ taskId })`.
+  console.log(result.data?.image_url);
+} catch (error) {
+  console.error("AILabTools API Error:", error);
+  // Send request_id and log_id to support if you need help.
+}
+```
+
+## Error Handling
+
+API errors raise `AILabApiError`, which includes troubleshooting fields such as `request_id` and `log_id`.
+
+```py
+try:
+    with open("./photo.jpg", "rb") as image:
+        result = await client.background.remove({
+            "image": image,
+            "returnForm": "whiteBK",
+        })
+    print(result["data"]["image_url"])
+except Exception as error:
+    print("AILabTools API Error:", error)
+    # Send request_id and log_id to support if you need help.
+```
+
+## Async Task Example
+
+Some APIs return `task_id` for long-running image generation or enhancement jobs. Use `waitForTask` to poll until the task succeeds, fails, or times out.
+
+```ts
+const task = await client.portrait.changeHairstyle({
+  image: readFileSync("./portrait.jpg"),
+  hairStyle: "BuzzCut",
+  color: "blonde",
+});
+
+const taskId = task.task_id || task.data?.task_id;
+const result = await client.waitForTask(taskId!, {
+  intervalMs: 5000,
+  timeoutMs: 300000,
+  throwOnFailed: true,
+});
+
+console.log(result.data);
+```
+
+Python async:
+
+```py
+task = await client.portrait.change_hairstyle({
+    "image": image,
+    "hairStyle": "BuzzCut",
+    "color": "blonde",
+})
+
+task_id = task.get("task_id") or task.get("data", {}).get("task_id")
+result = await client.wait_for_task(
+    task_id,
+    interval=5,
+    timeout=300,
+    raise_on_failed=True,
+)
+
+print(result.get("data"))
+```
 
 ## File Uploads and URL Inputs
 
 - Node.js file fields support `Buffer | ArrayBuffer | Uint8Array`.
 - Python file fields support file-like objects with `read`, or `bytes` / `bytearray`.
+
+
+## Examples
+
+Copy-ready Node.js and Python examples are available in [`examples/`](../examples/), including background removal, image upscaling, object removal, async hairstyle generation, Next.js API routes, FastAPI upload servers, and batch folder processing.
+
+## Tutorials
+
+- [Background Removal API with AILabTools SDK](tutorials/background-removal-api.md)
+- [Image Upscaler API with AILabTools SDK](tutorials/image-upscaler-api.md)
+- [Async Task Polling with AILabTools SDK](tutorials/async-task-polling.md)
 
 ## Documentation
 
@@ -122,6 +214,7 @@ Async APIs return `task_id`. Poll the result with `commonQueryAsyncTaskResult({ 
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
+- [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 
 ## API Index
 

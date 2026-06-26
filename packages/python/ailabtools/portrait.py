@@ -215,6 +215,9 @@ class PortraitAPI:
         mapped = map_params(params, PortraitHairstyleEditingProParamMap)
         return await self._requester.request('POST', '/api/portrait/effects/hairstyle-editor-pro', body=mapped, multipart=True)
 
+    async def change_hairstyle(self, params: PortraitHairstyleEditingProParams) -> PortraitHairstyleEditingProResponse:
+        return await self.portraitHairstyleEditingPro(params)
+
     async def portraitLipsColorChanger(self, params: PortraitLipsColorChangerParams) -> PortraitLipsColorChangerResponse:
         validate_portraitLipsColorChanger_params(params)
         mapped = map_params(params, PortraitLipsColorChangerParamMap)
@@ -234,6 +237,9 @@ class PortraitAPI:
         validate_portraitIntelligentBeautification_params(params)
         mapped = map_params(params, PortraitIntelligentBeautificationParamMap)
         return await self._requester.request('POST', '/api/portrait/effects/smart-beauty', body=mapped, multipart=True)
+
+    async def retouch(self, params: PortraitIntelligentBeautificationParams) -> PortraitIntelligentBeautificationResponse:
+        return await self.portraitIntelligentBeautification(params)
 
     async def portraitIntelligentFaceSlimming(self, params: PortraitIntelligentFaceSlimmingParams) -> PortraitIntelligentFaceSlimmingResponse:
         validate_portraitIntelligentFaceSlimming_params(params)

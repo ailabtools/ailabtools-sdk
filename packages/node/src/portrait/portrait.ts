@@ -261,6 +261,10 @@ export class PortraitAPI {
     return this.request.request<PortraitHairstyleEditingProResponseData>("POST", "/api/portrait/effects/hairstyle-editor-pro", { body: mapped, multipart: true });
   }
 
+  async changeHairstyle(params: PortraitHairstyleEditingProParams): Promise<PortraitHairstyleEditingProResponse> {
+    return this.portraitHairstyleEditingPro(params);
+  }
+
   async portraitLipsColorChanger(params: PortraitLipsColorChangerParams): Promise<PortraitLipsColorChangerResponse> {
     validatePortraitLipsColorChangerParams(params);
     const mapped = mapParams(params, PortraitLipsColorChangerParamMap);
@@ -283,6 +287,10 @@ export class PortraitAPI {
     validatePortraitIntelligentBeautificationParams(params);
     const mapped = mapParams(params, PortraitIntelligentBeautificationParamMap);
     return this.request.request<PortraitIntelligentBeautificationResponseData>("POST", "/api/portrait/effects/smart-beauty", { body: mapped, multipart: true });
+  }
+
+  async retouch(params: PortraitIntelligentBeautificationParams): Promise<PortraitIntelligentBeautificationResponse> {
+    return this.portraitIntelligentBeautification(params);
   }
 
   async portraitIntelligentFaceSlimming(params: PortraitIntelligentFaceSlimmingParams): Promise<PortraitIntelligentFaceSlimmingResponse> {
