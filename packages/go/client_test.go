@@ -61,3 +61,21 @@ func TestWaitForTask(t *testing.T) {
 		t.Fatalf("task_status = %d", result.Data.TaskStatus)
 	}
 }
+
+func TestGeneratedPortraitResponsesDecodeUniqueJSONFields(t *testing.T) {
+	var analyzer PortraitFaceAnalyzerResponseData
+	if err := json.Unmarshal([]byte(`{"type":2,"probability":0.9,"pitch":10}`), &analyzer); err != nil {
+		t.Fatal(err)
+	}
+	if analyzer.Type != 2 || analyzer.Probability != 0.9 || analyzer.Pitch != 10 {
+		t.Fatalf("unexpected analyzer response: %+v", analyzer)
+	}
+
+	var advanced PortraitFaceAnalyzerAdvancedResponseData
+	if err := json.Unmarshal([]byte(`{"pose_list":[1.5,2.5,3.5]}`), &advanced); err != nil {
+		t.Fatal(err)
+	}
+	if len(advanced.PoseList) != 3 || advanced.PoseList[1] != 2.5 {
+		t.Fatalf("unexpected pose_list: %#v", advanced.PoseList)
+	}
+}

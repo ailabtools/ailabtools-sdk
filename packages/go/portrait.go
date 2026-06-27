@@ -33,70 +33,30 @@ type PortraitFaceAnalyzerResponseData struct {
 	Probability              float64 `json:"probability,omitempty"`
 	Eye                      any     `json:"eye,omitempty"`
 	Glass                    any     `json:"glass,omitempty"`
-	Type2                    int     `json:"type,omitempty"`
-	Probability2             float64 `json:"probability,omitempty"`
 	EyeOpen                  any     `json:"eye_open,omitempty"`
-	Type3                    int     `json:"type,omitempty"`
-	Probability3             float64 `json:"probability,omitempty"`
 	EyelidType               any     `json:"eyelid_type,omitempty"`
-	Type4                    int     `json:"type,omitempty"`
-	Probability4             float64 `json:"probability,omitempty"`
 	EyeSize                  any     `json:"eye_size,omitempty"`
-	Type5                    int     `json:"type,omitempty"`
-	Probability5             float64 `json:"probability,omitempty"`
 	Eyebrow                  any     `json:"eyebrow,omitempty"`
 	EyebrowDensity           any     `json:"eyebrow_density,omitempty"`
-	Type6                    int     `json:"type,omitempty"`
-	Probability6             float64 `json:"probability,omitempty"`
 	EyebrowCurve             any     `json:"eyebrow_curve,omitempty"`
-	Type7                    int     `json:"type,omitempty"`
-	Probability7             float64 `json:"probability,omitempty"`
 	EyebrowLength            any     `json:"eyebrow_length,omitempty"`
-	Type8                    int     `json:"type,omitempty"`
-	Probability8             float64 `json:"probability,omitempty"`
 	Gender                   any     `json:"gender,omitempty"`
-	Type9                    int     `json:"type,omitempty"`
-	Probability9             float64 `json:"probability,omitempty"`
 	Hair                     any     `json:"hair,omitempty"`
 	Length                   any     `json:"length,omitempty"`
-	Type10                   int     `json:"type,omitempty"`
-	Probability10            float64 `json:"probability,omitempty"`
 	Bang                     any     `json:"bang,omitempty"`
-	Type11                   int     `json:"type,omitempty"`
-	Probability11            float64 `json:"probability,omitempty"`
 	Color                    any     `json:"color,omitempty"`
-	Type12                   int     `json:"type,omitempty"`
-	Probability12            float64 `json:"probability,omitempty"`
 	Hat                      any     `json:"hat,omitempty"`
 	Style                    any     `json:"style,omitempty"`
-	Type13                   int     `json:"type,omitempty"`
-	Probability13            float64 `json:"probability,omitempty"`
-	Color2                   any     `json:"color,omitempty"`
-	Type14                   int     `json:"type,omitempty"`
-	Probability14            float64 `json:"probability,omitempty"`
 	HeadPose                 any     `json:"head_pose,omitempty"`
 	Pitch                    int     `json:"pitch,omitempty"`
 	Yaw                      int     `json:"yaw,omitempty"`
-	Pitch2                   int     `json:"pitch,omitempty"`
 	Mask                     any     `json:"mask,omitempty"`
-	Type15                   int     `json:"type,omitempty"`
-	Probability15            float64 `json:"probability,omitempty"`
 	Mouth                    any     `json:"mouth,omitempty"`
 	MouthOpen                any     `json:"mouth_open,omitempty"`
-	Type16                   int     `json:"type,omitempty"`
-	Probability16            float64 `json:"probability,omitempty"`
 	Moustache                any     `json:"moustache,omitempty"`
-	Type17                   int     `json:"type,omitempty"`
-	Probability17            float64 `json:"probability,omitempty"`
 	Nose                     any     `json:"nose,omitempty"`
-	Type18                   int     `json:"type,omitempty"`
-	Probability18            float64 `json:"probability,omitempty"`
 	Shape                    any     `json:"shape,omitempty"`
-	Type19                   int     `json:"type,omitempty"`
-	Probability19            float64 `json:"probability,omitempty"`
 	Skin                     any     `json:"skin,omitempty"`
-	Type20                   int     `json:"type,omitempty"`
-	Probability20            float64 `json:"probability,omitempty"`
 	Smile                    int     `json:"smile,omitempty"`
 }
 
@@ -139,7 +99,6 @@ type PortraitFaceAnalyzerAdvancedResponseData struct {
 	IlluList            []float64 `json:"illu_list,omitempty"`
 	MaskList            []float64 `json:"mask_list,omitempty"`
 	NoiseList           []float64 `json:"noise_list,omitempty"`
-	PoseList2           []float64 `json:"pose_list,omitempty"`
 }
 
 type PortraitFaceAnalyzerAdvancedResponse = BaseResponse[PortraitFaceAnalyzerAdvancedResponseData]
@@ -212,64 +171,23 @@ type PortraitSkinAnalysisBasicResponseData struct {
 	Value           int     `json:"value,omitempty"`
 	Confidence      float64 `json:"confidence,omitempty"`
 	RightEyelids    any     `json:"right_eyelids,omitempty"`
-	Value2          int     `json:"value,omitempty"`
-	Confidence2     float64 `json:"confidence,omitempty"`
 	EyePouch        any     `json:"eye_pouch,omitempty"`
-	Value3          int     `json:"value,omitempty"`
-	Confidence3     float64 `json:"confidence,omitempty"`
 	DarkCircle      any     `json:"dark_circle,omitempty"`
-	Value4          int     `json:"value,omitempty"`
-	Confidence4     float64 `json:"confidence,omitempty"`
 	ForeheadWrinkle any     `json:"forehead_wrinkle,omitempty"`
-	Value5          int     `json:"value,omitempty"`
-	Confidence5     float64 `json:"confidence,omitempty"`
 	CrowsFeet       any     `json:"crows_feet,omitempty"`
-	Value6          int     `json:"value,omitempty"`
-	Confidence6     float64 `json:"confidence,omitempty"`
 	EyeFinelines    any     `json:"eye_finelines,omitempty"`
-	Value7          int     `json:"value,omitempty"`
-	Confidence7     float64 `json:"confidence,omitempty"`
 	GlabellaWrinkle any     `json:"glabella_wrinkle,omitempty"`
-	Value8          int     `json:"value,omitempty"`
-	Confidence8     float64 `json:"confidence,omitempty"`
 	NasolabialFold  any     `json:"nasolabial_fold,omitempty"`
-	Value9          int     `json:"value,omitempty"`
-	Confidence9     float64 `json:"confidence,omitempty"`
 	SkinType        any     `json:"skin_type,omitempty"`
-	SkinType2       int     `json:"skin_type,omitempty"`
 	Details         any     `json:"details,omitempty"`
-	Value10         int     `json:"value,omitempty"`
-	Confidence10    float64 `json:"confidence,omitempty"`
-	Value11         int     `json:"value,omitempty"`
-	Confidence11    float64 `json:"confidence,omitempty"`
-	Value12         int     `json:"value,omitempty"`
-	Confidence12    float64 `json:"confidence,omitempty"`
-	Value13         int     `json:"value,omitempty"`
-	Confidence13    float64 `json:"confidence,omitempty"`
 	PoresForehead   any     `json:"pores_forehead,omitempty"`
-	Value14         int     `json:"value,omitempty"`
-	Confidence14    float64 `json:"confidence,omitempty"`
 	PoresLeftCheek  any     `json:"pores_left_cheek,omitempty"`
-	Value15         int     `json:"value,omitempty"`
-	Confidence15    float64 `json:"confidence,omitempty"`
 	PoresRightCheek any     `json:"pores_right_cheek,omitempty"`
-	Value16         int     `json:"value,omitempty"`
-	Confidence16    float64 `json:"confidence,omitempty"`
 	PoresJaw        any     `json:"pores_jaw,omitempty"`
-	Value17         int     `json:"value,omitempty"`
-	Confidence17    float64 `json:"confidence,omitempty"`
 	Blackhead       any     `json:"blackhead,omitempty"`
-	Value18         int     `json:"value,omitempty"`
-	Confidence18    float64 `json:"confidence,omitempty"`
 	Acne            any     `json:"acne,omitempty"`
-	Value19         int     `json:"value,omitempty"`
-	Confidence19    float64 `json:"confidence,omitempty"`
 	Mole            any     `json:"mole,omitempty"`
-	Value20         int     `json:"value,omitempty"`
-	Confidence20    float64 `json:"confidence,omitempty"`
 	SkinSpot        any     `json:"skin_spot,omitempty"`
-	Value21         int     `json:"value,omitempty"`
-	Confidence21    float64 `json:"confidence,omitempty"`
 }
 
 type PortraitSkinAnalysisBasicResponse = BaseResponse[PortraitSkinAnalysisBasicResponseData]
@@ -306,96 +224,30 @@ type PortraitSkinAnalysisAdvancedResponseData struct {
 	Skintone               int     `json:"skintone,omitempty"`
 	SkinHueHa              any     `json:"skin_hue_ha,omitempty"`
 	HA                     float64 `json:"HA,omitempty"`
-	Skintone2              int     `json:"skintone,omitempty"`
 	SkinAge                any     `json:"skin_age,omitempty"`
-	Value2                 int     `json:"value,omitempty"`
 	LeftEyelids            any     `json:"left_eyelids,omitempty"`
-	Value3                 int     `json:"value,omitempty"`
-	Confidence2            float64 `json:"confidence,omitempty"`
 	RightEyelids           any     `json:"right_eyelids,omitempty"`
-	Value4                 int     `json:"value,omitempty"`
-	Confidence3            float64 `json:"confidence,omitempty"`
 	EyePouch               any     `json:"eye_pouch,omitempty"`
-	Value5                 int     `json:"value,omitempty"`
-	Confidence4            float64 `json:"confidence,omitempty"`
 	EyePouchSeverity       any     `json:"eye_pouch_severity,omitempty"`
-	Value6                 int     `json:"value,omitempty"`
-	Confidence5            float64 `json:"confidence,omitempty"`
 	DarkCircle             any     `json:"dark_circle,omitempty"`
-	Value7                 int     `json:"value,omitempty"`
-	Confidence6            float64 `json:"confidence,omitempty"`
 	ForeheadWrinkle        any     `json:"forehead_wrinkle,omitempty"`
-	Value8                 int     `json:"value,omitempty"`
-	Confidence7            float64 `json:"confidence,omitempty"`
 	CrowsFeet              any     `json:"crows_feet,omitempty"`
-	Value9                 int     `json:"value,omitempty"`
-	Confidence8            float64 `json:"confidence,omitempty"`
 	EyeFinelines           any     `json:"eye_finelines,omitempty"`
-	Value10                int     `json:"value,omitempty"`
-	Confidence9            float64 `json:"confidence,omitempty"`
 	GlabellaWrinkle        any     `json:"glabella_wrinkle,omitempty"`
-	Value11                int     `json:"value,omitempty"`
-	Confidence10           float64 `json:"confidence,omitempty"`
 	NasolabialFold         any     `json:"nasolabial_fold,omitempty"`
-	Value12                int     `json:"value,omitempty"`
-	Confidence11           float64 `json:"confidence,omitempty"`
 	NasolabialFoldSeverity any     `json:"nasolabial_fold_severity,omitempty"`
-	Value13                int     `json:"value,omitempty"`
-	Confidence12           float64 `json:"confidence,omitempty"`
 	SkinType               any     `json:"skin_type,omitempty"`
-	SkinType2              int     `json:"skin_type,omitempty"`
 	Details                any     `json:"details,omitempty"`
-	Value14                int     `json:"value,omitempty"`
-	Confidence13           float64 `json:"confidence,omitempty"`
-	Value15                int     `json:"value,omitempty"`
-	Confidence14           float64 `json:"confidence,omitempty"`
-	Value16                int     `json:"value,omitempty"`
-	Confidence15           float64 `json:"confidence,omitempty"`
-	Value17                int     `json:"value,omitempty"`
-	Confidence16           float64 `json:"confidence,omitempty"`
 	PoresForehead          any     `json:"pores_forehead,omitempty"`
-	Value18                int     `json:"value,omitempty"`
-	Confidence17           float64 `json:"confidence,omitempty"`
 	PoresLeftCheek         any     `json:"pores_left_cheek,omitempty"`
-	Value19                int     `json:"value,omitempty"`
-	Confidence18           float64 `json:"confidence,omitempty"`
 	PoresRightCheek        any     `json:"pores_right_cheek,omitempty"`
-	Value20                int     `json:"value,omitempty"`
-	Confidence19           float64 `json:"confidence,omitempty"`
 	PoresJaw               any     `json:"pores_jaw,omitempty"`
-	Value21                int     `json:"value,omitempty"`
-	Confidence20           float64 `json:"confidence,omitempty"`
 	Blackhead              any     `json:"blackhead,omitempty"`
-	Value22                int     `json:"value,omitempty"`
-	Confidence21           float64 `json:"confidence,omitempty"`
 	Acne                   any     `json:"acne,omitempty"`
 	Rectangle              []any   `json:"rectangle,omitempty"`
-	Width2                 float64 `json:"width,omitempty"`
-	Height2                float64 `json:"height,omitempty"`
-	Left2                  float64 `json:"left,omitempty"`
-	Top2                   float64 `json:"top,omitempty"`
-	Confidence22           []any   `json:"confidence,omitempty"`
 	Mole                   any     `json:"mole,omitempty"`
-	Rectangle2             []any   `json:"rectangle,omitempty"`
-	Width3                 float64 `json:"width,omitempty"`
-	Height3                float64 `json:"height,omitempty"`
-	Left3                  float64 `json:"left,omitempty"`
-	Top3                   float64 `json:"top,omitempty"`
-	Confidence23           []any   `json:"confidence,omitempty"`
 	ClosedComedones        any     `json:"closed_comedones,omitempty"`
-	Rectangle3             []any   `json:"rectangle,omitempty"`
-	Width4                 float64 `json:"width,omitempty"`
-	Height4                float64 `json:"height,omitempty"`
-	Left4                  float64 `json:"left,omitempty"`
-	Top4                   float64 `json:"top,omitempty"`
-	Confidence24           []any   `json:"confidence,omitempty"`
 	SkinSpot               any     `json:"skin_spot,omitempty"`
-	Rectangle4             []any   `json:"rectangle,omitempty"`
-	Width5                 float64 `json:"width,omitempty"`
-	Height5                float64 `json:"height,omitempty"`
-	Left5                  float64 `json:"left,omitempty"`
-	Top5                   float64 `json:"top,omitempty"`
-	Confidence25           []any   `json:"confidence,omitempty"`
 	FaceMaps               any     `json:"face_maps,omitempty"`
 	RedArea                string  `json:"red_area,omitempty"`
 	Sensitivity            any     `json:"sensitivity,omitempty"`
