@@ -6,6 +6,8 @@ Copy these examples into your application after installing the SDK.
 - Python async: `pip install ailabtools-sdk`
 - Go: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - Dart / Flutter: `flutter pub add ailabtools`
+- PHP: `composer require ailabtools/ailabtools`
+- Java: `com.ailabtools:ailabtools-sdk`
 - API key: [AILabTools Developer Console](https://www.ailabtools.com/developer)
 - API docs: [AILabTools API Documentation](https://www.ailabtools.com/docs)
 
@@ -25,6 +27,14 @@ Copy these examples into your application after installing the SDK.
 ## Dart / Flutter
 
 - `dart/background_removal.dart` - remove image backgrounds
+
+## PHP
+
+- `php/background_removal.php` - remove image backgrounds
+
+## Java
+
+- `java/BackgroundRemoval.java` - remove image backgrounds
 
 ## Python
 

@@ -1,6 +1,6 @@
-# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, and Flutter
+# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, and Java
 
-Official Node.js, TypeScript, async Python, Go, Dart, and Flutter SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, and Java SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
@@ -8,6 +8,8 @@ Build AI-powered photo editing features with simple API calls: background remova
 - Python async SDK: `pip install ailabtools-sdk`
 - Go SDK: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - Dart / Flutter SDK: `flutter pub add ailabtools`
+- PHP SDK: `composer require ailabtools/ailabtools`
+- Java SDK: `com.ailabtools:ailabtools-sdk`
 - 60+ active AI image, cutout, and portrait APIs
 - Supports file uploads, URL input, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -21,6 +23,8 @@ Build AI-powered photo editing features with simple API calls: background remova
 - Node.js SDK with TypeScript definitions
 - Async Python SDK for modern Python applications
 - Cross-platform Dart and Flutter SDK with strongly typed models
+- PHP SDK with PSR-4 autoloading and strongly typed DTOs
+- Java 11 SDK with typed builders and Maven Central release metadata
 
 ## Installation
 
@@ -46,6 +50,22 @@ go get github.com/ailabtools/ailabtools-sdk/packages/go
 
 ```bash
 flutter pub add ailabtools
+```
+
+### PHP
+
+```bash
+composer require ailabtools/ailabtools
+```
+
+### Java
+
+```xml
+<dependency>
+  <groupId>com.ailabtools</groupId>
+  <artifactId>ailabtools-sdk</artifactId>
+  <version>0.5.3</version>
+</dependency>
 ```
 
 Import it in Python as `ailabtools`:
@@ -162,6 +182,46 @@ Future<void> main() async {
 }
 ```
 
+#### PHP
+
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use AILabTools\AILabClient;
+use AILabTools\Generated\Params\CutoutUniversalBackgroundRemovalParams;
+use AILabTools\Http\FileInput;
+
+$client = new AILabClient(apiKey: getenv('AILAB_API_KEY'));
+$result = $client->background->remove(
+    new CutoutUniversalBackgroundRemovalParams(
+        image: FileInput::fromPath('./photo.jpg'),
+        returnForm: 'whiteBK',
+    ),
+);
+
+echo $result->data?->imageUrl;
+```
+
+#### Java
+
+```java
+import com.ailabtools.sdk.AILabClient;
+import com.ailabtools.sdk.generated.params.CutoutUniversalBackgroundRemovalParams;
+import com.ailabtools.sdk.http.FileInput;
+import java.nio.file.Path;
+
+AILabClient client = new AILabClient(System.getenv("AILAB_API_KEY"));
+var result = client.background().remove(
+        CutoutUniversalBackgroundRemovalParams.builder()
+                .image(FileInput.fromPath(Path.of("./photo.jpg")))
+                .returnForm("whiteBK")
+                .build());
+
+System.out.println(result.getData().getImageUrl());
+```
+
 The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale_factor`, and `returnForm` maps to `return_form`.
 
 ## Popular Use Cases
@@ -249,6 +309,8 @@ try {
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
 - [Go SDK module](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/go)
 - [Dart and Flutter SDK](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/dart)
+- [PHP SDK](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/php)
+- [Java SDK](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/java)
 - [SDK API reference](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

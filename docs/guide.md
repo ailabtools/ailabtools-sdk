@@ -1,6 +1,6 @@
 # AILabTools SDK Full Usage Guide
 
-This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, and Flutter to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, Flutter, PHP, and Java to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Quick Start
 
@@ -36,6 +36,22 @@ Dart / Flutter:
 
 ```bash
 flutter pub add ailabtools
+```
+
+PHP:
+
+```bash
+composer require ailabtools/ailabtools
+```
+
+Java:
+
+```xml
+<dependency>
+  <groupId>com.ailabtools</groupId>
+  <artifactId>ailabtools-sdk</artifactId>
+  <version>0.5.3</version>
+</dependency>
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
@@ -136,6 +152,41 @@ Future<void> main() async {
 }
 ```
 
+#### PHP
+
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use AILabTools\AILabClient;
+use AILabTools\Generated\Params\CutoutUniversalBackgroundRemovalParams;
+use AILabTools\Http\FileInput;
+
+$client = new AILabClient(apiKey: getenv('AILAB_API_KEY'));
+$result = $client->background->remove(
+    new CutoutUniversalBackgroundRemovalParams(
+        image: FileInput::fromPath('./photo.jpg'),
+        returnForm: 'whiteBK',
+    ),
+);
+
+echo $result->data?->imageUrl;
+```
+
+#### Java
+
+```java
+AILabClient client = new AILabClient(System.getenv("AILAB_API_KEY"));
+var result = client.background().remove(
+        CutoutUniversalBackgroundRemovalParams.builder()
+                .image(FileInput.fromPath(Path.of("./photo.jpg")))
+                .returnForm("whiteBK")
+                .build());
+
+System.out.println(result.getData().getImageUrl());
+```
+
 The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale_factor`, and `returnForm` maps to `return_form`.
 
 ## Popular Use Cases
@@ -169,6 +220,8 @@ Both full API method names and short aliases are supported. The full names map d
 - Python: file-like objects, `bytes`, or `bytearray`
 - Go: `FileFromPath`, `FileFromBytes`, or `FileFromReader`
 - Dart / Flutter: `AILabFile.fromBytes`
+- PHP: `FileInput::fromPath`, `FileInput::fromBytes`, or `FileInput::fromResource`
+- Java: `FileInput.fromPath`, `FileInput.fromBytes`, or `FileInput.fromInputStream`
 
 ## Async Task Example
 

@@ -31,6 +31,15 @@ packages/python/*.egg-info/
 .dart_tool/
 packages/dart/pubspec.lock
 
+# PHP / Composer
+packages/php/vendor/
+packages/php/composer.lock
+packages/php/.phpunit.cache/
+packages/php/.phpstan/
+
+# Java / Maven
+packages/java/target/
+
 # Local integration assets and generated reports
 test-assets/
 image.jpg

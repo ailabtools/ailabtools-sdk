@@ -1,0 +1,47 @@
+{
+  "name": "ailabtools/ailabtools",
+  "description": "Official PHP SDK for AILabTools AI image APIs, including background removal, image upscaling, portrait editing, and more.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "ailabtools",
+    "artificial-intelligence",
+    "image-processing",
+    "background-removal",
+    "api-client"
+  ],
+  "homepage": "https://www.ailabtools.com/",
+  "support": {
+    "docs": "https://www.ailabtools.com/docs",
+    "issues": "https://github.com/ailabtools/ailabtools-sdk/issues",
+    "source": "https://github.com/ailabtools/ailabtools-sdk"
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.8"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^10.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "AILabTools\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AILabTools\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "analyse": "phpstan analyse",
+    "test": "phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

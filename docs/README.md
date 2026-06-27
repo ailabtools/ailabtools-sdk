@@ -1,6 +1,6 @@
 # AILabTools SDK Documentation
 
-Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, and Flutter examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, and Java examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
@@ -49,6 +49,22 @@ Dart / Flutter:
 
 ```bash
 flutter pub add ailabtools
+```
+
+PHP:
+
+```bash
+composer require ailabtools/ailabtools
+```
+
+Java:
+
+```xml
+<dependency>
+  <groupId>com.ailabtools</groupId>
+  <artifactId>ailabtools-sdk</artifactId>
+  <version>0.5.3</version>
+</dependency>
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
