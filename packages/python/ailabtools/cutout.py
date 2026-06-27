@@ -28,7 +28,15 @@ from .generated.endpoints import (
     CutoutHumanBackgroundRemovalParams,
     CutoutHumanBackgroundRemovalResponse,
     CutoutHumanBackgroundRemovalParamMap,
-    validate_cutoutHumanBackgroundRemoval_params
+    validate_cutoutHumanBackgroundRemoval_params,
+    CutoutHDUniversalBackgroundRemovalParams,
+    CutoutHDUniversalBackgroundRemovalResponse,
+    CutoutHDUniversalBackgroundRemovalParamMap,
+    validate_cutoutHDUniversalBackgroundRemoval_params,
+    CutoutHdHumanBodyBackgroundRemovalParams,
+    CutoutHdHumanBodyBackgroundRemovalResponse,
+    CutoutHdHumanBodyBackgroundRemovalParamMap,
+    validate_cutoutHdHumanBodyBackgroundRemoval_params
 )
 
 class CutoutAPI:
@@ -69,3 +77,13 @@ class CutoutAPI:
         validate_cutoutHumanBackgroundRemoval_params(params)
         mapped = map_params(params, CutoutHumanBackgroundRemovalParamMap)
         return await self._requester.request('POST', '/api/cutout/portrait/portrait-background-removal', body=mapped, multipart=True)
+
+    async def cutoutHDUniversalBackgroundRemoval(self, params: CutoutHDUniversalBackgroundRemovalParams) -> CutoutHDUniversalBackgroundRemovalResponse:
+        validate_cutoutHDUniversalBackgroundRemoval_params(params)
+        mapped = map_params(params, CutoutHDUniversalBackgroundRemovalParamMap)
+        return await self._requester.request('POST', '/api/cutout/general/hd-universal-background-removal', body=mapped, multipart=True)
+
+    async def cutoutHdHumanBodyBackgroundRemoval(self, params: CutoutHdHumanBodyBackgroundRemovalParams) -> CutoutHdHumanBodyBackgroundRemovalResponse:
+        validate_cutoutHdHumanBodyBackgroundRemoval_params(params)
+        mapped = map_params(params, CutoutHdHumanBodyBackgroundRemovalParamMap)
+        return await self._requester.request('POST', '/api/cutout/portrait/hd-portrait-background-removal', body=mapped, multipart=True)

@@ -6,6 +6,29 @@ import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 
 void main() {
+  test('premium hairstyle requires a style or template', () {
+    expect(
+      () => PortraitHairstyleEditingPremiumParams(
+        image: AILabFile.fromBytes(Uint8List(1), filename: 'photo.jpg'),
+      ),
+      throwsA(isA<AssertionError>()),
+    );
+  });
+
+  test('new nested response payloads are strongly typed', () {
+    final cutout = CutoutHdHumanBodyBackgroundRemovalResponseData.fromJson({
+      'elements': [
+        {'image_url': 'https://example.com/cutout.png'},
+      ],
+    });
+    final breast = PortraitAIBreastExpansionResponseData.fromJson({
+      'image': 'https://example.com/result.png',
+    });
+
+    expect(cutout.elements?.single.imageUrl, 'https://example.com/cutout.png');
+    expect(breast.image, 'https://example.com/result.png');
+  });
+
   test('background alias uploads a file and maps response fields', () async {
     final transport = RecordingClient((request) {
       expect(request.method, 'POST');

@@ -35,7 +35,17 @@ import {
   CutoutHumanBackgroundRemovalResponse,
   CutoutHumanBackgroundRemovalResponseData,
   validateCutoutHumanBackgroundRemovalParams,
-  CutoutHumanBackgroundRemovalParamMap
+  CutoutHumanBackgroundRemovalParamMap,
+  CutoutHDUniversalBackgroundRemovalParams,
+  CutoutHDUniversalBackgroundRemovalResponse,
+  CutoutHDUniversalBackgroundRemovalResponseData,
+  validateCutoutHDUniversalBackgroundRemovalParams,
+  CutoutHDUniversalBackgroundRemovalParamMap,
+  CutoutHdHumanBodyBackgroundRemovalParams,
+  CutoutHdHumanBodyBackgroundRemovalResponse,
+  CutoutHdHumanBodyBackgroundRemovalResponseData,
+  validateCutoutHdHumanBodyBackgroundRemovalParams,
+  CutoutHdHumanBodyBackgroundRemovalParamMap
 } from "../generated/endpoints";
 
 export class CutoutAPI {
@@ -81,6 +91,18 @@ export class CutoutAPI {
     validateCutoutHumanBackgroundRemovalParams(params);
     const mapped = mapParams(params, CutoutHumanBackgroundRemovalParamMap);
     return this.request.request<CutoutHumanBackgroundRemovalResponseData>("POST", "/api/cutout/portrait/portrait-background-removal", { body: mapped, multipart: true });
+  }
+
+  async cutoutHDUniversalBackgroundRemoval(params: CutoutHDUniversalBackgroundRemovalParams): Promise<CutoutHDUniversalBackgroundRemovalResponse> {
+    validateCutoutHDUniversalBackgroundRemovalParams(params);
+    const mapped = mapParams(params, CutoutHDUniversalBackgroundRemovalParamMap);
+    return this.request.request<CutoutHDUniversalBackgroundRemovalResponseData>("POST", "/api/cutout/general/hd-universal-background-removal", { body: mapped, multipart: true });
+  }
+
+  async cutoutHdHumanBodyBackgroundRemoval(params: CutoutHdHumanBodyBackgroundRemovalParams): Promise<CutoutHdHumanBodyBackgroundRemovalResponse> {
+    validateCutoutHdHumanBodyBackgroundRemovalParams(params);
+    const mapped = mapParams(params, CutoutHdHumanBodyBackgroundRemovalParamMap);
+    return this.request.request<CutoutHdHumanBodyBackgroundRemovalResponseData>("POST", "/api/cutout/portrait/hd-portrait-background-removal", { body: mapped, multipart: true });
   }
 
 }

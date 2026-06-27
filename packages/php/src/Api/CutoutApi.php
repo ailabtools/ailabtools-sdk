@@ -20,6 +20,11 @@ use AILabTools\Generated\Response\CutoutHairExtractionResponse;
 use AILabTools\Generated\Params\CutoutHumanBackgroundRemovalParams;
 use AILabTools\Generated\Response\CutoutHumanBackgroundRemovalResponse;
 
+use AILabTools\Generated\Params\CutoutHDUniversalBackgroundRemovalParams;
+use AILabTools\Generated\Response\CutoutHDUniversalBackgroundRemovalResponse;
+use AILabTools\Generated\Params\CutoutHdHumanBodyBackgroundRemovalParams;
+use AILabTools\Generated\Response\CutoutHdHumanBodyBackgroundRemovalResponse;
+
 final class CutoutApi
 {
     public function __construct(private readonly Requester $requester)
@@ -68,4 +73,16 @@ final class CutoutApi
         return $this->requester->request('POST', '/api/cutout/portrait/portrait-background-removal', $params->toArray(), true, [CutoutHumanBackgroundRemovalResponse::class, 'fromArray']);
     }
 
+    // BEGIN GENERATED OPENAPI ADDITIONS
+    public function cutoutHDUniversalBackgroundRemoval(CutoutHDUniversalBackgroundRemovalParams $params): CutoutHDUniversalBackgroundRemovalResponse
+    {
+        /** @var CutoutHDUniversalBackgroundRemovalResponse */
+        return $this->requester->request('POST', '/api/cutout/general/hd-universal-background-removal', $params->toArray(), true, [CutoutHDUniversalBackgroundRemovalResponse::class, 'fromArray']);
+    }
+
+    public function cutoutHdHumanBodyBackgroundRemoval(CutoutHdHumanBodyBackgroundRemovalParams $params): CutoutHdHumanBodyBackgroundRemovalResponse
+    {
+        /** @var CutoutHdHumanBodyBackgroundRemovalResponse */
+        return $this->requester->request('POST', '/api/cutout/portrait/hd-portrait-background-removal', $params->toArray(), true, [CutoutHdHumanBodyBackgroundRemovalResponse::class, 'fromArray']);
+    }
 }

@@ -60,6 +60,57 @@ use AILabTools\Generated\Response\PortraitIntelligentSkinRetouchingResponse;
 use AILabTools\Generated\Params\PortraitTryOnClothesRefinerParams;
 use AILabTools\Generated\Response\PortraitTryOnClothesRefinerResponse;
 
+use AILabTools\Generated\Params\PortraitAIFaceRatingParams;
+use AILabTools\Generated\Response\PortraitAIFaceRatingResponse;
+use AILabTools\Generated\Params\PortraitAIBaldParams;
+use AILabTools\Generated\Response\PortraitAIBaldResponse;
+use AILabTools\Generated\Params\PortraitAIBeardRemovalParams;
+use AILabTools\Generated\Response\PortraitAIBeardRemovalResponse;
+use AILabTools\Generated\Params\PortraitAIBeardStylingParams;
+use AILabTools\Generated\Response\PortraitAIBeardStylingResponse;
+use AILabTools\Generated\Params\PortraitAIBreastExpansionParams;
+use AILabTools\Generated\Response\PortraitAIBreastExpansionResponse;
+use AILabTools\Generated\Params\PortraitAIButtEnhancementParams;
+use AILabTools\Generated\Response\PortraitAIButtEnhancementResponse;
+use AILabTools\Generated\Params\PortraitAIColoredContactsParams;
+use AILabTools\Generated\Response\PortraitAIColoredContactsResponse;
+use AILabTools\Generated\Params\PortraitAIEyebrowsParams;
+use AILabTools\Generated\Response\PortraitAIEyebrowsResponse;
+use AILabTools\Generated\Params\PortraitAIEyelashesParams;
+use AILabTools\Generated\Response\PortraitAIEyelashesResponse;
+use AILabTools\Generated\Params\PortraitAIEyeshadowTryOnParams;
+use AILabTools\Generated\Response\PortraitAIEyeshadowTryOnResponse;
+use AILabTools\Generated\Params\PortraitAIFaceSwapParams;
+use AILabTools\Generated\Response\PortraitAIFaceSwapResponse;
+use AILabTools\Generated\Params\PortraitAIFatFilterParams;
+use AILabTools\Generated\Response\PortraitAIFatFilterResponse;
+use AILabTools\Generated\Params\PortraitAIHairColorParams;
+use AILabTools\Generated\Response\PortraitAIHairColorResponse;
+use AILabTools\Generated\Params\PortraitAIHairLossSimulationParams;
+use AILabTools\Generated\Response\PortraitAIHairLossSimulationResponse;
+use AILabTools\Generated\Params\PortraitAILipEnhancementParams;
+use AILabTools\Generated\Response\PortraitAILipEnhancementResponse;
+use AILabTools\Generated\Params\PortraitAIWaistSlimmingParams;
+use AILabTools\Generated\Response\PortraitAIWaistSlimmingResponse;
+use AILabTools\Generated\Params\PortraitTryOnClothesPremiumParams;
+use AILabTools\Generated\Response\PortraitTryOnClothesPremiumResponse;
+use AILabTools\Generated\Params\PortraitAIBigHeadEffectParams;
+use AILabTools\Generated\Response\PortraitAIBigHeadEffectResponse;
+use AILabTools\Generated\Params\PortraitAIHalloweenMaskParams;
+use AILabTools\Generated\Response\PortraitAIHalloweenMaskResponse;
+use AILabTools\Generated\Params\PortraitAILipBiteExpressionsParams;
+use AILabTools\Generated\Response\PortraitAILipBiteExpressionsResponse;
+use AILabTools\Generated\Params\PortraitAIRedLipGlossParams;
+use AILabTools\Generated\Response\PortraitAIRedLipGlossResponse;
+use AILabTools\Generated\Params\PortraitAISquareFaceFilterParams;
+use AILabTools\Generated\Response\PortraitAISquareFaceFilterResponse;
+use AILabTools\Generated\Params\PortraitExpressionEditingAdvancedParams;
+use AILabTools\Generated\Response\PortraitExpressionEditingAdvancedResponse;
+use AILabTools\Generated\Params\PortraitHairstyleEditingPremiumParams;
+use AILabTools\Generated\Response\PortraitHairstyleEditingPremiumResponse;
+use AILabTools\Generated\Params\PortraitAISkinEnhancementAdvancedParams;
+use AILabTools\Generated\Response\PortraitAISkinEnhancementAdvancedResponse;
+
 final class PortraitApi
 {
     public function __construct(private readonly Requester $requester)
@@ -238,4 +289,154 @@ final class PortraitApi
         return $this->portraitIntelligentBeautification($params);
     }
 
+    // BEGIN GENERATED OPENAPI ADDITIONS
+    public function portraitAIFaceRating(PortraitAIFaceRatingParams $params): PortraitAIFaceRatingResponse
+    {
+        /** @var PortraitAIFaceRatingResponse */
+        return $this->requester->request('POST', '/api/portrait/analysis/ai-face-rating', $params->toArray(), true, [PortraitAIFaceRatingResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIBald(PortraitAIBaldParams $params): PortraitAIBaldResponse
+    {
+        /** @var PortraitAIBaldResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-bald', $params->toArray(), true, [PortraitAIBaldResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIBeardRemoval(PortraitAIBeardRemovalParams $params): PortraitAIBeardRemovalResponse
+    {
+        /** @var PortraitAIBeardRemovalResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-beard-removal', $params->toArray(), true, [PortraitAIBeardRemovalResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIBeardStyling(PortraitAIBeardStylingParams $params): PortraitAIBeardStylingResponse
+    {
+        /** @var PortraitAIBeardStylingResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-beard-styling', $params->toArray(), true, [PortraitAIBeardStylingResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIBreastExpansion(PortraitAIBreastExpansionParams $params): PortraitAIBreastExpansionResponse
+    {
+        /** @var PortraitAIBreastExpansionResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-big-tits', $params->toArray(), true, [PortraitAIBreastExpansionResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIButtEnhancement(PortraitAIButtEnhancementParams $params): PortraitAIButtEnhancementResponse
+    {
+        /** @var PortraitAIButtEnhancementResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-butt-enhancement', $params->toArray(), true, [PortraitAIButtEnhancementResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIColoredContacts(PortraitAIColoredContactsParams $params): PortraitAIColoredContactsResponse
+    {
+        /** @var PortraitAIColoredContactsResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-colored-contacts', $params->toArray(), true, [PortraitAIColoredContactsResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIEyebrows(PortraitAIEyebrowsParams $params): PortraitAIEyebrowsResponse
+    {
+        /** @var PortraitAIEyebrowsResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-eyebrows', $params->toArray(), true, [PortraitAIEyebrowsResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIEyelashes(PortraitAIEyelashesParams $params): PortraitAIEyelashesResponse
+    {
+        /** @var PortraitAIEyelashesResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-eyelashes', $params->toArray(), true, [PortraitAIEyelashesResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIEyeshadowTryOn(PortraitAIEyeshadowTryOnParams $params): PortraitAIEyeshadowTryOnResponse
+    {
+        /** @var PortraitAIEyeshadowTryOnResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-eyeshadow', $params->toArray(), true, [PortraitAIEyeshadowTryOnResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIFaceSwap(PortraitAIFaceSwapParams $params): PortraitAIFaceSwapResponse
+    {
+        /** @var PortraitAIFaceSwapResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-face-swap', $params->toArray(), true, [PortraitAIFaceSwapResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIFatFilter(PortraitAIFatFilterParams $params): PortraitAIFatFilterResponse
+    {
+        /** @var PortraitAIFatFilterResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-fat-filter', $params->toArray(), true, [PortraitAIFatFilterResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIHairColor(PortraitAIHairColorParams $params): PortraitAIHairColorResponse
+    {
+        /** @var PortraitAIHairColorResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-hair-color', $params->toArray(), true, [PortraitAIHairColorResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIHairLossSimulation(PortraitAIHairLossSimulationParams $params): PortraitAIHairLossSimulationResponse
+    {
+        /** @var PortraitAIHairLossSimulationResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-hair-loss-simulation', $params->toArray(), true, [PortraitAIHairLossSimulationResponse::class, 'fromArray']);
+    }
+
+    public function portraitAILipEnhancement(PortraitAILipEnhancementParams $params): PortraitAILipEnhancementResponse
+    {
+        /** @var PortraitAILipEnhancementResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-lip-enhancement', $params->toArray(), true, [PortraitAILipEnhancementResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIWaistSlimming(PortraitAIWaistSlimmingParams $params): PortraitAIWaistSlimmingResponse
+    {
+        /** @var PortraitAIWaistSlimmingResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/ai-waist-slimming', $params->toArray(), true, [PortraitAIWaistSlimmingResponse::class, 'fromArray']);
+    }
+
+    public function portraitTryOnClothesPremium(PortraitTryOnClothesPremiumParams $params): PortraitTryOnClothesPremiumResponse
+    {
+        /** @var PortraitTryOnClothesPremiumResponse */
+        return $this->requester->request('POST', '/api/portrait/editing/try-on-clothes-premium', $params->toArray(), true, [PortraitTryOnClothesPremiumResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIBigHeadEffect(PortraitAIBigHeadEffectParams $params): PortraitAIBigHeadEffectResponse
+    {
+        /** @var PortraitAIBigHeadEffectResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/ai-big-head-effect', $params->toArray(), true, [PortraitAIBigHeadEffectResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIHalloweenMask(PortraitAIHalloweenMaskParams $params): PortraitAIHalloweenMaskResponse
+    {
+        /** @var PortraitAIHalloweenMaskResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/ai-halloween-mask', $params->toArray(), true, [PortraitAIHalloweenMaskResponse::class, 'fromArray']);
+    }
+
+    public function portraitAILipBiteExpressions(PortraitAILipBiteExpressionsParams $params): PortraitAILipBiteExpressionsResponse
+    {
+        /** @var PortraitAILipBiteExpressionsResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/ai-lip-bite-expressions', $params->toArray(), true, [PortraitAILipBiteExpressionsResponse::class, 'fromArray']);
+    }
+
+    public function portraitAIRedLipGloss(PortraitAIRedLipGlossParams $params): PortraitAIRedLipGlossResponse
+    {
+        /** @var PortraitAIRedLipGlossResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/ai-red-lip-gloss', $params->toArray(), true, [PortraitAIRedLipGlossResponse::class, 'fromArray']);
+    }
+
+    public function portraitAISquareFaceFilter(PortraitAISquareFaceFilterParams $params): PortraitAISquareFaceFilterResponse
+    {
+        /** @var PortraitAISquareFaceFilterResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/ai-square-face-filter', $params->toArray(), true, [PortraitAISquareFaceFilterResponse::class, 'fromArray']);
+    }
+
+    public function portraitExpressionEditingAdvanced(PortraitExpressionEditingAdvancedParams $params): PortraitExpressionEditingAdvancedResponse
+    {
+        /** @var PortraitExpressionEditingAdvancedResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/emotion-editor-advanced', $params->toArray(), true, [PortraitExpressionEditingAdvancedResponse::class, 'fromArray']);
+    }
+
+    public function portraitHairstyleEditingPremium(PortraitHairstyleEditingPremiumParams $params): PortraitHairstyleEditingPremiumResponse
+    {
+        /** @var PortraitHairstyleEditingPremiumResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/hairstyle-editor-premium', $params->toArray(), true, [PortraitHairstyleEditingPremiumResponse::class, 'fromArray']);
+    }
+
+    public function portraitAISkinEnhancementAdvanced(PortraitAISkinEnhancementAdvancedParams $params): PortraitAISkinEnhancementAdvancedResponse
+    {
+        /** @var PortraitAISkinEnhancementAdvancedResponse */
+        return $this->requester->request('POST', '/api/portrait/effects/smart-skin-advanced', $params->toArray(), true, [PortraitAISkinEnhancementAdvancedResponse::class, 'fromArray']);
+    }
 }

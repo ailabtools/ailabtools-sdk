@@ -10,7 +10,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - Dart / Flutter SDK: `flutter pub add ailabtools`
 - PHP SDK: `composer require ailabtools/ailabtools`
 - Java SDK: `com.ailabtools:ailabtools-sdk`
-- 60+ active AI image, cutout, and portrait APIs
+- 87 current APIs plus 6 legacy-compatible endpoints
 - Supports file uploads, URL input, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
 
@@ -226,18 +226,20 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 ## Popular Use Cases
 
-| Use case | API | SDK method |
+| Popular API | Typical use case | SDK method |
 | --- | --- | --- |
-| Remove image background | Universal Background Removal | `client.background.remove()` |
-| Upscale image 2x / 4x | Image Upscaler | `client.image.upscale()` |
-| Change hairstyle | Hairstyle Changer Pro | `client.portrait.changeHairstyle()` |
-| Retouch portrait | Smart Beauty | `client.portrait.retouch()` |
-| Remove objects | Remove Objects | `client.image.removeObjects()` |
-| Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
-| Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
-| Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
+| [Cartoon Yourself API](https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api) | Create cartoon portraits and avatars from photos. | `client.portrait.portraitCartoonYourself()` |
+| [Change Facial Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api) | Edit smiles, grins, sadness, and other facial expressions. | `client.portrait.portraitExpressionEditing()` |
+| [Hairstyle Changer Premium API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api) | Preview preset hairstyles or transfer a hairstyle from a reference image. | `client.portrait.portraitHairstyleEditingPremium()` |
+| [Try on Clothes Premium API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api) | Generate high-quality virtual clothing try-on results. | `client.portrait.portraitTryOnClothesPremium()` |
+| [Skin Analyze Pro API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api) | Analyze skin condition, texture, tone, acne, pores, and wrinkles. | `client.portrait.portraitSkinAnalysisProfessional()` |
+| [Face Beauty Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api) | Apply advanced portrait beautification and face shaping. | `client.portrait.portraitFacialBeautificationPro()` |
+| [AI Face Swap API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api) | Swap a face into a target portrait while preserving the scene. | `client.portrait.portraitAIFaceSwap()` |
+| [AI Breast Expansion API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api) | Apply a controlled bust-area adjustment to a portrait. | `client.portrait.portraitAIBreastExpansion()` |
 
-## Developer-Friendly Aliases
+[View the complete AILabTools SDK API index](docs/README.md#api-index).
+
+## Common Developer-Friendly Aliases
 
 Both full API method names and short aliases are supported. The full names map directly to the official API docs, while aliases are easier to use in application code.
 
@@ -248,6 +250,8 @@ Both full API method names and short aliases are supported. The full names map d
 | Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` / `client.image.remove_objects()` |
 | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` / `client.portrait.change_hairstyle()` |
 | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
+
+[View the complete method and alias reference](docs/method-aliases.md).
 
 ## Async Task Example
 

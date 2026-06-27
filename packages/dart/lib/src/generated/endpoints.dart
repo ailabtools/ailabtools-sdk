@@ -3930,3 +3930,1072 @@ final class PortraitTryOnClothesRefinerResponseData {
 
 typedef PortraitTryOnClothesRefinerResponse
     = AILabResponse<PortraitTryOnClothesRefinerResponseData>;
+
+// BEGIN GENERATED OPENAPI ADDITIONS
+
+final class CutoutHDUniversalBackgroundRemovalParams {
+  const CutoutHDUniversalBackgroundRemovalParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `BMP` `PNG` - Image size: No more than 40 MB. - Image resolution: Larger than 32x32px, smaller than 10000x10000px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class CutoutHDUniversalBackgroundRemovalResponseData {
+  const CutoutHDUniversalBackgroundRemovalResponseData();
+
+  factory CutoutHDUniversalBackgroundRemovalResponseData.fromJson(
+          JsonMap json) =>
+      const CutoutHDUniversalBackgroundRemovalResponseData();
+}
+
+typedef CutoutHDUniversalBackgroundRemovalResponse
+    = AILabResponse<CutoutHDUniversalBackgroundRemovalResponseData>;
+
+final class CutoutHdHumanBodyBackgroundRemovalParams {
+  const CutoutHdHumanBodyBackgroundRemovalParams({
+    required this.image,
+  });
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class CutoutHdHumanBodyBackgroundRemovalElement {
+  const CutoutHdHumanBodyBackgroundRemovalElement({
+    this.imageUrl,
+  });
+
+  factory CutoutHdHumanBodyBackgroundRemovalElement.fromJson(JsonMap json) =>
+      CutoutHdHumanBodyBackgroundRemovalElement(
+        imageUrl: json["image_url"]?.toString(),
+      );
+  final String? imageUrl;
+}
+
+final class CutoutHdHumanBodyBackgroundRemovalResponseData {
+  const CutoutHdHumanBodyBackgroundRemovalResponseData({
+    this.elements,
+  });
+
+  factory CutoutHdHumanBodyBackgroundRemovalResponseData.fromJson(
+          JsonMap json) =>
+      CutoutHdHumanBodyBackgroundRemovalResponseData(
+        elements: (json["elements"] as List?)
+            ?.whereType<JsonMap>()
+            .map(CutoutHdHumanBodyBackgroundRemovalElement.fromJson)
+            .toList(),
+      );
+  final List<CutoutHdHumanBodyBackgroundRemovalElement>? elements;
+}
+
+typedef CutoutHdHumanBodyBackgroundRemovalResponse
+    = AILabResponse<CutoutHdHumanBodyBackgroundRemovalResponseData>;
+
+final class ImageAINailArtParams {
+  const ImageAINailArtParams({
+    required this.image,
+    required this.nailName,
+    required this.nailDesc,
+  });
+
+  /// Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Nail Name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String nailName;
+
+  /// Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String nailDesc;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "nail_name": nailName,
+        "nail_desc": nailDesc,
+      };
+}
+
+final class ImageAINailArtResponseData {
+  const ImageAINailArtResponseData();
+
+  factory ImageAINailArtResponseData.fromJson(JsonMap json) =>
+      const ImageAINailArtResponseData();
+}
+
+typedef ImageAINailArtResponse = AILabResponse<ImageAINailArtResponseData>;
+
+final class ImageAINailArtProParams {
+  const ImageAINailArtProParams({
+    required this.image,
+    required this.referenceImage,
+    this.resolution,
+  });
+
+  /// Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Reference image for guidance. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile referenceImage;
+
+  /// Output resolution. Allowed values: 1K, 2K. Default: 1K.
+  final String? resolution;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "reference_image": referenceImage,
+        "resolution": resolution,
+      };
+}
+
+final class ImageAINailArtProResponseData {
+  const ImageAINailArtProResponseData();
+
+  factory ImageAINailArtProResponseData.fromJson(JsonMap json) =>
+      const ImageAINailArtProResponseData();
+}
+
+typedef ImageAINailArtProResponse
+    = AILabResponse<ImageAINailArtProResponseData>;
+
+final class ImageAIPhotographyParams {
+  const ImageAIPhotographyParams({
+    required this.image,
+    required this.styleTitle,
+    required this.styleDesc,
+    this.imageSize,
+  });
+
+  /// Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Style name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String styleTitle;
+
+  /// Style description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String styleDesc;
+
+  /// Output Image Aspect Ratio. Allowed values: auto, 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. Default: auto.
+  final String? imageSize;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "style_title": styleTitle,
+        "style_desc": styleDesc,
+        "image_size": imageSize,
+      };
+}
+
+final class ImageAIPhotographyResponseData {
+  const ImageAIPhotographyResponseData();
+
+  factory ImageAIPhotographyResponseData.fromJson(JsonMap json) =>
+      const ImageAIPhotographyResponseData();
+}
+
+typedef ImageAIPhotographyResponse
+    = AILabResponse<ImageAIPhotographyResponseData>;
+
+final class ImageAIEmojiGeneratorParams {
+  const ImageAIEmojiGeneratorParams({
+    required this.image,
+    required this.expression,
+    required this.style,
+    required this.scene,
+    this.filler,
+  });
+
+  /// Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Expression (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String expression;
+
+  /// Style (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String style;
+
+  /// Scene (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String scene;
+
+  /// Filler Text (English only). Max 20 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String? filler;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "expression": expression,
+        "style": style,
+        "scene": scene,
+        "filler": filler,
+      };
+}
+
+final class ImageAIEmojiGeneratorResponseData {
+  const ImageAIEmojiGeneratorResponseData();
+
+  factory ImageAIEmojiGeneratorResponseData.fromJson(JsonMap json) =>
+      const ImageAIEmojiGeneratorResponseData();
+}
+
+typedef ImageAIEmojiGeneratorResponse
+    = AILabResponse<ImageAIEmojiGeneratorResponseData>;
+
+final class ImagePhotoToColoringPageParams {
+  const ImagePhotoToColoringPageParams({
+    required this.image,
+    this.prompt,
+    this.imageSize,
+  });
+
+  /// Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Prompt (English only). Max 3000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  final String? prompt;
+
+  /// Output Image Aspect Ratio. Allowed values: A4, auto, 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. Default: A4.
+  final String? imageSize;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "prompt": prompt,
+        "image_size": imageSize,
+      };
+}
+
+final class ImagePhotoToColoringPageResponseData {
+  const ImagePhotoToColoringPageResponseData();
+
+  factory ImagePhotoToColoringPageResponseData.fromJson(JsonMap json) =>
+      const ImagePhotoToColoringPageResponseData();
+}
+
+typedef ImagePhotoToColoringPageResponse
+    = AILabResponse<ImagePhotoToColoringPageResponseData>;
+
+final class ImageAIFlowerWallpaperParams {
+  const ImageAIFlowerWallpaperParams({
+    this.name,
+    this.flowerElements,
+    this.style,
+    this.background,
+    this.aspectRatio,
+  });
+
+  /// User name to display in the wallpaper (English only). Default: AUTO.
+  final String? name;
+
+  /// Flower elements and bouquet composition description (English only). Default: AUTO.
+  final String? flowerElements;
+
+  /// Artwork style for the generated wallpaper (English only). Default: soft watercolor floral illustration.
+  final String? style;
+
+  /// Background style or color theme for the wallpaper (English only). Default: pastel gradient background.
+  final String? background;
+
+  /// Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+  final String? aspectRatio;
+
+  Map<String, Object?> toMap() => {
+        "name": name,
+        "flower_elements": flowerElements,
+        "style": style,
+        "background": background,
+        "aspect_ratio": aspectRatio,
+      };
+}
+
+final class ImageAIFlowerWallpaperResponseData {
+  const ImageAIFlowerWallpaperResponseData();
+
+  factory ImageAIFlowerWallpaperResponseData.fromJson(JsonMap json) =>
+      const ImageAIFlowerWallpaperResponseData();
+}
+
+typedef ImageAIFlowerWallpaperResponse
+    = AILabResponse<ImageAIFlowerWallpaperResponseData>;
+
+final class PortraitAIFaceRatingParams {
+  const PortraitAIFaceRatingParams({
+    required this.image,
+    this.aspectRatio,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+  final String? aspectRatio;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "aspect_ratio": aspectRatio,
+      };
+}
+
+final class PortraitAIFaceRatingResponseData {
+  const PortraitAIFaceRatingResponseData();
+
+  factory PortraitAIFaceRatingResponseData.fromJson(JsonMap json) =>
+      const PortraitAIFaceRatingResponseData();
+}
+
+typedef PortraitAIFaceRatingResponse
+    = AILabResponse<PortraitAIFaceRatingResponseData>;
+
+final class PortraitAIBaldParams {
+  const PortraitAIBaldParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIBaldResponseData {
+  const PortraitAIBaldResponseData();
+
+  factory PortraitAIBaldResponseData.fromJson(JsonMap json) =>
+      const PortraitAIBaldResponseData();
+}
+
+typedef PortraitAIBaldResponse = AILabResponse<PortraitAIBaldResponseData>;
+
+final class PortraitAIBeardRemovalParams {
+  const PortraitAIBeardRemovalParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIBeardRemovalResponseData {
+  const PortraitAIBeardRemovalResponseData();
+
+  factory PortraitAIBeardRemovalResponseData.fromJson(JsonMap json) =>
+      const PortraitAIBeardRemovalResponseData();
+}
+
+typedef PortraitAIBeardRemovalResponse
+    = AILabResponse<PortraitAIBeardRemovalResponseData>;
+
+final class PortraitAIBeardStylingParams {
+  const PortraitAIBeardStylingParams({
+    required this.image,
+    this.beard,
+    this.imageTemplate,
+  }) : assert(beard != null || imageTemplate != null);
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Built-in beard preset. Provide this field or `image_template`. If both are provided, `beard` takes precedence. See [Supported beard values](/docs/ai-portrait/editing/ai-beard-styling/api#beard). Allowed values: FullBeardClassic, CorporateBeard, Garibaldi, Verdi, FullBeardTapered, VanDyke, Bandholz, VanDykeRefined, Goatee, ExtendedGoatee, Balbo, AnchorBeardClean, DucktailBeardPointed, AnchorBeardFull, DucktailBeardFull, HeavyStubble, ChevronMoustache, HandlebarMoustache, ImperialMoustache, CircleBeard, ChinStrap, MuttonChops, SoulPatch, PetiteGoatee.
+  final String? beard;
+
+  /// Reference image for beard transfer. Provide this field or `beard`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile? imageTemplate;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "beard": beard,
+        "image_template": imageTemplate,
+      };
+}
+
+final class PortraitAIBeardStylingResponseData {
+  const PortraitAIBeardStylingResponseData();
+
+  factory PortraitAIBeardStylingResponseData.fromJson(JsonMap json) =>
+      const PortraitAIBeardStylingResponseData();
+}
+
+typedef PortraitAIBeardStylingResponse
+    = AILabResponse<PortraitAIBeardStylingResponseData>;
+
+final class PortraitAIBreastExpansionParams {
+  const PortraitAIBreastExpansionParams({
+    required this.personImage,
+    this.taskType,
+  });
+  final AILabFile personImage;
+
+  /// Task Type. <li>`async`: Asynchronous tasks.</li>
+  final String? taskType;
+
+  Map<String, Object?> toMap() => {
+        "task_type": taskType,
+        "person_image": personImage,
+      };
+}
+
+final class PortraitAIBreastExpansionResponseData {
+  const PortraitAIBreastExpansionResponseData({
+    this.image,
+  });
+
+  factory PortraitAIBreastExpansionResponseData.fromJson(JsonMap json) =>
+      PortraitAIBreastExpansionResponseData(
+        image: json["image"]?.toString(),
+      );
+  final String? image;
+}
+
+typedef PortraitAIBreastExpansionResponse
+    = AILabResponse<PortraitAIBreastExpansionResponseData>;
+
+final class PortraitAIButtEnhancementParams {
+  const PortraitAIButtEnhancementParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIButtEnhancementResponseData {
+  const PortraitAIButtEnhancementResponseData();
+
+  factory PortraitAIButtEnhancementResponseData.fromJson(JsonMap json) =>
+      const PortraitAIButtEnhancementResponseData();
+}
+
+typedef PortraitAIButtEnhancementResponse
+    = AILabResponse<PortraitAIButtEnhancementResponseData>;
+
+final class PortraitAIColoredContactsParams {
+  const PortraitAIColoredContactsParams({
+    required this.image,
+    this.name,
+    this.desc,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Contact Lens Name (English only).
+  final String? name;
+
+  /// Contact Lens Description (English only).
+  final String? desc;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "name": name,
+        "desc": desc,
+      };
+}
+
+final class PortraitAIColoredContactsResponseData {
+  const PortraitAIColoredContactsResponseData();
+
+  factory PortraitAIColoredContactsResponseData.fromJson(JsonMap json) =>
+      const PortraitAIColoredContactsResponseData();
+}
+
+typedef PortraitAIColoredContactsResponse
+    = AILabResponse<PortraitAIColoredContactsResponseData>;
+
+final class PortraitAIEyebrowsParams {
+  const PortraitAIEyebrowsParams({
+    required this.image,
+    required this.referenceImage,
+    this.resolution,
+  });
+
+  /// Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Reference Image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile referenceImage;
+
+  /// Resolution. Allowed values: 1K, 2K. Default: 1K.
+  final String? resolution;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "reference_image": referenceImage,
+        "resolution": resolution,
+      };
+}
+
+final class PortraitAIEyebrowsResponseData {
+  const PortraitAIEyebrowsResponseData();
+
+  factory PortraitAIEyebrowsResponseData.fromJson(JsonMap json) =>
+      const PortraitAIEyebrowsResponseData();
+}
+
+typedef PortraitAIEyebrowsResponse
+    = AILabResponse<PortraitAIEyebrowsResponseData>;
+
+final class PortraitAIEyelashesParams {
+  const PortraitAIEyelashesParams({
+    required this.image,
+    this.name,
+    this.desc,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Eyelash Name (English only).
+  final String? name;
+
+  /// Eyelash Description (English only).
+  final String? desc;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "name": name,
+        "desc": desc,
+      };
+}
+
+final class PortraitAIEyelashesResponseData {
+  const PortraitAIEyelashesResponseData();
+
+  factory PortraitAIEyelashesResponseData.fromJson(JsonMap json) =>
+      const PortraitAIEyelashesResponseData();
+}
+
+typedef PortraitAIEyelashesResponse
+    = AILabResponse<PortraitAIEyelashesResponseData>;
+
+final class PortraitAIEyeshadowTryOnParams {
+  const PortraitAIEyeshadowTryOnParams({
+    required this.image,
+    this.eyeshadowStyle,
+    this.imageTemplate,
+    this.aspectRatio,
+  }) : assert(eyeshadowStyle != null || imageTemplate != null);
+
+  /// Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Built-in eyeshadow preset. Provide this field or `image_template`. If both are provided, `eyeshadow_style` takes precedence. See [Supported eyeshadow styles](/docs/ai-portrait/editing/ai-eyeshadow/api#eyeshadow_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36.
+  final String? eyeshadowStyle;
+
+  /// Reference image for eyeshadow transfer. Provide this field or `eyeshadow_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile? imageTemplate;
+
+  /// Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+  final String? aspectRatio;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "eyeshadow_style": eyeshadowStyle,
+        "image_template": imageTemplate,
+        "aspect_ratio": aspectRatio,
+      };
+}
+
+final class PortraitAIEyeshadowTryOnResponseData {
+  const PortraitAIEyeshadowTryOnResponseData();
+
+  factory PortraitAIEyeshadowTryOnResponseData.fromJson(JsonMap json) =>
+      const PortraitAIEyeshadowTryOnResponseData();
+}
+
+typedef PortraitAIEyeshadowTryOnResponse
+    = AILabResponse<PortraitAIEyeshadowTryOnResponseData>;
+
+final class PortraitAIFaceSwapParams {
+  const PortraitAIFaceSwapParams({
+    required this.imageTarget,
+    required this.imageTemplate,
+  });
+
+  /// The image to be modified. The face in this image will be replaced. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile imageTarget;
+
+  /// The image that provides the face to use. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile imageTemplate;
+
+  Map<String, Object?> toMap() => {
+        "image_target": imageTarget,
+        "image_template": imageTemplate,
+      };
+}
+
+final class PortraitAIFaceSwapResponseData {
+  const PortraitAIFaceSwapResponseData();
+
+  factory PortraitAIFaceSwapResponseData.fromJson(JsonMap json) =>
+      const PortraitAIFaceSwapResponseData();
+}
+
+typedef PortraitAIFaceSwapResponse
+    = AILabResponse<PortraitAIFaceSwapResponseData>;
+
+final class PortraitAIFatFilterParams {
+  const PortraitAIFatFilterParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIFatFilterResponseData {
+  const PortraitAIFatFilterResponseData();
+
+  factory PortraitAIFatFilterResponseData.fromJson(JsonMap json) =>
+      const PortraitAIFatFilterResponseData();
+}
+
+typedef PortraitAIFatFilterResponse
+    = AILabResponse<PortraitAIFatFilterResponseData>;
+
+final class PortraitAIHairColorParams {
+  const PortraitAIHairColorParams({
+    required this.image,
+    this.name,
+    this.desc,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Hair Color Name (English only).
+  final String? name;
+
+  /// Hair Color Description (English only).
+  final String? desc;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "name": name,
+        "desc": desc,
+      };
+}
+
+final class PortraitAIHairColorResponseData {
+  const PortraitAIHairColorResponseData();
+
+  factory PortraitAIHairColorResponseData.fromJson(JsonMap json) =>
+      const PortraitAIHairColorResponseData();
+}
+
+typedef PortraitAIHairColorResponse
+    = AILabResponse<PortraitAIHairColorResponseData>;
+
+final class PortraitAIHairLossSimulationParams {
+  const PortraitAIHairLossSimulationParams({
+    required this.image,
+    required this.level,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Hair loss level. See [Supported level values](/docs/ai-portrait/editing/ai-hair-loss-simulation/api#level). Allowed values: man_1, man_2, man_3, man_4, man_5, man_6, man_7, woman_1, woman_2, woman_3, woman_4, woman_5, woman_6, woman_7.
+  final String level;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "level": level,
+      };
+}
+
+final class PortraitAIHairLossSimulationResponseData {
+  const PortraitAIHairLossSimulationResponseData();
+
+  factory PortraitAIHairLossSimulationResponseData.fromJson(JsonMap json) =>
+      const PortraitAIHairLossSimulationResponseData();
+}
+
+typedef PortraitAIHairLossSimulationResponse
+    = AILabResponse<PortraitAIHairLossSimulationResponseData>;
+
+final class PortraitAILipEnhancementParams {
+  const PortraitAILipEnhancementParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAILipEnhancementResponseData {
+  const PortraitAILipEnhancementResponseData();
+
+  factory PortraitAILipEnhancementResponseData.fromJson(JsonMap json) =>
+      const PortraitAILipEnhancementResponseData();
+}
+
+typedef PortraitAILipEnhancementResponse
+    = AILabResponse<PortraitAILipEnhancementResponseData>;
+
+final class PortraitAIWaistSlimmingParams {
+  const PortraitAIWaistSlimmingParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIWaistSlimmingResponseData {
+  const PortraitAIWaistSlimmingResponseData();
+
+  factory PortraitAIWaistSlimmingResponseData.fromJson(JsonMap json) =>
+      const PortraitAIWaistSlimmingResponseData();
+}
+
+typedef PortraitAIWaistSlimmingResponse
+    = AILabResponse<PortraitAIWaistSlimmingResponseData>;
+
+final class PortraitTryOnClothesPremiumParams {
+  const PortraitTryOnClothesPremiumParams({
+    required this.taskType,
+    required this.personImage,
+    required this.topGarment,
+    this.resolution,
+    this.restoreFace,
+    this.bottomGarment,
+  });
+
+  /// Task Type. <li>`async`: Asynchronous tasks.</li>
+  final String taskType;
+
+  /// Portrait image.
+  final AILabFile personImage;
+
+  /// Upper Body Clothing Image.
+  final AILabFile topGarment;
+
+  /// Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. <li>`-1`: Original image resolution.</li> <li>`1024`: 576x1024px.</li> <li>`1280`: 720x1280px.</li>
+  final double? resolution;
+
+  /// Whether to Keep the Model’s Face. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `true`. <li>`true`: Keep the model’s original face.</li> <li>`false`: Regenerate the model’s face.</li>
+  final bool? restoreFace;
+
+  /// Lower Body Clothing Image. <li>If no lower body clothing image is provided, the lower body clothing effect will be randomly generated.</li> <li>If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty.</li>
+  final AILabFile? bottomGarment;
+
+  Map<String, Object?> toMap() => {
+        "task_type": taskType,
+        "person_image": personImage,
+        "top_garment": topGarment,
+        "resolution": resolution,
+        "restore_face": restoreFace,
+        "bottom_garment": bottomGarment,
+      };
+}
+
+final class PortraitTryOnClothesPremiumResponseData {
+  const PortraitTryOnClothesPremiumResponseData();
+
+  factory PortraitTryOnClothesPremiumResponseData.fromJson(JsonMap json) =>
+      const PortraitTryOnClothesPremiumResponseData();
+}
+
+typedef PortraitTryOnClothesPremiumResponse
+    = AILabResponse<PortraitTryOnClothesPremiumResponseData>;
+
+final class PortraitAIBigHeadEffectParams {
+  const PortraitAIBigHeadEffectParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIBigHeadEffectResponseData {
+  const PortraitAIBigHeadEffectResponseData();
+
+  factory PortraitAIBigHeadEffectResponseData.fromJson(JsonMap json) =>
+      const PortraitAIBigHeadEffectResponseData();
+}
+
+typedef PortraitAIBigHeadEffectResponse
+    = AILabResponse<PortraitAIBigHeadEffectResponseData>;
+
+final class PortraitAIHalloweenMaskParams {
+  const PortraitAIHalloweenMaskParams({
+    required this.image,
+    this.maskStyle,
+    this.imageTemplate,
+    this.aspectRatio,
+  }) : assert(maskStyle != null || imageTemplate != null);
+
+  /// Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Built-in mask preset. Provide either this field or `image_template`. If both are provided, `mask_style` takes precedence. See [Supported mask styles](/docs/ai-portrait/effects/ai-halloween-mask/api#mask_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85.
+  final String? maskStyle;
+
+  /// Reference image for eyeshadow transfer. Provide this field or `mask_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile? imageTemplate;
+
+  /// Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+  final String? aspectRatio;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "mask_style": maskStyle,
+        "image_template": imageTemplate,
+        "aspect_ratio": aspectRatio,
+      };
+}
+
+final class PortraitAIHalloweenMaskResponseData {
+  const PortraitAIHalloweenMaskResponseData();
+
+  factory PortraitAIHalloweenMaskResponseData.fromJson(JsonMap json) =>
+      const PortraitAIHalloweenMaskResponseData();
+}
+
+typedef PortraitAIHalloweenMaskResponse
+    = AILabResponse<PortraitAIHalloweenMaskResponseData>;
+
+final class PortraitAILipBiteExpressionsParams {
+  const PortraitAILipBiteExpressionsParams({
+    required this.image,
+    this.gridCount,
+    this.aspectRatio,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Specifies the number of emoji stickers to generate in a single image. Allowed values: 1, 4, 6, 9. Default: 1.
+  final int? gridCount;
+
+  /// Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+  final String? aspectRatio;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "grid_count": gridCount,
+        "aspect_ratio": aspectRatio,
+      };
+}
+
+final class PortraitAILipBiteExpressionsResponseData {
+  const PortraitAILipBiteExpressionsResponseData();
+
+  factory PortraitAILipBiteExpressionsResponseData.fromJson(JsonMap json) =>
+      const PortraitAILipBiteExpressionsResponseData();
+}
+
+typedef PortraitAILipBiteExpressionsResponse
+    = AILabResponse<PortraitAILipBiteExpressionsResponseData>;
+
+final class PortraitAIRedLipGlossParams {
+  const PortraitAIRedLipGlossParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAIRedLipGlossResponseData {
+  const PortraitAIRedLipGlossResponseData();
+
+  factory PortraitAIRedLipGlossResponseData.fromJson(JsonMap json) =>
+      const PortraitAIRedLipGlossResponseData();
+}
+
+typedef PortraitAIRedLipGlossResponse
+    = AILabResponse<PortraitAIRedLipGlossResponseData>;
+
+final class PortraitAISquareFaceFilterParams {
+  const PortraitAISquareFaceFilterParams({
+    required this.image,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+      };
+}
+
+final class PortraitAISquareFaceFilterResponseData {
+  const PortraitAISquareFaceFilterResponseData();
+
+  factory PortraitAISquareFaceFilterResponseData.fromJson(JsonMap json) =>
+      const PortraitAISquareFaceFilterResponseData();
+}
+
+typedef PortraitAISquareFaceFilterResponse
+    = AILabResponse<PortraitAISquareFaceFilterResponseData>;
+
+final class PortraitExpressionEditingAdvancedParams {
+  const PortraitExpressionEditingAdvancedParams({
+    required this.image,
+    required this.expression,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Expression. See [Supported expression values](/docs/ai-portrait/effects/emotion-editor-advanced/api#expression). Allowed values: natural_smile, bright_laugh, sweet_smile, happy_surprise, proud_smirk, laughing_with_tears, crazy_happy_face, overjoyed_screaming_laugh, slight_annoyance, angry_stare, gritted_teeth_anger, furious_shout, cold_glare, cartoon_rage_face, angry_puffed_cheeks, villain_angry_smirk, downcast_sadness, wronged_near_tears, tearful_sadness, heartbroken_breakdown, silent_grief, big_crying_face, puppy_eyes_sad, fake_crying_funny, tongue_out_playful, wink_cute, silly_face, mischievous_smirk, exaggerated_surprised_face, cross_eyed_silly_face, one_eye_squint_funny, duck_face_funny, crazy_tongue_face, slight_surprise, shocked_open_mouth, disbelief, fearful_surprise, jaw_drop_surprise, cartoon_shocked_face, speechless_shock, nervous_fear, terrified_expression, timid_withdrawal, panic_breakdown, screaming_fear_face, frozen_in_fear, panic_wide_eyes, mild_dislike, strong_aversion, nauseated_disgust, eye_roll_disgust, extreme_disgust_face, grossed_out_face, dramatic_eye_roll, shy_smile, blushing_shyness, awkward_forced_smile, socially_embarrassed, over_shy_blushing_face, awkward_sweat_smile, embarrassed_cover_mouth, confident_smile, dominant_gaze, cold_cool_expression, victorious_pride, super_confident_smirk, bossy_cool_face, winning_smug_face, slight_confusion, frowning_thought, not_understanding, suspicious_look, confused_tilted_face, what_are_you_doing_face, brain_loading_face, tired_blank_eyes, helpless_expression, awkward_silence, sleepy_yawn, dead_inside_face, exhausted_melting_face, speechless_blank_stare, charming_smile, flirty_eyebrow_raise, soft_lip_bite, dreamy_gaze, playful_seductive_smirk, wink_flirty_face, dramatic_lip_bite, gentle_gaze, fond_smile, sweet_pouting_affection, deep_affectionate_gaze, heart_eyes_expression, overly_sweet_affection, clingy_cute_pout, cold_contempt, sarcastic_sneer, dismissive_pout, in_control_expression, extreme_smug_face, mocking_laugh_face, looking_down_contempt, soft_cute_smile, cute_pout, innocent_big_eyes, expectant_sparkling_eyes, super_cute_pouting_face, sparkling_eyes_cute, baby_like_innocent_face, frowning_in_pain, holding_back_tears, crying_breakdown, repressed_exhaustion, dramatic_pain_face, holding_back_scream, overwhelmed_breakdown_face.
+  final String expression;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "expression": expression,
+      };
+}
+
+final class PortraitExpressionEditingAdvancedResponseData {
+  const PortraitExpressionEditingAdvancedResponseData();
+
+  factory PortraitExpressionEditingAdvancedResponseData.fromJson(
+          JsonMap json) =>
+      const PortraitExpressionEditingAdvancedResponseData();
+}
+
+typedef PortraitExpressionEditingAdvancedResponse
+    = AILabResponse<PortraitExpressionEditingAdvancedResponseData>;
+
+final class PortraitHairstyleEditingPremiumParams {
+  const PortraitHairstyleEditingPremiumParams({
+    required this.image,
+    this.imageTemplate,
+    this.hairStyle,
+    this.color,
+  }) : assert(hairStyle != null || imageTemplate != null);
+
+  /// Source image. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right.
+  final AILabFile image;
+
+  /// Reference image for hairstyle transfer. Provide this field or `hair_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right.
+  final AILabFile? imageTemplate;
+
+  /// Built-in hairstyle preset. Provide this field or `image_template`. If both are provided, `hair_style` takes precedence. See [Supported hair_style values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#hair_style). Allowed values: BuzzCut, UnderCut, Pompadour, SlickBack, CurlyShag, WavyShag, FauxHawk, Spiky, CombOver, HighTightFade, ManBun, Afro, LowFade, UndercutLongHair, TwoBlockHaircut, TexturedFringe, BluntBowlCut, LongWavyCurtainBangs, MessyTousled, CornrowBraids, LongHairTiedUp, Middle-parted, ManGreased, WavyMiddlePart, Natural_Side-Part, Wolf_Crop, Wind-Tousled_Crop, Side-Parted_Textured, FluffyMiddlePart, FreshSide-Parted, Smooth_Crop, Korean_Wavy_Crop, Comma_Hair, Side-Part_Crop, Natural_Middle_Part, ShortPixieWithShavedSides, ShortNeatBob, DoubleBun, Updo, Spiked, bowlCut, Chignon, PixieCut, SlickedBack, LongCurly, CurlyBob, StackedCurlsInShortBob, SidePartCombOverHairstyleWithHighFade, WavyFrenchBobVibesfrom1920, BobCut, ShortTwintails, ShortCurlyPixie, LongStraight, LongWavy, FishtailBraid, TwinBraids, Ponytail, Dreadlocks, Cornrows, ShoulderLengthHair, LooseCurlyAfro, LongTwintails, LongHimeCut, BoxBraids, Layered_Waves, Side_Flip_Perm, Textured_Crop, Mushroom_Curl, Vintage_Curls, Magic_Perm, Side-Parted_Waves, Fluffy_Short, Smooth_Inward_Bob, Neat_Short, Natural_Short, Chic_Tapered_Bob, Edgy_Textured_Pixie, Elegant_Wavy_Crop, Chic_Wavy_Pixie, Elegant_Side_Wave, Soft_Layered_Curl, Executive_Pixie, Curved_Chic_Bob, Airy_Short_Curls, Playful_Curly_Bob, Playful_Wavy_Bob, Elegant_Soft_Curl, Elegant_Smooth_Bob, Retro_Airy_Curl, Soft_Wavy_Bob, Light_Inward_Bob, Neat_Curly_Crop_Cut, Elegant_Volumized_Bob, Modern_Curls_Chic, Mocha_Volume_Pixie, Elegant_Side_Flow, Chestnut, ChoppyBangs, StructuredWavyShag, TinfoilPerm, ClassicWavyBob, Fluffy_Pixie_Cut, FrenchBangs, JapaneseShort, MediumLongLayered, male_hairstyle_0001, male_hairstyle_0002, male_hairstyle_0003, male_hairstyle_0004, male_hairstyle_0005, male_hairstyle_0006, male_hairstyle_0007, male_hairstyle_0008, male_hairstyle_0009, male_hairstyle_0010, male_hairstyle_0011, male_hairstyle_0012, male_hairstyle_0013, male_hairstyle_0014, male_hairstyle_0015, male_hairstyle_0016, male_hairstyle_0017, male_hairstyle_0018, male_hairstyle_0019, male_hairstyle_0020, male_hairstyle_0021, male_hairstyle_0022, male_hairstyle_0023, male_hairstyle_0024, male_hairstyle_0025, male_hairstyle_0026, male_hairstyle_0027, male_hairstyle_0028, male_hairstyle_0029, male_hairstyle_0030, male_hairstyle_0031, male_hairstyle_0032, male_hairstyle_0033, male_hairstyle_0034, male_hairstyle_0035, male_hairstyle_0036, male_hairstyle_0037, male_hairstyle_0038, male_hairstyle_0039, male_hairstyle_0040, male_hairstyle_0041, male_hairstyle_0042, male_hairstyle_0043, male_hairstyle_0044, male_hairstyle_0045, male_hairstyle_0046, male_hairstyle_0047, male_hairstyle_0048, male_hairstyle_0049, male_hairstyle_0050, male_hairstyle_0051, male_hairstyle_0052, male_hairstyle_0053, male_hairstyle_0054, male_hairstyle_0055, male_hairstyle_0056, male_hairstyle_0057, male_hairstyle_0058, male_hairstyle_0059, male_hairstyle_0060, male_hairstyle_0061, male_hairstyle_0062, female_hairstyle_0001, female_hairstyle_0002, female_hairstyle_0003, female_hairstyle_0004, female_hairstyle_0005, female_hairstyle_0006, female_hairstyle_0007, female_hairstyle_0008, female_hairstyle_0009, female_hairstyle_0010, female_hairstyle_0011, female_hairstyle_0012, female_hairstyle_0013, female_hairstyle_0014, female_hairstyle_0015, female_hairstyle_0016, female_hairstyle_0017, female_hairstyle_0018, female_hairstyle_0019, female_hairstyle_0020, female_hairstyle_0021, female_hairstyle_0022, female_hairstyle_0023, female_hairstyle_0024, female_hairstyle_0025, female_hairstyle_0026, female_hairstyle_0027, female_hairstyle_0028, female_hairstyle_0029, female_hairstyle_0030, female_hairstyle_0031, female_hairstyle_0032, female_hairstyle_0033, female_hairstyle_0034, female_hairstyle_0035, female_hairstyle_0036, female_hairstyle_0037, female_hairstyle_0038, female_hairstyle_0039, female_hairstyle_0040, female_hairstyle_0041, female_hairstyle_0042, female_hairstyle_0043, female_hairstyle_0044, female_hairstyle_0045, female_hairstyle_0046, female_hairstyle_0047, female_hairstyle_0048, female_hairstyle_0049, female_hairstyle_0050, female_hairstyle_0051, female_hairstyle_0052, female_hairstyle_0053, female_hairstyle_0054, female_hairstyle_0055, female_hairstyle_0056, female_hairstyle_0057, female_hairstyle_0058, female_hairstyle_0059, female_hairstyle_0060, female_hairstyle_0061, female_hairstyle_0062, female_hairstyle_0063, female_hairstyle_0064, female_hairstyle_0065, female_hairstyle_0066, female_hairstyle_0067, female_hairstyle_0068, female_hairstyle_0069, female_hairstyle_0070, female_hairstyle_0071, female_hairstyle_0072, female_hairstyle_0073.
+  final String? hairStyle;
+
+  /// Hair color preset. `original` keeps the source image color. `reference` uses the hair color from `image_template`. See [Supported color values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#color). Allowed values: original, reference, blonde, platinumBlonde, brown, lightBrown, blue, lightBlue, purple, lightPurple, pink, black, white, grey, silver, red, orange, green, gradient, multicolored, darkBlue, burgundy, darkGreen. Default: original.
+  final String? color;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "image_template": imageTemplate,
+        "hair_style": hairStyle,
+        "color": color,
+      };
+}
+
+final class PortraitHairstyleEditingPremiumResponseData {
+  const PortraitHairstyleEditingPremiumResponseData();
+
+  factory PortraitHairstyleEditingPremiumResponseData.fromJson(JsonMap json) =>
+      const PortraitHairstyleEditingPremiumResponseData();
+}
+
+typedef PortraitHairstyleEditingPremiumResponse
+    = AILabResponse<PortraitHairstyleEditingPremiumResponseData>;
+
+final class PortraitAISkinEnhancementAdvancedParams {
+  const PortraitAISkinEnhancementAdvancedParams({
+    required this.image,
+    this.smartSkin,
+    this.acneRemoval,
+    this.spotCorrection,
+    this.skinBrightening,
+    this.skinSmoothing,
+    this.poreControl,
+    this.wrinkleReduction,
+    this.underEyeCorrection,
+    this.scarReduction,
+  });
+
+  /// - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  final AILabFile image;
+
+  /// Smart all-in-one skin beautification. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? smartSkin;
+
+  /// Acne and blemish removal. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? acneRemoval;
+
+  /// Spot and pigmentation correction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? spotCorrection;
+
+  /// Skin brightening and tone enhancement. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? skinBrightening;
+
+  /// Skin smoothing and refinement. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? skinSmoothing;
+
+  /// Pore and oil control. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? poreControl;
+
+  /// Wrinkle and fine-line reduction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? wrinkleReduction;
+
+  /// Under-eye correction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? underEyeCorrection;
+
+  /// Scar and skin damage reduction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  final String? scarReduction;
+
+  Map<String, Object?> toMap() => {
+        "image": image,
+        "smart_skin": smartSkin,
+        "acne_removal": acneRemoval,
+        "spot_correction": spotCorrection,
+        "skin_brightening": skinBrightening,
+        "skin_smoothing": skinSmoothing,
+        "pore_control": poreControl,
+        "wrinkle_reduction": wrinkleReduction,
+        "under_eye_correction": underEyeCorrection,
+        "scar_reduction": scarReduction,
+      };
+}
+
+final class PortraitAISkinEnhancementAdvancedResponseData {
+  const PortraitAISkinEnhancementAdvancedResponseData();
+
+  factory PortraitAISkinEnhancementAdvancedResponseData.fromJson(
+          JsonMap json) =>
+      const PortraitAISkinEnhancementAdvancedResponseData();
+}
+
+typedef PortraitAISkinEnhancementAdvancedResponse
+    = AILabResponse<PortraitAISkinEnhancementAdvancedResponseData>;

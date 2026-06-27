@@ -120,7 +120,37 @@ import {
   ImageExposureRatingResponse,
   ImageExposureRatingResponseData,
   validateImageExposureRatingParams,
-  ImageExposureRatingParamMap
+  ImageExposureRatingParamMap,
+  ImageAINailArtParams,
+  ImageAINailArtResponse,
+  ImageAINailArtResponseData,
+  validateImageAINailArtParams,
+  ImageAINailArtParamMap,
+  ImageAINailArtProParams,
+  ImageAINailArtProResponse,
+  ImageAINailArtProResponseData,
+  validateImageAINailArtProParams,
+  ImageAINailArtProParamMap,
+  ImageAIPhotographyParams,
+  ImageAIPhotographyResponse,
+  ImageAIPhotographyResponseData,
+  validateImageAIPhotographyParams,
+  ImageAIPhotographyParamMap,
+  ImageAIEmojiGeneratorParams,
+  ImageAIEmojiGeneratorResponse,
+  ImageAIEmojiGeneratorResponseData,
+  validateImageAIEmojiGeneratorParams,
+  ImageAIEmojiGeneratorParamMap,
+  ImagePhotoToColoringPageParams,
+  ImagePhotoToColoringPageResponse,
+  ImagePhotoToColoringPageResponseData,
+  validateImagePhotoToColoringPageParams,
+  ImagePhotoToColoringPageParamMap,
+  ImageAIFlowerWallpaperParams,
+  ImageAIFlowerWallpaperResponse,
+  ImageAIFlowerWallpaperResponseData,
+  validateImageAIFlowerWallpaperParams,
+  ImageAIFlowerWallpaperParamMap
 } from "../generated/endpoints";
 
 export class ImageAPI {
@@ -276,6 +306,42 @@ export class ImageAPI {
     validateImageExposureRatingParams(params);
     const mapped = mapParams(params, ImageExposureRatingParamMap);
     return this.request.request<ImageExposureRatingResponseData>("POST", "/api/image/rating/image-exposure-score", { body: mapped, multipart: true });
+  }
+
+  async imageAINailArt(params: ImageAINailArtParams): Promise<ImageAINailArtResponse> {
+    validateImageAINailArtParams(params);
+    const mapped = mapParams(params, ImageAINailArtParamMap);
+    return this.request.request<ImageAINailArtResponseData>("POST", "/api/image/editing/ai-nail-art", { body: mapped, multipart: true });
+  }
+
+  async imageAINailArtPro(params: ImageAINailArtProParams): Promise<ImageAINailArtProResponse> {
+    validateImageAINailArtProParams(params);
+    const mapped = mapParams(params, ImageAINailArtProParamMap);
+    return this.request.request<ImageAINailArtProResponseData>("POST", "/api/image/editing/ai-nail-art-pro", { body: mapped, multipart: true });
+  }
+
+  async imageAIPhotography(params: ImageAIPhotographyParams): Promise<ImageAIPhotographyResponse> {
+    validateImageAIPhotographyParams(params);
+    const mapped = mapParams(params, ImageAIPhotographyParamMap);
+    return this.request.request<ImageAIPhotographyResponseData>("POST", "/api/image/effects/ai-photography", { body: mapped, multipart: true });
+  }
+
+  async imageAIEmojiGenerator(params: ImageAIEmojiGeneratorParams): Promise<ImageAIEmojiGeneratorResponse> {
+    validateImageAIEmojiGeneratorParams(params);
+    const mapped = mapParams(params, ImageAIEmojiGeneratorParamMap);
+    return this.request.request<ImageAIEmojiGeneratorResponseData>("POST", "/api/image/effects/photo-to-emoji-grid", { body: mapped, multipart: true });
+  }
+
+  async imagePhotoToColoringPage(params: ImagePhotoToColoringPageParams): Promise<ImagePhotoToColoringPageResponse> {
+    validateImagePhotoToColoringPageParams(params);
+    const mapped = mapParams(params, ImagePhotoToColoringPageParamMap);
+    return this.request.request<ImagePhotoToColoringPageResponseData>("POST", "/api/image/effects/photo-to-line-art", { body: mapped, multipart: true });
+  }
+
+  async imageAIFlowerWallpaper(params: ImageAIFlowerWallpaperParams): Promise<ImageAIFlowerWallpaperResponse> {
+    validateImageAIFlowerWallpaperParams(params);
+    const mapped = mapParams(params, ImageAIFlowerWallpaperParamMap);
+    return this.request.request<ImageAIFlowerWallpaperResponseData>("POST", "/api/image/generation/ai-flower-wallpaper", { body: mapped, multipart: true });
   }
 
 }

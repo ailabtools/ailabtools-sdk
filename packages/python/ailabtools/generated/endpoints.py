@@ -12,9 +12,15 @@ class CommonQueryAsyncTaskResultResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CommonQueryAsyncTaskResultResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CommonQueryAsyncTaskResultParamMap = {
     "taskId": "task_id",
@@ -42,9 +48,15 @@ class CommonQueryCreditsResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: List[CommonQueryCreditsResponseData]
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CommonQueryCreditsParamMap = {
 }
@@ -78,9 +90,15 @@ class CutoutClothingBackgroundRemovalResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutClothingBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutClothingBackgroundRemovalParamMap = {
     "outMode": "out_mode",
@@ -105,9 +123,15 @@ class CutoutProductBackgroundRemovalResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutProductBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutProductBackgroundRemovalParamMap = {
     "returnForm": "return_form",
@@ -130,9 +154,15 @@ class CutoutFoodBackgroundRemovalResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutFoodBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutFoodBackgroundRemovalParamMap = {
     "returnForm": "return_form",
@@ -155,9 +185,15 @@ class CutoutUniversalBackgroundRemovalResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutUniversalBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutUniversalBackgroundRemovalParamMap = {
     "returnForm": "return_form",
@@ -185,9 +221,15 @@ class CutoutAvatarExtractionResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutAvatarExtractionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutAvatarExtractionParamMap = {
     "returnForm": "return_form",
@@ -214,9 +256,15 @@ class CutoutHairExtractionResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutHairExtractionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutHairExtractionParamMap = {
 }
@@ -238,9 +286,15 @@ class CutoutHumanBackgroundRemovalResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: CutoutHumanBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 CutoutHumanBackgroundRemovalParamMap = {
     "returnForm": "return_form",
@@ -263,9 +317,15 @@ class ImageQueryingAsyncTaskResultsResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageQueryingAsyncTaskResultsResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageQueryingAsyncTaskResultsParamMap = {
     "jobId": "job_id",
@@ -299,9 +359,15 @@ class ImageAiImageExtenderResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageAiImageExtenderResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageAiImageExtenderParamMap = {
     "customPrompt": "custom_prompt",
@@ -331,9 +397,15 @@ class ImageAiObjectReplacerResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageAiObjectReplacerResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageAiObjectReplacerParamMap = {
     "customPrompt": "custom_prompt",
@@ -364,9 +436,15 @@ class ImageAIImageCroppingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageAIImageCroppingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageAIImageCroppingParamMap = {
 }
@@ -390,9 +468,15 @@ class ImageErasureResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageErasureResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageErasureParamMap = {
     "userMask": "user_mask",
@@ -422,9 +506,15 @@ class ImageInvisibleImageWatermarkResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageInvisibleImageWatermarkResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageInvisibleImageWatermarkParamMap = {
     "functionType": "function_type",
@@ -458,9 +548,15 @@ class ImageInvisibleTextWatermarkResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageInvisibleTextWatermarkResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageInvisibleTextWatermarkParamMap = {
     "functionType": "function_type",
@@ -493,9 +589,15 @@ class ImageIntelligentCompositionResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageIntelligentCompositionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageIntelligentCompositionParamMap = {
     "numBoxes": "num_boxes",
@@ -518,9 +620,15 @@ class ImagePhotoEditingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImagePhotoEditingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImagePhotoEditingParamMap = {
 }
@@ -544,9 +652,15 @@ class ImageRemoveObjectsResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageRemoveObjectsResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageRemoveObjectsParamMap = {
 }
@@ -576,9 +690,15 @@ class ImageRemoveObjectsAdvancedResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageRemoveObjectsAdvancedResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageRemoveObjectsAdvancedParamMap = {
     "dilateSize": "dilate_size",
@@ -603,9 +723,15 @@ class ImageRemoveObjectsProResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageRemoveObjectsProResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageRemoveObjectsProParamMap = {
 }
@@ -631,9 +757,15 @@ class ImageAICartoonGeneratorResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageAICartoonGeneratorResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageAICartoonGeneratorParamMap = {
     "taskType": "task_type",
@@ -657,9 +789,15 @@ class ImageColoringResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageColoringResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageColoringParamMap = {
 }
@@ -681,9 +819,15 @@ class ImageStyleTransferResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageStyleTransferResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageStyleTransferParamMap = {
 }
@@ -707,9 +851,15 @@ class ImageStyleMigrationResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageStyleMigrationResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageStyleMigrationParamMap = {
 }
@@ -734,9 +884,15 @@ class ImageColorEnhancementResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageColorEnhancementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageColorEnhancementParamMap = {
     "outputFormat": "output_format",
@@ -760,9 +916,15 @@ class ImageContrastEnhancementResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageContrastEnhancementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageContrastEnhancementParamMap = {
 }
@@ -783,9 +945,15 @@ class ImageDehazeResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageDehazeResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageDehazeParamMap = {
 }
@@ -810,9 +978,15 @@ class ImageLosslessEnlargementResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageLosslessEnlargementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageLosslessEnlargementParamMap = {
     "upscaleFactor": "upscale_factor",
@@ -836,9 +1010,15 @@ class ImageClarityEnhancementResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageClarityEnhancementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageClarityEnhancementParamMap = {
 }
@@ -860,9 +1040,15 @@ class ImageDistortionCorrectionResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageDistortionCorrectionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageDistortionCorrectionParamMap = {
 }
@@ -883,9 +1069,15 @@ class ImageCompositionAestheticsScoreResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageCompositionAestheticsScoreResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageCompositionAestheticsScoreParamMap = {
 }
@@ -906,9 +1098,15 @@ class ImageExposureRatingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: ImageExposureRatingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 ImageExposureRatingParamMap = {
 }
@@ -972,9 +1170,15 @@ class PortraitFaceAnalyzerResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFaceAnalyzerResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFaceAnalyzerParamMap = {
     "maxFaceNum": "max_face_num",
@@ -1020,9 +1224,15 @@ class PortraitFaceAnalyzerAdvancedResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFaceAnalyzerAdvancedResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFaceAnalyzerAdvancedParamMap = {
 }
@@ -1067,9 +1277,15 @@ class PortraitFacialLandmarksResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFacialLandmarksResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFacialLandmarksParamMap = {
     "maxFaceNum": "max_face_num",
@@ -1123,9 +1339,15 @@ class PortraitSkinAnalysisBasicResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitSkinAnalysisBasicResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitSkinAnalysisBasicParamMap = {
 }
@@ -1196,9 +1418,15 @@ class PortraitSkinAnalysisAdvancedResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitSkinAnalysisAdvancedResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitSkinAnalysisAdvancedParamMap = {
     "faceQualityControl": "face_quality_control",
@@ -1231,9 +1459,15 @@ class PortraitSkinAnalysisProfessionalResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitSkinAnalysisProfessionalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitSkinAnalysisProfessionalParamMap = {
     "leftSideImage": "left_side_image",
@@ -1314,9 +1548,15 @@ class PortraitSkinDiseaseDetectionResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitSkinDiseaseDetectionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitSkinDiseaseDetectionParamMap = {
 }
@@ -1341,9 +1581,15 @@ class PortraitTryOnClothesResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitTryOnClothesResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitTryOnClothesParamMap = {
     "taskType": "task_type",
@@ -1378,9 +1624,15 @@ class PortraitTryOnClothesProResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitTryOnClothesProResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitTryOnClothesProParamMap = {
     "taskType": "task_type",
@@ -1410,9 +1662,15 @@ class PortraitFacialBlurringResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFacialBlurringResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFacialBlurringParamMap = {
 }
@@ -1434,9 +1692,15 @@ class PortraitExpressionEditingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitExpressionEditingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitExpressionEditingParamMap = {
     "imageTarget": "image_target",
@@ -1460,9 +1724,15 @@ class PortraitFaceRestorationEnhancementResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFaceRestorationEnhancementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFaceRestorationEnhancementParamMap = {
 }
@@ -1487,9 +1757,15 @@ class PortraitFaceAttributeEditingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFaceAttributeEditingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFaceAttributeEditingParamMap = {
     "actionType": "action_type",
@@ -1517,9 +1793,15 @@ class PortraitFacialBeautificationResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFacialBeautificationResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFacialBeautificationParamMap = {
 }
@@ -1547,9 +1829,15 @@ class PortraitFacialBeautificationAdvancedResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFacialBeautificationAdvancedResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFacialBeautificationAdvancedParamMap = {
     "faceLifting": "face_lifting",
@@ -1581,9 +1869,15 @@ class PortraitFacialBeautificationProResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFacialBeautificationProResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFacialBeautificationProParamMap = {
     "shrinkFace": "shrink_face",
@@ -1611,9 +1905,15 @@ class PortraitFacialFiltersResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFacialFiltersResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFacialFiltersParamMap = {
     "resourceType": "resource_type",
@@ -1639,9 +1939,15 @@ class PortraitFaceFusionResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitFaceFusionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitFaceFusionParamMap = {
     "imageTarget": "image_target",
@@ -1668,9 +1974,15 @@ class PortraitHairstyleEditingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitHairstyleEditingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitHairstyleEditingParamMap = {
     "imageTarget": "image_target",
@@ -1702,9 +2014,15 @@ class PortraitHairstyleEditingProResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitHairstyleEditingProResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitHairstyleEditingProParamMap = {
     "taskType": "task_type",
@@ -1732,9 +2050,15 @@ class PortraitLipsColorChangerResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitLipsColorChangerResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitLipsColorChangerParamMap = {
     "lipColorInfos": "lip_color_infos",
@@ -1758,9 +2082,15 @@ class PortraitLivePhotosResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitLivePhotosResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitLivePhotosParamMap = {
     "imageTarget": "image_target",
@@ -1783,9 +2113,15 @@ class PortraitCartoonYourselfResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitCartoonYourselfResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitCartoonYourselfParamMap = {
 }
@@ -1811,9 +2147,15 @@ class PortraitIntelligentBeautificationResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitIntelligentBeautificationResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitIntelligentBeautificationParamMap = {
     "imageTarget": "image_target",
@@ -1839,9 +2181,15 @@ class PortraitIntelligentFaceSlimmingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitIntelligentFaceSlimmingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitIntelligentFaceSlimmingParamMap = {
     "slimDegree": "slim_degree",
@@ -1865,9 +2213,15 @@ class PortraitIntelligentSkinRetouchingResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitIntelligentSkinRetouchingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitIntelligentSkinRetouchingParamMap = {
     "retouchDegree": "retouch_degree",
@@ -1896,9 +2250,15 @@ class PortraitTryOnClothesRefinerResponse(TypedDict, total=False):
     request_id: str
     log_id: str
     error_code: int
+    error_code_str: str
     error_msg: str
     error_detail: Dict[str, Any]
     data: PortraitTryOnClothesRefinerResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
 
 PortraitTryOnClothesRefinerParamMap = {
     "taskType": "task_type",
@@ -1920,4 +2280,1224 @@ def validate_portraitTryOnClothesRefiner_params(params: Dict[str, Any]) -> None:
     if params.get("coarseImage") is not None and not is_file(params.get("coarseImage")): raise ValueError("Invalid file param: coarseImage")
     if params.get("gender") is None: raise ValueError("Missing required param: gender")
     if params.get("bottomGarment") is not None and not is_file(params.get("bottomGarment")): raise ValueError("Invalid file param: bottomGarment")
+
+class CutoutHDUniversalBackgroundRemovalParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class CutoutHDUniversalBackgroundRemovalResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class CutoutHDUniversalBackgroundRemovalResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: CutoutHDUniversalBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+CutoutHDUniversalBackgroundRemovalParamMap = {
+}
+
+def validate_cutoutHDUniversalBackgroundRemoval_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class CutoutHdHumanBodyBackgroundRemovalParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class CutoutHdHumanBodyBackgroundRemovalElement(TypedDict, total=False):
+    image_url: str  # image_url
+
+class CutoutHdHumanBodyBackgroundRemovalResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    elements: List[CutoutHdHumanBodyBackgroundRemovalElement]  # elements
+
+class CutoutHdHumanBodyBackgroundRemovalResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: CutoutHdHumanBodyBackgroundRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+CutoutHdHumanBodyBackgroundRemovalParamMap = {
+}
+
+def validate_cutoutHdHumanBodyBackgroundRemoval_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class ImageAINailArtParams(TypedDict, total=False):
+    image: FileInput  # image
+    nailName: str  # nail_name
+    nailDesc: str  # nail_desc
+
+class ImageAINailArtResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class ImageAINailArtResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: ImageAINailArtResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+ImageAINailArtParamMap = {
+    "nailName": "nail_name",
+    "nailDesc": "nail_desc",
+}
+
+def validate_imageAINailArt_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("nailName") is None: raise ValueError("Missing required param: nailName")
+    if params.get("nailDesc") is None: raise ValueError("Missing required param: nailDesc")
+
+class ImageAINailArtProParams(TypedDict, total=False):
+    image: FileInput  # image
+    referenceImage: FileInput  # reference_image
+    resolution: str  # resolution
+
+class ImageAINailArtProResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class ImageAINailArtProResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: ImageAINailArtProResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+ImageAINailArtProParamMap = {
+    "referenceImage": "reference_image",
+}
+
+def validate_imageAINailArtPro_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("referenceImage") is None: raise ValueError("Missing required param: referenceImage")
+    if params.get("referenceImage") is not None and not is_file(params.get("referenceImage")): raise ValueError("Invalid file param: referenceImage")
+
+class ImageAIPhotographyParams(TypedDict, total=False):
+    image: FileInput  # image
+    styleTitle: str  # style_title
+    styleDesc: str  # style_desc
+    imageSize: str  # image_size
+
+class ImageAIPhotographyResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class ImageAIPhotographyResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: ImageAIPhotographyResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+ImageAIPhotographyParamMap = {
+    "styleTitle": "style_title",
+    "styleDesc": "style_desc",
+    "imageSize": "image_size",
+}
+
+def validate_imageAIPhotography_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("styleTitle") is None: raise ValueError("Missing required param: styleTitle")
+    if params.get("styleDesc") is None: raise ValueError("Missing required param: styleDesc")
+
+class ImageAIEmojiGeneratorParams(TypedDict, total=False):
+    image: FileInput  # image
+    expression: str  # expression
+    style: str  # style
+    scene: str  # scene
+    filler: str  # filler
+
+class ImageAIEmojiGeneratorResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class ImageAIEmojiGeneratorResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: ImageAIEmojiGeneratorResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+ImageAIEmojiGeneratorParamMap = {
+}
+
+def validate_imageAIEmojiGenerator_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("expression") is None: raise ValueError("Missing required param: expression")
+    if params.get("style") is None: raise ValueError("Missing required param: style")
+    if params.get("scene") is None: raise ValueError("Missing required param: scene")
+
+class ImagePhotoToColoringPageParams(TypedDict, total=False):
+    image: FileInput  # image
+    prompt: str  # prompt
+    imageSize: str  # image_size
+
+class ImagePhotoToColoringPageResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class ImagePhotoToColoringPageResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: ImagePhotoToColoringPageResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+ImagePhotoToColoringPageParamMap = {
+    "imageSize": "image_size",
+}
+
+def validate_imagePhotoToColoringPage_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class ImageAIFlowerWallpaperParams(TypedDict, total=False):
+    name: str  # name
+    flowerElements: str  # flower_elements
+    style: str  # style
+    background: str  # background
+    aspectRatio: str  # aspect_ratio
+
+class ImageAIFlowerWallpaperResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class ImageAIFlowerWallpaperResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: ImageAIFlowerWallpaperResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+ImageAIFlowerWallpaperParamMap = {
+    "flowerElements": "flower_elements",
+    "aspectRatio": "aspect_ratio",
+}
+
+def validate_imageAIFlowerWallpaper_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    return
+
+class PortraitAIFaceRatingParams(TypedDict, total=False):
+    image: FileInput  # image
+    aspectRatio: str  # aspect_ratio
+
+class PortraitAIFaceRatingResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIFaceRatingResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIFaceRatingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIFaceRatingParamMap = {
+    "aspectRatio": "aspect_ratio",
+}
+
+def validate_portraitAIFaceRating_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIBaldParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIBaldResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIBaldResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIBaldResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIBaldParamMap = {
+}
+
+def validate_portraitAIBald_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIBeardRemovalParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIBeardRemovalResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIBeardRemovalResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIBeardRemovalResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIBeardRemovalParamMap = {
+}
+
+def validate_portraitAIBeardRemoval_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIBeardStylingParams(TypedDict, total=False):
+    image: FileInput  # image
+    beard: str  # beard
+    imageTemplate: FileInput  # image_template
+
+class PortraitAIBeardStylingResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIBeardStylingResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIBeardStylingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIBeardStylingParamMap = {
+    "imageTemplate": "image_template",
+}
+
+def validate_portraitAIBeardStyling_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("imageTemplate") is not None and not is_file(params.get("imageTemplate")): raise ValueError("Invalid file param: imageTemplate")
+    if params.get("beard") is None and params.get("imageTemplate") is None: raise ValueError("At least one of beard, imageTemplate is required")
+
+class PortraitAIBreastExpansionParams(TypedDict, total=False):
+    taskType: str  # task_type
+    personImage: FileInput  # person_image
+
+class PortraitAIBreastExpansionResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    image: str  # image
+
+class PortraitAIBreastExpansionResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIBreastExpansionResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIBreastExpansionParamMap = {
+    "taskType": "task_type",
+    "personImage": "person_image",
+}
+
+def validate_portraitAIBreastExpansion_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("personImage") is None: raise ValueError("Missing required param: personImage")
+    if params.get("personImage") is not None and not is_file(params.get("personImage")): raise ValueError("Invalid file param: personImage")
+
+class PortraitAIButtEnhancementParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIButtEnhancementResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIButtEnhancementResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIButtEnhancementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIButtEnhancementParamMap = {
+}
+
+def validate_portraitAIButtEnhancement_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIColoredContactsParams(TypedDict, total=False):
+    image: FileInput  # image
+    name: str  # name
+    desc: str  # desc
+
+class PortraitAIColoredContactsResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIColoredContactsResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIColoredContactsResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIColoredContactsParamMap = {
+}
+
+def validate_portraitAIColoredContacts_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIEyebrowsParams(TypedDict, total=False):
+    image: FileInput  # image
+    referenceImage: FileInput  # reference_image
+    resolution: str  # resolution
+
+class PortraitAIEyebrowsResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIEyebrowsResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIEyebrowsResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIEyebrowsParamMap = {
+    "referenceImage": "reference_image",
+}
+
+def validate_portraitAIEyebrows_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("referenceImage") is None: raise ValueError("Missing required param: referenceImage")
+    if params.get("referenceImage") is not None and not is_file(params.get("referenceImage")): raise ValueError("Invalid file param: referenceImage")
+
+class PortraitAIEyelashesParams(TypedDict, total=False):
+    image: FileInput  # image
+    name: str  # name
+    desc: str  # desc
+
+class PortraitAIEyelashesResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIEyelashesResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIEyelashesResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIEyelashesParamMap = {
+}
+
+def validate_portraitAIEyelashes_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIEyeshadowTryOnParams(TypedDict, total=False):
+    image: FileInput  # image
+    eyeshadowStyle: str  # eyeshadow_style
+    imageTemplate: FileInput  # image_template
+    aspectRatio: str  # aspect_ratio
+
+class PortraitAIEyeshadowTryOnResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIEyeshadowTryOnResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIEyeshadowTryOnResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIEyeshadowTryOnParamMap = {
+    "eyeshadowStyle": "eyeshadow_style",
+    "imageTemplate": "image_template",
+    "aspectRatio": "aspect_ratio",
+}
+
+def validate_portraitAIEyeshadowTryOn_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("imageTemplate") is not None and not is_file(params.get("imageTemplate")): raise ValueError("Invalid file param: imageTemplate")
+    if params.get("eyeshadowStyle") is None and params.get("imageTemplate") is None: raise ValueError("At least one of eyeshadowStyle, imageTemplate is required")
+
+class PortraitAIFaceSwapParams(TypedDict, total=False):
+    imageTarget: FileInput  # image_target
+    imageTemplate: FileInput  # image_template
+
+class PortraitAIFaceSwapResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class PortraitAIFaceSwapResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIFaceSwapResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIFaceSwapParamMap = {
+    "imageTarget": "image_target",
+    "imageTemplate": "image_template",
+}
+
+def validate_portraitAIFaceSwap_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("imageTarget") is None: raise ValueError("Missing required param: imageTarget")
+    if params.get("imageTarget") is not None and not is_file(params.get("imageTarget")): raise ValueError("Invalid file param: imageTarget")
+    if params.get("imageTemplate") is None: raise ValueError("Missing required param: imageTemplate")
+    if params.get("imageTemplate") is not None and not is_file(params.get("imageTemplate")): raise ValueError("Invalid file param: imageTemplate")
+
+class PortraitAIFatFilterParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIFatFilterResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIFatFilterResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIFatFilterResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIFatFilterParamMap = {
+}
+
+def validate_portraitAIFatFilter_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIHairColorParams(TypedDict, total=False):
+    image: FileInput  # image
+    name: str  # name
+    desc: str  # desc
+
+class PortraitAIHairColorResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIHairColorResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIHairColorResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIHairColorParamMap = {
+}
+
+def validate_portraitAIHairColor_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIHairLossSimulationParams(TypedDict, total=False):
+    image: FileInput  # image
+    level: str  # level
+
+class PortraitAIHairLossSimulationResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIHairLossSimulationResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIHairLossSimulationResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIHairLossSimulationParamMap = {
+}
+
+def validate_portraitAIHairLossSimulation_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("level") is None: raise ValueError("Missing required param: level")
+
+class PortraitAILipEnhancementParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAILipEnhancementResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAILipEnhancementResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAILipEnhancementResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAILipEnhancementParamMap = {
+}
+
+def validate_portraitAILipEnhancement_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIWaistSlimmingParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIWaistSlimmingResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIWaistSlimmingResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIWaistSlimmingResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIWaistSlimmingParamMap = {
+}
+
+def validate_portraitAIWaistSlimming_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitTryOnClothesPremiumParams(TypedDict, total=False):
+    taskType: str  # task_type
+    personImage: FileInput  # person_image
+    topGarment: FileInput  # top_garment
+    resolution: float  # resolution
+    restoreFace: bool  # restore_face
+    bottomGarment: FileInput  # bottom_garment
+
+class PortraitTryOnClothesPremiumResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorCode: int  # error_code
+    errorCodeStr: str  # error_code_str
+    errorMsg: str  # error_msg
+    errorDetail: Dict[str, Any]  # error_detail
+    taskType: str  # task_type
+    taskId: str  # task_id
+
+class PortraitTryOnClothesPremiumResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitTryOnClothesPremiumResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitTryOnClothesPremiumParamMap = {
+    "taskType": "task_type",
+    "personImage": "person_image",
+    "topGarment": "top_garment",
+    "restoreFace": "restore_face",
+    "bottomGarment": "bottom_garment",
+}
+
+def validate_portraitTryOnClothesPremium_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("taskType") is None: raise ValueError("Missing required param: taskType")
+    if params.get("personImage") is None: raise ValueError("Missing required param: personImage")
+    if params.get("personImage") is not None and not is_file(params.get("personImage")): raise ValueError("Invalid file param: personImage")
+    if params.get("topGarment") is None: raise ValueError("Missing required param: topGarment")
+    if params.get("topGarment") is not None and not is_file(params.get("topGarment")): raise ValueError("Invalid file param: topGarment")
+    if params.get("bottomGarment") is not None and not is_file(params.get("bottomGarment")): raise ValueError("Invalid file param: bottomGarment")
+
+class PortraitAIBigHeadEffectParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIBigHeadEffectResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIBigHeadEffectResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIBigHeadEffectResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIBigHeadEffectParamMap = {
+}
+
+def validate_portraitAIBigHeadEffect_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIHalloweenMaskParams(TypedDict, total=False):
+    image: FileInput  # image
+    maskStyle: str  # mask_style
+    imageTemplate: FileInput  # image_template
+    aspectRatio: str  # aspect_ratio
+
+class PortraitAIHalloweenMaskResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIHalloweenMaskResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIHalloweenMaskResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIHalloweenMaskParamMap = {
+    "maskStyle": "mask_style",
+    "imageTemplate": "image_template",
+    "aspectRatio": "aspect_ratio",
+}
+
+def validate_portraitAIHalloweenMask_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("imageTemplate") is not None and not is_file(params.get("imageTemplate")): raise ValueError("Invalid file param: imageTemplate")
+    if params.get("maskStyle") is None and params.get("imageTemplate") is None: raise ValueError("At least one of maskStyle, imageTemplate is required")
+
+class PortraitAILipBiteExpressionsParams(TypedDict, total=False):
+    image: FileInput  # image
+    gridCount: int  # grid_count
+    aspectRatio: str  # aspect_ratio
+
+class PortraitAILipBiteExpressionsResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAILipBiteExpressionsResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAILipBiteExpressionsResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAILipBiteExpressionsParamMap = {
+    "gridCount": "grid_count",
+    "aspectRatio": "aspect_ratio",
+}
+
+def validate_portraitAILipBiteExpressions_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAIRedLipGlossParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAIRedLipGlossResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAIRedLipGlossResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAIRedLipGlossResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAIRedLipGlossParamMap = {
+}
+
+def validate_portraitAIRedLipGloss_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitAISquareFaceFilterParams(TypedDict, total=False):
+    image: FileInput  # image
+
+class PortraitAISquareFaceFilterResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAISquareFaceFilterResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAISquareFaceFilterResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAISquareFaceFilterParamMap = {
+}
+
+def validate_portraitAISquareFaceFilter_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+
+class PortraitExpressionEditingAdvancedParams(TypedDict, total=False):
+    image: FileInput  # image
+    expression: str  # expression
+
+class PortraitExpressionEditingAdvancedResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitExpressionEditingAdvancedResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitExpressionEditingAdvancedResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitExpressionEditingAdvancedParamMap = {
+}
+
+def validate_portraitExpressionEditingAdvanced_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("expression") is None: raise ValueError("Missing required param: expression")
+
+class PortraitHairstyleEditingPremiumParams(TypedDict, total=False):
+    image: FileInput  # image
+    imageTemplate: FileInput  # image_template
+    hairStyle: str  # hair_style
+    color: str  # color
+
+class PortraitHairstyleEditingPremiumResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitHairstyleEditingPremiumResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitHairstyleEditingPremiumResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitHairstyleEditingPremiumParamMap = {
+    "imageTemplate": "image_template",
+    "hairStyle": "hair_style",
+}
+
+def validate_portraitHairstyleEditingPremium_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
+    if params.get("imageTemplate") is not None and not is_file(params.get("imageTemplate")): raise ValueError("Invalid file param: imageTemplate")
+    if params.get("hairStyle") is None and params.get("imageTemplate") is None: raise ValueError("At least one of hairStyle, imageTemplate is required")
+
+class PortraitAISkinEnhancementAdvancedParams(TypedDict, total=False):
+    image: FileInput  # image
+    smartSkin: str  # smart_skin
+    acneRemoval: str  # acne_removal
+    spotCorrection: str  # spot_correction
+    skinBrightening: str  # skin_brightening
+    skinSmoothing: str  # skin_smoothing
+    poreControl: str  # pore_control
+    wrinkleReduction: str  # wrinkle_reduction
+    underEyeCorrection: str  # under_eye_correction
+    scarReduction: str  # scar_reduction
+
+class PortraitAISkinEnhancementAdvancedResponseData(TypedDict, total=False):
+    requestId: str  # request_id
+    logId: str  # log_id
+    errorDetail: Dict[str, Any]  # error_detail
+    taskId: str  # task_id
+
+class PortraitAISkinEnhancementAdvancedResponse(TypedDict, total=False):
+    request_id: str
+    log_id: str
+    error_code: int
+    error_code_str: str
+    error_msg: str
+    error_detail: Dict[str, Any]
+    data: PortraitAISkinEnhancementAdvancedResponseData
+    image: str
+    ratio: Any
+    task_type: str
+    task_id: str
+    task_status: int
+
+PortraitAISkinEnhancementAdvancedParamMap = {
+    "smartSkin": "smart_skin",
+    "acneRemoval": "acne_removal",
+    "spotCorrection": "spot_correction",
+    "skinBrightening": "skin_brightening",
+    "skinSmoothing": "skin_smoothing",
+    "poreControl": "pore_control",
+    "wrinkleReduction": "wrinkle_reduction",
+    "underEyeCorrection": "under_eye_correction",
+    "scarReduction": "scar_reduction",
+}
+
+def validate_portraitAISkinEnhancementAdvanced_params(params: Dict[str, Any]) -> None:
+    def is_file(v):
+        return hasattr(v, "read") or isinstance(v, (bytes, bytearray, memoryview))
+    if params.get("image") is None: raise ValueError("Missing required param: image")
+    if params.get("image") is not None and not is_file(params.get("image")): raise ValueError("Invalid file param: image")
 

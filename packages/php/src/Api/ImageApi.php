@@ -54,6 +54,19 @@ use AILabTools\Generated\Response\ImageCompositionAestheticsScoreResponse;
 use AILabTools\Generated\Params\ImageExposureRatingParams;
 use AILabTools\Generated\Response\ImageExposureRatingResponse;
 
+use AILabTools\Generated\Params\ImageAINailArtParams;
+use AILabTools\Generated\Response\ImageAINailArtResponse;
+use AILabTools\Generated\Params\ImageAINailArtProParams;
+use AILabTools\Generated\Response\ImageAINailArtProResponse;
+use AILabTools\Generated\Params\ImageAIPhotographyParams;
+use AILabTools\Generated\Response\ImageAIPhotographyResponse;
+use AILabTools\Generated\Params\ImageAIEmojiGeneratorParams;
+use AILabTools\Generated\Response\ImageAIEmojiGeneratorResponse;
+use AILabTools\Generated\Params\ImagePhotoToColoringPageParams;
+use AILabTools\Generated\Response\ImagePhotoToColoringPageResponse;
+use AILabTools\Generated\Params\ImageAIFlowerWallpaperParams;
+use AILabTools\Generated\Response\ImageAIFlowerWallpaperResponse;
+
 final class ImageApi
 {
     public function __construct(private readonly Requester $requester)
@@ -214,4 +227,40 @@ final class ImageApi
         return $this->imageRemoveObjects($params);
     }
 
+    // BEGIN GENERATED OPENAPI ADDITIONS
+    public function imageAINailArt(ImageAINailArtParams $params): ImageAINailArtResponse
+    {
+        /** @var ImageAINailArtResponse */
+        return $this->requester->request('POST', '/api/image/editing/ai-nail-art', $params->toArray(), true, [ImageAINailArtResponse::class, 'fromArray']);
+    }
+
+    public function imageAINailArtPro(ImageAINailArtProParams $params): ImageAINailArtProResponse
+    {
+        /** @var ImageAINailArtProResponse */
+        return $this->requester->request('POST', '/api/image/editing/ai-nail-art-pro', $params->toArray(), true, [ImageAINailArtProResponse::class, 'fromArray']);
+    }
+
+    public function imageAIPhotography(ImageAIPhotographyParams $params): ImageAIPhotographyResponse
+    {
+        /** @var ImageAIPhotographyResponse */
+        return $this->requester->request('POST', '/api/image/effects/ai-photography', $params->toArray(), true, [ImageAIPhotographyResponse::class, 'fromArray']);
+    }
+
+    public function imageAIEmojiGenerator(ImageAIEmojiGeneratorParams $params): ImageAIEmojiGeneratorResponse
+    {
+        /** @var ImageAIEmojiGeneratorResponse */
+        return $this->requester->request('POST', '/api/image/effects/photo-to-emoji-grid', $params->toArray(), true, [ImageAIEmojiGeneratorResponse::class, 'fromArray']);
+    }
+
+    public function imagePhotoToColoringPage(ImagePhotoToColoringPageParams $params): ImagePhotoToColoringPageResponse
+    {
+        /** @var ImagePhotoToColoringPageResponse */
+        return $this->requester->request('POST', '/api/image/effects/photo-to-line-art', $params->toArray(), true, [ImagePhotoToColoringPageResponse::class, 'fromArray']);
+    }
+
+    public function imageAIFlowerWallpaper(ImageAIFlowerWallpaperParams $params): ImageAIFlowerWallpaperResponse
+    {
+        /** @var ImageAIFlowerWallpaperResponse */
+        return $this->requester->request('POST', '/api/image/generation/ai-flower-wallpaper', $params->toArray(), true, [ImageAIFlowerWallpaperResponse::class, 'fromArray']);
+    }
 }

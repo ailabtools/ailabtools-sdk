@@ -4705,5 +4705,1990 @@
         "desc": "Asynchronous task ID. **Please use this field when calling the Querying Async Task Results API.**"
       }
     ]
+  },
+  {
+    "module": "cutout",
+    "name": "HD Universal Background Removal API",
+    "unique_sign": "cutout_general_hd_universal_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/general/hd-universal-background-removal",
+    "doc": "HD Universal Background Removal API removes backgrounds from people, animals, food, and objects with high-definition subject cutouts.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `BMP` `PNG` - Image size: No more than 40 MB. - Image resolution: Larger than 32x32px, smaller than 10000x10000px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "cutout",
+    "name": "HD Human Background Removal API",
+    "unique_sign": "cutout_portrait_hd_portrait_background_removal",
+    "method": "POST",
+    "path": "/api/cutout/portrait/hd-portrait-background-removal",
+    "doc": "HD Human Background Removal API removes portrait backgrounds with high-definition human subject cutouts for photo editing and design.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "data",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "elements",
+        "type": "array",
+        "desc": "",
+        "item_type": "CutoutHdHumanBodyBackgroundRemovalElement",
+        "item_fields": [
+          {
+            "name": "image_url",
+            "type": "string",
+            "desc": "URL of the background-removed image."
+          }
+        ],
+        "data_only": true
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Nail Art API",
+    "unique_sign": "image_editing_ai_nail_art",
+    "method": "POST",
+    "path": "/api/image/editing/ai-nail-art",
+    "doc": "AI Nail Art API applies prompt-based nail designs to real nail photos, creating realistic manicure previews for beauty apps.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "nail_name",
+        "label": "nail_name",
+        "type": "string",
+        "required": true,
+        "desc": "Nail Name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "nail_desc",
+        "label": "nail_desc",
+        "type": "string",
+        "required": true,
+        "desc": "Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Nail Art Pro API",
+    "unique_sign": "image_editing_ai_nail_art_pro",
+    "method": "POST",
+    "path": "/api/image/editing/ai-nail-art-pro",
+    "doc": "AI Nail Art Pro API generates reference-guided AI nail designs for salon previews, beauty apps, and production workflows.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "reference_image",
+        "label": "reference_image",
+        "type": "file",
+        "required": true,
+        "desc": "Reference image for guidance. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "resolution",
+        "label": "resolution",
+        "type": "string",
+        "required": false,
+        "desc": "Output resolution. Allowed values: 1K, 2K. Default: 1K."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Photography API",
+    "unique_sign": "image_effects_ai_photography",
+    "method": "POST",
+    "path": "/api/image/effects/ai-photography",
+    "doc": "AI Photography API creates stylized AI photoshoot images from portraits using prompt-defined scenes and styles.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "style_title",
+        "label": "style_title",
+        "type": "string",
+        "required": true,
+        "desc": "Style name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "style_desc",
+        "label": "style_desc",
+        "type": "string",
+        "required": true,
+        "desc": "Style description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "image_size",
+        "label": "image_size",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: auto, 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. Default: auto."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Emoji Generator API",
+    "unique_sign": "image_effects_photo_to_emoji_grid",
+    "method": "POST",
+    "path": "/api/image/effects/photo-to-emoji-grid",
+    "doc": "AI Emoji Generator API turns portrait or pet photos into emoji-style grids with consistent expressions and scenes.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "expression",
+        "label": "expression",
+        "type": "string",
+        "required": true,
+        "desc": "Expression (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "style",
+        "label": "style",
+        "type": "string",
+        "required": true,
+        "desc": "Style (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "scene",
+        "label": "scene",
+        "type": "string",
+        "required": true,
+        "desc": "Scene (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "filler",
+        "label": "filler",
+        "type": "string",
+        "required": false,
+        "desc": "Filler Text (English only). Max 20 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "Photo to Coloring Page API",
+    "unique_sign": "image_effects_photo_to_line_art",
+    "method": "POST",
+    "path": "/api/image/effects/photo-to-line-art",
+    "doc": "Photo to Coloring Page API converts photos into clean line art for printable coloring pages, templates, and creative use.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "prompt",
+        "label": "prompt",
+        "type": "string",
+        "required": false,
+        "desc": "Prompt (English only). Max 3000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review."
+      },
+      {
+        "name": "image_size",
+        "label": "image_size",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: A4, auto, 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. Default: A4."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "image",
+    "name": "AI Flower Wallpaper API",
+    "unique_sign": "image_generation_ai_flower_wallpaper",
+    "method": "POST",
+    "path": "/api/image/generation/ai-flower-wallpaper",
+    "doc": "AI Flower Wallpaper API turns names into personalized floral wallpapers, bouquet art, and flower-language image designs.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "name",
+        "label": "name",
+        "type": "string",
+        "required": false,
+        "desc": "User name to display in the wallpaper (English only). Default: AUTO."
+      },
+      {
+        "name": "flower_elements",
+        "label": "flower_elements",
+        "type": "string",
+        "required": false,
+        "desc": "Flower elements and bouquet composition description (English only). Default: AUTO."
+      },
+      {
+        "name": "style",
+        "label": "style",
+        "type": "string",
+        "required": false,
+        "desc": "Artwork style for the generated wallpaper (English only). Default: soft watercolor floral illustration."
+      },
+      {
+        "name": "background",
+        "label": "background",
+        "type": "string",
+        "required": false,
+        "desc": "Background style or color theme for the wallpaper (English only). Default: pastel gradient background."
+      },
+      {
+        "name": "aspect_ratio",
+        "label": "aspect_ratio",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Face Rating API",
+    "unique_sign": "portrait_analysis_ai_face_rating",
+    "method": "POST",
+    "path": "/api/portrait/analysis/ai-face-rating",
+    "doc": "AI Face Rating API analyzes portraits for beauty score, symmetry, facial proportions, skin impression, and improvement tips.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "aspect_ratio",
+        "label": "aspect_ratio",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Bald API",
+    "unique_sign": "portrait_editing_ai_bald",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-bald",
+    "doc": "AI Bald API creates realistic bald head and hair loss previews from portraits for hairstyle apps and virtual makeover tools.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Beard Removal API",
+    "unique_sign": "portrait_editing_ai_beard_removal",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-beard-removal",
+    "doc": "AI Beard Removal API removes beards, mustaches, and facial hair from portraits to create realistic clean-shaven results.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Beard Styling API",
+    "unique_sign": "portrait_editing_ai_beard_styling",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-beard-styling",
+    "doc": "AI Beard Styling API adds realistic beard and mustache styles to portraits for grooming apps, barbershop tools, and virtual try-ons.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "beard",
+        "label": "beard",
+        "type": "string",
+        "required": false,
+        "desc": "Built-in beard preset. Provide this field or `image_template`. If both are provided, `beard` takes precedence. See [Supported beard values](/docs/ai-portrait/editing/ai-beard-styling/api#beard). Allowed values: FullBeardClassic, CorporateBeard, Garibaldi, Verdi, FullBeardTapered, VanDyke, Bandholz, VanDykeRefined, Goatee, ExtendedGoatee, Balbo, AnchorBeardClean, DucktailBeardPointed, AnchorBeardFull, DucktailBeardFull, HeavyStubble, ChevronMoustache, HandlebarMoustache, ImperialMoustache, CircleBeard, ChinStrap, MuttonChops, SoulPatch, PetiteGoatee."
+      },
+      {
+        "name": "image_template",
+        "label": "image_template",
+        "type": "file",
+        "required": false,
+        "desc": "Reference image for beard transfer. Provide this field or `beard`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ],
+    "required_any_of": [
+      [
+        "beard",
+        "image_template"
+      ]
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Breast Expansion API",
+    "unique_sign": "portrait_editing_ai_big_tits",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-big-tits",
+    "doc": "AI Breast Expansion API enlarges the bust area in portraits while preserving face, clothing, background, and body proportions.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": false,
+        "desc": "Task Type. <li>`async`: Asynchronous tasks.</li>"
+      },
+      {
+        "name": "person_image",
+        "label": "person_image",
+        "type": "file",
+        "required": true,
+        "desc": ""
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "data",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "image",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Butt Enhancement API",
+    "unique_sign": "portrait_editing_ai_butt_enhancement",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-butt-enhancement",
+    "doc": "AI Butt Enhancement API naturally enhances butt shape and curves while preserving body proportions, clothing, pose, and image quality.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Colored Contacts API",
+    "unique_sign": "portrait_editing_ai_colored_contacts",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-colored-contacts",
+    "doc": "AI Colored Contacts API applies realistic colored contact lens effects to portraits using prompt-guided eye color customization.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "name",
+        "label": "name",
+        "type": "string",
+        "required": false,
+        "desc": "Contact Lens Name (English only)."
+      },
+      {
+        "name": "desc",
+        "label": "desc",
+        "type": "string",
+        "required": false,
+        "desc": "Contact Lens Description (English only)."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Eyebrows API",
+    "unique_sign": "portrait_editing_ai_eyebrows",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-eyebrows",
+    "doc": "AI Eyebrows API applies reference-guided eyebrow styles to portraits with realistic shape, detail, and high-resolution output.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "reference_image",
+        "label": "reference_image",
+        "type": "file",
+        "required": true,
+        "desc": "Reference Image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "resolution",
+        "label": "resolution",
+        "type": "string",
+        "required": false,
+        "desc": "Resolution. Allowed values: 1K, 2K. Default: 1K."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Eyelashes API",
+    "unique_sign": "portrait_editing_ai_eyelashes",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-eyelashes",
+    "doc": "AI Eyelashes API applies natural-looking eyelash effects to portraits using prompt-guided eye style enhancement.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "name",
+        "label": "name",
+        "type": "string",
+        "required": false,
+        "desc": "Eyelash Name (English only)."
+      },
+      {
+        "name": "desc",
+        "label": "desc",
+        "type": "string",
+        "required": false,
+        "desc": "Eyelash Description (English only)."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Eyeshadow Try-On API",
+    "unique_sign": "portrait_editing_ai_eyeshadow",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-eyeshadow",
+    "doc": "AI Eyeshadow Try-On API applies realistic eyeshadow styles while preserving facial features, skin tone, expression, and lighting.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "eyeshadow_style",
+        "label": "eyeshadow_style",
+        "type": "string",
+        "required": false,
+        "desc": "Built-in eyeshadow preset. Provide this field or `image_template`. If both are provided, `eyeshadow_style` takes precedence. See [Supported eyeshadow styles](/docs/ai-portrait/editing/ai-eyeshadow/api#eyeshadow_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36."
+      },
+      {
+        "name": "image_template",
+        "label": "image_template",
+        "type": "file",
+        "required": false,
+        "desc": "Reference image for eyeshadow transfer. Provide this field or `eyeshadow_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "aspect_ratio",
+        "label": "aspect_ratio",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ],
+    "required_any_of": [
+      [
+        "eyeshadow_style",
+        "image_template"
+      ]
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Face Swap API",
+    "unique_sign": "portrait_editing_ai_face_swap",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-face-swap",
+    "doc": "AI Face Swap API swaps a source face onto a target image and returns an asynchronous task ID for result retrieval.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image_target",
+        "label": "image_target",
+        "type": "file",
+        "required": true,
+        "desc": "The image to be modified. The face in this image will be replaced. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "image_template",
+        "label": "image_template",
+        "type": "file",
+        "required": true,
+        "desc": "The image that provides the face to use. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Fat Filter API",
+    "unique_sign": "portrait_editing_ai_fat_filter",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-fat-filter",
+    "doc": "AI Fat Filter API makes people look naturally heavier while preserving identity, facial features, clothing, pose, and background.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Hair Color API",
+    "unique_sign": "portrait_editing_ai_hair_color",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-hair-color",
+    "doc": "AI Hair Color API applies realistic hair color effects to portraits with prompt-guided tones, styles, and natural results.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "name",
+        "label": "name",
+        "type": "string",
+        "required": false,
+        "desc": "Hair Color Name (English only)."
+      },
+      {
+        "name": "desc",
+        "label": "desc",
+        "type": "string",
+        "required": false,
+        "desc": "Hair Color Description (English only)."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Hair Loss Simulation API",
+    "unique_sign": "portrait_editing_ai_hair_loss_simulation",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-hair-loss-simulation",
+    "doc": "AI Hair Loss Simulation API creates realistic hair thinning, receding hairline, and baldness previews from portrait photos.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "level",
+        "label": "level",
+        "type": "string",
+        "required": true,
+        "desc": "Hair loss level. See [Supported level values](/docs/ai-portrait/editing/ai-hair-loss-simulation/api#level). Allowed values: man_1, man_2, man_3, man_4, man_5, man_6, man_7, woman_1, woman_2, woman_3, woman_4, woman_5, woman_6, woman_7."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Lip Enhancement API",
+    "unique_sign": "portrait_editing_ai_lip_enhancement",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-lip-enhancement",
+    "doc": "AI Lip Enhancement API creates fuller, natural-looking lips while preserving facial features, expression, skin tone, and image quality.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Waist Slimming API",
+    "unique_sign": "portrait_editing_ai_waist_slimming",
+    "method": "POST",
+    "path": "/api/portrait/editing/ai-waist-slimming",
+    "doc": "AI Waist Slimming API creates a slimmer waist while preserving natural body proportions, clothing, pose, and image quality.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Try on Clothes Premium API",
+    "unique_sign": "portrait_editing_try_on_clothes_premium",
+    "method": "POST",
+    "path": "/api/portrait/editing/try-on-clothes-premium",
+    "doc": "Try on Clothes Premium API creates high-quality virtual try-on images with realistic garment fit, texture, and body alignment.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "task_type",
+        "label": "task_type",
+        "type": "string",
+        "required": true,
+        "desc": "Task Type. <li>`async`: Asynchronous tasks.</li>"
+      },
+      {
+        "name": "person_image",
+        "label": "person_image",
+        "type": "file",
+        "required": true,
+        "desc": "Portrait image."
+      },
+      {
+        "name": "top_garment",
+        "label": "top_garment",
+        "type": "file",
+        "required": true,
+        "desc": "Upper Body Clothing Image."
+      },
+      {
+        "name": "resolution",
+        "label": "resolution",
+        "type": "number",
+        "required": false,
+        "desc": "Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. <li>`-1`: Original image resolution.</li> <li>`1024`: 576x1024px.</li> <li>`1280`: 720x1280px.</li>"
+      },
+      {
+        "name": "restore_face",
+        "label": "restore_face",
+        "type": "boolean",
+        "required": false,
+        "desc": "Whether to Keep the Model’s Face. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `true`. <li>`true`: Keep the model’s original face.</li> <li>`false`: Regenerate the model’s face.</li>"
+      },
+      {
+        "name": "bottom_garment",
+        "label": "bottom_garment",
+        "type": "file",
+        "required": false,
+        "desc": "Lower Body Clothing Image. <li>If no lower body clothing image is provided, the lower body clothing effect will be randomly generated.</li> <li>If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty.</li>"
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_code",
+        "type": "integer",
+        "desc": ""
+      },
+      {
+        "name": "error_code_str",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_msg",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_type",
+        "type": "string",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Big Head Effect API",
+    "unique_sign": "portrait_effects_ai_big_head_effect",
+    "method": "POST",
+    "path": "/api/portrait/effects/ai-big-head-effect",
+    "doc": "AI Big Head Effect API creates big-head portrait effects while preserving identity, hairstyle, outfit, background, and lighting.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Halloween Mask API",
+    "unique_sign": "portrait_effects_ai_halloween_mask",
+    "method": "POST",
+    "path": "/api/portrait/effects/ai-halloween-mask",
+    "doc": "AI Halloween Mask API adds spooky Halloween masks to portraits while preserving identity, lighting, background, and facial structure.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "mask_style",
+        "label": "mask_style",
+        "type": "string",
+        "required": false,
+        "desc": "Built-in mask preset. Provide either this field or `image_template`. If both are provided, `mask_style` takes precedence. See [Supported mask styles](/docs/ai-portrait/effects/ai-halloween-mask/api#mask_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85."
+      },
+      {
+        "name": "image_template",
+        "label": "image_template",
+        "type": "file",
+        "required": false,
+        "desc": "Reference image for eyeshadow transfer. Provide this field or `mask_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "aspect_ratio",
+        "label": "aspect_ratio",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ],
+    "required_any_of": [
+      [
+        "mask_style",
+        "image_template"
+      ]
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Lip Bite Expressions API",
+    "unique_sign": "portrait_effects_ai_lip_bite_expressions",
+    "method": "POST",
+    "path": "/api/portrait/effects/ai-lip-bite-expressions",
+    "doc": "AI Lip Bite Expressions API turns portraits into consistent lip bite emoji packs with 1, 4, 6, or 9 panels.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "grid_count",
+        "label": "grid_count",
+        "type": "integer",
+        "required": false,
+        "desc": "Specifies the number of emoji stickers to generate in a single image. Allowed values: 1, 4, 6, 9. Default: 1."
+      },
+      {
+        "name": "aspect_ratio",
+        "label": "aspect_ratio",
+        "type": "string",
+        "required": false,
+        "desc": "Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Red Lip Gloss API",
+    "unique_sign": "portrait_effects_ai_red_lip_gloss",
+    "method": "POST",
+    "path": "/api/portrait/effects/ai-red-lip-gloss",
+    "doc": "AI Red Lip Gloss API adds glossy red lips to portraits while preserving facial features, expression, skin tone, and natural lighting.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Square Face Filter API",
+    "unique_sign": "portrait_effects_ai_square_face_filter",
+    "method": "POST",
+    "path": "/api/portrait/effects/ai-square-face-filter",
+    "doc": "AI Square Face Filter API turns portraits into rounded-square cartoon avatars while preserving identity and facial features.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Change Facial Expressions Advanced API",
+    "unique_sign": "portrait_effects_emotion_editor_advanced",
+    "method": "POST",
+    "path": "/api/portrait/effects/emotion-editor-advanced",
+    "doc": "Change Facial Expressions Advanced API applies 100+ realistic expression styles to portraits while preserving facial identity and quality.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "expression",
+        "label": "expression",
+        "type": "string",
+        "required": true,
+        "desc": "Expression. See [Supported expression values](/docs/ai-portrait/effects/emotion-editor-advanced/api#expression). Allowed values: natural_smile, bright_laugh, sweet_smile, happy_surprise, proud_smirk, laughing_with_tears, crazy_happy_face, overjoyed_screaming_laugh, slight_annoyance, angry_stare, gritted_teeth_anger, furious_shout, cold_glare, cartoon_rage_face, angry_puffed_cheeks, villain_angry_smirk, downcast_sadness, wronged_near_tears, tearful_sadness, heartbroken_breakdown, silent_grief, big_crying_face, puppy_eyes_sad, fake_crying_funny, tongue_out_playful, wink_cute, silly_face, mischievous_smirk, exaggerated_surprised_face, cross_eyed_silly_face, one_eye_squint_funny, duck_face_funny, crazy_tongue_face, slight_surprise, shocked_open_mouth, disbelief, fearful_surprise, jaw_drop_surprise, cartoon_shocked_face, speechless_shock, nervous_fear, terrified_expression, timid_withdrawal, panic_breakdown, screaming_fear_face, frozen_in_fear, panic_wide_eyes, mild_dislike, strong_aversion, nauseated_disgust, eye_roll_disgust, extreme_disgust_face, grossed_out_face, dramatic_eye_roll, shy_smile, blushing_shyness, awkward_forced_smile, socially_embarrassed, over_shy_blushing_face, awkward_sweat_smile, embarrassed_cover_mouth, confident_smile, dominant_gaze, cold_cool_expression, victorious_pride, super_confident_smirk, bossy_cool_face, winning_smug_face, slight_confusion, frowning_thought, not_understanding, suspicious_look, confused_tilted_face, what_are_you_doing_face, brain_loading_face, tired_blank_eyes, helpless_expression, awkward_silence, sleepy_yawn, dead_inside_face, exhausted_melting_face, speechless_blank_stare, charming_smile, flirty_eyebrow_raise, soft_lip_bite, dreamy_gaze, playful_seductive_smirk, wink_flirty_face, dramatic_lip_bite, gentle_gaze, fond_smile, sweet_pouting_affection, deep_affectionate_gaze, heart_eyes_expression, overly_sweet_affection, clingy_cute_pout, cold_contempt, sarcastic_sneer, dismissive_pout, in_control_expression, extreme_smug_face, mocking_laugh_face, looking_down_contempt, soft_cute_smile, cute_pout, innocent_big_eyes, expectant_sparkling_eyes, super_cute_pouting_face, sparkling_eyes_cute, baby_like_innocent_face, frowning_in_pain, holding_back_tears, crying_breakdown, repressed_exhaustion, dramatic_pain_face, holding_back_scream, overwhelmed_breakdown_face."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "Hairstyle Changer Premium API",
+    "unique_sign": "portrait_effects_hairstyle_editor_premium",
+    "method": "POST",
+    "path": "/api/portrait/effects/hairstyle-editor-premium",
+    "doc": "Hairstyle Changer Premium API generates preset or reference-based hairstyles and custom hair colors for men and women.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "Source image. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right."
+      },
+      {
+        "name": "image_template",
+        "label": "image_template",
+        "type": "file",
+        "required": false,
+        "desc": "Reference image for hairstyle transfer. Provide this field or `hair_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right."
+      },
+      {
+        "name": "hair_style",
+        "label": "hair_style",
+        "type": "string",
+        "required": false,
+        "desc": "Built-in hairstyle preset. Provide this field or `image_template`. If both are provided, `hair_style` takes precedence. See [Supported hair_style values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#hair_style). Allowed values: BuzzCut, UnderCut, Pompadour, SlickBack, CurlyShag, WavyShag, FauxHawk, Spiky, CombOver, HighTightFade, ManBun, Afro, LowFade, UndercutLongHair, TwoBlockHaircut, TexturedFringe, BluntBowlCut, LongWavyCurtainBangs, MessyTousled, CornrowBraids, LongHairTiedUp, Middle-parted, ManGreased, WavyMiddlePart, Natural_Side-Part, Wolf_Crop, Wind-Tousled_Crop, Side-Parted_Textured, FluffyMiddlePart, FreshSide-Parted, Smooth_Crop, Korean_Wavy_Crop, Comma_Hair, Side-Part_Crop, Natural_Middle_Part, ShortPixieWithShavedSides, ShortNeatBob, DoubleBun, Updo, Spiked, bowlCut, Chignon, PixieCut, SlickedBack, LongCurly, CurlyBob, StackedCurlsInShortBob, SidePartCombOverHairstyleWithHighFade, WavyFrenchBobVibesfrom1920, BobCut, ShortTwintails, ShortCurlyPixie, LongStraight, LongWavy, FishtailBraid, TwinBraids, Ponytail, Dreadlocks, Cornrows, ShoulderLengthHair, LooseCurlyAfro, LongTwintails, LongHimeCut, BoxBraids, Layered_Waves, Side_Flip_Perm, Textured_Crop, Mushroom_Curl, Vintage_Curls, Magic_Perm, Side-Parted_Waves, Fluffy_Short, Smooth_Inward_Bob, Neat_Short, Natural_Short, Chic_Tapered_Bob, Edgy_Textured_Pixie, Elegant_Wavy_Crop, Chic_Wavy_Pixie, Elegant_Side_Wave, Soft_Layered_Curl, Executive_Pixie, Curved_Chic_Bob, Airy_Short_Curls, Playful_Curly_Bob, Playful_Wavy_Bob, Elegant_Soft_Curl, Elegant_Smooth_Bob, Retro_Airy_Curl, Soft_Wavy_Bob, Light_Inward_Bob, Neat_Curly_Crop_Cut, Elegant_Volumized_Bob, Modern_Curls_Chic, Mocha_Volume_Pixie, Elegant_Side_Flow, Chestnut, ChoppyBangs, StructuredWavyShag, TinfoilPerm, ClassicWavyBob, Fluffy_Pixie_Cut, FrenchBangs, JapaneseShort, MediumLongLayered, male_hairstyle_0001, male_hairstyle_0002, male_hairstyle_0003, male_hairstyle_0004, male_hairstyle_0005, male_hairstyle_0006, male_hairstyle_0007, male_hairstyle_0008, male_hairstyle_0009, male_hairstyle_0010, male_hairstyle_0011, male_hairstyle_0012, male_hairstyle_0013, male_hairstyle_0014, male_hairstyle_0015, male_hairstyle_0016, male_hairstyle_0017, male_hairstyle_0018, male_hairstyle_0019, male_hairstyle_0020, male_hairstyle_0021, male_hairstyle_0022, male_hairstyle_0023, male_hairstyle_0024, male_hairstyle_0025, male_hairstyle_0026, male_hairstyle_0027, male_hairstyle_0028, male_hairstyle_0029, male_hairstyle_0030, male_hairstyle_0031, male_hairstyle_0032, male_hairstyle_0033, male_hairstyle_0034, male_hairstyle_0035, male_hairstyle_0036, male_hairstyle_0037, male_hairstyle_0038, male_hairstyle_0039, male_hairstyle_0040, male_hairstyle_0041, male_hairstyle_0042, male_hairstyle_0043, male_hairstyle_0044, male_hairstyle_0045, male_hairstyle_0046, male_hairstyle_0047, male_hairstyle_0048, male_hairstyle_0049, male_hairstyle_0050, male_hairstyle_0051, male_hairstyle_0052, male_hairstyle_0053, male_hairstyle_0054, male_hairstyle_0055, male_hairstyle_0056, male_hairstyle_0057, male_hairstyle_0058, male_hairstyle_0059, male_hairstyle_0060, male_hairstyle_0061, male_hairstyle_0062, female_hairstyle_0001, female_hairstyle_0002, female_hairstyle_0003, female_hairstyle_0004, female_hairstyle_0005, female_hairstyle_0006, female_hairstyle_0007, female_hairstyle_0008, female_hairstyle_0009, female_hairstyle_0010, female_hairstyle_0011, female_hairstyle_0012, female_hairstyle_0013, female_hairstyle_0014, female_hairstyle_0015, female_hairstyle_0016, female_hairstyle_0017, female_hairstyle_0018, female_hairstyle_0019, female_hairstyle_0020, female_hairstyle_0021, female_hairstyle_0022, female_hairstyle_0023, female_hairstyle_0024, female_hairstyle_0025, female_hairstyle_0026, female_hairstyle_0027, female_hairstyle_0028, female_hairstyle_0029, female_hairstyle_0030, female_hairstyle_0031, female_hairstyle_0032, female_hairstyle_0033, female_hairstyle_0034, female_hairstyle_0035, female_hairstyle_0036, female_hairstyle_0037, female_hairstyle_0038, female_hairstyle_0039, female_hairstyle_0040, female_hairstyle_0041, female_hairstyle_0042, female_hairstyle_0043, female_hairstyle_0044, female_hairstyle_0045, female_hairstyle_0046, female_hairstyle_0047, female_hairstyle_0048, female_hairstyle_0049, female_hairstyle_0050, female_hairstyle_0051, female_hairstyle_0052, female_hairstyle_0053, female_hairstyle_0054, female_hairstyle_0055, female_hairstyle_0056, female_hairstyle_0057, female_hairstyle_0058, female_hairstyle_0059, female_hairstyle_0060, female_hairstyle_0061, female_hairstyle_0062, female_hairstyle_0063, female_hairstyle_0064, female_hairstyle_0065, female_hairstyle_0066, female_hairstyle_0067, female_hairstyle_0068, female_hairstyle_0069, female_hairstyle_0070, female_hairstyle_0071, female_hairstyle_0072, female_hairstyle_0073."
+      },
+      {
+        "name": "color",
+        "label": "color",
+        "type": "string",
+        "required": false,
+        "desc": "Hair color preset. `original` keeps the source image color. `reference` uses the hair color from `image_template`. See [Supported color values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#color). Allowed values: original, reference, blonde, platinumBlonde, brown, lightBrown, blue, lightBlue, purple, lightPurple, pink, black, white, grey, silver, red, orange, green, gradient, multicolored, darkBlue, burgundy, darkGreen. Default: original."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ],
+    "required_any_of": [
+      [
+        "hair_style",
+        "image_template"
+      ]
+    ]
+  },
+  {
+    "module": "portrait",
+    "name": "AI Skin Enhancement Advanced API",
+    "unique_sign": "portrait_effects_smart_skin_advanced",
+    "method": "POST",
+    "path": "/api/portrait/effects/smart-skin-advanced",
+    "doc": "AI Skin Enhancement Advanced API removes acne, wrinkles, pores, spots, eye bags, and uneven tone while preserving natural skin texture.",
+    "api_doc": "",
+    "body_params": [
+      {
+        "name": "image",
+        "label": "image",
+        "type": "file",
+        "required": true,
+        "desc": "- Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px."
+      },
+      {
+        "name": "smart_skin",
+        "label": "smart_skin",
+        "type": "string",
+        "required": false,
+        "desc": "Smart all-in-one skin beautification. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "acne_removal",
+        "label": "acne_removal",
+        "type": "string",
+        "required": false,
+        "desc": "Acne and blemish removal. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "spot_correction",
+        "label": "spot_correction",
+        "type": "string",
+        "required": false,
+        "desc": "Spot and pigmentation correction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "skin_brightening",
+        "label": "skin_brightening",
+        "type": "string",
+        "required": false,
+        "desc": "Skin brightening and tone enhancement. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "skin_smoothing",
+        "label": "skin_smoothing",
+        "type": "string",
+        "required": false,
+        "desc": "Skin smoothing and refinement. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "pore_control",
+        "label": "pore_control",
+        "type": "string",
+        "required": false,
+        "desc": "Pore and oil control. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "wrinkle_reduction",
+        "label": "wrinkle_reduction",
+        "type": "string",
+        "required": false,
+        "desc": "Wrinkle and fine-line reduction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "under_eye_correction",
+        "label": "under_eye_correction",
+        "type": "string",
+        "required": false,
+        "desc": "Under-eye correction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      },
+      {
+        "name": "scar_reduction",
+        "label": "scar_reduction",
+        "type": "string",
+        "required": false,
+        "desc": "Scar and skin damage reduction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0."
+      }
+    ],
+    "query_params": [],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "desc": "Request ID for debugging."
+      },
+      {
+        "name": "log_id",
+        "type": "string",
+        "desc": "Log ID for debugging."
+      },
+      {
+        "name": "error_detail",
+        "type": "object",
+        "desc": ""
+      },
+      {
+        "name": "task_id",
+        "type": "string",
+        "desc": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
+    ]
   }
 ]

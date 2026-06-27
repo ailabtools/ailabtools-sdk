@@ -135,7 +135,132 @@ import {
   PortraitTryOnClothesRefinerResponse,
   PortraitTryOnClothesRefinerResponseData,
   validatePortraitTryOnClothesRefinerParams,
-  PortraitTryOnClothesRefinerParamMap
+  PortraitTryOnClothesRefinerParamMap,
+  PortraitAIFaceRatingParams,
+  PortraitAIFaceRatingResponse,
+  PortraitAIFaceRatingResponseData,
+  validatePortraitAIFaceRatingParams,
+  PortraitAIFaceRatingParamMap,
+  PortraitAIBaldParams,
+  PortraitAIBaldResponse,
+  PortraitAIBaldResponseData,
+  validatePortraitAIBaldParams,
+  PortraitAIBaldParamMap,
+  PortraitAIBeardRemovalParams,
+  PortraitAIBeardRemovalResponse,
+  PortraitAIBeardRemovalResponseData,
+  validatePortraitAIBeardRemovalParams,
+  PortraitAIBeardRemovalParamMap,
+  PortraitAIBeardStylingParams,
+  PortraitAIBeardStylingResponse,
+  PortraitAIBeardStylingResponseData,
+  validatePortraitAIBeardStylingParams,
+  PortraitAIBeardStylingParamMap,
+  PortraitAIBreastExpansionParams,
+  PortraitAIBreastExpansionResponse,
+  PortraitAIBreastExpansionResponseData,
+  validatePortraitAIBreastExpansionParams,
+  PortraitAIBreastExpansionParamMap,
+  PortraitAIButtEnhancementParams,
+  PortraitAIButtEnhancementResponse,
+  PortraitAIButtEnhancementResponseData,
+  validatePortraitAIButtEnhancementParams,
+  PortraitAIButtEnhancementParamMap,
+  PortraitAIColoredContactsParams,
+  PortraitAIColoredContactsResponse,
+  PortraitAIColoredContactsResponseData,
+  validatePortraitAIColoredContactsParams,
+  PortraitAIColoredContactsParamMap,
+  PortraitAIEyebrowsParams,
+  PortraitAIEyebrowsResponse,
+  PortraitAIEyebrowsResponseData,
+  validatePortraitAIEyebrowsParams,
+  PortraitAIEyebrowsParamMap,
+  PortraitAIEyelashesParams,
+  PortraitAIEyelashesResponse,
+  PortraitAIEyelashesResponseData,
+  validatePortraitAIEyelashesParams,
+  PortraitAIEyelashesParamMap,
+  PortraitAIEyeshadowTryOnParams,
+  PortraitAIEyeshadowTryOnResponse,
+  PortraitAIEyeshadowTryOnResponseData,
+  validatePortraitAIEyeshadowTryOnParams,
+  PortraitAIEyeshadowTryOnParamMap,
+  PortraitAIFaceSwapParams,
+  PortraitAIFaceSwapResponse,
+  PortraitAIFaceSwapResponseData,
+  validatePortraitAIFaceSwapParams,
+  PortraitAIFaceSwapParamMap,
+  PortraitAIFatFilterParams,
+  PortraitAIFatFilterResponse,
+  PortraitAIFatFilterResponseData,
+  validatePortraitAIFatFilterParams,
+  PortraitAIFatFilterParamMap,
+  PortraitAIHairColorParams,
+  PortraitAIHairColorResponse,
+  PortraitAIHairColorResponseData,
+  validatePortraitAIHairColorParams,
+  PortraitAIHairColorParamMap,
+  PortraitAIHairLossSimulationParams,
+  PortraitAIHairLossSimulationResponse,
+  PortraitAIHairLossSimulationResponseData,
+  validatePortraitAIHairLossSimulationParams,
+  PortraitAIHairLossSimulationParamMap,
+  PortraitAILipEnhancementParams,
+  PortraitAILipEnhancementResponse,
+  PortraitAILipEnhancementResponseData,
+  validatePortraitAILipEnhancementParams,
+  PortraitAILipEnhancementParamMap,
+  PortraitAIWaistSlimmingParams,
+  PortraitAIWaistSlimmingResponse,
+  PortraitAIWaistSlimmingResponseData,
+  validatePortraitAIWaistSlimmingParams,
+  PortraitAIWaistSlimmingParamMap,
+  PortraitTryOnClothesPremiumParams,
+  PortraitTryOnClothesPremiumResponse,
+  PortraitTryOnClothesPremiumResponseData,
+  validatePortraitTryOnClothesPremiumParams,
+  PortraitTryOnClothesPremiumParamMap,
+  PortraitAIBigHeadEffectParams,
+  PortraitAIBigHeadEffectResponse,
+  PortraitAIBigHeadEffectResponseData,
+  validatePortraitAIBigHeadEffectParams,
+  PortraitAIBigHeadEffectParamMap,
+  PortraitAIHalloweenMaskParams,
+  PortraitAIHalloweenMaskResponse,
+  PortraitAIHalloweenMaskResponseData,
+  validatePortraitAIHalloweenMaskParams,
+  PortraitAIHalloweenMaskParamMap,
+  PortraitAILipBiteExpressionsParams,
+  PortraitAILipBiteExpressionsResponse,
+  PortraitAILipBiteExpressionsResponseData,
+  validatePortraitAILipBiteExpressionsParams,
+  PortraitAILipBiteExpressionsParamMap,
+  PortraitAIRedLipGlossParams,
+  PortraitAIRedLipGlossResponse,
+  PortraitAIRedLipGlossResponseData,
+  validatePortraitAIRedLipGlossParams,
+  PortraitAIRedLipGlossParamMap,
+  PortraitAISquareFaceFilterParams,
+  PortraitAISquareFaceFilterResponse,
+  PortraitAISquareFaceFilterResponseData,
+  validatePortraitAISquareFaceFilterParams,
+  PortraitAISquareFaceFilterParamMap,
+  PortraitExpressionEditingAdvancedParams,
+  PortraitExpressionEditingAdvancedResponse,
+  PortraitExpressionEditingAdvancedResponseData,
+  validatePortraitExpressionEditingAdvancedParams,
+  PortraitExpressionEditingAdvancedParamMap,
+  PortraitHairstyleEditingPremiumParams,
+  PortraitHairstyleEditingPremiumResponse,
+  PortraitHairstyleEditingPremiumResponseData,
+  validatePortraitHairstyleEditingPremiumParams,
+  PortraitHairstyleEditingPremiumParamMap,
+  PortraitAISkinEnhancementAdvancedParams,
+  PortraitAISkinEnhancementAdvancedResponse,
+  PortraitAISkinEnhancementAdvancedResponseData,
+  validatePortraitAISkinEnhancementAdvancedParams,
+  PortraitAISkinEnhancementAdvancedParamMap
 } from "../generated/endpoints";
 
 export class PortraitAPI {
@@ -309,6 +434,156 @@ export class PortraitAPI {
     validatePortraitTryOnClothesRefinerParams(params);
     const mapped = mapParams(params, PortraitTryOnClothesRefinerParamMap);
     return this.request.request<PortraitTryOnClothesRefinerResponseData>("POST", "/api/portrait/enhance/try-on-clothes-refiner", { body: mapped, multipart: true });
+  }
+
+  async portraitAIFaceRating(params: PortraitAIFaceRatingParams): Promise<PortraitAIFaceRatingResponse> {
+    validatePortraitAIFaceRatingParams(params);
+    const mapped = mapParams(params, PortraitAIFaceRatingParamMap);
+    return this.request.request<PortraitAIFaceRatingResponseData>("POST", "/api/portrait/analysis/ai-face-rating", { body: mapped, multipart: true });
+  }
+
+  async portraitAIBald(params: PortraitAIBaldParams): Promise<PortraitAIBaldResponse> {
+    validatePortraitAIBaldParams(params);
+    const mapped = mapParams(params, PortraitAIBaldParamMap);
+    return this.request.request<PortraitAIBaldResponseData>("POST", "/api/portrait/editing/ai-bald", { body: mapped, multipart: true });
+  }
+
+  async portraitAIBeardRemoval(params: PortraitAIBeardRemovalParams): Promise<PortraitAIBeardRemovalResponse> {
+    validatePortraitAIBeardRemovalParams(params);
+    const mapped = mapParams(params, PortraitAIBeardRemovalParamMap);
+    return this.request.request<PortraitAIBeardRemovalResponseData>("POST", "/api/portrait/editing/ai-beard-removal", { body: mapped, multipart: true });
+  }
+
+  async portraitAIBeardStyling(params: PortraitAIBeardStylingParams): Promise<PortraitAIBeardStylingResponse> {
+    validatePortraitAIBeardStylingParams(params);
+    const mapped = mapParams(params, PortraitAIBeardStylingParamMap);
+    return this.request.request<PortraitAIBeardStylingResponseData>("POST", "/api/portrait/editing/ai-beard-styling", { body: mapped, multipart: true });
+  }
+
+  async portraitAIBreastExpansion(params: PortraitAIBreastExpansionParams): Promise<PortraitAIBreastExpansionResponse> {
+    validatePortraitAIBreastExpansionParams(params);
+    const mapped = mapParams(params, PortraitAIBreastExpansionParamMap);
+    return this.request.request<PortraitAIBreastExpansionResponseData>("POST", "/api/portrait/editing/ai-big-tits", { body: mapped, multipart: true });
+  }
+
+  async portraitAIButtEnhancement(params: PortraitAIButtEnhancementParams): Promise<PortraitAIButtEnhancementResponse> {
+    validatePortraitAIButtEnhancementParams(params);
+    const mapped = mapParams(params, PortraitAIButtEnhancementParamMap);
+    return this.request.request<PortraitAIButtEnhancementResponseData>("POST", "/api/portrait/editing/ai-butt-enhancement", { body: mapped, multipart: true });
+  }
+
+  async portraitAIColoredContacts(params: PortraitAIColoredContactsParams): Promise<PortraitAIColoredContactsResponse> {
+    validatePortraitAIColoredContactsParams(params);
+    const mapped = mapParams(params, PortraitAIColoredContactsParamMap);
+    return this.request.request<PortraitAIColoredContactsResponseData>("POST", "/api/portrait/editing/ai-colored-contacts", { body: mapped, multipart: true });
+  }
+
+  async portraitAIEyebrows(params: PortraitAIEyebrowsParams): Promise<PortraitAIEyebrowsResponse> {
+    validatePortraitAIEyebrowsParams(params);
+    const mapped = mapParams(params, PortraitAIEyebrowsParamMap);
+    return this.request.request<PortraitAIEyebrowsResponseData>("POST", "/api/portrait/editing/ai-eyebrows", { body: mapped, multipart: true });
+  }
+
+  async portraitAIEyelashes(params: PortraitAIEyelashesParams): Promise<PortraitAIEyelashesResponse> {
+    validatePortraitAIEyelashesParams(params);
+    const mapped = mapParams(params, PortraitAIEyelashesParamMap);
+    return this.request.request<PortraitAIEyelashesResponseData>("POST", "/api/portrait/editing/ai-eyelashes", { body: mapped, multipart: true });
+  }
+
+  async portraitAIEyeshadowTryOn(params: PortraitAIEyeshadowTryOnParams): Promise<PortraitAIEyeshadowTryOnResponse> {
+    validatePortraitAIEyeshadowTryOnParams(params);
+    const mapped = mapParams(params, PortraitAIEyeshadowTryOnParamMap);
+    return this.request.request<PortraitAIEyeshadowTryOnResponseData>("POST", "/api/portrait/editing/ai-eyeshadow", { body: mapped, multipart: true });
+  }
+
+  async portraitAIFaceSwap(params: PortraitAIFaceSwapParams): Promise<PortraitAIFaceSwapResponse> {
+    validatePortraitAIFaceSwapParams(params);
+    const mapped = mapParams(params, PortraitAIFaceSwapParamMap);
+    return this.request.request<PortraitAIFaceSwapResponseData>("POST", "/api/portrait/editing/ai-face-swap", { body: mapped, multipart: true });
+  }
+
+  async portraitAIFatFilter(params: PortraitAIFatFilterParams): Promise<PortraitAIFatFilterResponse> {
+    validatePortraitAIFatFilterParams(params);
+    const mapped = mapParams(params, PortraitAIFatFilterParamMap);
+    return this.request.request<PortraitAIFatFilterResponseData>("POST", "/api/portrait/editing/ai-fat-filter", { body: mapped, multipart: true });
+  }
+
+  async portraitAIHairColor(params: PortraitAIHairColorParams): Promise<PortraitAIHairColorResponse> {
+    validatePortraitAIHairColorParams(params);
+    const mapped = mapParams(params, PortraitAIHairColorParamMap);
+    return this.request.request<PortraitAIHairColorResponseData>("POST", "/api/portrait/editing/ai-hair-color", { body: mapped, multipart: true });
+  }
+
+  async portraitAIHairLossSimulation(params: PortraitAIHairLossSimulationParams): Promise<PortraitAIHairLossSimulationResponse> {
+    validatePortraitAIHairLossSimulationParams(params);
+    const mapped = mapParams(params, PortraitAIHairLossSimulationParamMap);
+    return this.request.request<PortraitAIHairLossSimulationResponseData>("POST", "/api/portrait/editing/ai-hair-loss-simulation", { body: mapped, multipart: true });
+  }
+
+  async portraitAILipEnhancement(params: PortraitAILipEnhancementParams): Promise<PortraitAILipEnhancementResponse> {
+    validatePortraitAILipEnhancementParams(params);
+    const mapped = mapParams(params, PortraitAILipEnhancementParamMap);
+    return this.request.request<PortraitAILipEnhancementResponseData>("POST", "/api/portrait/editing/ai-lip-enhancement", { body: mapped, multipart: true });
+  }
+
+  async portraitAIWaistSlimming(params: PortraitAIWaistSlimmingParams): Promise<PortraitAIWaistSlimmingResponse> {
+    validatePortraitAIWaistSlimmingParams(params);
+    const mapped = mapParams(params, PortraitAIWaistSlimmingParamMap);
+    return this.request.request<PortraitAIWaistSlimmingResponseData>("POST", "/api/portrait/editing/ai-waist-slimming", { body: mapped, multipart: true });
+  }
+
+  async portraitTryOnClothesPremium(params: PortraitTryOnClothesPremiumParams): Promise<PortraitTryOnClothesPremiumResponse> {
+    validatePortraitTryOnClothesPremiumParams(params);
+    const mapped = mapParams(params, PortraitTryOnClothesPremiumParamMap);
+    return this.request.request<PortraitTryOnClothesPremiumResponseData>("POST", "/api/portrait/editing/try-on-clothes-premium", { body: mapped, multipart: true });
+  }
+
+  async portraitAIBigHeadEffect(params: PortraitAIBigHeadEffectParams): Promise<PortraitAIBigHeadEffectResponse> {
+    validatePortraitAIBigHeadEffectParams(params);
+    const mapped = mapParams(params, PortraitAIBigHeadEffectParamMap);
+    return this.request.request<PortraitAIBigHeadEffectResponseData>("POST", "/api/portrait/effects/ai-big-head-effect", { body: mapped, multipart: true });
+  }
+
+  async portraitAIHalloweenMask(params: PortraitAIHalloweenMaskParams): Promise<PortraitAIHalloweenMaskResponse> {
+    validatePortraitAIHalloweenMaskParams(params);
+    const mapped = mapParams(params, PortraitAIHalloweenMaskParamMap);
+    return this.request.request<PortraitAIHalloweenMaskResponseData>("POST", "/api/portrait/effects/ai-halloween-mask", { body: mapped, multipart: true });
+  }
+
+  async portraitAILipBiteExpressions(params: PortraitAILipBiteExpressionsParams): Promise<PortraitAILipBiteExpressionsResponse> {
+    validatePortraitAILipBiteExpressionsParams(params);
+    const mapped = mapParams(params, PortraitAILipBiteExpressionsParamMap);
+    return this.request.request<PortraitAILipBiteExpressionsResponseData>("POST", "/api/portrait/effects/ai-lip-bite-expressions", { body: mapped, multipart: true });
+  }
+
+  async portraitAIRedLipGloss(params: PortraitAIRedLipGlossParams): Promise<PortraitAIRedLipGlossResponse> {
+    validatePortraitAIRedLipGlossParams(params);
+    const mapped = mapParams(params, PortraitAIRedLipGlossParamMap);
+    return this.request.request<PortraitAIRedLipGlossResponseData>("POST", "/api/portrait/effects/ai-red-lip-gloss", { body: mapped, multipart: true });
+  }
+
+  async portraitAISquareFaceFilter(params: PortraitAISquareFaceFilterParams): Promise<PortraitAISquareFaceFilterResponse> {
+    validatePortraitAISquareFaceFilterParams(params);
+    const mapped = mapParams(params, PortraitAISquareFaceFilterParamMap);
+    return this.request.request<PortraitAISquareFaceFilterResponseData>("POST", "/api/portrait/effects/ai-square-face-filter", { body: mapped, multipart: true });
+  }
+
+  async portraitExpressionEditingAdvanced(params: PortraitExpressionEditingAdvancedParams): Promise<PortraitExpressionEditingAdvancedResponse> {
+    validatePortraitExpressionEditingAdvancedParams(params);
+    const mapped = mapParams(params, PortraitExpressionEditingAdvancedParamMap);
+    return this.request.request<PortraitExpressionEditingAdvancedResponseData>("POST", "/api/portrait/effects/emotion-editor-advanced", { body: mapped, multipart: true });
+  }
+
+  async portraitHairstyleEditingPremium(params: PortraitHairstyleEditingPremiumParams): Promise<PortraitHairstyleEditingPremiumResponse> {
+    validatePortraitHairstyleEditingPremiumParams(params);
+    const mapped = mapParams(params, PortraitHairstyleEditingPremiumParamMap);
+    return this.request.request<PortraitHairstyleEditingPremiumResponseData>("POST", "/api/portrait/effects/hairstyle-editor-premium", { body: mapped, multipart: true });
+  }
+
+  async portraitAISkinEnhancementAdvanced(params: PortraitAISkinEnhancementAdvancedParams): Promise<PortraitAISkinEnhancementAdvancedResponse> {
+    validatePortraitAISkinEnhancementAdvancedParams(params);
+    const mapped = mapParams(params, PortraitAISkinEnhancementAdvancedParamMap);
+    return this.request.request<PortraitAISkinEnhancementAdvancedResponseData>("POST", "/api/portrait/effects/smart-skin-advanced", { body: mapped, multipart: true });
   }
 
 }

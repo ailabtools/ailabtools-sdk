@@ -329,4 +329,76 @@ final class ImageAPI {
     ImageRemoveObjectsParams params,
   ) =>
       imageRemoveObjects(params);
+
+  // BEGIN GENERATED OPENAPI ADDITIONS
+  Future<ImageAINailArtResponse> imageAINailArt(ImageAINailArtParams params) =>
+      _requester.request<ImageAINailArtResponseData>(
+        method: "POST",
+        path: "/api/image/editing/ai-nail-art",
+        parseData: (value) => value is Map<String, dynamic>
+            ? ImageAINailArtResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<ImageAINailArtProResponse> imageAINailArtPro(
+          ImageAINailArtProParams params) =>
+      _requester.request<ImageAINailArtProResponseData>(
+        method: "POST",
+        path: "/api/image/editing/ai-nail-art-pro",
+        parseData: (value) => value is Map<String, dynamic>
+            ? ImageAINailArtProResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<ImageAIPhotographyResponse> imageAIPhotography(
+          ImageAIPhotographyParams params) =>
+      _requester.request<ImageAIPhotographyResponseData>(
+        method: "POST",
+        path: "/api/image/effects/ai-photography",
+        parseData: (value) => value is Map<String, dynamic>
+            ? ImageAIPhotographyResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<ImageAIEmojiGeneratorResponse> imageAIEmojiGenerator(
+          ImageAIEmojiGeneratorParams params) =>
+      _requester.request<ImageAIEmojiGeneratorResponseData>(
+        method: "POST",
+        path: "/api/image/effects/photo-to-emoji-grid",
+        parseData: (value) => value is Map<String, dynamic>
+            ? ImageAIEmojiGeneratorResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<ImagePhotoToColoringPageResponse> imagePhotoToColoringPage(
+          ImagePhotoToColoringPageParams params) =>
+      _requester.request<ImagePhotoToColoringPageResponseData>(
+        method: "POST",
+        path: "/api/image/effects/photo-to-line-art",
+        parseData: (value) => value is Map<String, dynamic>
+            ? ImagePhotoToColoringPageResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<ImageAIFlowerWallpaperResponse> imageAIFlowerWallpaper(
+          ImageAIFlowerWallpaperParams params) =>
+      _requester.request<ImageAIFlowerWallpaperResponseData>(
+        method: "POST",
+        path: "/api/image/generation/ai-flower-wallpaper",
+        parseData: (value) => value is Map<String, dynamic>
+            ? ImageAIFlowerWallpaperResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
 }

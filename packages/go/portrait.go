@@ -813,3 +813,508 @@ func (api *PortraitAPI) ChangeHairstyle(ctx context.Context, params PortraitHair
 func (api *PortraitAPI) Retouch(ctx context.Context, params PortraitIntelligentBeautificationParams) (*PortraitIntelligentBeautificationResponse, error) {
 	return api.PortraitIntelligentBeautification(ctx, params)
 }
+
+// BEGIN GENERATED OPENAPI ADDITIONS
+
+type PortraitAIFaceRatingParams struct {
+	Image       FileInput `form:"image"`
+	AspectRatio string    `form:"aspect_ratio,omitempty"`
+}
+
+type PortraitAIFaceRatingResponseData struct {
+}
+
+type PortraitAIFaceRatingResponse = BaseResponse[PortraitAIFaceRatingResponseData]
+
+func (api *PortraitAPI) PortraitAIFaceRating(ctx context.Context, params PortraitAIFaceRatingParams) (*PortraitAIFaceRatingResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIFaceRatingResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/analysis/ai-face-rating", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIBaldParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIBaldResponseData struct {
+}
+
+type PortraitAIBaldResponse = BaseResponse[PortraitAIBaldResponseData]
+
+func (api *PortraitAPI) PortraitAIBald(ctx context.Context, params PortraitAIBaldParams) (*PortraitAIBaldResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIBaldResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-bald", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIBeardRemovalParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIBeardRemovalResponseData struct {
+}
+
+type PortraitAIBeardRemovalResponse = BaseResponse[PortraitAIBeardRemovalResponseData]
+
+func (api *PortraitAPI) PortraitAIBeardRemoval(ctx context.Context, params PortraitAIBeardRemovalParams) (*PortraitAIBeardRemovalResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIBeardRemovalResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-beard-removal", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIBeardStylingParams struct {
+	Image         FileInput `form:"image"`
+	Beard         string    `form:"beard,omitempty"`
+	ImageTemplate FileInput `form:"image_template,omitempty"`
+}
+
+type PortraitAIBeardStylingResponseData struct {
+}
+
+type PortraitAIBeardStylingResponse = BaseResponse[PortraitAIBeardStylingResponseData]
+
+func (api *PortraitAPI) PortraitAIBeardStyling(ctx context.Context, params PortraitAIBeardStylingParams) (*PortraitAIBeardStylingResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	if err := validateAtLeastOne(params, "Beard", "ImageTemplate"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIBeardStylingResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-beard-styling", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIBreastExpansionParams struct {
+	TaskType    string    `form:"task_type,omitempty"`
+	PersonImage FileInput `form:"person_image"`
+}
+
+type PortraitAIBreastExpansionResponseData struct {
+	Image string `json:"image,omitempty"`
+}
+
+type PortraitAIBreastExpansionResponse = BaseResponse[PortraitAIBreastExpansionResponseData]
+
+func (api *PortraitAPI) PortraitAIBreastExpansion(ctx context.Context, params PortraitAIBreastExpansionParams) (*PortraitAIBreastExpansionResponse, error) {
+	if err := validateRequired(params, "PersonImage"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIBreastExpansionResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-big-tits", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIButtEnhancementParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIButtEnhancementResponseData struct {
+}
+
+type PortraitAIButtEnhancementResponse = BaseResponse[PortraitAIButtEnhancementResponseData]
+
+func (api *PortraitAPI) PortraitAIButtEnhancement(ctx context.Context, params PortraitAIButtEnhancementParams) (*PortraitAIButtEnhancementResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIButtEnhancementResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-butt-enhancement", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIColoredContactsParams struct {
+	Image FileInput `form:"image"`
+	Name  string    `form:"name,omitempty"`
+	Desc  string    `form:"desc,omitempty"`
+}
+
+type PortraitAIColoredContactsResponseData struct {
+}
+
+type PortraitAIColoredContactsResponse = BaseResponse[PortraitAIColoredContactsResponseData]
+
+func (api *PortraitAPI) PortraitAIColoredContacts(ctx context.Context, params PortraitAIColoredContactsParams) (*PortraitAIColoredContactsResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIColoredContactsResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-colored-contacts", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIEyebrowsParams struct {
+	Image          FileInput `form:"image"`
+	ReferenceImage FileInput `form:"reference_image"`
+	Resolution     string    `form:"resolution,omitempty"`
+}
+
+type PortraitAIEyebrowsResponseData struct {
+}
+
+type PortraitAIEyebrowsResponse = BaseResponse[PortraitAIEyebrowsResponseData]
+
+func (api *PortraitAPI) PortraitAIEyebrows(ctx context.Context, params PortraitAIEyebrowsParams) (*PortraitAIEyebrowsResponse, error) {
+	if err := validateRequired(params, "Image", "ReferenceImage"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIEyebrowsResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-eyebrows", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIEyelashesParams struct {
+	Image FileInput `form:"image"`
+	Name  string    `form:"name,omitempty"`
+	Desc  string    `form:"desc,omitempty"`
+}
+
+type PortraitAIEyelashesResponseData struct {
+}
+
+type PortraitAIEyelashesResponse = BaseResponse[PortraitAIEyelashesResponseData]
+
+func (api *PortraitAPI) PortraitAIEyelashes(ctx context.Context, params PortraitAIEyelashesParams) (*PortraitAIEyelashesResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIEyelashesResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-eyelashes", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIEyeshadowTryOnParams struct {
+	Image          FileInput `form:"image"`
+	EyeshadowStyle string    `form:"eyeshadow_style,omitempty"`
+	ImageTemplate  FileInput `form:"image_template,omitempty"`
+	AspectRatio    string    `form:"aspect_ratio,omitempty"`
+}
+
+type PortraitAIEyeshadowTryOnResponseData struct {
+}
+
+type PortraitAIEyeshadowTryOnResponse = BaseResponse[PortraitAIEyeshadowTryOnResponseData]
+
+func (api *PortraitAPI) PortraitAIEyeshadowTryOn(ctx context.Context, params PortraitAIEyeshadowTryOnParams) (*PortraitAIEyeshadowTryOnResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	if err := validateAtLeastOne(params, "EyeshadowStyle", "ImageTemplate"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIEyeshadowTryOnResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-eyeshadow", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIFaceSwapParams struct {
+	ImageTarget   FileInput `form:"image_target"`
+	ImageTemplate FileInput `form:"image_template"`
+}
+
+type PortraitAIFaceSwapResponseData struct {
+}
+
+type PortraitAIFaceSwapResponse = BaseResponse[PortraitAIFaceSwapResponseData]
+
+func (api *PortraitAPI) PortraitAIFaceSwap(ctx context.Context, params PortraitAIFaceSwapParams) (*PortraitAIFaceSwapResponse, error) {
+	if err := validateRequired(params, "ImageTarget", "ImageTemplate"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIFaceSwapResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-face-swap", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIFatFilterParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIFatFilterResponseData struct {
+}
+
+type PortraitAIFatFilterResponse = BaseResponse[PortraitAIFatFilterResponseData]
+
+func (api *PortraitAPI) PortraitAIFatFilter(ctx context.Context, params PortraitAIFatFilterParams) (*PortraitAIFatFilterResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIFatFilterResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-fat-filter", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIHairColorParams struct {
+	Image FileInput `form:"image"`
+	Name  string    `form:"name,omitempty"`
+	Desc  string    `form:"desc,omitempty"`
+}
+
+type PortraitAIHairColorResponseData struct {
+}
+
+type PortraitAIHairColorResponse = BaseResponse[PortraitAIHairColorResponseData]
+
+func (api *PortraitAPI) PortraitAIHairColor(ctx context.Context, params PortraitAIHairColorParams) (*PortraitAIHairColorResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIHairColorResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-hair-color", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIHairLossSimulationParams struct {
+	Image FileInput `form:"image"`
+	Level string    `form:"level"`
+}
+
+type PortraitAIHairLossSimulationResponseData struct {
+}
+
+type PortraitAIHairLossSimulationResponse = BaseResponse[PortraitAIHairLossSimulationResponseData]
+
+func (api *PortraitAPI) PortraitAIHairLossSimulation(ctx context.Context, params PortraitAIHairLossSimulationParams) (*PortraitAIHairLossSimulationResponse, error) {
+	if err := validateRequired(params, "Image", "Level"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIHairLossSimulationResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-hair-loss-simulation", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAILipEnhancementParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAILipEnhancementResponseData struct {
+}
+
+type PortraitAILipEnhancementResponse = BaseResponse[PortraitAILipEnhancementResponseData]
+
+func (api *PortraitAPI) PortraitAILipEnhancement(ctx context.Context, params PortraitAILipEnhancementParams) (*PortraitAILipEnhancementResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAILipEnhancementResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-lip-enhancement", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIWaistSlimmingParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIWaistSlimmingResponseData struct {
+}
+
+type PortraitAIWaistSlimmingResponse = BaseResponse[PortraitAIWaistSlimmingResponseData]
+
+func (api *PortraitAPI) PortraitAIWaistSlimming(ctx context.Context, params PortraitAIWaistSlimmingParams) (*PortraitAIWaistSlimmingResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIWaistSlimmingResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/ai-waist-slimming", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitTryOnClothesPremiumParams struct {
+	TaskType      string    `form:"task_type"`
+	PersonImage   FileInput `form:"person_image"`
+	TopGarment    FileInput `form:"top_garment"`
+	Resolution    float64   `form:"resolution,omitempty"`
+	RestoreFace   bool      `form:"restore_face,omitempty"`
+	BottomGarment FileInput `form:"bottom_garment,omitempty"`
+}
+
+type PortraitTryOnClothesPremiumResponseData struct {
+}
+
+type PortraitTryOnClothesPremiumResponse = BaseResponse[PortraitTryOnClothesPremiumResponseData]
+
+func (api *PortraitAPI) PortraitTryOnClothesPremium(ctx context.Context, params PortraitTryOnClothesPremiumParams) (*PortraitTryOnClothesPremiumResponse, error) {
+	if err := validateRequired(params, "TaskType", "PersonImage", "TopGarment"); err != nil {
+		return nil, err
+	}
+	var out PortraitTryOnClothesPremiumResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/editing/try-on-clothes-premium", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIBigHeadEffectParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIBigHeadEffectResponseData struct {
+}
+
+type PortraitAIBigHeadEffectResponse = BaseResponse[PortraitAIBigHeadEffectResponseData]
+
+func (api *PortraitAPI) PortraitAIBigHeadEffect(ctx context.Context, params PortraitAIBigHeadEffectParams) (*PortraitAIBigHeadEffectResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIBigHeadEffectResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/ai-big-head-effect", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIHalloweenMaskParams struct {
+	Image         FileInput `form:"image"`
+	MaskStyle     string    `form:"mask_style,omitempty"`
+	ImageTemplate FileInput `form:"image_template,omitempty"`
+	AspectRatio   string    `form:"aspect_ratio,omitempty"`
+}
+
+type PortraitAIHalloweenMaskResponseData struct {
+}
+
+type PortraitAIHalloweenMaskResponse = BaseResponse[PortraitAIHalloweenMaskResponseData]
+
+func (api *PortraitAPI) PortraitAIHalloweenMask(ctx context.Context, params PortraitAIHalloweenMaskParams) (*PortraitAIHalloweenMaskResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	if err := validateAtLeastOne(params, "MaskStyle", "ImageTemplate"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIHalloweenMaskResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/ai-halloween-mask", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAILipBiteExpressionsParams struct {
+	Image       FileInput `form:"image"`
+	GridCount   int       `form:"grid_count,omitempty"`
+	AspectRatio string    `form:"aspect_ratio,omitempty"`
+}
+
+type PortraitAILipBiteExpressionsResponseData struct {
+}
+
+type PortraitAILipBiteExpressionsResponse = BaseResponse[PortraitAILipBiteExpressionsResponseData]
+
+func (api *PortraitAPI) PortraitAILipBiteExpressions(ctx context.Context, params PortraitAILipBiteExpressionsParams) (*PortraitAILipBiteExpressionsResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAILipBiteExpressionsResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/ai-lip-bite-expressions", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAIRedLipGlossParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAIRedLipGlossResponseData struct {
+}
+
+type PortraitAIRedLipGlossResponse = BaseResponse[PortraitAIRedLipGlossResponseData]
+
+func (api *PortraitAPI) PortraitAIRedLipGloss(ctx context.Context, params PortraitAIRedLipGlossParams) (*PortraitAIRedLipGlossResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAIRedLipGlossResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/ai-red-lip-gloss", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAISquareFaceFilterParams struct {
+	Image FileInput `form:"image"`
+}
+
+type PortraitAISquareFaceFilterResponseData struct {
+}
+
+type PortraitAISquareFaceFilterResponse = BaseResponse[PortraitAISquareFaceFilterResponseData]
+
+func (api *PortraitAPI) PortraitAISquareFaceFilter(ctx context.Context, params PortraitAISquareFaceFilterParams) (*PortraitAISquareFaceFilterResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAISquareFaceFilterResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/ai-square-face-filter", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitExpressionEditingAdvancedParams struct {
+	Image      FileInput `form:"image"`
+	Expression string    `form:"expression"`
+}
+
+type PortraitExpressionEditingAdvancedResponseData struct {
+}
+
+type PortraitExpressionEditingAdvancedResponse = BaseResponse[PortraitExpressionEditingAdvancedResponseData]
+
+func (api *PortraitAPI) PortraitExpressionEditingAdvanced(ctx context.Context, params PortraitExpressionEditingAdvancedParams) (*PortraitExpressionEditingAdvancedResponse, error) {
+	if err := validateRequired(params, "Image", "Expression"); err != nil {
+		return nil, err
+	}
+	var out PortraitExpressionEditingAdvancedResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/emotion-editor-advanced", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitHairstyleEditingPremiumParams struct {
+	Image         FileInput `form:"image"`
+	ImageTemplate FileInput `form:"image_template,omitempty"`
+	HairStyle     string    `form:"hair_style,omitempty"`
+	Color         string    `form:"color,omitempty"`
+}
+
+type PortraitHairstyleEditingPremiumResponseData struct {
+}
+
+type PortraitHairstyleEditingPremiumResponse = BaseResponse[PortraitHairstyleEditingPremiumResponseData]
+
+func (api *PortraitAPI) PortraitHairstyleEditingPremium(ctx context.Context, params PortraitHairstyleEditingPremiumParams) (*PortraitHairstyleEditingPremiumResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	if err := validateAtLeastOne(params, "HairStyle", "ImageTemplate"); err != nil {
+		return nil, err
+	}
+	var out PortraitHairstyleEditingPremiumResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/hairstyle-editor-premium", nil, params, true, &out)
+	return &out, err
+}
+
+type PortraitAISkinEnhancementAdvancedParams struct {
+	Image              FileInput `form:"image"`
+	SmartSkin          string    `form:"smart_skin,omitempty"`
+	AcneRemoval        string    `form:"acne_removal,omitempty"`
+	SpotCorrection     string    `form:"spot_correction,omitempty"`
+	SkinBrightening    string    `form:"skin_brightening,omitempty"`
+	SkinSmoothing      string    `form:"skin_smoothing,omitempty"`
+	PoreControl        string    `form:"pore_control,omitempty"`
+	WrinkleReduction   string    `form:"wrinkle_reduction,omitempty"`
+	UnderEyeCorrection string    `form:"under_eye_correction,omitempty"`
+	ScarReduction      string    `form:"scar_reduction,omitempty"`
+}
+
+type PortraitAISkinEnhancementAdvancedResponseData struct {
+}
+
+type PortraitAISkinEnhancementAdvancedResponse = BaseResponse[PortraitAISkinEnhancementAdvancedResponseData]
+
+func (api *PortraitAPI) PortraitAISkinEnhancementAdvanced(ctx context.Context, params PortraitAISkinEnhancementAdvancedParams) (*PortraitAISkinEnhancementAdvancedResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out PortraitAISkinEnhancementAdvancedResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/portrait/effects/smart-skin-advanced", nil, params, true, &out)
+	return &out, err
+}

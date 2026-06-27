@@ -1,6 +1,12 @@
 import pytest
 
 from ailabtools import AILabClient
+from ailabtools.generated.endpoints import (
+    validate_cutoutHdHumanBodyBackgroundRemoval_params,
+    validate_portraitAIBreastExpansion_params,
+    validate_portraitHairstyleEditingPremium_params,
+    validate_portraitTryOnClothesPremium_params,
+)
 
 
 @pytest.mark.asyncio
@@ -50,3 +56,38 @@ async def test_short_aliases_and_wait_for_task():
     assert result["data"]["taskStatus"] == 2
 
     await client.aclose()
+
+
+def test_new_endpoint_surface_and_conditional_validation():
+    with pytest.raises(ValueError, match="At least one of hairStyle, imageTemplate is required"):
+        validate_portraitHairstyleEditingPremium_params({"image": b"image"})
+
+    validate_portraitHairstyleEditingPremium_params({
+        "image": b"image",
+        "hairStyle": "BuzzCut",
+    })
+
+    client = AILabClient(api_key="test")
+    assert callable(client.portrait.portraitAIFaceSwap)
+    assert callable(client.portrait.portraitAIBreastExpansion)
+    assert callable(client.portrait.portraitTryOnClothesPremium)
+
+
+def test_new_endpoint_required_params():
+    image = b"\xff\xd8\xff"
+
+    with pytest.raises(ValueError, match="Missing required param: image"):
+        validate_cutoutHdHumanBodyBackgroundRemoval_params({})
+    with pytest.raises(ValueError, match="Missing required param: personImage"):
+        validate_portraitAIBreastExpansion_params({})
+    with pytest.raises(ValueError, match="Missing required param: topGarment"):
+        validate_portraitTryOnClothesPremium_params({
+            "taskType": "async",
+            "personImage": image,
+        })
+
+    validate_portraitTryOnClothesPremium_params({
+        "taskType": "async",
+        "personImage": image,
+        "topGarment": image,
+    })

@@ -1,6 +1,6 @@
 # Cutout API Reference
 
-> This document is generated from the active endpoints in `packages/spec.json`. Disabled platform endpoints are intentionally excluded.
+> Generated from `packages/spec.json`. The SDK exposes 87 endpoints from the current official OpenAPI and retains 6 legacy-compatible endpoints.
 
 ## Costume Background Removal API
 
@@ -11,10 +11,10 @@
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
-| out_mode | integer | No | 0 |
-| cloth_class | string | No | Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat. |
-| return_form | string | No | Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned. |
+| `image` | `file` | Yes |  |
+| `out_mode` | `integer` | No | 0 |
+| `cloth_class` | `string` | No | Clothing categories. Multiple values can be submitted at once, separated by commas (,). tops: Tops. coat: Coat. skirt: Skirt. pants: Pants. bag: Bag. shoes: Shoes. hat: Hat. |
+| `return_form` | `string` | No | Specify the desired image format for the output. whiteBK: Returns an image with a white background. mask: Returns a single-channel mask. If not specified, a four-channel PNG image will be returned. |
 
 ### Request URL
 
@@ -26,19 +26,19 @@ https://www.ailabapi.com/api/cutout/general/apparel-background-removal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| elements | array | Returns an array of elements. |
-| 0 | object |  |
-| image_url | string | Returns the keying result image URL address. |
-| 1 | object |  |
-| class_url | object | Return the URL corresponding to the clothing category based on the input cloth_class. |
-| tops | string | Tops URL. |
-| coat | string | Coat URL. |
-| skirt | string | Skirt URL. |
-| pants | string | Pants URL. |
-| bag | string | Bag URL. |
-| shoes | string | Shoes URL. |
-| hat | string | Hat URL. |
+| `data` | `object` | The content of the result data returned. |
+| `elements` | `array` | Returns an array of elements. |
+| `0` | `object` |  |
+| `image_url` | `string` | Returns the keying result image URL address. |
+| `1` | `object` |  |
+| `class_url` | `object` | Return the URL corresponding to the clothing category based on the input cloth_class. |
+| `tops` | `string` | Tops URL. |
+| `coat` | `string` | Coat URL. |
+| `skirt` | `string` | Skirt URL. |
+| `pants` | `string` | Pants URL. |
+| `bag` | `string` | Bag URL. |
+| `shoes` | `string` | Shoes URL. |
+| `hat` | `string` | Hat URL. |
 
 ### SDK Return Type
 
@@ -53,8 +53,8 @@ https://www.ailabapi.com/api/cutout/general/apparel-background-removal
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
-| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| `image` | `file` | Yes |  |
+| `return_form` | `string` | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
 ### Request URL
 
@@ -66,8 +66,8 @@ https://www.ailabapi.com/api/cutout/general/commodity-background-removal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| image_url | string | Resulting image URL address. |
+| `data` | `object` | The content of the result data returned. |
+| `image_url` | `string` | Resulting image URL address. |
 
 ### SDK Return Type
 
@@ -82,8 +82,8 @@ https://www.ailabapi.com/api/cutout/general/commodity-background-removal
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
-| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. |
+| `image` | `file` | Yes |  |
+| `return_form` | `string` | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. |
 
 ### Request URL
 
@@ -95,8 +95,8 @@ https://www.ailabapi.com/api/cutout/general/food-background-removal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| image_url | string | Resulting image URL address. |
+| `data` | `object` | The content of the result data returned. |
+| `image_url` | `string` | Resulting image URL address. |
 
 ### SDK Return Type
 
@@ -111,8 +111,8 @@ https://www.ailabapi.com/api/cutout/general/food-background-removal
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
-| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| `image` | `file` | Yes |  |
+| `return_form` | `string` | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
 ### Request URL
 
@@ -124,8 +124,8 @@ https://www.ailabapi.com/api/cutout/general/universal-background-removal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| image_url | string | Resulting image URL address. |
+| `data` | `object` | The content of the result data returned. |
+| `image_url` | `string` | Resulting image URL address. |
 
 ### SDK Return Type
 
@@ -140,8 +140,8 @@ https://www.ailabapi.com/api/cutout/general/universal-background-removal
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
-| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. |
+| `image` | `file` | Yes |  |
+| `return_form` | `string` | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. |
 
 ### Request URL
 
@@ -153,13 +153,13 @@ https://www.ailabapi.com/api/cutout/portrait/avatar-extraction
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| elements | array | The keying result of each child element. |
-| image_url | string | Resulting image URL address. |
-| width | integer | The width of the result map. |
-| height | integer | The height of the resultant graph. |
-| x | integer | Top left x-coordinate. |
-| y | integer | Top left y-coordinate. |
+| `data` | `object` | The content of the result data returned. |
+| `elements` | `array` | The keying result of each child element. |
+| `image_url` | `string` | Resulting image URL address. |
+| `width` | `integer` | The width of the result map. |
+| `height` | `integer` | The height of the resultant graph. |
+| `x` | `integer` | Top left x-coordinate. |
+| `y` | `integer` | Top left y-coordinate. |
 
 ### SDK Return Type
 
@@ -174,7 +174,7 @@ https://www.ailabapi.com/api/cutout/portrait/avatar-extraction
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
+| `image` | `file` | Yes |  |
 
 ### Request URL
 
@@ -186,13 +186,13 @@ https://www.ailabapi.com/api/cutout/portrait/hairstyle-extraction
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| elements | array | The keying result of each child element. |
-| image_url | string | Resulting image URL address. |
-| width | integer | The width of the result map. |
-| height | integer | The height of the resultant graph. |
-| x | integer | Top left x-coordinate. |
-| y | integer | Top left y-coordinate. |
+| `data` | `object` | The content of the result data returned. |
+| `elements` | `array` | The keying result of each child element. |
+| `image_url` | `string` | Resulting image URL address. |
+| `width` | `integer` | The width of the result map. |
+| `height` | `integer` | The height of the resultant graph. |
+| `x` | `integer` | Top left x-coordinate. |
+| `y` | `integer` | Top left y-coordinate. |
 
 ### SDK Return Type
 
@@ -207,8 +207,8 @@ https://www.ailabapi.com/api/cutout/portrait/hairstyle-extraction
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| image | file | Yes |  |
-| return_form | string | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
+| `image` | `file` | Yes |  |
+| `return_form` | `string` | No | Specifies the form of the returned image. If not set, the four-channel PNG map is returned. mask: Returns a single channel mask. whiteBK: Return to white background image. crop: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges). |
 
 ### Request URL
 
@@ -220,9 +220,73 @@ https://www.ailabapi.com/api/cutout/portrait/portrait-background-removal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| data | object | The content of the result data returned. |
-| image_url | string | Resulting image URL address. |
+| `data` | `object` | The content of the result data returned. |
+| `image_url` | `string` | Resulting image URL address. |
 
 ### SDK Return Type
 
 - `BaseResponse<CutoutHumanBackgroundRemovalResponseData>`
+
+## HD Universal Background Removal API
+
+- SDK method: `cutout.cutoutHDUniversalBackgroundRemoval()`
+- HTTP: `POST /api/cutout/general/hd-universal-background-removal`
+
+### Body Parameters
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `image` | `file` | Yes | - Image format: `JPEG` `JPG` `BMP` `PNG` - Image size: No more than 40 MB. - Image resolution: Larger than 32x32px, smaller than 10000x10000px. |
+
+### Request URL
+
+```text
+https://www.ailabapi.com/api/cutout/general/hd-universal-background-removal
+```
+
+### Response Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `request_id` | `string` | Request ID for debugging. |
+| `log_id` | `string` | Log ID for debugging. |
+| `error_detail` | `object` |  |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+
+### SDK Return Type
+
+- `BaseResponse<CutoutHDUniversalBackgroundRemovalResponseData>`
+
+## HD Human Background Removal API
+
+- SDK method: `cutout.cutoutHdHumanBodyBackgroundRemoval()`
+- HTTP: `POST /api/cutout/portrait/hd-portrait-background-removal`
+
+### Body Parameters
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `image` | `file` | No |  |
+
+### Request URL
+
+```text
+https://www.ailabapi.com/api/cutout/portrait/hd-portrait-background-removal
+```
+
+### Response Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `request_id` | `string` |  |
+| `log_id` | `string` |  |
+| `error_code` | `integer` |  |
+| `error_code_str` | `string` |  |
+| `error_msg` | `string` |  |
+| `error_detail` | `object` |  |
+| `data` | `object` |  |
+| `elements` | `array` |  |
+
+### SDK Return Type
+
+- `BaseResponse<CutoutHdHumanBodyBackgroundRemovalResponseData>`

@@ -538,3 +538,127 @@ func (api *ImageAPI) Upscale(ctx context.Context, params ImageLosslessEnlargemen
 func (api *ImageAPI) RemoveObjects(ctx context.Context, params ImageRemoveObjectsParams) (*ImageRemoveObjectsResponse, error) {
 	return api.ImageRemoveObjects(ctx, params)
 }
+
+// BEGIN GENERATED OPENAPI ADDITIONS
+
+type ImageAINailArtParams struct {
+	Image    FileInput `form:"image"`
+	NailName string    `form:"nail_name"`
+	NailDesc string    `form:"nail_desc"`
+}
+
+type ImageAINailArtResponseData struct {
+}
+
+type ImageAINailArtResponse = BaseResponse[ImageAINailArtResponseData]
+
+func (api *ImageAPI) ImageAINailArt(ctx context.Context, params ImageAINailArtParams) (*ImageAINailArtResponse, error) {
+	if err := validateRequired(params, "Image", "NailName", "NailDesc"); err != nil {
+		return nil, err
+	}
+	var out ImageAINailArtResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/image/editing/ai-nail-art", nil, params, true, &out)
+	return &out, err
+}
+
+type ImageAINailArtProParams struct {
+	Image          FileInput `form:"image"`
+	ReferenceImage FileInput `form:"reference_image"`
+	Resolution     string    `form:"resolution,omitempty"`
+}
+
+type ImageAINailArtProResponseData struct {
+}
+
+type ImageAINailArtProResponse = BaseResponse[ImageAINailArtProResponseData]
+
+func (api *ImageAPI) ImageAINailArtPro(ctx context.Context, params ImageAINailArtProParams) (*ImageAINailArtProResponse, error) {
+	if err := validateRequired(params, "Image", "ReferenceImage"); err != nil {
+		return nil, err
+	}
+	var out ImageAINailArtProResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/image/editing/ai-nail-art-pro", nil, params, true, &out)
+	return &out, err
+}
+
+type ImageAIPhotographyParams struct {
+	Image      FileInput `form:"image"`
+	StyleTitle string    `form:"style_title"`
+	StyleDesc  string    `form:"style_desc"`
+	ImageSize  string    `form:"image_size,omitempty"`
+}
+
+type ImageAIPhotographyResponseData struct {
+}
+
+type ImageAIPhotographyResponse = BaseResponse[ImageAIPhotographyResponseData]
+
+func (api *ImageAPI) ImageAIPhotography(ctx context.Context, params ImageAIPhotographyParams) (*ImageAIPhotographyResponse, error) {
+	if err := validateRequired(params, "Image", "StyleTitle", "StyleDesc"); err != nil {
+		return nil, err
+	}
+	var out ImageAIPhotographyResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/image/effects/ai-photography", nil, params, true, &out)
+	return &out, err
+}
+
+type ImageAIEmojiGeneratorParams struct {
+	Image      FileInput `form:"image"`
+	Expression string    `form:"expression"`
+	Style      string    `form:"style"`
+	Scene      string    `form:"scene"`
+	Filler     string    `form:"filler,omitempty"`
+}
+
+type ImageAIEmojiGeneratorResponseData struct {
+}
+
+type ImageAIEmojiGeneratorResponse = BaseResponse[ImageAIEmojiGeneratorResponseData]
+
+func (api *ImageAPI) ImageAIEmojiGenerator(ctx context.Context, params ImageAIEmojiGeneratorParams) (*ImageAIEmojiGeneratorResponse, error) {
+	if err := validateRequired(params, "Image", "Expression", "Style", "Scene"); err != nil {
+		return nil, err
+	}
+	var out ImageAIEmojiGeneratorResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/image/effects/photo-to-emoji-grid", nil, params, true, &out)
+	return &out, err
+}
+
+type ImagePhotoToColoringPageParams struct {
+	Image     FileInput `form:"image"`
+	Prompt    string    `form:"prompt,omitempty"`
+	ImageSize string    `form:"image_size,omitempty"`
+}
+
+type ImagePhotoToColoringPageResponseData struct {
+}
+
+type ImagePhotoToColoringPageResponse = BaseResponse[ImagePhotoToColoringPageResponseData]
+
+func (api *ImageAPI) ImagePhotoToColoringPage(ctx context.Context, params ImagePhotoToColoringPageParams) (*ImagePhotoToColoringPageResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out ImagePhotoToColoringPageResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/image/effects/photo-to-line-art", nil, params, true, &out)
+	return &out, err
+}
+
+type ImageAIFlowerWallpaperParams struct {
+	Name           string `form:"name,omitempty"`
+	FlowerElements string `form:"flower_elements,omitempty"`
+	Style          string `form:"style,omitempty"`
+	Background     string `form:"background,omitempty"`
+	AspectRatio    string `form:"aspect_ratio,omitempty"`
+}
+
+type ImageAIFlowerWallpaperResponseData struct {
+}
+
+type ImageAIFlowerWallpaperResponse = BaseResponse[ImageAIFlowerWallpaperResponseData]
+
+func (api *ImageAPI) ImageAIFlowerWallpaper(ctx context.Context, params ImageAIFlowerWallpaperParams) (*ImageAIFlowerWallpaperResponse, error) {
+	var out ImageAIFlowerWallpaperResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/image/generation/ai-flower-wallpaper", nil, params, true, &out)
+	return &out, err
+}

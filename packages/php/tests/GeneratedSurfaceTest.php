@@ -22,6 +22,6 @@ final class GeneratedSurfaceTest extends TestCase
             }
         }
 
-        self::assertSame(60, preg_match_all('/->request\\(/', $source));
+        self::assertSame(93, preg_match_all('/->request\\(/', $source));
     }
 }

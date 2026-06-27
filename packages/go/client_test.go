@@ -79,3 +79,32 @@ func TestGeneratedPortraitResponsesDecodeUniqueJSONFields(t *testing.T) {
 		t.Fatalf("unexpected pose_list: %#v", advanced.PoseList)
 	}
 }
+
+func TestNewNestedResponsesDecode(t *testing.T) {
+	var cutout CutoutHdHumanBodyBackgroundRemovalResponse
+	if err := json.Unmarshal([]byte(`{"error_code":0,"data":{"elements":[{"image_url":"https://example.com/cutout.png"}]}}`), &cutout); err != nil {
+		t.Fatal(err)
+	}
+	if len(cutout.Data.Elements) != 1 || cutout.Data.Elements[0].ImageUrl != "https://example.com/cutout.png" {
+		t.Fatalf("unexpected HD cutout response: %+v", cutout.Data)
+	}
+
+	var breast PortraitAIBreastExpansionResponse
+	if err := json.Unmarshal([]byte(`{"error_code":0,"data":{"image":"https://example.com/result.png"}}`), &breast); err != nil {
+		t.Fatal(err)
+	}
+	if breast.Data.Image != "https://example.com/result.png" {
+		t.Fatalf("unexpected breast expansion response: %+v", breast.Data)
+	}
+}
+
+func TestPremiumHairstyleRequiresStyleOrTemplate(t *testing.T) {
+	client := NewClient("test-key")
+	_, err := client.Portrait.PortraitHairstyleEditingPremium(
+		context.Background(),
+		PortraitHairstyleEditingPremiumParams{Image: FileFromBytes("image.jpg", []byte("img"))},
+	)
+	if err == nil {
+		t.Fatal("expected conditional parameter validation error")
+	}
+}

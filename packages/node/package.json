@@ -11,8 +11,8 @@
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "npm run build && node tests/aliases.test.js && node tests/credits.test.js",
-    "test:unit": "npm run build && node tests/aliases.test.js"
+    "test": "npm run build && node tests/aliases.test.js && node tests/new-endpoints.test.js && node tests/credits.test.js",
+    "test:unit": "npm run build && node tests/aliases.test.js && node tests/new-endpoints.test.js"
   },
   "dependencies": {
     "axios": "^1.6.0",

@@ -6,6 +6,7 @@ Official SDK documentation for AILabTools AI image and portrait APIs, including 
 
 - [Quick Start](#quick-start)
 - [Popular Use Cases](#popular-use-cases)
+- [Common Developer-Friendly Aliases](#common-developer-friendly-aliases)
 - [Authentication and Configuration](#authentication-and-configuration)
 - [Error Handling](#error-handling)
 - [Async Task Polling](#async-task-polling)
@@ -14,6 +15,7 @@ Official SDK documentation for AILabTools AI image and portrait APIs, including 
 - [Tutorials](#tutorials)
 - [Documentation](#documentation)
 - [API Index](#api-index)
+- [Complete Method and Alias Reference](method-aliases.md)
 
 ## Quick Start
 
@@ -143,18 +145,20 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 ## Popular Use Cases
 
-| Use case | API | SDK method |
+| Popular API | Typical use case | SDK method |
 | --- | --- | --- |
-| Remove image background | Universal Background Removal | `client.background.remove()` |
-| Upscale image 2x / 4x | Image Upscaler | `client.image.upscale()` |
-| Change hairstyle | Hairstyle Changer Pro | `client.portrait.changeHairstyle()` |
-| Retouch portrait | Smart Beauty | `client.portrait.retouch()` |
-| Remove objects | Remove Objects | `client.image.removeObjects()` |
-| Generate cartoon avatar | Cartoon Yourself | `client.portrait.portraitCartoonYourself()` |
-| Analyze face attributes | Face Analyzer | `client.portrait.portraitFaceAnalyzer()` |
-| Virtual try-on | Try on Clothes Pro | `client.portrait.portraitTryOnClothesPro()` |
+| [Cartoon Yourself API](https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api) | Create cartoon portraits and avatars from photos. | `client.portrait.portraitCartoonYourself()` |
+| [Change Facial Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api) | Edit smiles, grins, sadness, and other facial expressions. | `client.portrait.portraitExpressionEditing()` |
+| [Hairstyle Changer Premium API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api) | Preview preset hairstyles or transfer a hairstyle from a reference image. | `client.portrait.portraitHairstyleEditingPremium()` |
+| [Try on Clothes Premium API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api) | Generate high-quality virtual clothing try-on results. | `client.portrait.portraitTryOnClothesPremium()` |
+| [Skin Analyze Pro API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api) | Analyze skin condition, texture, tone, acne, pores, and wrinkles. | `client.portrait.portraitSkinAnalysisProfessional()` |
+| [Face Beauty Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api) | Apply advanced portrait beautification and face shaping. | `client.portrait.portraitFacialBeautificationPro()` |
+| [AI Face Swap API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api) | Swap a face into a target portrait while preserving the scene. | `client.portrait.portraitAIFaceSwap()` |
+| [AI Breast Expansion API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api) | Apply a controlled bust-area adjustment to a portrait. | `client.portrait.portraitAIBreastExpansion()` |
 
-## Developer-Friendly Aliases
+[View the complete AILabTools SDK API index](#api-index).
+
+## Common Developer-Friendly Aliases
 
 Both full API method names and short aliases are supported. The full names map directly to the official API docs, while aliases are easier to use in application code.
 
@@ -165,6 +169,8 @@ Both full API method names and short aliases are supported. The full names map d
 | Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` / `client.image.remove_objects()` |
 | Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` / `client.portrait.change_hairstyle()` |
 | Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
+
+[View the complete method and alias reference](method-aliases.md).
 
 ## Authentication and Configuration
 
@@ -276,79 +282,112 @@ Copy-ready Node.js and Python examples are available in [`examples/`](../example
 
 ## API Index
 
-The current SDK documents `60` active endpoints. Disabled platform endpoints are not included.
+The SDK exposes **93 endpoints**: **87 current APIs** from the official OpenAPI plus **6 legacy-compatible endpoints** retained for existing integrations.
 
 ### Common
 
-- `common.commonQueryAsyncTaskResult()`  (GET /api/common/query-async-task-result)  - Querying Async Task Results API
-- `common.commonQueryCredits()`  (GET /api/common/query-credits)  - Querying Credits API
+- `common.commonQueryAsyncTaskResult()` (`GET /api/common/query-async-task-result`) — Querying Async Task Results API
+- `common.commonQueryCredits()` (`GET /api/common/query-credits`) — Querying Credits API
 
 ### Image
 
-- `image.imageQueryingAsyncTaskResults()`  (GET /api/image/asyn-task-results)  - Querying Async Task Results API
-- `image.imageAiImageExtender()`  (POST /api/image/editing/ai-image-extender)  - AI Image Extender API
-- `image.imageAiObjectReplacer()`  (POST /api/image/editing/ai-object-replacer)  - AI Object Replacer API
-- `image.imageAIImageCropping()`  (POST /api/image/editing/image-cropping)  - AI Image Cropping API
-- `image.imageErasure()`  (POST /api/image/editing/image-erase)  - Image Erasure API
-- `image.imageInvisibleImageWatermark()`  (POST /api/image/editing/image-invisible-image-watermark)  - Image Invisible Picture Watermark API
-- `image.imageInvisibleTextWatermark()`  (POST /api/image/editing/image-invisible-text-watermarking)  - Image Invisible Text Watermark API
-- `image.imageIntelligentComposition()`  (POST /api/image/editing/intelligent-composition)  - Intelligent Composition API
-- `image.imagePhotoEditing()`  (POST /api/image/editing/photo-retouching)  - Photo Retouch API
-- `image.imageRemoveObjects()`  (POST /api/image/editing/remove-objects)  - Remove Objects API
-- `image.imageRemoveObjectsAdvanced()`  (POST /api/image/editing/remove-objects-advanced)  - Remove Objects Advanced API
-- `image.imageRemoveObjectsPro()`  (POST /api/image/editing/remove-objects-pro)  - Remove Objects Pro API
-- `image.imageAICartoonGenerator()`  (POST /api/image/effects/ai-anime-generator)  - AI Cartoon Generator API
-- `image.imageColoring()`  (POST /api/image/effects/image-colorization)  - AI Photo Colorize API
-- `image.imageStyleTransfer()`  (POST /api/image/effects/image-style-conversion)  - Photo to Painting API
-- `image.imageStyleMigration()`  (POST /api/image/effects/image-style-migration)  - Style Transfer API
-- `image.imageColorEnhancement()`  (POST /api/image/enhance/image-color-enhancement)  - Image Color Enhancement API
-- `image.imageContrastEnhancement()`  (POST /api/image/enhance/image-contrast-enhancement)  - Image Contrast Enhancement API
-- `image.imageDehaze()`  (POST /api/image/enhance/image-defogging)  - Image Dehaze API
-- `image.imageLosslessEnlargement()`  (POST /api/image/enhance/image-lossless-enlargement)  - Image Upscaler API
-- `image.imageClarityEnhancement()`  (POST /api/image/enhance/image-sharpness-enhancement)  - Image Sharpness Enhancement API
-- `image.imageDistortionCorrection()`  (POST /api/image/enhance/stretch-image-recovery)  - Stretched Image Restoration API
-- `image.imageCompositionAestheticsScore()`  (POST /api/image/rating/image-composition-aesthetics-scoring)  - Image Composition Aesthetics Score API
-- `image.imageExposureRating()`  (POST /api/image/rating/image-exposure-score)  - Image Exposure Score API
+- `image.imageQueryingAsyncTaskResults()` (`GET /api/image/asyn-task-results`) — Querying Async Task Results API — Legacy compatibility
+- `image.imageAiImageExtender()` (`POST /api/image/editing/ai-image-extender`) — AI Image Extender API
+- `image.imageAiObjectReplacer()` (`POST /api/image/editing/ai-object-replacer`) — AI Object Replacer API
+- `image.imageAIImageCropping()` (`POST /api/image/editing/image-cropping`) — AI Image Cropping API
+- `image.imageErasure()` (`POST /api/image/editing/image-erase`) — Image Erasure API — Legacy compatibility
+- `image.imageInvisibleImageWatermark()` (`POST /api/image/editing/image-invisible-image-watermark`) — Image Invisible Picture Watermark API
+- `image.imageInvisibleTextWatermark()` (`POST /api/image/editing/image-invisible-text-watermarking`) — Image Invisible Text Watermark API
+- `image.imageIntelligentComposition()` (`POST /api/image/editing/intelligent-composition`) — Intelligent Composition API
+- `image.imagePhotoEditing()` (`POST /api/image/editing/photo-retouching`) — Photo Retouch API
+- `image.imageRemoveObjects()` (`POST /api/image/editing/remove-objects`) — Remove Objects API
+- `image.imageRemoveObjectsAdvanced()` (`POST /api/image/editing/remove-objects-advanced`) — Remove Objects Advanced API
+- `image.imageRemoveObjectsPro()` (`POST /api/image/editing/remove-objects-pro`) — Remove Objects Pro API
+- `image.imageAICartoonGenerator()` (`POST /api/image/effects/ai-anime-generator`) — AI Cartoon Generator API
+- `image.imageColoring()` (`POST /api/image/effects/image-colorization`) — AI Photo Colorize API
+- `image.imageStyleTransfer()` (`POST /api/image/effects/image-style-conversion`) — Photo to Painting API
+- `image.imageStyleMigration()` (`POST /api/image/effects/image-style-migration`) — Style Transfer API — Legacy compatibility
+- `image.imageColorEnhancement()` (`POST /api/image/enhance/image-color-enhancement`) — Image Color Enhancement API
+- `image.imageContrastEnhancement()` (`POST /api/image/enhance/image-contrast-enhancement`) — Image Contrast Enhancement API
+- `image.imageDehaze()` (`POST /api/image/enhance/image-defogging`) — Image Dehaze API
+- `image.imageLosslessEnlargement()` (`POST /api/image/enhance/image-lossless-enlargement`) — Image Upscaler API
+- `image.imageClarityEnhancement()` (`POST /api/image/enhance/image-sharpness-enhancement`) — Image Sharpness Enhancement API
+- `image.imageDistortionCorrection()` (`POST /api/image/enhance/stretch-image-recovery`) — Stretched Image Restoration API
+- `image.imageCompositionAestheticsScore()` (`POST /api/image/rating/image-composition-aesthetics-scoring`) — Image Composition Aesthetics Score API
+- `image.imageExposureRating()` (`POST /api/image/rating/image-exposure-score`) — Image Exposure Score API
+- `image.imageAINailArt()` (`POST /api/image/editing/ai-nail-art`) — AI Nail Art API
+- `image.imageAINailArtPro()` (`POST /api/image/editing/ai-nail-art-pro`) — AI Nail Art Pro API
+- `image.imageAIPhotography()` (`POST /api/image/effects/ai-photography`) — AI Photography API
+- `image.imageAIEmojiGenerator()` (`POST /api/image/effects/photo-to-emoji-grid`) — AI Emoji Generator API
+- `image.imagePhotoToColoringPage()` (`POST /api/image/effects/photo-to-line-art`) — Photo to Coloring Page API
+- `image.imageAIFlowerWallpaper()` (`POST /api/image/generation/ai-flower-wallpaper`) — AI Flower Wallpaper API
 
 ### Portrait
 
-- `portrait.portraitFaceAnalyzer()`  (POST /api/portrait/analysis/face-analyzer)  - Face Analyzer API
-- `portrait.portraitFaceAnalyzerAdvanced()`  (POST /api/portrait/analysis/face-analyzer-advanced)  - Face Analyzer Advanced API
-- `portrait.portraitFacialLandmarks()`  (POST /api/portrait/analysis/face-key-points)  - Facial Landmarks API
-- `portrait.portraitSkinAnalysisBasic()`  (POST /api/portrait/analysis/skin-analysis)  - Skin Analyze API
-- `portrait.portraitSkinAnalysisAdvanced()`  (POST /api/portrait/analysis/skin-analysis-advanced)  - Skin Analyze Advanced API
-- `portrait.portraitSkinAnalysisProfessional()`  (POST /api/portrait/analysis/skin-analysis-pro)  - Skin Analyze Pro API
-- `portrait.portraitSkinDiseaseDetection()`  (POST /api/portrait/analysis/skin-disease-detection)  - Detect Skin Disease API
-- `portrait.portraitTryOnClothes()`  (POST /api/portrait/editing/try-on-clothes)  - Try on Clothes API
-- `portrait.portraitTryOnClothesPro()`  (POST /api/portrait/editing/try-on-clothes-pro)  - Try on Clothes Pro API
-- `portrait.portraitFacialBlurring()`  (POST /api/portrait/effects/blurred-faces)  - Face Blur API
-- `portrait.portraitExpressionEditing()`  (POST /api/portrait/effects/emotion-editor)  - Change Facial Expressions API
-- `portrait.portraitFaceRestorationEnhancement()`  (POST /api/portrait/effects/enhance-face)  - AI Face Enhancer API
-- `portrait.portraitFaceAttributeEditing()`  (POST /api/portrait/effects/face-attribute-editing)  - Age & Gender Swap API
-- `portrait.portraitFacialBeautification()`  (POST /api/portrait/effects/face-beauty)  - Face Beauty API
-- `portrait.portraitFacialBeautificationAdvanced()`  (POST /api/portrait/effects/face-beauty-advanced)  - Face Beauty Advanced API
-- `portrait.portraitFacialBeautificationPro()`  (POST /api/portrait/effects/face-beauty-pro)  - Face Beauty Pro API
-- `portrait.portraitFacialFilters()`  (POST /api/portrait/effects/face-filter)  - Face Filters API
-- `portrait.portraitFaceFusion()`  (POST /api/portrait/effects/face-fusion)  - Merge Portraits API
-- `portrait.portraitHairstyleEditing()`  (POST /api/portrait/effects/hairstyle-editor)  - Hairstyle Changer API
-- `portrait.portraitHairstyleEditingPro()`  (POST /api/portrait/effects/hairstyle-editor-pro)  - Hairstyle Changer Pro API
-- `portrait.portraitLipsColorChanger()`  (POST /api/portrait/effects/lips-color-changer)  - Lips Color Changer API
-- `portrait.portraitLivePhotos()`  (POST /api/portrait/effects/live-photo)  - Live Photos API
-- `portrait.portraitCartoonYourself()`  (POST /api/portrait/effects/portrait-animation)  - Cartoon Yourself API
-- `portrait.portraitIntelligentBeautification()`  (POST /api/portrait/effects/smart-beauty)  - Smart Beauty API
-- `portrait.portraitIntelligentFaceSlimming()`  (POST /api/portrait/effects/smart-face-slimming)  - AI Face Slimming API
-- `portrait.portraitIntelligentSkinRetouching()`  (POST /api/portrait/effects/smart-skin)  - AI Skin Beauty API
-- `portrait.portraitTryOnClothesRefiner()`  (POST /api/portrait/enhance/try-on-clothes-refiner)  - Try on Clothes Refiner API
+- `portrait.portraitFaceAnalyzer()` (`POST /api/portrait/analysis/face-analyzer`) — Face Analyzer API
+- `portrait.portraitFaceAnalyzerAdvanced()` (`POST /api/portrait/analysis/face-analyzer-advanced`) — Face Analyzer Advanced API
+- `portrait.portraitFacialLandmarks()` (`POST /api/portrait/analysis/face-key-points`) — Facial Landmarks API
+- `portrait.portraitSkinAnalysisBasic()` (`POST /api/portrait/analysis/skin-analysis`) — Skin Analyze API
+- `portrait.portraitSkinAnalysisAdvanced()` (`POST /api/portrait/analysis/skin-analysis-advanced`) — Skin Analyze Advanced API
+- `portrait.portraitSkinAnalysisProfessional()` (`POST /api/portrait/analysis/skin-analysis-pro`) — Skin Analyze Pro API
+- `portrait.portraitSkinDiseaseDetection()` (`POST /api/portrait/analysis/skin-disease-detection`) — Detect Skin Disease API — Legacy compatibility
+- `portrait.portraitTryOnClothes()` (`POST /api/portrait/editing/try-on-clothes`) — Try on Clothes API
+- `portrait.portraitTryOnClothesPro()` (`POST /api/portrait/editing/try-on-clothes-pro`) — Try on Clothes Pro API
+- `portrait.portraitFacialBlurring()` (`POST /api/portrait/effects/blurred-faces`) — Face Blur API
+- `portrait.portraitExpressionEditing()` (`POST /api/portrait/effects/emotion-editor`) — Change Facial Expressions API
+- `portrait.portraitFaceRestorationEnhancement()` (`POST /api/portrait/effects/enhance-face`) — AI Face Enhancer API
+- `portrait.portraitFaceAttributeEditing()` (`POST /api/portrait/effects/face-attribute-editing`) — Age & Gender Swap API
+- `portrait.portraitFacialBeautification()` (`POST /api/portrait/effects/face-beauty`) — Face Beauty API
+- `portrait.portraitFacialBeautificationAdvanced()` (`POST /api/portrait/effects/face-beauty-advanced`) — Face Beauty Advanced API
+- `portrait.portraitFacialBeautificationPro()` (`POST /api/portrait/effects/face-beauty-pro`) — Face Beauty Pro API
+- `portrait.portraitFacialFilters()` (`POST /api/portrait/effects/face-filter`) — Face Filters API
+- `portrait.portraitFaceFusion()` (`POST /api/portrait/effects/face-fusion`) — Merge Portraits API
+- `portrait.portraitHairstyleEditing()` (`POST /api/portrait/effects/hairstyle-editor`) — Hairstyle Changer API — Legacy compatibility
+- `portrait.portraitHairstyleEditingPro()` (`POST /api/portrait/effects/hairstyle-editor-pro`) — Hairstyle Changer Pro API
+- `portrait.portraitLipsColorChanger()` (`POST /api/portrait/effects/lips-color-changer`) — Lips Color Changer API
+- `portrait.portraitLivePhotos()` (`POST /api/portrait/effects/live-photo`) — Live Photos API — Legacy compatibility
+- `portrait.portraitCartoonYourself()` (`POST /api/portrait/effects/portrait-animation`) — Cartoon Yourself API
+- `portrait.portraitIntelligentBeautification()` (`POST /api/portrait/effects/smart-beauty`) — Smart Beauty API
+- `portrait.portraitIntelligentFaceSlimming()` (`POST /api/portrait/effects/smart-face-slimming`) — AI Face Slimming API
+- `portrait.portraitIntelligentSkinRetouching()` (`POST /api/portrait/effects/smart-skin`) — AI Skin Beauty API
+- `portrait.portraitTryOnClothesRefiner()` (`POST /api/portrait/enhance/try-on-clothes-refiner`) — Try on Clothes Refiner API
+- `portrait.portraitAIFaceRating()` (`POST /api/portrait/analysis/ai-face-rating`) — AI Face Rating API
+- `portrait.portraitAIBald()` (`POST /api/portrait/editing/ai-bald`) — AI Bald API
+- `portrait.portraitAIBeardRemoval()` (`POST /api/portrait/editing/ai-beard-removal`) — AI Beard Removal API
+- `portrait.portraitAIBeardStyling()` (`POST /api/portrait/editing/ai-beard-styling`) — AI Beard Styling API
+- `portrait.portraitAIBreastExpansion()` (`POST /api/portrait/editing/ai-big-tits`) — AI Breast Expansion API
+- `portrait.portraitAIButtEnhancement()` (`POST /api/portrait/editing/ai-butt-enhancement`) — AI Butt Enhancement API
+- `portrait.portraitAIColoredContacts()` (`POST /api/portrait/editing/ai-colored-contacts`) — AI Colored Contacts API
+- `portrait.portraitAIEyebrows()` (`POST /api/portrait/editing/ai-eyebrows`) — AI Eyebrows API
+- `portrait.portraitAIEyelashes()` (`POST /api/portrait/editing/ai-eyelashes`) — AI Eyelashes API
+- `portrait.portraitAIEyeshadowTryOn()` (`POST /api/portrait/editing/ai-eyeshadow`) — AI Eyeshadow Try-On API
+- `portrait.portraitAIFaceSwap()` (`POST /api/portrait/editing/ai-face-swap`) — AI Face Swap API
+- `portrait.portraitAIFatFilter()` (`POST /api/portrait/editing/ai-fat-filter`) — AI Fat Filter API
+- `portrait.portraitAIHairColor()` (`POST /api/portrait/editing/ai-hair-color`) — AI Hair Color API
+- `portrait.portraitAIHairLossSimulation()` (`POST /api/portrait/editing/ai-hair-loss-simulation`) — AI Hair Loss Simulation API
+- `portrait.portraitAILipEnhancement()` (`POST /api/portrait/editing/ai-lip-enhancement`) — AI Lip Enhancement API
+- `portrait.portraitAIWaistSlimming()` (`POST /api/portrait/editing/ai-waist-slimming`) — AI Waist Slimming API
+- `portrait.portraitTryOnClothesPremium()` (`POST /api/portrait/editing/try-on-clothes-premium`) — Try on Clothes Premium API
+- `portrait.portraitAIBigHeadEffect()` (`POST /api/portrait/effects/ai-big-head-effect`) — AI Big Head Effect API
+- `portrait.portraitAIHalloweenMask()` (`POST /api/portrait/effects/ai-halloween-mask`) — AI Halloween Mask API
+- `portrait.portraitAILipBiteExpressions()` (`POST /api/portrait/effects/ai-lip-bite-expressions`) — AI Lip Bite Expressions API
+- `portrait.portraitAIRedLipGloss()` (`POST /api/portrait/effects/ai-red-lip-gloss`) — AI Red Lip Gloss API
+- `portrait.portraitAISquareFaceFilter()` (`POST /api/portrait/effects/ai-square-face-filter`) — AI Square Face Filter API
+- `portrait.portraitExpressionEditingAdvanced()` (`POST /api/portrait/effects/emotion-editor-advanced`) — Change Facial Expressions Advanced API
+- `portrait.portraitHairstyleEditingPremium()` (`POST /api/portrait/effects/hairstyle-editor-premium`) — Hairstyle Changer Premium API
+- `portrait.portraitAISkinEnhancementAdvanced()` (`POST /api/portrait/effects/smart-skin-advanced`) — AI Skin Enhancement Advanced API
 
 ### Cutout
 
-- `cutout.cutoutClothingBackgroundRemoval()`  (POST /api/cutout/general/apparel-background-removal)  - Costume Background Removal API
-- `cutout.cutoutProductBackgroundRemoval()`  (POST /api/cutout/general/commodity-background-removal)  - Product Background Removal API
-- `cutout.cutoutFoodBackgroundRemoval()`  (POST /api/cutout/general/food-background-removal)  - Food Background Removal API
-- `cutout.cutoutUniversalBackgroundRemoval()`  (POST /api/cutout/general/universal-background-removal)  - Universal Background Removal API
-- `cutout.cutoutAvatarExtraction()`  (POST /api/cutout/portrait/avatar-extraction)  - Head Extraction API
-- `cutout.cutoutHairExtraction()`  (POST /api/cutout/portrait/hairstyle-extraction)  - Hairstyle Extraction API
-- `cutout.cutoutHumanBackgroundRemoval()`  (POST /api/cutout/portrait/portrait-background-removal)  - Human Background Removal API
+- `cutout.cutoutClothingBackgroundRemoval()` (`POST /api/cutout/general/apparel-background-removal`) — Costume Background Removal API
+- `cutout.cutoutProductBackgroundRemoval()` (`POST /api/cutout/general/commodity-background-removal`) — Product Background Removal API
+- `cutout.cutoutFoodBackgroundRemoval()` (`POST /api/cutout/general/food-background-removal`) — Food Background Removal API
+- `cutout.cutoutUniversalBackgroundRemoval()` (`POST /api/cutout/general/universal-background-removal`) — Universal Background Removal API
+- `cutout.cutoutAvatarExtraction()` (`POST /api/cutout/portrait/avatar-extraction`) — Head Extraction API
+- `cutout.cutoutHairExtraction()` (`POST /api/cutout/portrait/hairstyle-extraction`) — Hairstyle Extraction API
+- `cutout.cutoutHumanBackgroundRemoval()` (`POST /api/cutout/portrait/portrait-background-removal`) — Human Background Removal API
+- `cutout.cutoutHDUniversalBackgroundRemoval()` (`POST /api/cutout/general/hd-universal-background-removal`) — HD Universal Background Removal API
+- `cutout.cutoutHdHumanBodyBackgroundRemoval()` (`POST /api/cutout/portrait/hd-portrait-background-removal`) — HD Human Background Removal API
 
 ## Reference Documents
 

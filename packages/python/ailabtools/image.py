@@ -96,7 +96,31 @@ from .generated.endpoints import (
     ImageExposureRatingParams,
     ImageExposureRatingResponse,
     ImageExposureRatingParamMap,
-    validate_imageExposureRating_params
+    validate_imageExposureRating_params,
+    ImageAINailArtParams,
+    ImageAINailArtResponse,
+    ImageAINailArtParamMap,
+    validate_imageAINailArt_params,
+    ImageAINailArtProParams,
+    ImageAINailArtProResponse,
+    ImageAINailArtProParamMap,
+    validate_imageAINailArtPro_params,
+    ImageAIPhotographyParams,
+    ImageAIPhotographyResponse,
+    ImageAIPhotographyParamMap,
+    validate_imageAIPhotography_params,
+    ImageAIEmojiGeneratorParams,
+    ImageAIEmojiGeneratorResponse,
+    ImageAIEmojiGeneratorParamMap,
+    validate_imageAIEmojiGenerator_params,
+    ImagePhotoToColoringPageParams,
+    ImagePhotoToColoringPageResponse,
+    ImagePhotoToColoringPageParamMap,
+    validate_imagePhotoToColoringPage_params,
+    ImageAIFlowerWallpaperParams,
+    ImageAIFlowerWallpaperResponse,
+    ImageAIFlowerWallpaperParamMap,
+    validate_imageAIFlowerWallpaper_params
 )
 
 class ImageAPI:
@@ -228,3 +252,33 @@ class ImageAPI:
         validate_imageExposureRating_params(params)
         mapped = map_params(params, ImageExposureRatingParamMap)
         return await self._requester.request('POST', '/api/image/rating/image-exposure-score', body=mapped, multipart=True)
+
+    async def imageAINailArt(self, params: ImageAINailArtParams) -> ImageAINailArtResponse:
+        validate_imageAINailArt_params(params)
+        mapped = map_params(params, ImageAINailArtParamMap)
+        return await self._requester.request('POST', '/api/image/editing/ai-nail-art', body=mapped, multipart=True)
+
+    async def imageAINailArtPro(self, params: ImageAINailArtProParams) -> ImageAINailArtProResponse:
+        validate_imageAINailArtPro_params(params)
+        mapped = map_params(params, ImageAINailArtProParamMap)
+        return await self._requester.request('POST', '/api/image/editing/ai-nail-art-pro', body=mapped, multipart=True)
+
+    async def imageAIPhotography(self, params: ImageAIPhotographyParams) -> ImageAIPhotographyResponse:
+        validate_imageAIPhotography_params(params)
+        mapped = map_params(params, ImageAIPhotographyParamMap)
+        return await self._requester.request('POST', '/api/image/effects/ai-photography', body=mapped, multipart=True)
+
+    async def imageAIEmojiGenerator(self, params: ImageAIEmojiGeneratorParams) -> ImageAIEmojiGeneratorResponse:
+        validate_imageAIEmojiGenerator_params(params)
+        mapped = map_params(params, ImageAIEmojiGeneratorParamMap)
+        return await self._requester.request('POST', '/api/image/effects/photo-to-emoji-grid', body=mapped, multipart=True)
+
+    async def imagePhotoToColoringPage(self, params: ImagePhotoToColoringPageParams) -> ImagePhotoToColoringPageResponse:
+        validate_imagePhotoToColoringPage_params(params)
+        mapped = map_params(params, ImagePhotoToColoringPageParamMap)
+        return await self._requester.request('POST', '/api/image/effects/photo-to-line-art', body=mapped, multipart=True)
+
+    async def imageAIFlowerWallpaper(self, params: ImageAIFlowerWallpaperParams) -> ImageAIFlowerWallpaperResponse:
+        validate_imageAIFlowerWallpaper_params(params)
+        mapped = map_params(params, ImageAIFlowerWallpaperParamMap)
+        return await self._requester.request('POST', '/api/image/generation/ai-flower-wallpaper', body=mapped, multipart=True)

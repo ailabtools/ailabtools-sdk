@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:test/test.dart';
 
 void main() {
-  test('generated API surface contains all 60 documented endpoints', () {
+  test('generated API surface contains all 93 SDK endpoints', () {
     final generated = Directory('lib/src/generated')
         .listSync()
         .whereType<File>()
@@ -11,6 +11,6 @@ void main() {
         .map((file) => file.readAsStringSync())
         .join();
 
-    expect(RegExp(r'path: ').allMatches(generated), hasLength(60));
+    expect(RegExp(r'path: ').allMatches(generated), hasLength(93));
   });
 }

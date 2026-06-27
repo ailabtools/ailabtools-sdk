@@ -306,6 +306,23 @@ func validateRequired(params any, fields ...string) error {
 	return nil
 }
 
+func validateAtLeastOne(params any, fields ...string) error {
+	v := reflect.ValueOf(params)
+	if v.Kind() == reflect.Pointer {
+		if v.IsNil() {
+			return errors.New("params is nil")
+		}
+		v = v.Elem()
+	}
+	for _, name := range fields {
+		field := v.FieldByName(name)
+		if field.IsValid() && !isEmptyValue(field) {
+			return nil
+		}
+	}
+	return fmt.Errorf("at least one of %s is required", strings.Join(fields, ", "))
+}
+
 func escapeQuotes(s string) string {
 	return strings.ReplaceAll(s, `"`, `\"`)
 }

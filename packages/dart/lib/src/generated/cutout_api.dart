@@ -100,4 +100,31 @@ final class CutoutAPI {
         body: params.toMap(),
         multipart: true,
       );
+
+  // BEGIN GENERATED OPENAPI ADDITIONS
+  Future<CutoutHDUniversalBackgroundRemovalResponse>
+      cutoutHDUniversalBackgroundRemoval(
+              CutoutHDUniversalBackgroundRemovalParams params) =>
+          _requester.request<CutoutHDUniversalBackgroundRemovalResponseData>(
+            method: "POST",
+            path: "/api/cutout/general/hd-universal-background-removal",
+            parseData: (value) => value is Map<String, dynamic>
+                ? CutoutHDUniversalBackgroundRemovalResponseData.fromJson(value)
+                : null,
+            body: params.toMap(),
+            multipart: true,
+          );
+
+  Future<CutoutHdHumanBodyBackgroundRemovalResponse>
+      cutoutHdHumanBodyBackgroundRemoval(
+              CutoutHdHumanBodyBackgroundRemovalParams params) =>
+          _requester.request<CutoutHdHumanBodyBackgroundRemovalResponseData>(
+            method: "POST",
+            path: "/api/cutout/portrait/hd-portrait-background-removal",
+            parseData: (value) => value is Map<String, dynamic>
+                ? CutoutHdHumanBodyBackgroundRemovalResponseData.fromJson(value)
+                : null,
+            body: params.toMap(),
+            multipart: true,
+          );
 }

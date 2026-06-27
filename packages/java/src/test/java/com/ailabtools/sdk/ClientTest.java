@@ -6,10 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.ailabtools.sdk.exception.ApiException;
 import com.ailabtools.sdk.generated.params.CommonQueryCreditsParams;
+import com.ailabtools.sdk.generated.params.CutoutHdHumanBodyBackgroundRemovalParams;
 import com.ailabtools.sdk.generated.params.CutoutUniversalBackgroundRemovalParams;
 import com.ailabtools.sdk.generated.params.ImageLosslessEnlargementParams;
 import com.ailabtools.sdk.generated.params.ImageRemoveObjectsAdvancedParams;
 import com.ailabtools.sdk.generated.params.PortraitFaceAnalyzerAdvancedParams;
+import com.ailabtools.sdk.generated.params.PortraitHairstyleEditingPremiumParams;
+import com.ailabtools.sdk.generated.params.PortraitAIBreastExpansionParams;
+import com.ailabtools.sdk.generated.params.PortraitTryOnClothesPremiumParams;
 import com.ailabtools.sdk.http.FileInput;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
@@ -29,6 +33,54 @@ final class ClientTest {
     @AfterEach
     void stopServer() {
         if (server != null) server.stop(0);
+    }
+
+    @Test
+    void premiumHairstyleRequiresStyleOrTemplate() {
+        IllegalArgumentException error = assertThrows(
+                IllegalArgumentException.class,
+                () -> PortraitHairstyleEditingPremiumParams.builder()
+                        .image(FileInput.fromBytes(new byte[] {1}, "photo.jpg"))
+                        .build());
+
+        assertEquals("At least one of hairStyle, imageTemplate is required", error.getMessage());
+    }
+
+    @Test
+    void newRequiredParametersAreEnforced() {
+        assertThrows(NullPointerException.class,
+                () -> CutoutHdHumanBodyBackgroundRemovalParams.builder().build());
+        assertThrows(NullPointerException.class,
+                () -> PortraitAIBreastExpansionParams.builder().build());
+        assertThrows(NullPointerException.class,
+                () -> PortraitTryOnClothesPremiumParams.builder()
+                        .taskType("async")
+                        .personImage(FileInput.fromBytes(new byte[] {1}, "person.jpg"))
+                        .build());
+    }
+
+    @Test
+    void newNestedResponsesDeserialize() throws Exception {
+        start(exchange -> {
+            if (exchange.getRequestURI().getPath().contains("hd-portrait-background-removal")) {
+                respond(exchange, 200,
+                        "{\"error_code\":0,\"data\":{\"elements\":[{\"image_url\":\"https://example.com/cutout.png\"}]}}");
+            } else {
+                respond(exchange, 200,
+                        "{\"error_code\":0,\"data\":{\"image\":\"https://example.com/result.png\"}}");
+            }
+        });
+        AILabClient client = client();
+        FileInput image = FileInput.fromBytes(new byte[] {1}, "image.jpg");
+
+        var cutout = client.cutout().cutoutHdHumanBodyBackgroundRemoval(
+                CutoutHdHumanBodyBackgroundRemovalParams.builder().image(image).build());
+        var breast = client.portrait().portraitAIBreastExpansion(
+                PortraitAIBreastExpansionParams.builder().personImage(image).build());
+
+        assertEquals("https://example.com/cutout.png",
+                cutout.getData().getElements().get(0).getImageUrl());
+        assertEquals("https://example.com/result.png", breast.getData().getImage());
     }
 
     @Test

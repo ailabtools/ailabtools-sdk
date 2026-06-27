@@ -1,5 +1,9 @@
 package com.ailabtools.sdk.api;
 
+import com.ailabtools.sdk.generated.params.CutoutHDUniversalBackgroundRemovalParams;
+import com.ailabtools.sdk.generated.response.CutoutHDUniversalBackgroundRemovalResponse;
+import com.ailabtools.sdk.generated.params.CutoutHdHumanBodyBackgroundRemovalParams;
+import com.ailabtools.sdk.generated.response.CutoutHdHumanBodyBackgroundRemovalResponse;
 import com.ailabtools.sdk.http.Requester;
 import com.ailabtools.sdk.generated.params.CutoutClothingBackgroundRemovalParams;
 import com.ailabtools.sdk.generated.response.CutoutClothingBackgroundRemovalResponse;
@@ -52,4 +56,12 @@ public final class CutoutApi {
         return requester.request("POST", "/api/cutout/portrait/portrait-background-removal", params.toMap(), true, CutoutHumanBackgroundRemovalResponse.class);
     }
 
+    // BEGIN GENERATED OPENAPI ADDITIONS
+    public CutoutHDUniversalBackgroundRemovalResponse cutoutHDUniversalBackgroundRemoval(CutoutHDUniversalBackgroundRemovalParams params) {
+        return requester.request("POST", "/api/cutout/general/hd-universal-background-removal", params.toMap(), true, CutoutHDUniversalBackgroundRemovalResponse.class);
+    }
+
+    public CutoutHdHumanBodyBackgroundRemovalResponse cutoutHdHumanBodyBackgroundRemoval(CutoutHdHumanBodyBackgroundRemovalParams params) {
+        return requester.request("POST", "/api/cutout/portrait/hd-portrait-background-removal", params.toMap(), true, CutoutHdHumanBodyBackgroundRemovalResponse.class);
+    }
 }

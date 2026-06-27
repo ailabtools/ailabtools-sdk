@@ -376,4 +376,307 @@ final class PortraitAPI {
     PortraitIntelligentBeautificationParams params,
   ) =>
       portraitIntelligentBeautification(params);
+
+  // BEGIN GENERATED OPENAPI ADDITIONS
+  Future<PortraitAIFaceRatingResponse> portraitAIFaceRating(
+          PortraitAIFaceRatingParams params) =>
+      _requester.request<PortraitAIFaceRatingResponseData>(
+        method: "POST",
+        path: "/api/portrait/analysis/ai-face-rating",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIFaceRatingResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIBaldResponse> portraitAIBald(PortraitAIBaldParams params) =>
+      _requester.request<PortraitAIBaldResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-bald",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIBaldResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIBeardRemovalResponse> portraitAIBeardRemoval(
+          PortraitAIBeardRemovalParams params) =>
+      _requester.request<PortraitAIBeardRemovalResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-beard-removal",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIBeardRemovalResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIBeardStylingResponse> portraitAIBeardStyling(
+          PortraitAIBeardStylingParams params) =>
+      _requester.request<PortraitAIBeardStylingResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-beard-styling",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIBeardStylingResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIBreastExpansionResponse> portraitAIBreastExpansion(
+          PortraitAIBreastExpansionParams params) =>
+      _requester.request<PortraitAIBreastExpansionResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-big-tits",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIBreastExpansionResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIButtEnhancementResponse> portraitAIButtEnhancement(
+          PortraitAIButtEnhancementParams params) =>
+      _requester.request<PortraitAIButtEnhancementResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-butt-enhancement",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIButtEnhancementResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIColoredContactsResponse> portraitAIColoredContacts(
+          PortraitAIColoredContactsParams params) =>
+      _requester.request<PortraitAIColoredContactsResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-colored-contacts",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIColoredContactsResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIEyebrowsResponse> portraitAIEyebrows(
+          PortraitAIEyebrowsParams params) =>
+      _requester.request<PortraitAIEyebrowsResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-eyebrows",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIEyebrowsResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIEyelashesResponse> portraitAIEyelashes(
+          PortraitAIEyelashesParams params) =>
+      _requester.request<PortraitAIEyelashesResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-eyelashes",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIEyelashesResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIEyeshadowTryOnResponse> portraitAIEyeshadowTryOn(
+          PortraitAIEyeshadowTryOnParams params) =>
+      _requester.request<PortraitAIEyeshadowTryOnResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-eyeshadow",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIEyeshadowTryOnResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIFaceSwapResponse> portraitAIFaceSwap(
+          PortraitAIFaceSwapParams params) =>
+      _requester.request<PortraitAIFaceSwapResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-face-swap",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIFaceSwapResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIFatFilterResponse> portraitAIFatFilter(
+          PortraitAIFatFilterParams params) =>
+      _requester.request<PortraitAIFatFilterResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-fat-filter",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIFatFilterResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIHairColorResponse> portraitAIHairColor(
+          PortraitAIHairColorParams params) =>
+      _requester.request<PortraitAIHairColorResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-hair-color",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIHairColorResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIHairLossSimulationResponse> portraitAIHairLossSimulation(
+          PortraitAIHairLossSimulationParams params) =>
+      _requester.request<PortraitAIHairLossSimulationResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-hair-loss-simulation",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIHairLossSimulationResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAILipEnhancementResponse> portraitAILipEnhancement(
+          PortraitAILipEnhancementParams params) =>
+      _requester.request<PortraitAILipEnhancementResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-lip-enhancement",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAILipEnhancementResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIWaistSlimmingResponse> portraitAIWaistSlimming(
+          PortraitAIWaistSlimmingParams params) =>
+      _requester.request<PortraitAIWaistSlimmingResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/ai-waist-slimming",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIWaistSlimmingResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitTryOnClothesPremiumResponse> portraitTryOnClothesPremium(
+          PortraitTryOnClothesPremiumParams params) =>
+      _requester.request<PortraitTryOnClothesPremiumResponseData>(
+        method: "POST",
+        path: "/api/portrait/editing/try-on-clothes-premium",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitTryOnClothesPremiumResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIBigHeadEffectResponse> portraitAIBigHeadEffect(
+          PortraitAIBigHeadEffectParams params) =>
+      _requester.request<PortraitAIBigHeadEffectResponseData>(
+        method: "POST",
+        path: "/api/portrait/effects/ai-big-head-effect",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIBigHeadEffectResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIHalloweenMaskResponse> portraitAIHalloweenMask(
+          PortraitAIHalloweenMaskParams params) =>
+      _requester.request<PortraitAIHalloweenMaskResponseData>(
+        method: "POST",
+        path: "/api/portrait/effects/ai-halloween-mask",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIHalloweenMaskResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAILipBiteExpressionsResponse> portraitAILipBiteExpressions(
+          PortraitAILipBiteExpressionsParams params) =>
+      _requester.request<PortraitAILipBiteExpressionsResponseData>(
+        method: "POST",
+        path: "/api/portrait/effects/ai-lip-bite-expressions",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAILipBiteExpressionsResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAIRedLipGlossResponse> portraitAIRedLipGloss(
+          PortraitAIRedLipGlossParams params) =>
+      _requester.request<PortraitAIRedLipGlossResponseData>(
+        method: "POST",
+        path: "/api/portrait/effects/ai-red-lip-gloss",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAIRedLipGlossResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitAISquareFaceFilterResponse> portraitAISquareFaceFilter(
+          PortraitAISquareFaceFilterParams params) =>
+      _requester.request<PortraitAISquareFaceFilterResponseData>(
+        method: "POST",
+        path: "/api/portrait/effects/ai-square-face-filter",
+        parseData: (value) => value is Map<String, dynamic>
+            ? PortraitAISquareFaceFilterResponseData.fromJson(value)
+            : null,
+        body: params.toMap(),
+        multipart: true,
+      );
+
+  Future<PortraitExpressionEditingAdvancedResponse>
+      portraitExpressionEditingAdvanced(
+              PortraitExpressionEditingAdvancedParams params) =>
+          _requester.request<PortraitExpressionEditingAdvancedResponseData>(
+            method: "POST",
+            path: "/api/portrait/effects/emotion-editor-advanced",
+            parseData: (value) => value is Map<String, dynamic>
+                ? PortraitExpressionEditingAdvancedResponseData.fromJson(value)
+                : null,
+            body: params.toMap(),
+            multipart: true,
+          );
+
+  Future<PortraitHairstyleEditingPremiumResponse>
+      portraitHairstyleEditingPremium(
+              PortraitHairstyleEditingPremiumParams params) =>
+          _requester.request<PortraitHairstyleEditingPremiumResponseData>(
+            method: "POST",
+            path: "/api/portrait/effects/hairstyle-editor-premium",
+            parseData: (value) => value is Map<String, dynamic>
+                ? PortraitHairstyleEditingPremiumResponseData.fromJson(value)
+                : null,
+            body: params.toMap(),
+            multipart: true,
+          );
+
+  Future<PortraitAISkinEnhancementAdvancedResponse>
+      portraitAISkinEnhancementAdvanced(
+              PortraitAISkinEnhancementAdvancedParams params) =>
+          _requester.request<PortraitAISkinEnhancementAdvancedResponseData>(
+            method: "POST",
+            path: "/api/portrait/effects/smart-skin-advanced",
+            parseData: (value) => value is Map<String, dynamic>
+                ? PortraitAISkinEnhancementAdvancedResponseData.fromJson(value)
+                : null,
+            body: params.toMap(),
+            multipart: true,
+          );
 }

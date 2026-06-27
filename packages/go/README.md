@@ -38,7 +38,22 @@ func main() {
 }
 ```
 
-## Developer-Friendly Aliases
+## Popular Use Cases
+
+| Popular API | Typical use case | SDK method |
+| --- | --- | --- |
+| [Cartoon Yourself API](https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api) | Create cartoon portraits and avatars from photos. | `client.Portrait.PortraitCartoonYourself()` |
+| [Change Facial Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api) | Edit smiles, grins, sadness, and other facial expressions. | `client.Portrait.PortraitExpressionEditing()` |
+| [Hairstyle Changer Premium API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api) | Preview preset hairstyles or transfer a hairstyle from a reference image. | `client.Portrait.PortraitHairstyleEditingPremium()` |
+| [Try on Clothes Premium API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api) | Generate high-quality virtual clothing try-on results. | `client.Portrait.PortraitTryOnClothesPremium()` |
+| [Skin Analyze Pro API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api) | Analyze skin condition, texture, tone, acne, pores, and wrinkles. | `client.Portrait.PortraitSkinAnalysisProfessional()` |
+| [Face Beauty Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api) | Apply advanced portrait beautification and face shaping. | `client.Portrait.PortraitFacialBeautificationPro()` |
+| [AI Face Swap API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api) | Swap a face into a target portrait while preserving the scene. | `client.Portrait.PortraitAIFaceSwap()` |
+| [AI Breast Expansion API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api) | Apply a controlled bust-area adjustment to a portrait. | `client.Portrait.PortraitAIBreastExpansion()` |
+
+[View the complete AILabTools SDK API index](https://github.com/ailabtools/ailabtools-sdk/blob/main/docs/README.md#api-index).
+
+## Common Developer-Friendly Aliases
 
 Both full API method names and short aliases are supported.
 
@@ -49,6 +64,8 @@ Both full API method names and short aliases are supported.
 | Remove Objects | `client.Image.ImageRemoveObjects()` | `client.Image.RemoveObjects()` |
 | Hairstyle Changer Pro | `client.Portrait.PortraitHairstyleEditingPro()` | `client.Portrait.ChangeHairstyle()` |
 | Smart Beauty | `client.Portrait.PortraitIntelligentBeautification()` | `client.Portrait.Retouch()` |
+
+[View the complete method and alias reference](https://github.com/ailabtools/ailabtools-sdk/blob/main/docs/method-aliases.md).
 
 ## Async Tasks
 

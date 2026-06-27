@@ -24,6 +24,6 @@ final class GeneratedSurfaceTest {
                     .filter(line -> line.contains("requester.request("))
                     .count();
         }
-        assertEquals(60, count);
+        assertEquals(93, count);
     }
 }

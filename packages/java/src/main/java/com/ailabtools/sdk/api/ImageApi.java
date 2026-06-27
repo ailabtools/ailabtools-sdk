@@ -1,5 +1,17 @@
 package com.ailabtools.sdk.api;
 
+import com.ailabtools.sdk.generated.params.ImageAINailArtParams;
+import com.ailabtools.sdk.generated.response.ImageAINailArtResponse;
+import com.ailabtools.sdk.generated.params.ImageAINailArtProParams;
+import com.ailabtools.sdk.generated.response.ImageAINailArtProResponse;
+import com.ailabtools.sdk.generated.params.ImageAIPhotographyParams;
+import com.ailabtools.sdk.generated.response.ImageAIPhotographyResponse;
+import com.ailabtools.sdk.generated.params.ImageAIEmojiGeneratorParams;
+import com.ailabtools.sdk.generated.response.ImageAIEmojiGeneratorResponse;
+import com.ailabtools.sdk.generated.params.ImagePhotoToColoringPageParams;
+import com.ailabtools.sdk.generated.response.ImagePhotoToColoringPageResponse;
+import com.ailabtools.sdk.generated.params.ImageAIFlowerWallpaperParams;
+import com.ailabtools.sdk.generated.response.ImageAIFlowerWallpaperResponse;
 import com.ailabtools.sdk.http.Requester;
 import com.ailabtools.sdk.generated.params.ImageQueryingAsyncTaskResultsParams;
 import com.ailabtools.sdk.generated.response.ImageQueryingAsyncTaskResultsResponse;
@@ -162,4 +174,28 @@ public final class ImageApi {
         return imageRemoveObjects(params);
     }
 
+    // BEGIN GENERATED OPENAPI ADDITIONS
+    public ImageAINailArtResponse imageAINailArt(ImageAINailArtParams params) {
+        return requester.request("POST", "/api/image/editing/ai-nail-art", params.toMap(), true, ImageAINailArtResponse.class);
+    }
+
+    public ImageAINailArtProResponse imageAINailArtPro(ImageAINailArtProParams params) {
+        return requester.request("POST", "/api/image/editing/ai-nail-art-pro", params.toMap(), true, ImageAINailArtProResponse.class);
+    }
+
+    public ImageAIPhotographyResponse imageAIPhotography(ImageAIPhotographyParams params) {
+        return requester.request("POST", "/api/image/effects/ai-photography", params.toMap(), true, ImageAIPhotographyResponse.class);
+    }
+
+    public ImageAIEmojiGeneratorResponse imageAIEmojiGenerator(ImageAIEmojiGeneratorParams params) {
+        return requester.request("POST", "/api/image/effects/photo-to-emoji-grid", params.toMap(), true, ImageAIEmojiGeneratorResponse.class);
+    }
+
+    public ImagePhotoToColoringPageResponse imagePhotoToColoringPage(ImagePhotoToColoringPageParams params) {
+        return requester.request("POST", "/api/image/effects/photo-to-line-art", params.toMap(), true, ImagePhotoToColoringPageResponse.class);
+    }
+
+    public ImageAIFlowerWallpaperResponse imageAIFlowerWallpaper(ImageAIFlowerWallpaperParams params) {
+        return requester.request("POST", "/api/image/generation/ai-flower-wallpaper", params.toMap(), true, ImageAIFlowerWallpaperResponse.class);
+    }
 }

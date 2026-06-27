@@ -9,8 +9,11 @@ use AILabTools\Exception\ApiException;
 use AILabTools\Generated\Params\CommonQueryCreditsParams;
 use AILabTools\Generated\Params\CutoutUniversalBackgroundRemovalParams;
 use AILabTools\Generated\Params\ImageLosslessEnlargementParams;
+use AILabTools\Generated\Params\PortraitHairstyleEditingPremiumParams;
 use AILabTools\Generated\Response\ImageRemoveObjectsAdvancedResponse;
+use AILabTools\Generated\Response\CutoutHdHumanBodyBackgroundRemovalResponse;
 use AILabTools\Generated\Response\PortraitFaceAnalyzerAdvancedResponse;
+use AILabTools\Generated\Response\PortraitAIBreastExpansionResponse;
 use AILabTools\Http\FileInput;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
@@ -21,6 +24,16 @@ use PHPUnit\Framework\TestCase;
 
 final class ClientTest extends TestCase
 {
+    public function testPremiumHairstyleRequiresStyleOrTemplate(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('At least one of hairStyle, imageTemplate is required');
+
+        new PortraitHairstyleEditingPremiumParams(
+            image: FileInput::fromBytes('image', 'photo.jpg'),
+        );
+    }
+
     public function testBackgroundAliasUploadsFileAndMapsResponse(): void
     {
         $history = [];
@@ -140,6 +153,25 @@ final class ClientTest extends TestCase
         self::assertSame([1.0, 2.5], $analysis->data->pupils);
         self::assertSame([0, 1], $analysis->data->genderList);
         self::assertSame(['first', 'second'], $removal->data->binaryDataBase64);
+    }
+
+    public function testNewNestedResponses(): void
+    {
+        $cutout = CutoutHdHumanBodyBackgroundRemovalResponse::fromArray([
+            'error_code' => 0,
+            'data' => [
+                'elements' => [
+                    ['image_url' => 'https://example.com/cutout.png'],
+                ],
+            ],
+        ]);
+        $breast = PortraitAIBreastExpansionResponse::fromArray([
+            'error_code' => 0,
+            'data' => ['image' => 'https://example.com/result.png'],
+        ]);
+
+        self::assertSame('https://example.com/cutout.png', $cutout->data?->elements[0]->imageUrl);
+        self::assertSame('https://example.com/result.png', $breast->data?->image);
     }
 
     public function testWaitForTaskPollsUntilSuccess(): void

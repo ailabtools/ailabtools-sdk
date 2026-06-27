@@ -1236,6 +1236,500 @@ export interface PortraitTryOnClothesRefinerResponseData {
 export interface PortraitTryOnClothesRefinerResponse extends BaseResponse<PortraitTryOnClothesRefinerResponseData> {
 }
 
+export interface CutoutHDUniversalBackgroundRemovalParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `BMP` `PNG` - Image size: No more than 40 MB. - Image resolution: Larger than 32x32px, smaller than 10000x10000px.
+}
+export interface CutoutHDUniversalBackgroundRemovalResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface CutoutHDUniversalBackgroundRemovalResponse extends BaseResponse<CutoutHDUniversalBackgroundRemovalResponseData> {
+}
+
+export interface CutoutHdHumanBodyBackgroundRemovalParams {
+  image: FileInput; // image
+}
+export interface CutoutHdHumanBodyBackgroundRemovalElement {
+  image_url?: string; // image_url | URL of the background-removed image.
+}
+export interface CutoutHdHumanBodyBackgroundRemovalResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  elements?: CutoutHdHumanBodyBackgroundRemovalElement[]; // elements
+}
+export interface CutoutHdHumanBodyBackgroundRemovalResponse extends BaseResponse<CutoutHdHumanBodyBackgroundRemovalResponseData> {
+}
+
+export interface ImageAINailArtParams {
+  image: FileInput; // image | Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  nailName: string; // nail_name | Nail Name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  nailDesc: string; // nail_desc | Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+}
+export interface ImageAINailArtResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface ImageAINailArtResponse extends BaseResponse<ImageAINailArtResponseData> {
+}
+
+export interface ImageAINailArtProParams {
+  image: FileInput; // image | Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  referenceImage: FileInput; // reference_image | Reference image for guidance. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  resolution?: string; // resolution | Output resolution. Allowed values: 1K, 2K. Default: 1K.
+}
+export interface ImageAINailArtProResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface ImageAINailArtProResponse extends BaseResponse<ImageAINailArtProResponseData> {
+}
+
+export interface ImageAIPhotographyParams {
+  image: FileInput; // image | Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  styleTitle: string; // style_title | Style name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  styleDesc: string; // style_desc | Style description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  imageSize?: string; // image_size | Output Image Aspect Ratio. Allowed values: auto, 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. Default: auto.
+}
+export interface ImageAIPhotographyResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface ImageAIPhotographyResponse extends BaseResponse<ImageAIPhotographyResponseData> {
+}
+
+export interface ImageAIEmojiGeneratorParams {
+  image: FileInput; // image | Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  expression: string; // expression | Expression (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  style: string; // style | Style (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  scene: string; // scene | Scene (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  filler?: string; // filler | Filler Text (English only). Max 20 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+}
+export interface ImageAIEmojiGeneratorResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface ImageAIEmojiGeneratorResponse extends BaseResponse<ImageAIEmojiGeneratorResponseData> {
+}
+
+export interface ImagePhotoToColoringPageParams {
+  image: FileInput; // image | Original image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  prompt?: string; // prompt | Prompt (English only). Max 3000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.
+  imageSize?: string; // image_size | Output Image Aspect Ratio. Allowed values: A4, auto, 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9. Default: A4.
+}
+export interface ImagePhotoToColoringPageResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface ImagePhotoToColoringPageResponse extends BaseResponse<ImagePhotoToColoringPageResponseData> {
+}
+
+export interface ImageAIFlowerWallpaperParams {
+  name?: string; // name | User name to display in the wallpaper (English only). Default: AUTO.
+  flowerElements?: string; // flower_elements | Flower elements and bouquet composition description (English only). Default: AUTO.
+  style?: string; // style | Artwork style for the generated wallpaper (English only). Default: soft watercolor floral illustration.
+  background?: string; // background | Background style or color theme for the wallpaper (English only). Default: pastel gradient background.
+  aspectRatio?: string; // aspect_ratio | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+}
+export interface ImageAIFlowerWallpaperResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface ImageAIFlowerWallpaperResponse extends BaseResponse<ImageAIFlowerWallpaperResponseData> {
+}
+
+export interface PortraitAIFaceRatingParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  aspectRatio?: string; // aspect_ratio | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+}
+export interface PortraitAIFaceRatingResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIFaceRatingResponse extends BaseResponse<PortraitAIFaceRatingResponseData> {
+}
+
+export interface PortraitAIBaldParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIBaldResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIBaldResponse extends BaseResponse<PortraitAIBaldResponseData> {
+}
+
+export interface PortraitAIBeardRemovalParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIBeardRemovalResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIBeardRemovalResponse extends BaseResponse<PortraitAIBeardRemovalResponseData> {
+}
+
+export interface PortraitAIBeardStylingParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  beard?: string; // beard | Built-in beard preset. Provide this field or `image_template`. If both are provided, `beard` takes precedence. See [Supported beard values](/docs/ai-portrait/editing/ai-beard-styling/api#beard). Allowed values: FullBeardClassic, CorporateBeard, Garibaldi, Verdi, FullBeardTapered, VanDyke, Bandholz, VanDykeRefined, Goatee, ExtendedGoatee, Balbo, AnchorBeardClean, DucktailBeardPointed, AnchorBeardFull, DucktailBeardFull, HeavyStubble, ChevronMoustache, HandlebarMoustache, ImperialMoustache, CircleBeard, ChinStrap, MuttonChops, SoulPatch, PetiteGoatee.
+  imageTemplate?: FileInput; // image_template | Reference image for beard transfer. Provide this field or `beard`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIBeardStylingResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIBeardStylingResponse extends BaseResponse<PortraitAIBeardStylingResponseData> {
+}
+
+export interface PortraitAIBreastExpansionParams {
+  taskType?: string; // task_type | Task Type. <li>`async`: Asynchronous tasks.</li>
+  personImage: FileInput; // person_image
+}
+export interface PortraitAIBreastExpansionResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  image?: string; // image
+}
+export interface PortraitAIBreastExpansionResponse extends BaseResponse<PortraitAIBreastExpansionResponseData> {
+}
+
+export interface PortraitAIButtEnhancementParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIButtEnhancementResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIButtEnhancementResponse extends BaseResponse<PortraitAIButtEnhancementResponseData> {
+}
+
+export interface PortraitAIColoredContactsParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  name?: string; // name | Contact Lens Name (English only).
+  desc?: string; // desc | Contact Lens Description (English only).
+}
+export interface PortraitAIColoredContactsResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIColoredContactsResponse extends BaseResponse<PortraitAIColoredContactsResponseData> {
+}
+
+export interface PortraitAIEyebrowsParams {
+  image: FileInput; // image | Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  referenceImage: FileInput; // reference_image | Reference Image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  resolution?: string; // resolution | Resolution. Allowed values: 1K, 2K. Default: 1K.
+}
+export interface PortraitAIEyebrowsResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIEyebrowsResponse extends BaseResponse<PortraitAIEyebrowsResponseData> {
+}
+
+export interface PortraitAIEyelashesParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  name?: string; // name | Eyelash Name (English only).
+  desc?: string; // desc | Eyelash Description (English only).
+}
+export interface PortraitAIEyelashesResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIEyelashesResponse extends BaseResponse<PortraitAIEyelashesResponseData> {
+}
+
+export interface PortraitAIEyeshadowTryOnParams {
+  image: FileInput; // image | Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  eyeshadowStyle?: string; // eyeshadow_style | Built-in eyeshadow preset. Provide this field or `image_template`. If both are provided, `eyeshadow_style` takes precedence. See [Supported eyeshadow styles](/docs/ai-portrait/editing/ai-eyeshadow/api#eyeshadow_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36.
+  imageTemplate?: FileInput; // image_template | Reference image for eyeshadow transfer. Provide this field or `eyeshadow_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  aspectRatio?: string; // aspect_ratio | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+}
+export interface PortraitAIEyeshadowTryOnResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIEyeshadowTryOnResponse extends BaseResponse<PortraitAIEyeshadowTryOnResponseData> {
+}
+
+export interface PortraitAIFaceSwapParams {
+  imageTarget: FileInput; // image_target | The image to be modified. The face in this image will be replaced. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+  imageTemplate: FileInput; // image_template | The image that provides the face to use. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIFaceSwapResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface PortraitAIFaceSwapResponse extends BaseResponse<PortraitAIFaceSwapResponseData> {
+}
+
+export interface PortraitAIFatFilterParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIFatFilterResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIFatFilterResponse extends BaseResponse<PortraitAIFatFilterResponseData> {
+}
+
+export interface PortraitAIHairColorParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  name?: string; // name | Hair Color Name (English only).
+  desc?: string; // desc | Hair Color Description (English only).
+}
+export interface PortraitAIHairColorResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIHairColorResponse extends BaseResponse<PortraitAIHairColorResponseData> {
+}
+
+export interface PortraitAIHairLossSimulationParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  level: string; // level | Hair loss level. See [Supported level values](/docs/ai-portrait/editing/ai-hair-loss-simulation/api#level). Allowed values: man_1, man_2, man_3, man_4, man_5, man_6, man_7, woman_1, woman_2, woman_3, woman_4, woman_5, woman_6, woman_7.
+}
+export interface PortraitAIHairLossSimulationResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIHairLossSimulationResponse extends BaseResponse<PortraitAIHairLossSimulationResponseData> {
+}
+
+export interface PortraitAILipEnhancementParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAILipEnhancementResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAILipEnhancementResponse extends BaseResponse<PortraitAILipEnhancementResponseData> {
+}
+
+export interface PortraitAIWaistSlimmingParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIWaistSlimmingResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIWaistSlimmingResponse extends BaseResponse<PortraitAIWaistSlimmingResponseData> {
+}
+
+export interface PortraitTryOnClothesPremiumParams {
+  taskType: string; // task_type | Task Type. <li>`async`: Asynchronous tasks.</li>
+  personImage: FileInput; // person_image | Portrait image.
+  topGarment: FileInput; // top_garment | Upper Body Clothing Image.
+  resolution?: number; // resolution | Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. <li>`-1`: Original image resolution.</li> <li>`1024`: 576x1024px.</li> <li>`1280`: 720x1280px.</li>
+  restoreFace?: boolean; // restore_face | Whether to Keep the Model’s Face. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `true`. <li>`true`: Keep the model’s original face.</li> <li>`false`: Regenerate the model’s face.</li>
+  bottomGarment?: FileInput; // bottom_garment | Lower Body Clothing Image. <li>If no lower body clothing image is provided, the lower body clothing effect will be randomly generated.</li> <li>If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty.</li>
+}
+export interface PortraitTryOnClothesPremiumResponseData {
+  request_id?: string; // request_id
+  log_id?: string; // log_id
+  error_code?: number; // error_code
+  error_code_str?: string; // error_code_str
+  error_msg?: string; // error_msg
+  error_detail?: Record<string, unknown>; // error_detail
+  task_type?: string; // task_type
+  task_id?: string; // task_id
+}
+export interface PortraitTryOnClothesPremiumResponse extends BaseResponse<PortraitTryOnClothesPremiumResponseData> {
+}
+
+export interface PortraitAIBigHeadEffectParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIBigHeadEffectResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIBigHeadEffectResponse extends BaseResponse<PortraitAIBigHeadEffectResponseData> {
+}
+
+export interface PortraitAIHalloweenMaskParams {
+  image: FileInput; // image | Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  maskStyle?: string; // mask_style | Built-in mask preset. Provide either this field or `image_template`. If both are provided, `mask_style` takes precedence. See [Supported mask styles](/docs/ai-portrait/effects/ai-halloween-mask/api#mask_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85.
+  imageTemplate?: FileInput; // image_template | Reference image for eyeshadow transfer. Provide this field or `mask_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  aspectRatio?: string; // aspect_ratio | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+}
+export interface PortraitAIHalloweenMaskResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIHalloweenMaskResponse extends BaseResponse<PortraitAIHalloweenMaskResponseData> {
+}
+
+export interface PortraitAILipBiteExpressionsParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  gridCount?: number; // grid_count | Specifies the number of emoji stickers to generate in a single image. Allowed values: 1, 4, 6, 9. Default: 1.
+  aspectRatio?: string; // aspect_ratio | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto.
+}
+export interface PortraitAILipBiteExpressionsResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAILipBiteExpressionsResponse extends BaseResponse<PortraitAILipBiteExpressionsResponseData> {
+}
+
+export interface PortraitAIRedLipGlossParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAIRedLipGlossResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAIRedLipGlossResponse extends BaseResponse<PortraitAIRedLipGlossResponseData> {
+}
+
+export interface PortraitAISquareFaceFilterParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px.
+}
+export interface PortraitAISquareFaceFilterResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAISquareFaceFilterResponse extends BaseResponse<PortraitAISquareFaceFilterResponseData> {
+}
+
+export interface PortraitExpressionEditingAdvancedParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  expression: string; // expression | Expression. See [Supported expression values](/docs/ai-portrait/effects/emotion-editor-advanced/api#expression). Allowed values: natural_smile, bright_laugh, sweet_smile, happy_surprise, proud_smirk, laughing_with_tears, crazy_happy_face, overjoyed_screaming_laugh, slight_annoyance, angry_stare, gritted_teeth_anger, furious_shout, cold_glare, cartoon_rage_face, angry_puffed_cheeks, villain_angry_smirk, downcast_sadness, wronged_near_tears, tearful_sadness, heartbroken_breakdown, silent_grief, big_crying_face, puppy_eyes_sad, fake_crying_funny, tongue_out_playful, wink_cute, silly_face, mischievous_smirk, exaggerated_surprised_face, cross_eyed_silly_face, one_eye_squint_funny, duck_face_funny, crazy_tongue_face, slight_surprise, shocked_open_mouth, disbelief, fearful_surprise, jaw_drop_surprise, cartoon_shocked_face, speechless_shock, nervous_fear, terrified_expression, timid_withdrawal, panic_breakdown, screaming_fear_face, frozen_in_fear, panic_wide_eyes, mild_dislike, strong_aversion, nauseated_disgust, eye_roll_disgust, extreme_disgust_face, grossed_out_face, dramatic_eye_roll, shy_smile, blushing_shyness, awkward_forced_smile, socially_embarrassed, over_shy_blushing_face, awkward_sweat_smile, embarrassed_cover_mouth, confident_smile, dominant_gaze, cold_cool_expression, victorious_pride, super_confident_smirk, bossy_cool_face, winning_smug_face, slight_confusion, frowning_thought, not_understanding, suspicious_look, confused_tilted_face, what_are_you_doing_face, brain_loading_face, tired_blank_eyes, helpless_expression, awkward_silence, sleepy_yawn, dead_inside_face, exhausted_melting_face, speechless_blank_stare, charming_smile, flirty_eyebrow_raise, soft_lip_bite, dreamy_gaze, playful_seductive_smirk, wink_flirty_face, dramatic_lip_bite, gentle_gaze, fond_smile, sweet_pouting_affection, deep_affectionate_gaze, heart_eyes_expression, overly_sweet_affection, clingy_cute_pout, cold_contempt, sarcastic_sneer, dismissive_pout, in_control_expression, extreme_smug_face, mocking_laugh_face, looking_down_contempt, soft_cute_smile, cute_pout, innocent_big_eyes, expectant_sparkling_eyes, super_cute_pouting_face, sparkling_eyes_cute, baby_like_innocent_face, frowning_in_pain, holding_back_tears, crying_breakdown, repressed_exhaustion, dramatic_pain_face, holding_back_scream, overwhelmed_breakdown_face.
+}
+export interface PortraitExpressionEditingAdvancedResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitExpressionEditingAdvancedResponse extends BaseResponse<PortraitExpressionEditingAdvancedResponseData> {
+}
+
+export interface PortraitHairstyleEditingPremiumParams {
+  image: FileInput; // image | Source image. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right.
+  imageTemplate?: FileInput; // image_template | Reference image for hairstyle transfer. Provide this field or `hair_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right.
+  hairStyle?: string; // hair_style | Built-in hairstyle preset. Provide this field or `image_template`. If both are provided, `hair_style` takes precedence. See [Supported hair_style values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#hair_style). Allowed values: BuzzCut, UnderCut, Pompadour, SlickBack, CurlyShag, WavyShag, FauxHawk, Spiky, CombOver, HighTightFade, ManBun, Afro, LowFade, UndercutLongHair, TwoBlockHaircut, TexturedFringe, BluntBowlCut, LongWavyCurtainBangs, MessyTousled, CornrowBraids, LongHairTiedUp, Middle-parted, ManGreased, WavyMiddlePart, Natural_Side-Part, Wolf_Crop, Wind-Tousled_Crop, Side-Parted_Textured, FluffyMiddlePart, FreshSide-Parted, Smooth_Crop, Korean_Wavy_Crop, Comma_Hair, Side-Part_Crop, Natural_Middle_Part, ShortPixieWithShavedSides, ShortNeatBob, DoubleBun, Updo, Spiked, bowlCut, Chignon, PixieCut, SlickedBack, LongCurly, CurlyBob, StackedCurlsInShortBob, SidePartCombOverHairstyleWithHighFade, WavyFrenchBobVibesfrom1920, BobCut, ShortTwintails, ShortCurlyPixie, LongStraight, LongWavy, FishtailBraid, TwinBraids, Ponytail, Dreadlocks, Cornrows, ShoulderLengthHair, LooseCurlyAfro, LongTwintails, LongHimeCut, BoxBraids, Layered_Waves, Side_Flip_Perm, Textured_Crop, Mushroom_Curl, Vintage_Curls, Magic_Perm, Side-Parted_Waves, Fluffy_Short, Smooth_Inward_Bob, Neat_Short, Natural_Short, Chic_Tapered_Bob, Edgy_Textured_Pixie, Elegant_Wavy_Crop, Chic_Wavy_Pixie, Elegant_Side_Wave, Soft_Layered_Curl, Executive_Pixie, Curved_Chic_Bob, Airy_Short_Curls, Playful_Curly_Bob, Playful_Wavy_Bob, Elegant_Soft_Curl, Elegant_Smooth_Bob, Retro_Airy_Curl, Soft_Wavy_Bob, Light_Inward_Bob, Neat_Curly_Crop_Cut, Elegant_Volumized_Bob, Modern_Curls_Chic, Mocha_Volume_Pixie, Elegant_Side_Flow, Chestnut, ChoppyBangs, StructuredWavyShag, TinfoilPerm, ClassicWavyBob, Fluffy_Pixie_Cut, FrenchBangs, JapaneseShort, MediumLongLayered, male_hairstyle_0001, male_hairstyle_0002, male_hairstyle_0003, male_hairstyle_0004, male_hairstyle_0005, male_hairstyle_0006, male_hairstyle_0007, male_hairstyle_0008, male_hairstyle_0009, male_hairstyle_0010, male_hairstyle_0011, male_hairstyle_0012, male_hairstyle_0013, male_hairstyle_0014, male_hairstyle_0015, male_hairstyle_0016, male_hairstyle_0017, male_hairstyle_0018, male_hairstyle_0019, male_hairstyle_0020, male_hairstyle_0021, male_hairstyle_0022, male_hairstyle_0023, male_hairstyle_0024, male_hairstyle_0025, male_hairstyle_0026, male_hairstyle_0027, male_hairstyle_0028, male_hairstyle_0029, male_hairstyle_0030, male_hairstyle_0031, male_hairstyle_0032, male_hairstyle_0033, male_hairstyle_0034, male_hairstyle_0035, male_hairstyle_0036, male_hairstyle_0037, male_hairstyle_0038, male_hairstyle_0039, male_hairstyle_0040, male_hairstyle_0041, male_hairstyle_0042, male_hairstyle_0043, male_hairstyle_0044, male_hairstyle_0045, male_hairstyle_0046, male_hairstyle_0047, male_hairstyle_0048, male_hairstyle_0049, male_hairstyle_0050, male_hairstyle_0051, male_hairstyle_0052, male_hairstyle_0053, male_hairstyle_0054, male_hairstyle_0055, male_hairstyle_0056, male_hairstyle_0057, male_hairstyle_0058, male_hairstyle_0059, male_hairstyle_0060, male_hairstyle_0061, male_hairstyle_0062, female_hairstyle_0001, female_hairstyle_0002, female_hairstyle_0003, female_hairstyle_0004, female_hairstyle_0005, female_hairstyle_0006, female_hairstyle_0007, female_hairstyle_0008, female_hairstyle_0009, female_hairstyle_0010, female_hairstyle_0011, female_hairstyle_0012, female_hairstyle_0013, female_hairstyle_0014, female_hairstyle_0015, female_hairstyle_0016, female_hairstyle_0017, female_hairstyle_0018, female_hairstyle_0019, female_hairstyle_0020, female_hairstyle_0021, female_hairstyle_0022, female_hairstyle_0023, female_hairstyle_0024, female_hairstyle_0025, female_hairstyle_0026, female_hairstyle_0027, female_hairstyle_0028, female_hairstyle_0029, female_hairstyle_0030, female_hairstyle_0031, female_hairstyle_0032, female_hairstyle_0033, female_hairstyle_0034, female_hairstyle_0035, female_hairstyle_0036, female_hairstyle_0037, female_hairstyle_0038, female_hairstyle_0039, female_hairstyle_0040, female_hairstyle_0041, female_hairstyle_0042, female_hairstyle_0043, female_hairstyle_0044, female_hairstyle_0045, female_hairstyle_0046, female_hairstyle_0047, female_hairstyle_0048, female_hairstyle_0049, female_hairstyle_0050, female_hairstyle_0051, female_hairstyle_0052, female_hairstyle_0053, female_hairstyle_0054, female_hairstyle_0055, female_hairstyle_0056, female_hairstyle_0057, female_hairstyle_0058, female_hairstyle_0059, female_hairstyle_0060, female_hairstyle_0061, female_hairstyle_0062, female_hairstyle_0063, female_hairstyle_0064, female_hairstyle_0065, female_hairstyle_0066, female_hairstyle_0067, female_hairstyle_0068, female_hairstyle_0069, female_hairstyle_0070, female_hairstyle_0071, female_hairstyle_0072, female_hairstyle_0073.
+  color?: string; // color | Hair color preset. `original` keeps the source image color. `reference` uses the hair color from `image_template`. See [Supported color values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#color). Allowed values: original, reference, blonde, platinumBlonde, brown, lightBrown, blue, lightBlue, purple, lightPurple, pink, black, white, grey, silver, red, orange, green, gradient, multicolored, darkBlue, burgundy, darkGreen. Default: original.
+}
+export interface PortraitHairstyleEditingPremiumResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitHairstyleEditingPremiumResponse extends BaseResponse<PortraitHairstyleEditingPremiumResponseData> {
+}
+
+export interface PortraitAISkinEnhancementAdvancedParams {
+  image: FileInput; // image | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px.
+  smartSkin?: string; // smart_skin | Smart all-in-one skin beautification. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  acneRemoval?: string; // acne_removal | Acne and blemish removal. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  spotCorrection?: string; // spot_correction | Spot and pigmentation correction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  skinBrightening?: string; // skin_brightening | Skin brightening and tone enhancement. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  skinSmoothing?: string; // skin_smoothing | Skin smoothing and refinement. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  poreControl?: string; // pore_control | Pore and oil control. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  wrinkleReduction?: string; // wrinkle_reduction | Wrinkle and fine-line reduction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  underEyeCorrection?: string; // under_eye_correction | Under-eye correction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+  scarReduction?: string; // scar_reduction | Scar and skin damage reduction. - `0`: No. - `1`: Yes. Allowed values: 0, 1. Default: 0.
+}
+export interface PortraitAISkinEnhancementAdvancedResponseData {
+  request_id?: string; // request_id | Request ID for debugging.
+  log_id?: string; // log_id | Log ID for debugging.
+  error_detail?: Record<string, unknown>; // error_detail
+  task_id?: string; // task_id | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api).
+}
+export interface PortraitAISkinEnhancementAdvancedResponse extends BaseResponse<PortraitAISkinEnhancementAdvancedResponseData> {
+}
+
 export const CommonQueryAsyncTaskResultParamMap: Record<string, string> = {
   "taskId": "task_id",
 };
@@ -1504,6 +1998,145 @@ export const PortraitTryOnClothesRefinerParamMap: Record<string, string> = {
   "topGarment": "top_garment",
   "coarseImage": "coarse_image",
   "bottomGarment": "bottom_garment",
+};
+
+export const CutoutHDUniversalBackgroundRemovalParamMap: Record<string, string> = {
+};
+
+export const CutoutHdHumanBodyBackgroundRemovalParamMap: Record<string, string> = {
+};
+
+export const ImageAINailArtParamMap: Record<string, string> = {
+  "nailName": "nail_name",
+  "nailDesc": "nail_desc",
+};
+
+export const ImageAINailArtProParamMap: Record<string, string> = {
+  "referenceImage": "reference_image",
+};
+
+export const ImageAIPhotographyParamMap: Record<string, string> = {
+  "styleTitle": "style_title",
+  "styleDesc": "style_desc",
+  "imageSize": "image_size",
+};
+
+export const ImageAIEmojiGeneratorParamMap: Record<string, string> = {
+};
+
+export const ImagePhotoToColoringPageParamMap: Record<string, string> = {
+  "imageSize": "image_size",
+};
+
+export const ImageAIFlowerWallpaperParamMap: Record<string, string> = {
+  "flowerElements": "flower_elements",
+  "aspectRatio": "aspect_ratio",
+};
+
+export const PortraitAIFaceRatingParamMap: Record<string, string> = {
+  "aspectRatio": "aspect_ratio",
+};
+
+export const PortraitAIBaldParamMap: Record<string, string> = {
+};
+
+export const PortraitAIBeardRemovalParamMap: Record<string, string> = {
+};
+
+export const PortraitAIBeardStylingParamMap: Record<string, string> = {
+  "imageTemplate": "image_template",
+};
+
+export const PortraitAIBreastExpansionParamMap: Record<string, string> = {
+  "taskType": "task_type",
+  "personImage": "person_image",
+};
+
+export const PortraitAIButtEnhancementParamMap: Record<string, string> = {
+};
+
+export const PortraitAIColoredContactsParamMap: Record<string, string> = {
+};
+
+export const PortraitAIEyebrowsParamMap: Record<string, string> = {
+  "referenceImage": "reference_image",
+};
+
+export const PortraitAIEyelashesParamMap: Record<string, string> = {
+};
+
+export const PortraitAIEyeshadowTryOnParamMap: Record<string, string> = {
+  "eyeshadowStyle": "eyeshadow_style",
+  "imageTemplate": "image_template",
+  "aspectRatio": "aspect_ratio",
+};
+
+export const PortraitAIFaceSwapParamMap: Record<string, string> = {
+  "imageTarget": "image_target",
+  "imageTemplate": "image_template",
+};
+
+export const PortraitAIFatFilterParamMap: Record<string, string> = {
+};
+
+export const PortraitAIHairColorParamMap: Record<string, string> = {
+};
+
+export const PortraitAIHairLossSimulationParamMap: Record<string, string> = {
+};
+
+export const PortraitAILipEnhancementParamMap: Record<string, string> = {
+};
+
+export const PortraitAIWaistSlimmingParamMap: Record<string, string> = {
+};
+
+export const PortraitTryOnClothesPremiumParamMap: Record<string, string> = {
+  "taskType": "task_type",
+  "personImage": "person_image",
+  "topGarment": "top_garment",
+  "restoreFace": "restore_face",
+  "bottomGarment": "bottom_garment",
+};
+
+export const PortraitAIBigHeadEffectParamMap: Record<string, string> = {
+};
+
+export const PortraitAIHalloweenMaskParamMap: Record<string, string> = {
+  "maskStyle": "mask_style",
+  "imageTemplate": "image_template",
+  "aspectRatio": "aspect_ratio",
+};
+
+export const PortraitAILipBiteExpressionsParamMap: Record<string, string> = {
+  "gridCount": "grid_count",
+  "aspectRatio": "aspect_ratio",
+};
+
+export const PortraitAIRedLipGlossParamMap: Record<string, string> = {
+};
+
+export const PortraitAISquareFaceFilterParamMap: Record<string, string> = {
+};
+
+export const PortraitExpressionEditingAdvancedParamMap: Record<string, string> = {
+};
+
+export const PortraitHairstyleEditingPremiumParamMap: Record<string, string> = {
+  "imageTemplate": "image_template",
+  "hairStyle": "hair_style",
+};
+
+export const PortraitAISkinEnhancementAdvancedParamMap: Record<string, string> = {
+  "smartSkin": "smart_skin",
+  "acneRemoval": "acne_removal",
+  "spotCorrection": "spot_correction",
+  "skinBrightening": "skin_brightening",
+  "skinSmoothing": "skin_smoothing",
+  "poreControl": "pore_control",
+  "wrinkleReduction": "wrinkle_reduction",
+  "underEyeCorrection": "under_eye_correction",
+  "scarReduction": "scar_reduction",
 };
 
 export function validateCommonQueryAsyncTaskResultParams(params: CommonQueryAsyncTaskResultParams): void {
@@ -1917,5 +2550,228 @@ export function validatePortraitTryOnClothesRefinerParams(params: PortraitTryOnC
   if (params.coarseImage !== undefined && params.coarseImage !== null && !isFileInput(params.coarseImage)) throw new Error("Invalid file param: coarseImage");
   if (params.gender === undefined || params.gender === null) throw new Error("Missing required param: gender");
   if (params.bottomGarment !== undefined && params.bottomGarment !== null && !isFileInput(params.bottomGarment)) throw new Error("Invalid file param: bottomGarment");
+}
+
+export function validateCutoutHDUniversalBackgroundRemovalParams(params: CutoutHDUniversalBackgroundRemovalParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validateCutoutHdHumanBodyBackgroundRemovalParams(params: CutoutHdHumanBodyBackgroundRemovalParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validateImageAINailArtParams(params: ImageAINailArtParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.nailName === undefined || params.nailName === null) throw new Error("Missing required param: nailName");
+  if (params.nailDesc === undefined || params.nailDesc === null) throw new Error("Missing required param: nailDesc");
+}
+
+export function validateImageAINailArtProParams(params: ImageAINailArtProParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.referenceImage === undefined || params.referenceImage === null) throw new Error("Missing required param: referenceImage");
+  if (params.referenceImage !== undefined && params.referenceImage !== null && !isFileInput(params.referenceImage)) throw new Error("Invalid file param: referenceImage");
+}
+
+export function validateImageAIPhotographyParams(params: ImageAIPhotographyParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.styleTitle === undefined || params.styleTitle === null) throw new Error("Missing required param: styleTitle");
+  if (params.styleDesc === undefined || params.styleDesc === null) throw new Error("Missing required param: styleDesc");
+}
+
+export function validateImageAIEmojiGeneratorParams(params: ImageAIEmojiGeneratorParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.expression === undefined || params.expression === null) throw new Error("Missing required param: expression");
+  if (params.style === undefined || params.style === null) throw new Error("Missing required param: style");
+  if (params.scene === undefined || params.scene === null) throw new Error("Missing required param: scene");
+}
+
+export function validateImagePhotoToColoringPageParams(params: ImagePhotoToColoringPageParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validateImageAIFlowerWallpaperParams(params: ImageAIFlowerWallpaperParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+}
+
+export function validatePortraitAIFaceRatingParams(params: PortraitAIFaceRatingParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIBaldParams(params: PortraitAIBaldParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIBeardRemovalParams(params: PortraitAIBeardRemovalParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIBeardStylingParams(params: PortraitAIBeardStylingParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.imageTemplate !== undefined && params.imageTemplate !== null && !isFileInput(params.imageTemplate)) throw new Error("Invalid file param: imageTemplate");
+  if ((params.beard === undefined || params.beard === null) && (params.imageTemplate === undefined || params.imageTemplate === null)) throw new Error("At least one of beard, imageTemplate is required");
+}
+
+export function validatePortraitAIBreastExpansionParams(params: PortraitAIBreastExpansionParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.personImage === undefined || params.personImage === null) throw new Error("Missing required param: personImage");
+  if (params.personImage !== undefined && params.personImage !== null && !isFileInput(params.personImage)) throw new Error("Invalid file param: personImage");
+}
+
+export function validatePortraitAIButtEnhancementParams(params: PortraitAIButtEnhancementParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIColoredContactsParams(params: PortraitAIColoredContactsParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIEyebrowsParams(params: PortraitAIEyebrowsParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.referenceImage === undefined || params.referenceImage === null) throw new Error("Missing required param: referenceImage");
+  if (params.referenceImage !== undefined && params.referenceImage !== null && !isFileInput(params.referenceImage)) throw new Error("Invalid file param: referenceImage");
+}
+
+export function validatePortraitAIEyelashesParams(params: PortraitAIEyelashesParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIEyeshadowTryOnParams(params: PortraitAIEyeshadowTryOnParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.imageTemplate !== undefined && params.imageTemplate !== null && !isFileInput(params.imageTemplate)) throw new Error("Invalid file param: imageTemplate");
+  if ((params.eyeshadowStyle === undefined || params.eyeshadowStyle === null) && (params.imageTemplate === undefined || params.imageTemplate === null)) throw new Error("At least one of eyeshadowStyle, imageTemplate is required");
+}
+
+export function validatePortraitAIFaceSwapParams(params: PortraitAIFaceSwapParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.imageTarget === undefined || params.imageTarget === null) throw new Error("Missing required param: imageTarget");
+  if (params.imageTarget !== undefined && params.imageTarget !== null && !isFileInput(params.imageTarget)) throw new Error("Invalid file param: imageTarget");
+  if (params.imageTemplate === undefined || params.imageTemplate === null) throw new Error("Missing required param: imageTemplate");
+  if (params.imageTemplate !== undefined && params.imageTemplate !== null && !isFileInput(params.imageTemplate)) throw new Error("Invalid file param: imageTemplate");
+}
+
+export function validatePortraitAIFatFilterParams(params: PortraitAIFatFilterParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIHairColorParams(params: PortraitAIHairColorParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIHairLossSimulationParams(params: PortraitAIHairLossSimulationParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.level === undefined || params.level === null) throw new Error("Missing required param: level");
+}
+
+export function validatePortraitAILipEnhancementParams(params: PortraitAILipEnhancementParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIWaistSlimmingParams(params: PortraitAIWaistSlimmingParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitTryOnClothesPremiumParams(params: PortraitTryOnClothesPremiumParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.taskType === undefined || params.taskType === null) throw new Error("Missing required param: taskType");
+  if (params.personImage === undefined || params.personImage === null) throw new Error("Missing required param: personImage");
+  if (params.personImage !== undefined && params.personImage !== null && !isFileInput(params.personImage)) throw new Error("Invalid file param: personImage");
+  if (params.topGarment === undefined || params.topGarment === null) throw new Error("Missing required param: topGarment");
+  if (params.topGarment !== undefined && params.topGarment !== null && !isFileInput(params.topGarment)) throw new Error("Invalid file param: topGarment");
+  if (params.bottomGarment !== undefined && params.bottomGarment !== null && !isFileInput(params.bottomGarment)) throw new Error("Invalid file param: bottomGarment");
+}
+
+export function validatePortraitAIBigHeadEffectParams(params: PortraitAIBigHeadEffectParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIHalloweenMaskParams(params: PortraitAIHalloweenMaskParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.imageTemplate !== undefined && params.imageTemplate !== null && !isFileInput(params.imageTemplate)) throw new Error("Invalid file param: imageTemplate");
+  if ((params.maskStyle === undefined || params.maskStyle === null) && (params.imageTemplate === undefined || params.imageTemplate === null)) throw new Error("At least one of maskStyle, imageTemplate is required");
+}
+
+export function validatePortraitAILipBiteExpressionsParams(params: PortraitAILipBiteExpressionsParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAIRedLipGlossParams(params: PortraitAIRedLipGlossParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitAISquareFaceFilterParams(params: PortraitAISquareFaceFilterParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+}
+
+export function validatePortraitExpressionEditingAdvancedParams(params: PortraitExpressionEditingAdvancedParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.expression === undefined || params.expression === null) throw new Error("Missing required param: expression");
+}
+
+export function validatePortraitHairstyleEditingPremiumParams(params: PortraitHairstyleEditingPremiumParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
+  if (params.imageTemplate !== undefined && params.imageTemplate !== null && !isFileInput(params.imageTemplate)) throw new Error("Invalid file param: imageTemplate");
+  if ((params.hairStyle === undefined || params.hairStyle === null) && (params.imageTemplate === undefined || params.imageTemplate === null)) throw new Error("At least one of hairStyle, imageTemplate is required");
+}
+
+export function validatePortraitAISkinEnhancementAdvancedParams(params: PortraitAISkinEnhancementAdvancedParams): void {
+  const isFileInput = (v: any) => v instanceof Uint8Array || v instanceof ArrayBuffer || (typeof Buffer !== "undefined" && Buffer.isBuffer(v)) || (v && typeof v === "object" && typeof (v as any).pipe === "function");
+  if (params.image === undefined || params.image === null) throw new Error("Missing required param: image");
+  if (params.image !== undefined && params.image !== null && !isFileInput(params.image)) throw new Error("Invalid file param: image");
 }
 

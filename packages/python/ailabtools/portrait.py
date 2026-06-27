@@ -108,7 +108,107 @@ from .generated.endpoints import (
     PortraitTryOnClothesRefinerParams,
     PortraitTryOnClothesRefinerResponse,
     PortraitTryOnClothesRefinerParamMap,
-    validate_portraitTryOnClothesRefiner_params
+    validate_portraitTryOnClothesRefiner_params,
+    PortraitAIFaceRatingParams,
+    PortraitAIFaceRatingResponse,
+    PortraitAIFaceRatingParamMap,
+    validate_portraitAIFaceRating_params,
+    PortraitAIBaldParams,
+    PortraitAIBaldResponse,
+    PortraitAIBaldParamMap,
+    validate_portraitAIBald_params,
+    PortraitAIBeardRemovalParams,
+    PortraitAIBeardRemovalResponse,
+    PortraitAIBeardRemovalParamMap,
+    validate_portraitAIBeardRemoval_params,
+    PortraitAIBeardStylingParams,
+    PortraitAIBeardStylingResponse,
+    PortraitAIBeardStylingParamMap,
+    validate_portraitAIBeardStyling_params,
+    PortraitAIBreastExpansionParams,
+    PortraitAIBreastExpansionResponse,
+    PortraitAIBreastExpansionParamMap,
+    validate_portraitAIBreastExpansion_params,
+    PortraitAIButtEnhancementParams,
+    PortraitAIButtEnhancementResponse,
+    PortraitAIButtEnhancementParamMap,
+    validate_portraitAIButtEnhancement_params,
+    PortraitAIColoredContactsParams,
+    PortraitAIColoredContactsResponse,
+    PortraitAIColoredContactsParamMap,
+    validate_portraitAIColoredContacts_params,
+    PortraitAIEyebrowsParams,
+    PortraitAIEyebrowsResponse,
+    PortraitAIEyebrowsParamMap,
+    validate_portraitAIEyebrows_params,
+    PortraitAIEyelashesParams,
+    PortraitAIEyelashesResponse,
+    PortraitAIEyelashesParamMap,
+    validate_portraitAIEyelashes_params,
+    PortraitAIEyeshadowTryOnParams,
+    PortraitAIEyeshadowTryOnResponse,
+    PortraitAIEyeshadowTryOnParamMap,
+    validate_portraitAIEyeshadowTryOn_params,
+    PortraitAIFaceSwapParams,
+    PortraitAIFaceSwapResponse,
+    PortraitAIFaceSwapParamMap,
+    validate_portraitAIFaceSwap_params,
+    PortraitAIFatFilterParams,
+    PortraitAIFatFilterResponse,
+    PortraitAIFatFilterParamMap,
+    validate_portraitAIFatFilter_params,
+    PortraitAIHairColorParams,
+    PortraitAIHairColorResponse,
+    PortraitAIHairColorParamMap,
+    validate_portraitAIHairColor_params,
+    PortraitAIHairLossSimulationParams,
+    PortraitAIHairLossSimulationResponse,
+    PortraitAIHairLossSimulationParamMap,
+    validate_portraitAIHairLossSimulation_params,
+    PortraitAILipEnhancementParams,
+    PortraitAILipEnhancementResponse,
+    PortraitAILipEnhancementParamMap,
+    validate_portraitAILipEnhancement_params,
+    PortraitAIWaistSlimmingParams,
+    PortraitAIWaistSlimmingResponse,
+    PortraitAIWaistSlimmingParamMap,
+    validate_portraitAIWaistSlimming_params,
+    PortraitTryOnClothesPremiumParams,
+    PortraitTryOnClothesPremiumResponse,
+    PortraitTryOnClothesPremiumParamMap,
+    validate_portraitTryOnClothesPremium_params,
+    PortraitAIBigHeadEffectParams,
+    PortraitAIBigHeadEffectResponse,
+    PortraitAIBigHeadEffectParamMap,
+    validate_portraitAIBigHeadEffect_params,
+    PortraitAIHalloweenMaskParams,
+    PortraitAIHalloweenMaskResponse,
+    PortraitAIHalloweenMaskParamMap,
+    validate_portraitAIHalloweenMask_params,
+    PortraitAILipBiteExpressionsParams,
+    PortraitAILipBiteExpressionsResponse,
+    PortraitAILipBiteExpressionsParamMap,
+    validate_portraitAILipBiteExpressions_params,
+    PortraitAIRedLipGlossParams,
+    PortraitAIRedLipGlossResponse,
+    PortraitAIRedLipGlossParamMap,
+    validate_portraitAIRedLipGloss_params,
+    PortraitAISquareFaceFilterParams,
+    PortraitAISquareFaceFilterResponse,
+    PortraitAISquareFaceFilterParamMap,
+    validate_portraitAISquareFaceFilter_params,
+    PortraitExpressionEditingAdvancedParams,
+    PortraitExpressionEditingAdvancedResponse,
+    PortraitExpressionEditingAdvancedParamMap,
+    validate_portraitExpressionEditingAdvanced_params,
+    PortraitHairstyleEditingPremiumParams,
+    PortraitHairstyleEditingPremiumResponse,
+    PortraitHairstyleEditingPremiumParamMap,
+    validate_portraitHairstyleEditingPremium_params,
+    PortraitAISkinEnhancementAdvancedParams,
+    PortraitAISkinEnhancementAdvancedResponse,
+    PortraitAISkinEnhancementAdvancedParamMap,
+    validate_portraitAISkinEnhancementAdvanced_params
 )
 
 class PortraitAPI:
@@ -255,3 +355,128 @@ class PortraitAPI:
         validate_portraitTryOnClothesRefiner_params(params)
         mapped = map_params(params, PortraitTryOnClothesRefinerParamMap)
         return await self._requester.request('POST', '/api/portrait/enhance/try-on-clothes-refiner', body=mapped, multipart=True)
+
+    async def portraitAIFaceRating(self, params: PortraitAIFaceRatingParams) -> PortraitAIFaceRatingResponse:
+        validate_portraitAIFaceRating_params(params)
+        mapped = map_params(params, PortraitAIFaceRatingParamMap)
+        return await self._requester.request('POST', '/api/portrait/analysis/ai-face-rating', body=mapped, multipart=True)
+
+    async def portraitAIBald(self, params: PortraitAIBaldParams) -> PortraitAIBaldResponse:
+        validate_portraitAIBald_params(params)
+        mapped = map_params(params, PortraitAIBaldParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-bald', body=mapped, multipart=True)
+
+    async def portraitAIBeardRemoval(self, params: PortraitAIBeardRemovalParams) -> PortraitAIBeardRemovalResponse:
+        validate_portraitAIBeardRemoval_params(params)
+        mapped = map_params(params, PortraitAIBeardRemovalParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-beard-removal', body=mapped, multipart=True)
+
+    async def portraitAIBeardStyling(self, params: PortraitAIBeardStylingParams) -> PortraitAIBeardStylingResponse:
+        validate_portraitAIBeardStyling_params(params)
+        mapped = map_params(params, PortraitAIBeardStylingParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-beard-styling', body=mapped, multipart=True)
+
+    async def portraitAIBreastExpansion(self, params: PortraitAIBreastExpansionParams) -> PortraitAIBreastExpansionResponse:
+        validate_portraitAIBreastExpansion_params(params)
+        mapped = map_params(params, PortraitAIBreastExpansionParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-big-tits', body=mapped, multipart=True)
+
+    async def portraitAIButtEnhancement(self, params: PortraitAIButtEnhancementParams) -> PortraitAIButtEnhancementResponse:
+        validate_portraitAIButtEnhancement_params(params)
+        mapped = map_params(params, PortraitAIButtEnhancementParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-butt-enhancement', body=mapped, multipart=True)
+
+    async def portraitAIColoredContacts(self, params: PortraitAIColoredContactsParams) -> PortraitAIColoredContactsResponse:
+        validate_portraitAIColoredContacts_params(params)
+        mapped = map_params(params, PortraitAIColoredContactsParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-colored-contacts', body=mapped, multipart=True)
+
+    async def portraitAIEyebrows(self, params: PortraitAIEyebrowsParams) -> PortraitAIEyebrowsResponse:
+        validate_portraitAIEyebrows_params(params)
+        mapped = map_params(params, PortraitAIEyebrowsParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-eyebrows', body=mapped, multipart=True)
+
+    async def portraitAIEyelashes(self, params: PortraitAIEyelashesParams) -> PortraitAIEyelashesResponse:
+        validate_portraitAIEyelashes_params(params)
+        mapped = map_params(params, PortraitAIEyelashesParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-eyelashes', body=mapped, multipart=True)
+
+    async def portraitAIEyeshadowTryOn(self, params: PortraitAIEyeshadowTryOnParams) -> PortraitAIEyeshadowTryOnResponse:
+        validate_portraitAIEyeshadowTryOn_params(params)
+        mapped = map_params(params, PortraitAIEyeshadowTryOnParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-eyeshadow', body=mapped, multipart=True)
+
+    async def portraitAIFaceSwap(self, params: PortraitAIFaceSwapParams) -> PortraitAIFaceSwapResponse:
+        validate_portraitAIFaceSwap_params(params)
+        mapped = map_params(params, PortraitAIFaceSwapParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-face-swap', body=mapped, multipart=True)
+
+    async def portraitAIFatFilter(self, params: PortraitAIFatFilterParams) -> PortraitAIFatFilterResponse:
+        validate_portraitAIFatFilter_params(params)
+        mapped = map_params(params, PortraitAIFatFilterParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-fat-filter', body=mapped, multipart=True)
+
+    async def portraitAIHairColor(self, params: PortraitAIHairColorParams) -> PortraitAIHairColorResponse:
+        validate_portraitAIHairColor_params(params)
+        mapped = map_params(params, PortraitAIHairColorParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-hair-color', body=mapped, multipart=True)
+
+    async def portraitAIHairLossSimulation(self, params: PortraitAIHairLossSimulationParams) -> PortraitAIHairLossSimulationResponse:
+        validate_portraitAIHairLossSimulation_params(params)
+        mapped = map_params(params, PortraitAIHairLossSimulationParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-hair-loss-simulation', body=mapped, multipart=True)
+
+    async def portraitAILipEnhancement(self, params: PortraitAILipEnhancementParams) -> PortraitAILipEnhancementResponse:
+        validate_portraitAILipEnhancement_params(params)
+        mapped = map_params(params, PortraitAILipEnhancementParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-lip-enhancement', body=mapped, multipart=True)
+
+    async def portraitAIWaistSlimming(self, params: PortraitAIWaistSlimmingParams) -> PortraitAIWaistSlimmingResponse:
+        validate_portraitAIWaistSlimming_params(params)
+        mapped = map_params(params, PortraitAIWaistSlimmingParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/ai-waist-slimming', body=mapped, multipart=True)
+
+    async def portraitTryOnClothesPremium(self, params: PortraitTryOnClothesPremiumParams) -> PortraitTryOnClothesPremiumResponse:
+        validate_portraitTryOnClothesPremium_params(params)
+        mapped = map_params(params, PortraitTryOnClothesPremiumParamMap)
+        return await self._requester.request('POST', '/api/portrait/editing/try-on-clothes-premium', body=mapped, multipart=True)
+
+    async def portraitAIBigHeadEffect(self, params: PortraitAIBigHeadEffectParams) -> PortraitAIBigHeadEffectResponse:
+        validate_portraitAIBigHeadEffect_params(params)
+        mapped = map_params(params, PortraitAIBigHeadEffectParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/ai-big-head-effect', body=mapped, multipart=True)
+
+    async def portraitAIHalloweenMask(self, params: PortraitAIHalloweenMaskParams) -> PortraitAIHalloweenMaskResponse:
+        validate_portraitAIHalloweenMask_params(params)
+        mapped = map_params(params, PortraitAIHalloweenMaskParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/ai-halloween-mask', body=mapped, multipart=True)
+
+    async def portraitAILipBiteExpressions(self, params: PortraitAILipBiteExpressionsParams) -> PortraitAILipBiteExpressionsResponse:
+        validate_portraitAILipBiteExpressions_params(params)
+        mapped = map_params(params, PortraitAILipBiteExpressionsParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/ai-lip-bite-expressions', body=mapped, multipart=True)
+
+    async def portraitAIRedLipGloss(self, params: PortraitAIRedLipGlossParams) -> PortraitAIRedLipGlossResponse:
+        validate_portraitAIRedLipGloss_params(params)
+        mapped = map_params(params, PortraitAIRedLipGlossParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/ai-red-lip-gloss', body=mapped, multipart=True)
+
+    async def portraitAISquareFaceFilter(self, params: PortraitAISquareFaceFilterParams) -> PortraitAISquareFaceFilterResponse:
+        validate_portraitAISquareFaceFilter_params(params)
+        mapped = map_params(params, PortraitAISquareFaceFilterParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/ai-square-face-filter', body=mapped, multipart=True)
+
+    async def portraitExpressionEditingAdvanced(self, params: PortraitExpressionEditingAdvancedParams) -> PortraitExpressionEditingAdvancedResponse:
+        validate_portraitExpressionEditingAdvanced_params(params)
+        mapped = map_params(params, PortraitExpressionEditingAdvancedParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/emotion-editor-advanced', body=mapped, multipart=True)
+
+    async def portraitHairstyleEditingPremium(self, params: PortraitHairstyleEditingPremiumParams) -> PortraitHairstyleEditingPremiumResponse:
+        validate_portraitHairstyleEditingPremium_params(params)
+        mapped = map_params(params, PortraitHairstyleEditingPremiumParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/hairstyle-editor-premium', body=mapped, multipart=True)
+
+    async def portraitAISkinEnhancementAdvanced(self, params: PortraitAISkinEnhancementAdvancedParams) -> PortraitAISkinEnhancementAdvancedResponse:
+        validate_portraitAISkinEnhancementAdvanced_params(params)
+        mapped = map_params(params, PortraitAISkinEnhancementAdvancedParamMap)
+        return await self._requester.request('POST', '/api/portrait/effects/smart-skin-advanced', body=mapped, multipart=True)

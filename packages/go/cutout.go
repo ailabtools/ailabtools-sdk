@@ -168,3 +168,46 @@ func (api *CutoutAPI) CutoutHumanBackgroundRemoval(ctx context.Context, params C
 	err := api.requester.request(ctx, http.MethodPost, "/api/cutout/portrait/portrait-background-removal", nil, params, true, &out)
 	return &out, err
 }
+
+// BEGIN GENERATED OPENAPI ADDITIONS
+
+type CutoutHDUniversalBackgroundRemovalParams struct {
+	Image FileInput `form:"image"`
+}
+
+type CutoutHDUniversalBackgroundRemovalResponseData struct {
+}
+
+type CutoutHDUniversalBackgroundRemovalResponse = BaseResponse[CutoutHDUniversalBackgroundRemovalResponseData]
+
+func (api *CutoutAPI) CutoutHDUniversalBackgroundRemoval(ctx context.Context, params CutoutHDUniversalBackgroundRemovalParams) (*CutoutHDUniversalBackgroundRemovalResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out CutoutHDUniversalBackgroundRemovalResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/cutout/general/hd-universal-background-removal", nil, params, true, &out)
+	return &out, err
+}
+
+type CutoutHdHumanBodyBackgroundRemovalParams struct {
+	Image FileInput `form:"image"`
+}
+
+type CutoutHdHumanBodyBackgroundRemovalElement struct {
+	ImageUrl string `json:"image_url,omitempty"`
+}
+
+type CutoutHdHumanBodyBackgroundRemovalResponseData struct {
+	Elements []CutoutHdHumanBodyBackgroundRemovalElement `json:"elements,omitempty"`
+}
+
+type CutoutHdHumanBodyBackgroundRemovalResponse = BaseResponse[CutoutHdHumanBodyBackgroundRemovalResponseData]
+
+func (api *CutoutAPI) CutoutHdHumanBodyBackgroundRemoval(ctx context.Context, params CutoutHdHumanBodyBackgroundRemovalParams) (*CutoutHdHumanBodyBackgroundRemovalResponse, error) {
+	if err := validateRequired(params, "Image"); err != nil {
+		return nil, err
+	}
+	var out CutoutHdHumanBodyBackgroundRemovalResponse
+	err := api.requester.request(ctx, http.MethodPost, "/api/cutout/portrait/hd-portrait-background-removal", nil, params, true, &out)
+	return &out, err
+}
