@@ -113,8 +113,8 @@ $client = new AILabClient(
 
 - [Get an AILabTools API key](https://www.ailabtools.com/developer)
 - [AILabTools API documentation](https://www.ailabtools.com/docs)
-- [AILabTools SDK source code](https://github.com/ailabtools/ailabtools-sdk)
-- [Report an SDK issue](https://github.com/ailabtools/ailabtools-sdk/issues)
+- [AILabTools PHP SDK source code](https://github.com/ailabtools/ailabtools-php)
+- [Report a PHP SDK issue](https://github.com/ailabtools/ailabtools-php/issues)
 
 ## License
 

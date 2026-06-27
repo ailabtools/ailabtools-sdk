@@ -13,8 +13,8 @@
   "homepage": "https://www.ailabtools.com/",
   "support": {
     "docs": "https://www.ailabtools.com/docs",
-    "issues": "https://github.com/ailabtools/ailabtools-sdk/issues",
-    "source": "https://github.com/ailabtools/ailabtools-sdk"
+    "issues": "https://github.com/ailabtools/ailabtools-php/issues",
+    "source": "https://github.com/ailabtools/ailabtools-php"
   },
   "require": {
     "php": ">=8.1",
