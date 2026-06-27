@@ -1,6 +1,6 @@
 # AILabTools SDK Full Usage Guide
 
-This guide helps developers use the AILabTools SDKs for Node.js, Python, and Go to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, and Flutter to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Quick Start
 
@@ -30,6 +30,12 @@ Go:
 
 ```bash
 go get github.com/ailabtools/ailabtools-sdk/packages/go
+```
+
+Dart / Flutter:
+
+```bash
+flutter pub add ailabtools
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
@@ -104,7 +110,33 @@ func main() {
 }
 ```
 
-The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale-factor`, and `returnForm` maps to `return_form`.
+#### Dart / Flutter
+
+```dart
+import 'dart:io';
+
+import 'package:ailabtools/ailabtools.dart';
+
+Future<void> main() async {
+  final client = AILabClient(
+    apiKey: Platform.environment['AILAB_API_KEY']!,
+  );
+  try {
+    final bytes = await File('./photo.jpg').readAsBytes();
+    final result = await client.background.remove(
+      CutoutUniversalBackgroundRemovalParams(
+        image: AILabFile.fromBytes(bytes, filename: 'photo.jpg'),
+        returnForm: 'whiteBK',
+      ),
+    );
+    print(result.data?.imageUrl);
+  } finally {
+    client.close();
+  }
+}
+```
+
+The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale_factor`, and `returnForm` maps to `return_form`.
 
 ## Popular Use Cases
 
@@ -136,6 +168,7 @@ Both full API method names and short aliases are supported. The full names map d
 - Node.js: `Buffer | ArrayBuffer | Uint8Array`
 - Python: file-like objects, `bytes`, or `bytearray`
 - Go: `FileFromPath`, `FileFromBytes`, or `FileFromReader`
+- Dart / Flutter: `AILabFile.fromBytes`
 
 ## Async Task Example
 

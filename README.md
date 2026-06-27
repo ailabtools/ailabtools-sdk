@@ -1,12 +1,13 @@
-# AILabTools SDK - AI Image API for Node.js, Python, and Go
+# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, and Flutter
 
-Official Node.js, TypeScript, async Python, and Go SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, Go, Dart, and Flutter SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 - Node.js / TypeScript SDK: `npm install ailabtools`
 - Python async SDK: `pip install ailabtools-sdk`
 - Go SDK: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
+- Dart / Flutter SDK: `flutter pub add ailabtools`
 - 60+ active AI image, cutout, and portrait APIs
 - Supports file uploads, URL input, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -19,6 +20,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - AI portrait API for face retouching, hairstyle changer, cartoon avatar generation, skin analysis, and virtual try-on
 - Node.js SDK with TypeScript definitions
 - Async Python SDK for modern Python applications
+- Cross-platform Dart and Flutter SDK with strongly typed models
 
 ## Installation
 
@@ -38,6 +40,12 @@ pip install ailabtools-sdk
 
 ```bash
 go get github.com/ailabtools/ailabtools-sdk/packages/go
+```
+
+### Dart / Flutter
+
+```bash
+flutter pub add ailabtools
 ```
 
 Import it in Python as `ailabtools`:
@@ -128,7 +136,33 @@ func main() {
 }
 ```
 
-The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale-factor`, and `returnForm` maps to `return_form`.
+#### Dart / Flutter
+
+```dart
+import 'dart:io';
+
+import 'package:ailabtools/ailabtools.dart';
+
+Future<void> main() async {
+  final client = AILabClient(
+    apiKey: Platform.environment['AILAB_API_KEY']!,
+  );
+  try {
+    final bytes = await File('./photo.jpg').readAsBytes();
+    final result = await client.background.remove(
+      CutoutUniversalBackgroundRemovalParams(
+        image: AILabFile.fromBytes(bytes, filename: 'photo.jpg'),
+        returnForm: 'whiteBK',
+      ),
+    );
+    print(result.data?.imageUrl);
+  } finally {
+    client.close();
+  }
+}
+```
+
+The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale_factor`, and `returnForm` maps to `return_form`.
 
 ## Popular Use Cases
 
@@ -214,6 +248,7 @@ try {
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
 - [Go SDK module](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/go)
+- [Dart and Flutter SDK](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/dart)
 - [SDK API reference](https://github.com/ailabtools/ailabtools-sdk/tree/main/docs)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

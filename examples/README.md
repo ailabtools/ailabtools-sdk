@@ -5,6 +5,7 @@ Copy these examples into your application after installing the SDK.
 - Node.js / TypeScript: `npm install ailabtools`
 - Python async: `pip install ailabtools-sdk`
 - Go: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
+- Dart / Flutter: `flutter pub add ailabtools`
 - API key: [AILabTools Developer Console](https://www.ailabtools.com/developer)
 - API docs: [AILabTools API Documentation](https://www.ailabtools.com/docs)
 
@@ -20,6 +21,10 @@ Copy these examples into your application after installing the SDK.
 ## Go
 
 - `go/background-removal/main.go` - remove image backgrounds
+
+## Dart / Flutter
+
+- `dart/background_removal.dart` - remove image backgrounds
 
 ## Python
 

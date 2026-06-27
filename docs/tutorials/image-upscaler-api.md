@@ -1,6 +1,6 @@
 # Image Upscaler API with AILabTools SDK
 
-Use the AILabTools image upscaler API to enlarge photos with simple SDK calls. The SDK accepts local file uploads and maps camelCase parameters such as `upscaleFactor` to the API field `upscale-factor`.
+Use the AILabTools image upscaler API to enlarge photos with simple SDK calls. The SDK accepts local file uploads and maps camelCase parameters such as `upscaleFactor` to the API field `upscale_factor`.
 
 ## Node.js / TypeScript
 

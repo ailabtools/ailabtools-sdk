@@ -1,6 +1,6 @@
 # AILabTools SDK Documentation
 
-Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, and Go examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, and Flutter examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
@@ -43,6 +43,12 @@ Go:
 
 ```bash
 go get github.com/ailabtools/ailabtools-sdk/packages/go
+```
+
+Dart / Flutter:
+
+```bash
+flutter pub add ailabtools
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
@@ -117,7 +123,7 @@ func main() {
 }
 ```
 
-The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale-factor`, and `returnForm` maps to `return_form`.
+The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale_factor`, and `returnForm` maps to `return_form`.
 
 ## Popular Use Cases
 

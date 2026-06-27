@@ -27,6 +27,10 @@ packages/python/build/
 packages/python/dist/
 packages/python/*.egg-info/
 
+# Dart / Flutter
+.dart_tool/
+packages/dart/pubspec.lock
+
 # Local integration assets and generated reports
 test-assets/
 image.jpg
