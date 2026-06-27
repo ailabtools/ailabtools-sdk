@@ -9,7 +9,7 @@ async function main() {
     upscaleFactor: 2,
   });
 
-  console.log(result.data?.image_url);
+  console.log(result.data?.url);
 }
 
 main().catch((error) => {

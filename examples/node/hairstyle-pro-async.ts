@@ -5,6 +5,7 @@ const client = new AILabClient({ apiKey: process.env.AILAB_API_KEY! });
 
 async function main() {
   const task = await client.portrait.changeHairstyle({
+    taskType: "async",
     image: readFileSync("./portrait.jpg"),
     hairStyle: "BuzzCut",
     color: "blonde",

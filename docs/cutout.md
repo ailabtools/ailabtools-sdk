@@ -6,6 +6,7 @@
 
 - SDK method: `cutout.cutoutClothingBackgroundRemoval()`
 - HTTP: `POST /api/cutout/general/apparel-background-removal`
+- Official documentation: [Costume Background Removal API](https://www.ailabtools.com/docs/ai-cutout/general/apparel-background-removal/api)
 
 ### Body Parameters
 
@@ -48,6 +49,7 @@ https://www.ailabapi.com/api/cutout/general/apparel-background-removal
 
 - SDK method: `cutout.cutoutProductBackgroundRemoval()`
 - HTTP: `POST /api/cutout/general/commodity-background-removal`
+- Official documentation: [Product Background Removal API](https://www.ailabtools.com/docs/ai-cutout/general/commodity-background-removal/api)
 
 ### Body Parameters
 
@@ -77,6 +79,7 @@ https://www.ailabapi.com/api/cutout/general/commodity-background-removal
 
 - SDK method: `cutout.cutoutFoodBackgroundRemoval()`
 - HTTP: `POST /api/cutout/general/food-background-removal`
+- Official documentation: [Food Background Removal API](https://www.ailabtools.com/docs/ai-cutout/general/food-background-removal/api)
 
 ### Body Parameters
 
@@ -106,6 +109,7 @@ https://www.ailabapi.com/api/cutout/general/food-background-removal
 
 - SDK method: `cutout.cutoutUniversalBackgroundRemoval()`
 - HTTP: `POST /api/cutout/general/universal-background-removal`
+- Official documentation: [Universal Background Removal API](https://www.ailabtools.com/docs/ai-cutout/general/universal-background-removal/api)
 
 ### Body Parameters
 
@@ -135,6 +139,7 @@ https://www.ailabapi.com/api/cutout/general/universal-background-removal
 
 - SDK method: `cutout.cutoutAvatarExtraction()`
 - HTTP: `POST /api/cutout/portrait/avatar-extraction`
+- Official documentation: [Head Extraction API](https://www.ailabtools.com/docs/ai-cutout/portrait/avatar-extraction/api)
 
 ### Body Parameters
 
@@ -169,6 +174,7 @@ https://www.ailabapi.com/api/cutout/portrait/avatar-extraction
 
 - SDK method: `cutout.cutoutHairExtraction()`
 - HTTP: `POST /api/cutout/portrait/hairstyle-extraction`
+- Official documentation: [Hairstyle Extraction API](https://www.ailabtools.com/docs/ai-cutout/portrait/hairstyle-extraction/api)
 
 ### Body Parameters
 
@@ -202,6 +208,7 @@ https://www.ailabapi.com/api/cutout/portrait/hairstyle-extraction
 
 - SDK method: `cutout.cutoutHumanBackgroundRemoval()`
 - HTTP: `POST /api/cutout/portrait/portrait-background-removal`
+- Official documentation: [Human Background Removal API](https://www.ailabtools.com/docs/ai-cutout/portrait/portrait-background-removal/api)
 
 ### Body Parameters
 
@@ -231,6 +238,7 @@ https://www.ailabapi.com/api/cutout/portrait/portrait-background-removal
 
 - SDK method: `cutout.cutoutHDUniversalBackgroundRemoval()`
 - HTTP: `POST /api/cutout/general/hd-universal-background-removal`
+- Official documentation: [HD Universal Background Removal API](https://www.ailabtools.com/docs/ai-cutout/general/hd-universal-background-removal/api)
 
 ### Body Parameters
 
@@ -251,7 +259,7 @@ https://www.ailabapi.com/api/cutout/general/hd-universal-background-removal
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -261,12 +269,13 @@ https://www.ailabapi.com/api/cutout/general/hd-universal-background-removal
 
 - SDK method: `cutout.cutoutHdHumanBodyBackgroundRemoval()`
 - HTTP: `POST /api/cutout/portrait/hd-portrait-background-removal`
+- Official documentation: [HD Human Background Removal API](https://www.ailabtools.com/docs/ai-cutout/portrait/hd-portrait-background-removal/api)
 
 ### Body Parameters
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | `file` | No |  |
+| `image` | `file` | Yes | Portrait image to process. |
 
 ### Request URL
 

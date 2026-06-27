@@ -56,6 +56,8 @@ Java:
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
 
+[Compare all official SDK packages and installation commands](sdk-packages.md).
+
 ### 3. Remove an image background
 
 #### Node.js
@@ -191,16 +193,18 @@ The SDK uses camelCase parameters and maps them automatically to API field names
 
 ## Popular Use Cases
 
-| Popular API | Typical use case | SDK method |
-| --- | --- | --- |
-| [Cartoon Yourself API](https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api) | Create cartoon portraits and avatars from photos. | `client.portrait.portraitCartoonYourself()` |
-| [Change Facial Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api) | Edit smiles, grins, sadness, and other facial expressions. | `client.portrait.portraitExpressionEditing()` |
-| [Hairstyle Changer Premium API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api) | Preview preset hairstyles or transfer a hairstyle from a reference image. | `client.portrait.portraitHairstyleEditingPremium()` |
-| [Try on Clothes Premium API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api) | Generate high-quality virtual clothing try-on results. | `client.portrait.portraitTryOnClothesPremium()` |
-| [Skin Analyze Pro API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api) | Analyze skin condition, texture, tone, acne, pores, and wrinkles. | `client.portrait.portraitSkinAnalysisProfessional()` |
-| [Face Beauty Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api) | Apply advanced portrait beautification and face shaping. | `client.portrait.portraitFacialBeautificationPro()` |
-| [AI Face Swap API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api) | Swap a face into a target portrait while preserving the scene. | `client.portrait.portraitAIFaceSwap()` |
-| [AI Breast Expansion API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api) | Apply a controlled bust-area adjustment to a portrait. | `client.portrait.portraitAIBreastExpansion()` |
+| Popular API | Typical use case | SDK method | Try online |
+| --- | --- | --- | --- |
+| [Cartoon Yourself API](https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api) | Create cartoon portraits and avatars from photos. | `client.portrait.portraitCartoonYourself()` | [Try Cartoon Yourself online](https://www.ailabtools.com/face-anime-converter) |
+| [Change Facial Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api) | Edit smiles, grins, sadness, and other facial expressions. | `client.portrait.portraitExpressionEditing()` | [Try Change Facial Expressions online](https://www.ailabtools.com/change-facial-expressions) |
+| [Hairstyle Changer Premium API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api) | Preview preset hairstyles or transfer a hairstyle from a reference image. | `client.portrait.portraitHairstyleEditingPremium()` | [Try Hairstyle Changer online](https://www.ailabtools.com/hairstyle-changer) |
+| [Try on Clothes Premium API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api) | Generate high-quality virtual clothing try-on results. | `client.portrait.portraitTryOnClothesPremium()` | [Try Virtual Clothes Try-On online](https://www.ailabtools.com/virtual-try-on-clothes) |
+| [Skin Analyze Pro API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api) | Analyze skin condition, texture, tone, acne, pores, and wrinkles. | `client.portrait.portraitSkinAnalysisProfessional()` | [Try AI Skin Analyzer online](https://www.ailabtools.com/ai-skin-analyze) |
+| [Face Beauty Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api) | Apply advanced portrait beautification and face shaping. | `client.portrait.portraitFacialBeautificationPro()` | [Try Retouch Portraits online](https://www.ailabtools.com/retouch-portraits) |
+| [AI Face Swap API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api) | Swap a face into a target portrait while preserving the scene. | `client.portrait.portraitAIFaceSwap()` | [Try AI Face Swap online](https://www.ailabtools.com/face-swap) |
+| [AI Breast Expansion API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api) | Apply a controlled bust-area adjustment to a portrait. | `client.portrait.portraitAIBreastExpansion()` | [Try AI Breast Expansion online](https://www.ailabtools.com/ai-breast-expansion) |
+
+Browse more demos in [AILabTools AI Portrait Tools](https://www.ailabtools.com/ai-portrait-tools) and [AILabTools AI Image Tools](https://www.ailabtools.com/ai-image-tools).
 
 [View the complete AILabTools SDK API index](README.md#api-index).
 
@@ -233,6 +237,7 @@ Some APIs return `task_id` for long-running image generation or enhancement jobs
 
 ```ts
 const task = await client.portrait.changeHairstyle({
+  taskType: "async",
   image: readFileSync("./portrait.jpg"),
   hairStyle: "BuzzCut",
   color: "blonde",
@@ -252,6 +257,7 @@ Python async:
 
 ```py
 task = await client.portrait.change_hairstyle({
+    "taskType": "async",
     "image": image,
     "hairStyle": "BuzzCut",
     "color": "blonde",
@@ -270,6 +276,8 @@ print(result.get("data"))
 
 ## Error Handling
 
+### Node.js
+
 API errors throw `AILabApiError`, which includes troubleshooting fields such as `requestId` and `logId`.
 
 ```ts
@@ -286,7 +294,7 @@ try {
 }
 ```
 
-## Error Handling
+### Python
 
 API errors raise `AILabApiError`, which includes troubleshooting fields such as `request_id` and `log_id`.
 
@@ -319,7 +327,15 @@ See [`examples/`](../examples/) for Next.js, FastAPI, background removal, image 
 - [AILabTools API Documentation](https://www.ailabtools.com/docs)
 - [Node.js SDK on npm](https://www.npmjs.com/package/ailabtools)
 - [Python SDK on PyPI](https://pypi.org/project/ailabtools-sdk/)
-- [Go SDK module](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/go)
+- [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go)
+- [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
+- [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
+- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3)
+- [All official SDK package links](sdk-packages.md)
+- [Complete method and alias reference](method-aliases.md)
+- [Legacy API migration guide](legacy-migration.md)
+- [Security and data handling](security.md)
+- [SDK best practices](best-practices.md)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

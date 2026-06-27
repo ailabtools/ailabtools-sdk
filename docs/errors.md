@@ -39,6 +39,8 @@ Use `request_id` and `log_id` when contacting AILabTools support. They identify 
 ## Node.js Example
 
 ```ts
+import { AILabApiError } from "ailabtools";
+
 try {
   const result = await client.cutout.cutoutUniversalBackgroundRemoval({
     image: readFileSync("./photo.jpg"),
@@ -47,14 +49,17 @@ try {
 
   console.log(result.data?.image_url);
 } catch (error) {
-  console.error("AILabTools API Error:", error);
-  // Send request_id and log_id to support if you need help.
+  if (error instanceof AILabApiError) {
+    console.error(error.message, error.requestId, error.logId);
+  }
 }
 ```
 
 ## Python Example
 
 ```py
+from ailabtools import AILabApiError
+
 try:
     with open("./photo.jpg", "rb") as image:
         result = await client.cutout.cutoutUniversalBackgroundRemoval({
@@ -62,7 +67,52 @@ try:
             "returnForm": "whiteBK",
         })
     print(result["data"]["image_url"])
-except Exception as error:
-    print("AILabTools API Error:", error)
-    # Send request_id and log_id to support if you need help.
+except AILabApiError as error:
+    print(error, error.request_id, error.log_id)
+```
+
+## Go Example
+
+```go
+var apiErr *ailabtools.APIError
+if err != nil && errors.As(err, &apiErr) {
+    fmt.Println(apiErr.StatusCode)
+    fmt.Println(apiErr.RequestID, apiErr.LogID)
+}
+```
+
+## Dart / Flutter Example
+
+```dart
+try {
+  final result = await client.background.remove(params);
+  print(result.data?.imageUrl);
+} on AILabApiException catch (error) {
+  print(error.message);
+  print('${error.requestId} ${error.logId}');
+}
+```
+
+## PHP Example
+
+```php
+try {
+    $result = $client->background->remove($params);
+} catch (ApiException $error) {
+    echo $error->getMessage();
+    echo $error->requestId;
+    echo $error->logId;
+}
+```
+
+## Java Example
+
+```java
+try {
+    var result = client.background().remove(params);
+} catch (ApiException error) {
+    System.err.println(error.getMessage());
+    System.err.println(error.getRequestId());
+    System.err.println(error.getLogId());
+}
 ```

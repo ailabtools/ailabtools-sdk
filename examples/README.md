@@ -23,18 +23,26 @@ Copy these examples into your application after installing the SDK.
 ## Go
 
 - `go/background-removal/main.go` - remove image backgrounds
+- `go/image-upscale/main.go` - upscale an image
+- `go/async-task/main.go` - submit and poll an async hairstyle task
 
 ## Dart / Flutter
 
 - `dart/background_removal.dart` - remove image backgrounds
+- `dart/image_upscale.dart` - upscale an image
+- `dart/async_task.dart` - submit and poll an async hairstyle task
 
 ## PHP
 
 - `php/background_removal.php` - remove image backgrounds
+- `php/image_upscale.php` - upscale an image
+- `php/async_task.php` - submit and poll an async hairstyle task
 
 ## Java
 
 - `java/BackgroundRemoval.java` - remove image backgrounds
+- `java/ImageUpscale.java` - upscale an image
+- `java/AsyncTaskPolling.java` - submit and poll an async hairstyle task
 
 ## Python
 

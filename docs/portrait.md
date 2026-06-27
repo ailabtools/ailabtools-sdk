@@ -6,6 +6,7 @@
 
 - SDK method: `portrait.portraitFaceAnalyzer()`
 - HTTP: `POST /api/portrait/analysis/face-analyzer`
+- Official documentation: [Face Analyzer API](https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer/api)
 
 ### Body Parameters
 
@@ -116,6 +117,7 @@ https://www.ailabapi.com/api/portrait/analysis/face-analyzer
 
 - SDK method: `portrait.portraitFaceAnalyzerAdvanced()`
 - HTTP: `POST /api/portrait/analysis/face-analyzer-advanced`
+- Official documentation: [Face Analyzer Advanced API](https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer-advanced/api)
 
 ### Body Parameters
 
@@ -167,6 +169,7 @@ https://www.ailabapi.com/api/portrait/analysis/face-analyzer-advanced
 
 - SDK method: `portrait.portraitFacialLandmarks()`
 - HTTP: `POST /api/portrait/analysis/face-key-points`
+- Official documentation: [Facial Landmarks API](https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points/api)
 
 ### Body Parameters
 
@@ -218,6 +221,7 @@ https://www.ailabapi.com/api/portrait/analysis/face-key-points
 
 - SDK method: `portrait.portraitSkinAnalysisBasic()`
 - HTTP: `POST /api/portrait/analysis/skin-analysis`
+- Official documentation: [Skin Analyze API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis/api)
 
 ### Body Parameters
 
@@ -317,6 +321,7 @@ https://www.ailabapi.com/api/portrait/analysis/skin-analysis
 
 - SDK method: `portrait.portraitSkinAnalysisAdvanced()`
 - HTTP: `POST /api/portrait/analysis/skin-analysis-advanced`
+- Official documentation: [Skin Analyze Advanced API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-advanced/api)
 
 ### Body Parameters
 
@@ -460,6 +465,7 @@ https://www.ailabapi.com/api/portrait/analysis/skin-analysis-advanced
 
 - SDK method: `portrait.portraitSkinAnalysisProfessional()`
 - HTTP: `POST /api/portrait/analysis/skin-analysis-pro`
+- Official documentation: [Skin Analyze Pro API](https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api)
 
 ### Body Parameters
 
@@ -496,6 +502,7 @@ https://www.ailabapi.com/api/portrait/analysis/skin-analysis-pro
 
 - SDK method: `portrait.portraitSkinDiseaseDetection()`
 - HTTP: `POST /api/portrait/analysis/skin-disease-detection`
+- Compatibility guide: [Legacy API Migration Guide](legacy-migration.md)
 
 ### Body Parameters
 
@@ -576,6 +583,7 @@ https://www.ailabapi.com/api/portrait/analysis/skin-disease-detection
 
 - SDK method: `portrait.portraitTryOnClothes()`
 - HTTP: `POST /api/portrait/editing/try-on-clothes`
+- Official documentation: [Try on Clothes API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes/api)
 
 ### Body Parameters
 
@@ -607,6 +615,7 @@ https://www.ailabapi.com/api/portrait/editing/try-on-clothes
 
 - SDK method: `portrait.portraitTryOnClothesPro()`
 - HTTP: `POST /api/portrait/editing/try-on-clothes-pro`
+- Official documentation: [Try on Clothes Pro API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-pro/api)
 
 ### Body Parameters
 
@@ -640,6 +649,7 @@ https://www.ailabapi.com/api/portrait/editing/try-on-clothes-pro
 
 - SDK method: `portrait.portraitFacialBlurring()`
 - HTTP: `POST /api/portrait/effects/blurred-faces`
+- Official documentation: [Face Blur API](https://www.ailabtools.com/docs/ai-portrait/effects/blurred-faces/api)
 
 ### Body Parameters
 
@@ -668,6 +678,7 @@ https://www.ailabapi.com/api/portrait/effects/blurred-faces
 
 - SDK method: `portrait.portraitExpressionEditing()`
 - HTTP: `POST /api/portrait/effects/emotion-editor`
+- Official documentation: [Change Facial Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api)
 
 ### Body Parameters
 
@@ -697,6 +708,7 @@ https://www.ailabapi.com/api/portrait/effects/emotion-editor
 
 - SDK method: `portrait.portraitFaceRestorationEnhancement()`
 - HTTP: `POST /api/portrait/effects/enhance-face`
+- Official documentation: [AI Face Enhancer API](https://www.ailabtools.com/docs/ai-portrait/effects/ai-face-enhancer/api)
 
 ### Body Parameters
 
@@ -725,6 +737,7 @@ https://www.ailabapi.com/api/portrait/effects/enhance-face
 
 - SDK method: `portrait.portraitFaceAttributeEditing()`
 - HTTP: `POST /api/portrait/effects/face-attribute-editing`
+- Official documentation: [Age & Gender Swap API](https://www.ailabtools.com/docs/ai-portrait/effects/face-attribute-editing/api)
 
 ### Body Parameters
 
@@ -756,6 +769,7 @@ https://www.ailabapi.com/api/portrait/effects/face-attribute-editing
 
 - SDK method: `portrait.portraitFacialBeautification()`
 - HTTP: `POST /api/portrait/effects/face-beauty`
+- Official documentation: [Face Beauty API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty/api)
 
 ### Body Parameters
 
@@ -787,6 +801,7 @@ https://www.ailabapi.com/api/portrait/effects/face-beauty
 
 - SDK method: `portrait.portraitFacialBeautificationAdvanced()`
 - HTTP: `POST /api/portrait/effects/face-beauty-advanced`
+- Official documentation: [Face Beauty Advanced API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-advanced/api)
 
 ### Body Parameters
 
@@ -818,6 +833,7 @@ https://www.ailabapi.com/api/portrait/effects/face-beauty-advanced
 
 - SDK method: `portrait.portraitFacialBeautificationPro()`
 - HTTP: `POST /api/portrait/effects/face-beauty-pro`
+- Official documentation: [Face Beauty Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api)
 
 ### Body Parameters
 
@@ -854,6 +870,7 @@ https://www.ailabapi.com/api/portrait/effects/face-beauty-pro
 
 - SDK method: `portrait.portraitFacialFilters()`
 - HTTP: `POST /api/portrait/effects/face-filter`
+- Official documentation: [Face Filters API](https://www.ailabtools.com/docs/ai-portrait/effects/face-filter/api)
 
 ### Body Parameters
 
@@ -884,6 +901,7 @@ https://www.ailabapi.com/api/portrait/effects/face-filter
 
 - SDK method: `portrait.portraitFaceFusion()`
 - HTTP: `POST /api/portrait/effects/face-fusion`
+- Official documentation: [Merge Portraits API](https://www.ailabtools.com/docs/ai-portrait/effects/face-fusion/api)
 
 ### Body Parameters
 
@@ -914,6 +932,7 @@ https://www.ailabapi.com/api/portrait/effects/face-fusion
 
 - SDK method: `portrait.portraitHairstyleEditing()`
 - HTTP: `POST /api/portrait/effects/hairstyle-editor`
+- Compatibility guide: [Legacy API Migration Guide](legacy-migration.md)
 
 ### Body Parameters
 
@@ -943,6 +962,7 @@ https://www.ailabapi.com/api/portrait/effects/hairstyle-editor
 
 - SDK method: `portrait.portraitHairstyleEditingPro()`
 - HTTP: `POST /api/portrait/effects/hairstyle-editor-pro`
+- Official documentation: [Hairstyle Changer Pro API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro/api)
 
 ### Body Parameters
 
@@ -979,6 +999,7 @@ https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro
 
 - SDK method: `portrait.portraitLipsColorChanger()`
 - HTTP: `POST /api/portrait/effects/lips-color-changer`
+- Official documentation: [Lips Color Changer API](https://www.ailabtools.com/docs/ai-portrait/effects/lips-color-changer/api)
 
 ### Body Parameters
 
@@ -1007,6 +1028,7 @@ https://www.ailabapi.com/api/portrait/effects/lips-color-changer
 
 - SDK method: `portrait.portraitLivePhotos()`
 - HTTP: `POST /api/portrait/effects/live-photo`
+- Compatibility guide: [Legacy API Migration Guide](legacy-migration.md)
 
 ### Body Parameters
 
@@ -1036,6 +1058,7 @@ https://www.ailabapi.com/api/portrait/effects/live-photo
 
 - SDK method: `portrait.portraitCartoonYourself()`
 - HTTP: `POST /api/portrait/effects/portrait-animation`
+- Official documentation: [Cartoon Yourself API](https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api)
 
 ### Body Parameters
 
@@ -1065,6 +1088,7 @@ https://www.ailabapi.com/api/portrait/effects/portrait-animation
 
 - SDK method: `portrait.portraitIntelligentBeautification()`
 - HTTP: `POST /api/portrait/effects/smart-beauty`
+- Official documentation: [Smart Beauty API](https://www.ailabtools.com/docs/ai-portrait/effects/smart-beauty/api)
 
 ### Body Parameters
 
@@ -1097,6 +1121,7 @@ https://www.ailabapi.com/api/portrait/effects/smart-beauty
 
 - SDK method: `portrait.portraitIntelligentFaceSlimming()`
 - HTTP: `POST /api/portrait/effects/smart-face-slimming`
+- Official documentation: [AI Face Slimming API](https://www.ailabtools.com/docs/ai-portrait/effects/smart-face-slimming/api)
 
 ### Body Parameters
 
@@ -1126,6 +1151,7 @@ https://www.ailabapi.com/api/portrait/effects/smart-face-slimming
 
 - SDK method: `portrait.portraitIntelligentSkinRetouching()`
 - HTTP: `POST /api/portrait/effects/smart-skin`
+- Official documentation: [AI Skin Beauty API](https://www.ailabtools.com/docs/ai-portrait/effects/smart-skin/api)
 
 ### Body Parameters
 
@@ -1156,6 +1182,7 @@ https://www.ailabapi.com/api/portrait/effects/smart-skin
 
 - SDK method: `portrait.portraitTryOnClothesRefiner()`
 - HTTP: `POST /api/portrait/enhance/try-on-clothes-refiner`
+- Official documentation: [Try on Clothes Refiner API](https://www.ailabtools.com/docs/ai-portrait/enhance/try-on-clothes-refiner/api)
 
 ### Body Parameters
 
@@ -1189,6 +1216,7 @@ https://www.ailabapi.com/api/portrait/enhance/try-on-clothes-refiner
 
 - SDK method: `portrait.portraitAIFaceRating()`
 - HTTP: `POST /api/portrait/analysis/ai-face-rating`
+- Official documentation: [AI Face Rating API](https://www.ailabtools.com/docs/ai-portrait/analysis/ai-face-rating/api)
 
 ### Body Parameters
 
@@ -1210,7 +1238,7 @@ https://www.ailabapi.com/api/portrait/analysis/ai-face-rating
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1220,6 +1248,7 @@ https://www.ailabapi.com/api/portrait/analysis/ai-face-rating
 
 - SDK method: `portrait.portraitAIBald()`
 - HTTP: `POST /api/portrait/editing/ai-bald`
+- Official documentation: [AI Bald API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-bald/api)
 
 ### Body Parameters
 
@@ -1240,7 +1269,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-bald
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1250,6 +1279,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-bald
 
 - SDK method: `portrait.portraitAIBeardRemoval()`
 - HTTP: `POST /api/portrait/editing/ai-beard-removal`
+- Official documentation: [AI Beard Removal API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-removal/api)
 
 ### Body Parameters
 
@@ -1270,7 +1300,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-beard-removal
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1280,6 +1310,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-beard-removal
 
 - SDK method: `portrait.portraitAIBeardStyling()`
 - HTTP: `POST /api/portrait/editing/ai-beard-styling`
+- Official documentation: [AI Beard Styling API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-styling/api)
 - Conditional requirement: at least one of `beard`, `image_template` is required.
 
 ### Body Parameters
@@ -1287,7 +1318,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-beard-removal
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `image` | `file` | Yes | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
-| `beard` | `string` | No | Built-in beard preset. Provide this field or `image_template`. If both are provided, `beard` takes precedence. See [Supported beard values](/docs/ai-portrait/editing/ai-beard-styling/api#beard). Allowed values: FullBeardClassic, CorporateBeard, Garibaldi, Verdi, FullBeardTapered, VanDyke, Bandholz, VanDykeRefined, Goatee, ExtendedGoatee, Balbo, AnchorBeardClean, DucktailBeardPointed, AnchorBeardFull, DucktailBeardFull, HeavyStubble, ChevronMoustache, HandlebarMoustache, ImperialMoustache, CircleBeard, ChinStrap, MuttonChops, SoulPatch, PetiteGoatee. |
+| `beard` | `string` | No | Built-in beard preset. Provide this field or `image_template`. If both are provided, `beard` takes precedence. See [Supported beard values](https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-styling/api#beard). Allowed values: FullBeardClassic, CorporateBeard, Garibaldi, Verdi, FullBeardTapered, VanDyke, Bandholz, VanDykeRefined, Goatee, ExtendedGoatee, Balbo, AnchorBeardClean, DucktailBeardPointed, AnchorBeardFull, DucktailBeardFull, HeavyStubble, ChevronMoustache, HandlebarMoustache, ImperialMoustache, CircleBeard, ChinStrap, MuttonChops, SoulPatch, PetiteGoatee. |
 | `image_template` | `file` | No | Reference image for beard transfer. Provide this field or `beard`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
 
 ### Request URL
@@ -1303,7 +1334,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-beard-styling
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1313,13 +1344,14 @@ https://www.ailabapi.com/api/portrait/editing/ai-beard-styling
 
 - SDK method: `portrait.portraitAIBreastExpansion()`
 - HTTP: `POST /api/portrait/editing/ai-big-tits`
+- Official documentation: [AI Breast Expansion API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api)
 
 ### Body Parameters
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `task_type` | `string` | No | Task Type. <li>`async`: Asynchronous tasks.</li> |
-| `person_image` | `file` | No |  |
+| `person_image` | `file` | Yes | Portrait image to process. |
 
 ### Request URL
 
@@ -1348,6 +1380,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-big-tits
 
 - SDK method: `portrait.portraitAIButtEnhancement()`
 - HTTP: `POST /api/portrait/editing/ai-butt-enhancement`
+- Official documentation: [AI Butt Enhancement API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-butt-enhancement/api)
 
 ### Body Parameters
 
@@ -1368,7 +1401,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-butt-enhancement
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1378,6 +1411,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-butt-enhancement
 
 - SDK method: `portrait.portraitAIColoredContacts()`
 - HTTP: `POST /api/portrait/editing/ai-colored-contacts`
+- Official documentation: [AI Colored Contacts API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-colored-contacts/api)
 
 ### Body Parameters
 
@@ -1400,7 +1434,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-colored-contacts
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1410,6 +1444,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-colored-contacts
 
 - SDK method: `portrait.portraitAIEyebrows()`
 - HTTP: `POST /api/portrait/editing/ai-eyebrows`
+- Official documentation: [AI Eyebrows API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyebrows/api)
 
 ### Body Parameters
 
@@ -1432,7 +1467,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyebrows
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1442,6 +1477,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyebrows
 
 - SDK method: `portrait.portraitAIEyelashes()`
 - HTTP: `POST /api/portrait/editing/ai-eyelashes`
+- Official documentation: [AI Eyelashes API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyelashes/api)
 
 ### Body Parameters
 
@@ -1464,7 +1500,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyelashes
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1474,6 +1510,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyelashes
 
 - SDK method: `portrait.portraitAIEyeshadowTryOn()`
 - HTTP: `POST /api/portrait/editing/ai-eyeshadow`
+- Official documentation: [AI Eyeshadow Try-On API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyeshadow/api)
 - Conditional requirement: at least one of `eyeshadow_style`, `image_template` is required.
 
 ### Body Parameters
@@ -1481,7 +1518,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyelashes
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `image` | `file` | Yes | Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
-| `eyeshadow_style` | `string` | No | Built-in eyeshadow preset. Provide this field or `image_template`. If both are provided, `eyeshadow_style` takes precedence. See [Supported eyeshadow styles](/docs/ai-portrait/editing/ai-eyeshadow/api#eyeshadow_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36. |
+| `eyeshadow_style` | `string` | No | Built-in eyeshadow preset. Provide this field or `image_template`. If both are provided, `eyeshadow_style` takes precedence. See [Supported eyeshadow styles](https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyeshadow/api#eyeshadow_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36. |
 | `image_template` | `file` | No | Reference image for eyeshadow transfer. Provide this field or `eyeshadow_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
 | `aspect_ratio` | `string` | No | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto. |
 
@@ -1498,7 +1535,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyeshadow
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1508,6 +1545,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-eyeshadow
 
 - SDK method: `portrait.portraitAIFaceSwap()`
 - HTTP: `POST /api/portrait/editing/ai-face-swap`
+- Official documentation: [AI Face Swap API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api)
 
 ### Body Parameters
 
@@ -1543,6 +1581,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-face-swap
 
 - SDK method: `portrait.portraitAIFatFilter()`
 - HTTP: `POST /api/portrait/editing/ai-fat-filter`
+- Official documentation: [AI Fat Filter API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-fat-filter/api)
 
 ### Body Parameters
 
@@ -1563,7 +1602,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-fat-filter
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1573,6 +1612,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-fat-filter
 
 - SDK method: `portrait.portraitAIHairColor()`
 - HTTP: `POST /api/portrait/editing/ai-hair-color`
+- Official documentation: [AI Hair Color API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-color/api)
 
 ### Body Parameters
 
@@ -1595,7 +1635,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-hair-color
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1605,13 +1645,14 @@ https://www.ailabapi.com/api/portrait/editing/ai-hair-color
 
 - SDK method: `portrait.portraitAIHairLossSimulation()`
 - HTTP: `POST /api/portrait/editing/ai-hair-loss-simulation`
+- Official documentation: [AI Hair Loss Simulation API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-loss-simulation/api)
 
 ### Body Parameters
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `image` | `file` | Yes | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
-| `level` | `string` | Yes | Hair loss level. See [Supported level values](/docs/ai-portrait/editing/ai-hair-loss-simulation/api#level). Allowed values: man_1, man_2, man_3, man_4, man_5, man_6, man_7, woman_1, woman_2, woman_3, woman_4, woman_5, woman_6, woman_7. |
+| `level` | `string` | Yes | Hair loss level. See [Supported level values](https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-loss-simulation/api#level). Allowed values: man_1, man_2, man_3, man_4, man_5, man_6, man_7, woman_1, woman_2, woman_3, woman_4, woman_5, woman_6, woman_7. |
 
 ### Request URL
 
@@ -1626,7 +1667,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-hair-loss-simulation
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1636,6 +1677,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-hair-loss-simulation
 
 - SDK method: `portrait.portraitAILipEnhancement()`
 - HTTP: `POST /api/portrait/editing/ai-lip-enhancement`
+- Official documentation: [AI Lip Enhancement API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-lip-enhancement/api)
 
 ### Body Parameters
 
@@ -1656,7 +1698,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-lip-enhancement
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1666,6 +1708,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-lip-enhancement
 
 - SDK method: `portrait.portraitAIWaistSlimming()`
 - HTTP: `POST /api/portrait/editing/ai-waist-slimming`
+- Official documentation: [AI Waist Slimming API](https://www.ailabtools.com/docs/ai-portrait/editing/ai-waist-slimming/api)
 
 ### Body Parameters
 
@@ -1686,7 +1729,7 @@ https://www.ailabapi.com/api/portrait/editing/ai-waist-slimming
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1696,16 +1739,17 @@ https://www.ailabapi.com/api/portrait/editing/ai-waist-slimming
 
 - SDK method: `portrait.portraitTryOnClothesPremium()`
 - HTTP: `POST /api/portrait/editing/try-on-clothes-premium`
+- Official documentation: [Try on Clothes Premium API](https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api)
 
 ### Body Parameters
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `task_type` | `string` | No | Task Type. <li>`async`: Asynchronous tasks.</li> |
-| `person_image` | `file` | No | Portrait image. |
-| `top_garment` | `file` | No | Upper Body Clothing Image. |
-| `resolution` | `number` | No | Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. <li>`-1`: Original image resolution.</li> <li>`1024`: 576x1024px.</li> <li>`1280`: 720x1280px.</li> |
-| `restore_face` | `boolean` | No | Whether to Keep the Model’s Face. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `true`. <li>`true`: Keep the model’s original face.</li> <li>`false`: Regenerate the model’s face.</li> |
+| `task_type` | `string` | Yes | Task Type. <li>`async`: Asynchronous tasks.</li> |
+| `person_image` | `file` | Yes | Portrait image. |
+| `top_garment` | `file` | Yes | Upper Body Clothing Image. |
+| `resolution` | `number` | No | Output Image Resolution. If you plan to call the **[Try on Clothes Refiner API](https://www.ailabtools.com/docs/ai-portrait/enhance/try-on-clothes-refiner/api)** afterward, select `-1`. <li>`-1`: Original image resolution.</li> <li>`1024`: 576x1024px.</li> <li>`1280`: 720x1280px.</li> |
+| `restore_face` | `boolean` | No | Whether to keep the model's face. If you plan to call the **[Try on Clothes Refiner API](https://www.ailabtools.com/docs/ai-portrait/enhance/try-on-clothes-refiner/api)** afterward, select `true`. <li>`true`: Keep the model's original face.</li> <li>`false`: Regenerate the model's face.</li> |
 | `bottom_garment` | `file` | No | Lower Body Clothing Image. <li>If no lower body clothing image is provided, the lower body clothing effect will be randomly generated.</li> <li>If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty.</li> |
 
 ### Request URL
@@ -1735,6 +1779,7 @@ https://www.ailabapi.com/api/portrait/editing/try-on-clothes-premium
 
 - SDK method: `portrait.portraitAIBigHeadEffect()`
 - HTTP: `POST /api/portrait/effects/ai-big-head-effect`
+- Official documentation: [AI Big Head Effect API](https://www.ailabtools.com/docs/ai-portrait/effects/ai-big-head-effect/api)
 
 ### Body Parameters
 
@@ -1755,7 +1800,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-big-head-effect
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1765,6 +1810,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-big-head-effect
 
 - SDK method: `portrait.portraitAIHalloweenMask()`
 - HTTP: `POST /api/portrait/effects/ai-halloween-mask`
+- Official documentation: [AI Halloween Mask API](https://www.ailabtools.com/docs/ai-portrait/effects/ai-halloween-mask/api)
 - Conditional requirement: at least one of `mask_style`, `image_template` is required.
 
 ### Body Parameters
@@ -1772,7 +1818,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-big-head-effect
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `image` | `file` | Yes | Source image. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
-| `mask_style` | `string` | No | Built-in mask preset. Provide either this field or `image_template`. If both are provided, `mask_style` takes precedence. See [Supported mask styles](/docs/ai-portrait/effects/ai-halloween-mask/api#mask_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85. |
+| `mask_style` | `string` | No | Built-in mask preset. Provide either this field or `image_template`. If both are provided, `mask_style` takes precedence. See [Supported mask styles](https://www.ailabtools.com/docs/ai-portrait/effects/ai-halloween-mask/api#mask_style). Allowed values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85. |
 | `image_template` | `file` | No | Reference image for eyeshadow transfer. Provide this field or `mask_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
 | `aspect_ratio` | `string` | No | Output Image Aspect Ratio. Allowed values: auto, 1:1, 3:4, 4:3, 9:16, 16:9. Default: auto. |
 
@@ -1789,7 +1835,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-halloween-mask
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1799,6 +1845,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-halloween-mask
 
 - SDK method: `portrait.portraitAILipBiteExpressions()`
 - HTTP: `POST /api/portrait/effects/ai-lip-bite-expressions`
+- Official documentation: [AI Lip Bite Expressions API](https://www.ailabtools.com/docs/ai-portrait/effects/ai-lip-bite-expressions/api)
 
 ### Body Parameters
 
@@ -1821,7 +1868,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-lip-bite-expressions
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1831,6 +1878,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-lip-bite-expressions
 
 - SDK method: `portrait.portraitAIRedLipGloss()`
 - HTTP: `POST /api/portrait/effects/ai-red-lip-gloss`
+- Official documentation: [AI Red Lip Gloss API](https://www.ailabtools.com/docs/ai-portrait/effects/ai-red-lip-gloss/api)
 
 ### Body Parameters
 
@@ -1851,7 +1899,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-red-lip-gloss
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1861,6 +1909,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-red-lip-gloss
 
 - SDK method: `portrait.portraitAISquareFaceFilter()`
 - HTTP: `POST /api/portrait/effects/ai-square-face-filter`
+- Official documentation: [AI Square Face Filter API](https://www.ailabtools.com/docs/ai-portrait/effects/ai-square-face-filter/api)
 
 ### Body Parameters
 
@@ -1881,7 +1930,7 @@ https://www.ailabapi.com/api/portrait/effects/ai-square-face-filter
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1891,13 +1940,14 @@ https://www.ailabapi.com/api/portrait/effects/ai-square-face-filter
 
 - SDK method: `portrait.portraitExpressionEditingAdvanced()`
 - HTTP: `POST /api/portrait/effects/emotion-editor-advanced`
+- Official documentation: [Change Facial Expressions Advanced API](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor-advanced/api)
 
 ### Body Parameters
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `image` | `file` | Yes | - Image format: `JPEG` `JPG` `PNG` `WEBP` - Image size: No more than 10 MB. - Image resolution: Less than 4096x4096px. |
-| `expression` | `string` | Yes | Expression. See [Supported expression values](/docs/ai-portrait/effects/emotion-editor-advanced/api#expression). Allowed values: natural_smile, bright_laugh, sweet_smile, happy_surprise, proud_smirk, laughing_with_tears, crazy_happy_face, overjoyed_screaming_laugh, slight_annoyance, angry_stare, gritted_teeth_anger, furious_shout, cold_glare, cartoon_rage_face, angry_puffed_cheeks, villain_angry_smirk, downcast_sadness, wronged_near_tears, tearful_sadness, heartbroken_breakdown, silent_grief, big_crying_face, puppy_eyes_sad, fake_crying_funny, tongue_out_playful, wink_cute, silly_face, mischievous_smirk, exaggerated_surprised_face, cross_eyed_silly_face, one_eye_squint_funny, duck_face_funny, crazy_tongue_face, slight_surprise, shocked_open_mouth, disbelief, fearful_surprise, jaw_drop_surprise, cartoon_shocked_face, speechless_shock, nervous_fear, terrified_expression, timid_withdrawal, panic_breakdown, screaming_fear_face, frozen_in_fear, panic_wide_eyes, mild_dislike, strong_aversion, nauseated_disgust, eye_roll_disgust, extreme_disgust_face, grossed_out_face, dramatic_eye_roll, shy_smile, blushing_shyness, awkward_forced_smile, socially_embarrassed, over_shy_blushing_face, awkward_sweat_smile, embarrassed_cover_mouth, confident_smile, dominant_gaze, cold_cool_expression, victorious_pride, super_confident_smirk, bossy_cool_face, winning_smug_face, slight_confusion, frowning_thought, not_understanding, suspicious_look, confused_tilted_face, what_are_you_doing_face, brain_loading_face, tired_blank_eyes, helpless_expression, awkward_silence, sleepy_yawn, dead_inside_face, exhausted_melting_face, speechless_blank_stare, charming_smile, flirty_eyebrow_raise, soft_lip_bite, dreamy_gaze, playful_seductive_smirk, wink_flirty_face, dramatic_lip_bite, gentle_gaze, fond_smile, sweet_pouting_affection, deep_affectionate_gaze, heart_eyes_expression, overly_sweet_affection, clingy_cute_pout, cold_contempt, sarcastic_sneer, dismissive_pout, in_control_expression, extreme_smug_face, mocking_laugh_face, looking_down_contempt, soft_cute_smile, cute_pout, innocent_big_eyes, expectant_sparkling_eyes, super_cute_pouting_face, sparkling_eyes_cute, baby_like_innocent_face, frowning_in_pain, holding_back_tears, crying_breakdown, repressed_exhaustion, dramatic_pain_face, holding_back_scream, overwhelmed_breakdown_face. |
+| `expression` | `string` | Yes | Expression. See [Supported expression values](https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor-advanced/api#expression). Allowed values: natural_smile, bright_laugh, sweet_smile, happy_surprise, proud_smirk, laughing_with_tears, crazy_happy_face, overjoyed_screaming_laugh, slight_annoyance, angry_stare, gritted_teeth_anger, furious_shout, cold_glare, cartoon_rage_face, angry_puffed_cheeks, villain_angry_smirk, downcast_sadness, wronged_near_tears, tearful_sadness, heartbroken_breakdown, silent_grief, big_crying_face, puppy_eyes_sad, fake_crying_funny, tongue_out_playful, wink_cute, silly_face, mischievous_smirk, exaggerated_surprised_face, cross_eyed_silly_face, one_eye_squint_funny, duck_face_funny, crazy_tongue_face, slight_surprise, shocked_open_mouth, disbelief, fearful_surprise, jaw_drop_surprise, cartoon_shocked_face, speechless_shock, nervous_fear, terrified_expression, timid_withdrawal, panic_breakdown, screaming_fear_face, frozen_in_fear, panic_wide_eyes, mild_dislike, strong_aversion, nauseated_disgust, eye_roll_disgust, extreme_disgust_face, grossed_out_face, dramatic_eye_roll, shy_smile, blushing_shyness, awkward_forced_smile, socially_embarrassed, over_shy_blushing_face, awkward_sweat_smile, embarrassed_cover_mouth, confident_smile, dominant_gaze, cold_cool_expression, victorious_pride, super_confident_smirk, bossy_cool_face, winning_smug_face, slight_confusion, frowning_thought, not_understanding, suspicious_look, confused_tilted_face, what_are_you_doing_face, brain_loading_face, tired_blank_eyes, helpless_expression, awkward_silence, sleepy_yawn, dead_inside_face, exhausted_melting_face, speechless_blank_stare, charming_smile, flirty_eyebrow_raise, soft_lip_bite, dreamy_gaze, playful_seductive_smirk, wink_flirty_face, dramatic_lip_bite, gentle_gaze, fond_smile, sweet_pouting_affection, deep_affectionate_gaze, heart_eyes_expression, overly_sweet_affection, clingy_cute_pout, cold_contempt, sarcastic_sneer, dismissive_pout, in_control_expression, extreme_smug_face, mocking_laugh_face, looking_down_contempt, soft_cute_smile, cute_pout, innocent_big_eyes, expectant_sparkling_eyes, super_cute_pouting_face, sparkling_eyes_cute, baby_like_innocent_face, frowning_in_pain, holding_back_tears, crying_breakdown, repressed_exhaustion, dramatic_pain_face, holding_back_scream, overwhelmed_breakdown_face. |
 
 ### Request URL
 
@@ -1912,7 +1962,7 @@ https://www.ailabapi.com/api/portrait/effects/emotion-editor-advanced
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1922,6 +1972,7 @@ https://www.ailabapi.com/api/portrait/effects/emotion-editor-advanced
 
 - SDK method: `portrait.portraitHairstyleEditingPremium()`
 - HTTP: `POST /api/portrait/effects/hairstyle-editor-premium`
+- Official documentation: [Hairstyle Changer Premium API](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api)
 - Conditional requirement: at least one of `hair_style`, `image_template` is required.
 
 ### Body Parameters
@@ -1930,8 +1981,8 @@ https://www.ailabapi.com/api/portrait/effects/emotion-editor-advanced
 | --- | --- | --- | --- |
 | `image` | `file` | Yes | Source image. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right. |
 | `image_template` | `file` | No | Reference image for hairstyle transfer. Provide this field or `hair_style`. If both are provided, `image_template` is ignored. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Larger than 200x200px, smaller than 4090x4090px. - Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. - Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. - Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right. |
-| `hair_style` | `string` | No | Built-in hairstyle preset. Provide this field or `image_template`. If both are provided, `hair_style` takes precedence. See [Supported hair_style values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#hair_style). Allowed values: BuzzCut, UnderCut, Pompadour, SlickBack, CurlyShag, WavyShag, FauxHawk, Spiky, CombOver, HighTightFade, ManBun, Afro, LowFade, UndercutLongHair, TwoBlockHaircut, TexturedFringe, BluntBowlCut, LongWavyCurtainBangs, MessyTousled, CornrowBraids, LongHairTiedUp, Middle-parted, ManGreased, WavyMiddlePart, Natural_Side-Part, Wolf_Crop, Wind-Tousled_Crop, Side-Parted_Textured, FluffyMiddlePart, FreshSide-Parted, Smooth_Crop, Korean_Wavy_Crop, Comma_Hair, Side-Part_Crop, Natural_Middle_Part, ShortPixieWithShavedSides, ShortNeatBob, DoubleBun, Updo, Spiked, bowlCut, Chignon, PixieCut, SlickedBack, LongCurly, CurlyBob, StackedCurlsInShortBob, SidePartCombOverHairstyleWithHighFade, WavyFrenchBobVibesfrom1920, BobCut, ShortTwintails, ShortCurlyPixie, LongStraight, LongWavy, FishtailBraid, TwinBraids, Ponytail, Dreadlocks, Cornrows, ShoulderLengthHair, LooseCurlyAfro, LongTwintails, LongHimeCut, BoxBraids, Layered_Waves, Side_Flip_Perm, Textured_Crop, Mushroom_Curl, Vintage_Curls, Magic_Perm, Side-Parted_Waves, Fluffy_Short, Smooth_Inward_Bob, Neat_Short, Natural_Short, Chic_Tapered_Bob, Edgy_Textured_Pixie, Elegant_Wavy_Crop, Chic_Wavy_Pixie, Elegant_Side_Wave, Soft_Layered_Curl, Executive_Pixie, Curved_Chic_Bob, Airy_Short_Curls, Playful_Curly_Bob, Playful_Wavy_Bob, Elegant_Soft_Curl, Elegant_Smooth_Bob, Retro_Airy_Curl, Soft_Wavy_Bob, Light_Inward_Bob, Neat_Curly_Crop_Cut, Elegant_Volumized_Bob, Modern_Curls_Chic, Mocha_Volume_Pixie, Elegant_Side_Flow, Chestnut, ChoppyBangs, StructuredWavyShag, TinfoilPerm, ClassicWavyBob, Fluffy_Pixie_Cut, FrenchBangs, JapaneseShort, MediumLongLayered, male_hairstyle_0001, male_hairstyle_0002, male_hairstyle_0003, male_hairstyle_0004, male_hairstyle_0005, male_hairstyle_0006, male_hairstyle_0007, male_hairstyle_0008, male_hairstyle_0009, male_hairstyle_0010, male_hairstyle_0011, male_hairstyle_0012, male_hairstyle_0013, male_hairstyle_0014, male_hairstyle_0015, male_hairstyle_0016, male_hairstyle_0017, male_hairstyle_0018, male_hairstyle_0019, male_hairstyle_0020, male_hairstyle_0021, male_hairstyle_0022, male_hairstyle_0023, male_hairstyle_0024, male_hairstyle_0025, male_hairstyle_0026, male_hairstyle_0027, male_hairstyle_0028, male_hairstyle_0029, male_hairstyle_0030, male_hairstyle_0031, male_hairstyle_0032, male_hairstyle_0033, male_hairstyle_0034, male_hairstyle_0035, male_hairstyle_0036, male_hairstyle_0037, male_hairstyle_0038, male_hairstyle_0039, male_hairstyle_0040, male_hairstyle_0041, male_hairstyle_0042, male_hairstyle_0043, male_hairstyle_0044, male_hairstyle_0045, male_hairstyle_0046, male_hairstyle_0047, male_hairstyle_0048, male_hairstyle_0049, male_hairstyle_0050, male_hairstyle_0051, male_hairstyle_0052, male_hairstyle_0053, male_hairstyle_0054, male_hairstyle_0055, male_hairstyle_0056, male_hairstyle_0057, male_hairstyle_0058, male_hairstyle_0059, male_hairstyle_0060, male_hairstyle_0061, male_hairstyle_0062, female_hairstyle_0001, female_hairstyle_0002, female_hairstyle_0003, female_hairstyle_0004, female_hairstyle_0005, female_hairstyle_0006, female_hairstyle_0007, female_hairstyle_0008, female_hairstyle_0009, female_hairstyle_0010, female_hairstyle_0011, female_hairstyle_0012, female_hairstyle_0013, female_hairstyle_0014, female_hairstyle_0015, female_hairstyle_0016, female_hairstyle_0017, female_hairstyle_0018, female_hairstyle_0019, female_hairstyle_0020, female_hairstyle_0021, female_hairstyle_0022, female_hairstyle_0023, female_hairstyle_0024, female_hairstyle_0025, female_hairstyle_0026, female_hairstyle_0027, female_hairstyle_0028, female_hairstyle_0029, female_hairstyle_0030, female_hairstyle_0031, female_hairstyle_0032, female_hairstyle_0033, female_hairstyle_0034, female_hairstyle_0035, female_hairstyle_0036, female_hairstyle_0037, female_hairstyle_0038, female_hairstyle_0039, female_hairstyle_0040, female_hairstyle_0041, female_hairstyle_0042, female_hairstyle_0043, female_hairstyle_0044, female_hairstyle_0045, female_hairstyle_0046, female_hairstyle_0047, female_hairstyle_0048, female_hairstyle_0049, female_hairstyle_0050, female_hairstyle_0051, female_hairstyle_0052, female_hairstyle_0053, female_hairstyle_0054, female_hairstyle_0055, female_hairstyle_0056, female_hairstyle_0057, female_hairstyle_0058, female_hairstyle_0059, female_hairstyle_0060, female_hairstyle_0061, female_hairstyle_0062, female_hairstyle_0063, female_hairstyle_0064, female_hairstyle_0065, female_hairstyle_0066, female_hairstyle_0067, female_hairstyle_0068, female_hairstyle_0069, female_hairstyle_0070, female_hairstyle_0071, female_hairstyle_0072, female_hairstyle_0073. |
-| `color` | `string` | No | Hair color preset. `original` keeps the source image color. `reference` uses the hair color from `image_template`. See [Supported color values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#color). Allowed values: original, reference, blonde, platinumBlonde, brown, lightBrown, blue, lightBlue, purple, lightPurple, pink, black, white, grey, silver, red, orange, green, gradient, multicolored, darkBlue, burgundy, darkGreen. Default: original. |
+| `hair_style` | `string` | No | Built-in hairstyle preset. Provide this field or `image_template`. If both are provided, `hair_style` takes precedence. See [Supported hair_style values](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api#hair_style). Allowed values: BuzzCut, UnderCut, Pompadour, SlickBack, CurlyShag, WavyShag, FauxHawk, Spiky, CombOver, HighTightFade, ManBun, Afro, LowFade, UndercutLongHair, TwoBlockHaircut, TexturedFringe, BluntBowlCut, LongWavyCurtainBangs, MessyTousled, CornrowBraids, LongHairTiedUp, Middle-parted, ManGreased, WavyMiddlePart, Natural_Side-Part, Wolf_Crop, Wind-Tousled_Crop, Side-Parted_Textured, FluffyMiddlePart, FreshSide-Parted, Smooth_Crop, Korean_Wavy_Crop, Comma_Hair, Side-Part_Crop, Natural_Middle_Part, ShortPixieWithShavedSides, ShortNeatBob, DoubleBun, Updo, Spiked, bowlCut, Chignon, PixieCut, SlickedBack, LongCurly, CurlyBob, StackedCurlsInShortBob, SidePartCombOverHairstyleWithHighFade, WavyFrenchBobVibesfrom1920, BobCut, ShortTwintails, ShortCurlyPixie, LongStraight, LongWavy, FishtailBraid, TwinBraids, Ponytail, Dreadlocks, Cornrows, ShoulderLengthHair, LooseCurlyAfro, LongTwintails, LongHimeCut, BoxBraids, Layered_Waves, Side_Flip_Perm, Textured_Crop, Mushroom_Curl, Vintage_Curls, Magic_Perm, Side-Parted_Waves, Fluffy_Short, Smooth_Inward_Bob, Neat_Short, Natural_Short, Chic_Tapered_Bob, Edgy_Textured_Pixie, Elegant_Wavy_Crop, Chic_Wavy_Pixie, Elegant_Side_Wave, Soft_Layered_Curl, Executive_Pixie, Curved_Chic_Bob, Airy_Short_Curls, Playful_Curly_Bob, Playful_Wavy_Bob, Elegant_Soft_Curl, Elegant_Smooth_Bob, Retro_Airy_Curl, Soft_Wavy_Bob, Light_Inward_Bob, Neat_Curly_Crop_Cut, Elegant_Volumized_Bob, Modern_Curls_Chic, Mocha_Volume_Pixie, Elegant_Side_Flow, Chestnut, ChoppyBangs, StructuredWavyShag, TinfoilPerm, ClassicWavyBob, Fluffy_Pixie_Cut, FrenchBangs, JapaneseShort, MediumLongLayered, male_hairstyle_0001, male_hairstyle_0002, male_hairstyle_0003, male_hairstyle_0004, male_hairstyle_0005, male_hairstyle_0006, male_hairstyle_0007, male_hairstyle_0008, male_hairstyle_0009, male_hairstyle_0010, male_hairstyle_0011, male_hairstyle_0012, male_hairstyle_0013, male_hairstyle_0014, male_hairstyle_0015, male_hairstyle_0016, male_hairstyle_0017, male_hairstyle_0018, male_hairstyle_0019, male_hairstyle_0020, male_hairstyle_0021, male_hairstyle_0022, male_hairstyle_0023, male_hairstyle_0024, male_hairstyle_0025, male_hairstyle_0026, male_hairstyle_0027, male_hairstyle_0028, male_hairstyle_0029, male_hairstyle_0030, male_hairstyle_0031, male_hairstyle_0032, male_hairstyle_0033, male_hairstyle_0034, male_hairstyle_0035, male_hairstyle_0036, male_hairstyle_0037, male_hairstyle_0038, male_hairstyle_0039, male_hairstyle_0040, male_hairstyle_0041, male_hairstyle_0042, male_hairstyle_0043, male_hairstyle_0044, male_hairstyle_0045, male_hairstyle_0046, male_hairstyle_0047, male_hairstyle_0048, male_hairstyle_0049, male_hairstyle_0050, male_hairstyle_0051, male_hairstyle_0052, male_hairstyle_0053, male_hairstyle_0054, male_hairstyle_0055, male_hairstyle_0056, male_hairstyle_0057, male_hairstyle_0058, male_hairstyle_0059, male_hairstyle_0060, male_hairstyle_0061, male_hairstyle_0062, female_hairstyle_0001, female_hairstyle_0002, female_hairstyle_0003, female_hairstyle_0004, female_hairstyle_0005, female_hairstyle_0006, female_hairstyle_0007, female_hairstyle_0008, female_hairstyle_0009, female_hairstyle_0010, female_hairstyle_0011, female_hairstyle_0012, female_hairstyle_0013, female_hairstyle_0014, female_hairstyle_0015, female_hairstyle_0016, female_hairstyle_0017, female_hairstyle_0018, female_hairstyle_0019, female_hairstyle_0020, female_hairstyle_0021, female_hairstyle_0022, female_hairstyle_0023, female_hairstyle_0024, female_hairstyle_0025, female_hairstyle_0026, female_hairstyle_0027, female_hairstyle_0028, female_hairstyle_0029, female_hairstyle_0030, female_hairstyle_0031, female_hairstyle_0032, female_hairstyle_0033, female_hairstyle_0034, female_hairstyle_0035, female_hairstyle_0036, female_hairstyle_0037, female_hairstyle_0038, female_hairstyle_0039, female_hairstyle_0040, female_hairstyle_0041, female_hairstyle_0042, female_hairstyle_0043, female_hairstyle_0044, female_hairstyle_0045, female_hairstyle_0046, female_hairstyle_0047, female_hairstyle_0048, female_hairstyle_0049, female_hairstyle_0050, female_hairstyle_0051, female_hairstyle_0052, female_hairstyle_0053, female_hairstyle_0054, female_hairstyle_0055, female_hairstyle_0056, female_hairstyle_0057, female_hairstyle_0058, female_hairstyle_0059, female_hairstyle_0060, female_hairstyle_0061, female_hairstyle_0062, female_hairstyle_0063, female_hairstyle_0064, female_hairstyle_0065, female_hairstyle_0066, female_hairstyle_0067, female_hairstyle_0068, female_hairstyle_0069, female_hairstyle_0070, female_hairstyle_0071, female_hairstyle_0072, female_hairstyle_0073. |
+| `color` | `string` | No | Hair color preset. `original` keeps the source image color. `reference` uses the hair color from `image_template`. See [Supported color values](https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api#color). Allowed values: original, reference, blonde, platinumBlonde, brown, lightBrown, blue, lightBlue, purple, lightPurple, pink, black, white, grey, silver, red, orange, green, gradient, multicolored, darkBlue, burgundy, darkGreen. Default: original. |
 
 ### Request URL
 
@@ -1946,7 +1997,7 @@ https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-premium
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 
@@ -1956,6 +2007,7 @@ https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-premium
 
 - SDK method: `portrait.portraitAISkinEnhancementAdvanced()`
 - HTTP: `POST /api/portrait/effects/smart-skin-advanced`
+- Official documentation: [AI Skin Enhancement Advanced API](https://www.ailabtools.com/docs/ai-portrait/effects/smart-skin-advanced/api)
 
 ### Body Parameters
 
@@ -1985,7 +2037,7 @@ https://www.ailabapi.com/api/portrait/effects/smart-skin-advanced
 | `request_id` | `string` | Request ID for debugging. |
 | `log_id` | `string` | Log ID for debugging. |
 | `error_detail` | `object` |  |
-| `task_id` | `string` | Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
+| `task_id` | `string` | Task ID for querying [Querying Async Task Results](https://www.ailabtools.com/docs/ai-common/async-task-results/api). |
 
 ### SDK Return Type
 

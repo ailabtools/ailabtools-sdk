@@ -6,6 +6,7 @@
 
 - SDK method: `common.commonQueryAsyncTaskResult()`
 - HTTP: `GET /api/common/query-async-task-result`
+- Official documentation: [Querying Async Task Results API](https://www.ailabtools.com/docs/ai-common/async-task-results/api)
 
 ### Query Parameters
 
@@ -33,6 +34,7 @@ https://www.ailabapi.com/api/common/query-async-task-result
 
 - SDK method: `common.commonQueryCredits()`
 - HTTP: `GET /api/common/query-credits`
+- Official documentation: [Querying Credits API](https://www.ailabtools.com/docs/ai-common/querying-credits/api)
 
 ### Request URL
 

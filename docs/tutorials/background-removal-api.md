@@ -5,7 +5,7 @@ This tutorial shows how to remove an image background with the AILabTools SDK. I
 ## Prerequisites
 
 - AILabTools API key from the [AILabTools Developer Console](https://www.ailabtools.com/developer)
-- Node.js 18+ or Python 3.8+
+- A supported SDK runtime; see the [SDK compatibility matrix](../sdk-packages.md)
 - A local image named `photo.jpg`
 
 ## Node.js / TypeScript
@@ -44,6 +44,56 @@ with open("./photo.jpg", "rb") as image:
 
 print(result["data"]["image_url"])
 await client.aclose()
+```
+
+## Go
+
+```go
+result, err := client.Background.Remove(ctx, ailabtools.CutoutUniversalBackgroundRemovalParams{
+    Image:      ailabtools.FileFromPath("./photo.jpg"),
+    ReturnForm: "whiteBK",
+})
+if err != nil {
+    return err
+}
+fmt.Println(result.Data.ImageURL)
+```
+
+## Dart / Flutter
+
+```dart
+final bytes = await File('photo.jpg').readAsBytes();
+final result = await client.background.remove(
+  CutoutUniversalBackgroundRemovalParams(
+    image: AILabFile.fromBytes(bytes, filename: 'photo.jpg'),
+    returnForm: 'whiteBK',
+  ),
+);
+print(result.data?.imageUrl);
+client.close();
+```
+
+## PHP
+
+```php
+$result = $client->background->remove(
+    new CutoutUniversalBackgroundRemovalParams(
+        image: FileInput::fromPath(__DIR__ . '/photo.jpg'),
+        returnForm: 'whiteBK',
+    ),
+);
+echo $result->data?->imageUrl;
+```
+
+## Java
+
+```java
+var result = client.background().remove(
+        CutoutUniversalBackgroundRemovalParams.builder()
+                .image(FileInput.fromPath(Path.of("photo.jpg")))
+                .returnForm("whiteBK")
+                .build());
+System.out.println(result.getData().getImageUrl());
 ```
 
 Use the full [AILabTools API Documentation](https://www.ailabtools.com/docs) for all supported parameters and result fields.

@@ -7,6 +7,7 @@ async def main():
     client = AILabClient(api_key=os.environ["AILAB_API_KEY"])
     with open("./portrait.jpg", "rb") as image:
         task = await client.portrait.change_hairstyle({
+            "taskType": "async",
             "image": image,
             "hairStyle": "BuzzCut",
             "color": "blonde",

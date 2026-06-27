@@ -6,6 +6,7 @@
 
 - SDK method: `image.imageQueryingAsyncTaskResults()`
 - HTTP: `GET /api/image/asyn-task-results`
+- Compatibility guide: [Legacy API Migration Guide](legacy-migration.md)
 
 ### Query Parameters
 
@@ -28,6 +29,7 @@ https://www.ailabapi.com/api/image/asyn-task-results
 
 - SDK method: `image.imageAiImageExtender()`
 - HTTP: `POST /api/image/editing/ai-image-extender`
+- Official documentation: [AI Image Extender API](https://www.ailabtools.com/docs/ai-image/editing/ai-image-extender/api)
 
 ### Body Parameters
 
@@ -68,6 +70,7 @@ https://www.ailabapi.com/api/image/editing/ai-image-extender
 
 - SDK method: `image.imageAiObjectReplacer()`
 - HTTP: `POST /api/image/editing/ai-object-replacer`
+- Official documentation: [AI Object Replacer API](https://www.ailabtools.com/docs/ai-image/editing/ai-object-replacer/api)
 
 ### Body Parameters
 
@@ -101,6 +104,7 @@ https://www.ailabapi.com/api/image/editing/ai-object-replacer
 
 - SDK method: `image.imageAIImageCropping()`
 - HTTP: `POST /api/image/editing/image-cropping`
+- Official documentation: [AI Image Cropping API](https://www.ailabtools.com/docs/ai-image/editing/image-cropping/api)
 
 ### Body Parameters
 
@@ -136,6 +140,7 @@ https://www.ailabapi.com/api/image/editing/image-cropping
 
 - SDK method: `image.imageErasure()`
 - HTTP: `POST /api/image/editing/image-erase`
+- Compatibility guide: [Legacy API Migration Guide](legacy-migration.md)
 
 ### Body Parameters
 
@@ -165,6 +170,7 @@ https://www.ailabapi.com/api/image/editing/image-erase
 
 - SDK method: `image.imageInvisibleImageWatermark()`
 - HTTP: `POST /api/image/editing/image-invisible-image-watermark`
+- Official documentation: [Image Invisible Picture Watermark API](https://www.ailabtools.com/docs/ai-image/editing/image-invisible-image-watermark/api)
 
 ### Body Parameters
 
@@ -199,6 +205,7 @@ https://www.ailabapi.com/api/image/editing/image-invisible-image-watermark
 
 - SDK method: `image.imageInvisibleTextWatermark()`
 - HTTP: `POST /api/image/editing/image-invisible-text-watermarking`
+- Official documentation: [Image Invisible Text Watermark API](https://www.ailabtools.com/docs/ai-image/editing/image-invisible-text-watermarking/api)
 
 ### Body Parameters
 
@@ -233,6 +240,7 @@ https://www.ailabapi.com/api/image/editing/image-invisible-text-watermarking
 
 - SDK method: `image.imageIntelligentComposition()`
 - HTTP: `POST /api/image/editing/intelligent-composition`
+- Official documentation: [Intelligent Composition API](https://www.ailabtools.com/docs/ai-image/editing/intelligent-composition/api)
 
 ### Body Parameters
 
@@ -267,6 +275,7 @@ https://www.ailabapi.com/api/image/editing/intelligent-composition
 
 - SDK method: `image.imagePhotoEditing()`
 - HTTP: `POST /api/image/editing/photo-retouching`
+- Official documentation: [Photo Retouch API](https://www.ailabtools.com/docs/ai-image/editing/photo-retouching/api)
 
 ### Body Parameters
 
@@ -296,6 +305,7 @@ https://www.ailabapi.com/api/image/editing/photo-retouching
 
 - SDK method: `image.imageRemoveObjects()`
 - HTTP: `POST /api/image/editing/remove-objects`
+- Official documentation: [Remove Objects API](https://www.ailabtools.com/docs/ai-image/editing/remove-objects/api)
 
 ### Body Parameters
 
@@ -325,6 +335,7 @@ https://www.ailabapi.com/api/image/editing/remove-objects
 
 - SDK method: `image.imageRemoveObjectsAdvanced()`
 - HTTP: `POST /api/image/editing/remove-objects-advanced`
+- Official documentation: [Remove Objects Advanced API](https://www.ailabtools.com/docs/ai-image/editing/remove-objects-advanced/api)
 
 ### Body Parameters
 
@@ -360,6 +371,7 @@ https://www.ailabapi.com/api/image/editing/remove-objects-advanced
 
 - SDK method: `image.imageRemoveObjectsPro()`
 - HTTP: `POST /api/image/editing/remove-objects-pro`
+- Official documentation: [Remove Objects Pro API](https://www.ailabtools.com/docs/ai-image/editing/remove-objects-pro/api)
 
 ### Body Parameters
 
@@ -389,6 +401,7 @@ https://www.ailabapi.com/api/image/editing/remove-objects-pro
 
 - SDK method: `image.imageAICartoonGenerator()`
 - HTTP: `POST /api/image/effects/ai-anime-generator`
+- Official documentation: [AI Cartoon Generator API](https://www.ailabtools.com/docs/ai-image/effects/ai-anime-generator/api)
 
 ### Body Parameters
 
@@ -419,6 +432,7 @@ https://www.ailabapi.com/api/image/effects/ai-anime-generator
 
 - SDK method: `image.imageColoring()`
 - HTTP: `POST /api/image/effects/image-colorization`
+- Official documentation: [AI Photo Colorize API](https://www.ailabtools.com/docs/ai-image/effects/image-colorization/api)
 
 ### Body Parameters
 
@@ -446,6 +460,7 @@ https://www.ailabapi.com/api/image/effects/image-colorization
 
 - SDK method: `image.imageStyleTransfer()`
 - HTTP: `POST /api/image/effects/image-style-conversion`
+- Official documentation: [Photo to Painting API](https://www.ailabtools.com/docs/ai-image/effects/image-style-conversion/api)
 
 ### Body Parameters
 
@@ -474,6 +489,7 @@ https://www.ailabapi.com/api/image/effects/image-style-conversion
 
 - SDK method: `image.imageStyleMigration()`
 - HTTP: `POST /api/image/effects/image-style-migration`
+- Compatibility guide: [Legacy API Migration Guide](legacy-migration.md)
 
 ### Body Parameters
 
@@ -504,6 +520,7 @@ https://www.ailabapi.com/api/image/effects/image-style-migration
 
 - SDK method: `image.imageColorEnhancement()`
 - HTTP: `POST /api/image/enhance/image-color-enhancement`
+- Official documentation: [Image Color Enhancement API](https://www.ailabtools.com/docs/ai-image/enhance/image-color-enhancement/api)
 
 ### Body Parameters
 
@@ -534,6 +551,7 @@ https://www.ailabapi.com/api/image/enhance/image-color-enhancement
 
 - SDK method: `image.imageContrastEnhancement()`
 - HTTP: `POST /api/image/enhance/image-contrast-enhancement`
+- Official documentation: [Image Contrast Enhancement API](https://www.ailabtools.com/docs/ai-image/enhance/image-contrast-enhancement/api)
 
 ### Body Parameters
 
@@ -561,6 +579,7 @@ https://www.ailabapi.com/api/image/enhance/image-contrast-enhancement
 
 - SDK method: `image.imageDehaze()`
 - HTTP: `POST /api/image/enhance/image-defogging`
+- Official documentation: [Image Dehaze API](https://www.ailabtools.com/docs/ai-image/enhance/image-defogging/api)
 
 ### Body Parameters
 
@@ -588,6 +607,7 @@ https://www.ailabapi.com/api/image/enhance/image-defogging
 
 - SDK method: `image.imageLosslessEnlargement()`
 - HTTP: `POST /api/image/enhance/image-lossless-enlargement`
+- Official documentation: [Image Upscaler API](https://www.ailabtools.com/docs/ai-image/enhance/image-lossless-enlargement/api)
 
 ### Body Parameters
 
@@ -620,6 +640,7 @@ https://www.ailabapi.com/api/image/enhance/image-lossless-enlargement
 
 - SDK method: `image.imageClarityEnhancement()`
 - HTTP: `POST /api/image/enhance/image-sharpness-enhancement`
+- Official documentation: [Image Sharpness Enhancement API](https://www.ailabtools.com/docs/ai-image/enhance/image-sharpness-enhancement/api)
 
 ### Body Parameters
 
@@ -647,6 +668,7 @@ https://www.ailabapi.com/api/image/enhance/image-sharpness-enhancement
 
 - SDK method: `image.imageDistortionCorrection()`
 - HTTP: `POST /api/image/enhance/stretch-image-recovery`
+- Official documentation: [Stretched Image Restoration API](https://www.ailabtools.com/docs/ai-image/enhance/stretch-image-recovery/api)
 
 ### Body Parameters
 
@@ -675,6 +697,7 @@ https://www.ailabapi.com/api/image/enhance/stretch-image-recovery
 
 - SDK method: `image.imageCompositionAestheticsScore()`
 - HTTP: `POST /api/image/rating/image-composition-aesthetics-scoring`
+- Official documentation: [Image Composition Aesthetics Score API](https://www.ailabtools.com/docs/ai-image/rating/image-composition-aesthetics-scoring/api)
 
 ### Body Parameters
 
@@ -703,6 +726,7 @@ https://www.ailabapi.com/api/image/rating/image-composition-aesthetics-scoring
 
 - SDK method: `image.imageExposureRating()`
 - HTTP: `POST /api/image/rating/image-exposure-score`
+- Official documentation: [Image Exposure Score API](https://www.ailabtools.com/docs/ai-image/rating/image-exposure-score/api)
 
 ### Body Parameters
 
@@ -731,6 +755,7 @@ https://www.ailabapi.com/api/image/rating/image-exposure-score
 
 - SDK method: `image.imageAINailArt()`
 - HTTP: `POST /api/image/editing/ai-nail-art`
+- Official documentation: [AI Nail Art API](https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art/api)
 
 ### Body Parameters
 
@@ -767,6 +792,7 @@ https://www.ailabapi.com/api/image/editing/ai-nail-art
 
 - SDK method: `image.imageAINailArtPro()`
 - HTTP: `POST /api/image/editing/ai-nail-art-pro`
+- Official documentation: [AI Nail Art Pro API](https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art-pro/api)
 
 ### Body Parameters
 
@@ -803,6 +829,7 @@ https://www.ailabapi.com/api/image/editing/ai-nail-art-pro
 
 - SDK method: `image.imageAIPhotography()`
 - HTTP: `POST /api/image/effects/ai-photography`
+- Official documentation: [AI Photography API](https://www.ailabtools.com/docs/ai-image/effects/ai-photography/api)
 
 ### Body Parameters
 
@@ -840,6 +867,7 @@ https://www.ailabapi.com/api/image/effects/ai-photography
 
 - SDK method: `image.imageAIEmojiGenerator()`
 - HTTP: `POST /api/image/effects/photo-to-emoji-grid`
+- Official documentation: [AI Emoji Generator API](https://www.ailabtools.com/docs/ai-image/effects/photo-to-emoji-grid/api)
 
 ### Body Parameters
 
@@ -878,6 +906,7 @@ https://www.ailabapi.com/api/image/effects/photo-to-emoji-grid
 
 - SDK method: `image.imagePhotoToColoringPage()`
 - HTTP: `POST /api/image/effects/photo-to-line-art`
+- Official documentation: [Photo to Coloring Page API](https://www.ailabtools.com/docs/ai-image/effects/photo-to-line-art/api)
 
 ### Body Parameters
 
@@ -914,6 +943,7 @@ https://www.ailabapi.com/api/image/effects/photo-to-line-art
 
 - SDK method: `image.imageAIFlowerWallpaper()`
 - HTTP: `POST /api/image/generation/ai-flower-wallpaper`
+- Official documentation: [AI Flower Wallpaper API](https://www.ailabtools.com/docs/ai-image/generation/ai-flower-wallpaper/api)
 
 ### Body Parameters
 

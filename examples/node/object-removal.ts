@@ -6,6 +6,7 @@ const client = new AILabClient({ apiKey: process.env.AILAB_API_KEY! });
 async function main() {
   const result = await client.image.removeObjects({
     image: readFileSync("./photo.jpg"),
+    mask: readFileSync("./mask.png"),
   });
 
   console.log(result.data?.image_url);
