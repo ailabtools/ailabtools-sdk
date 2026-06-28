@@ -1,6 +1,6 @@
 # AILabTools SDK Full Usage Guide
 
-This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, Flutter, PHP, and Java to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, Flutter, PHP, Java, and C#/.NET to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Quick Start
 

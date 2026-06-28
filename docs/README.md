@@ -1,6 +1,6 @@
 # AILabTools SDK Documentation
 
-Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, and Java examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, Java, and C#/.NET examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
@@ -71,6 +71,12 @@ Java:
   <artifactId>ailabtools-sdk</artifactId>
   <version>0.5.4</version>
 </dependency>
+```
+
+C# / .NET:
+
+```bash
+dotnet add package AILabTools --version 0.5.4
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
@@ -273,6 +279,7 @@ print(result.get("data"))
 - Dart and Flutter file fields use `AILabFile.fromBytes`.
 - PHP file fields use `FileInput::fromPath`, `FileInput::fromBytes`, or `FileInput::fromResource`.
 - Java file fields use `FileInput.fromPath`, `FileInput.fromBytes`, or `FileInput.fromInputStream`.
+- C#/.NET file fields use `FileInput.FromPath`, `FileInput.FromBytes`, or `FileInput.FromStream`.
 
 ## Examples
 
@@ -297,6 +304,7 @@ Copy-ready Node.js and Python examples are available in [`examples/`](../example
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
+- C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](../packages/dotnet)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <PackageId>AILabTools</PackageId>
+    <Version>0.5.4</Version>
+    <Authors>AILabTools</Authors>
+    <Company>AILabTools</Company>
+    <Description>Official asynchronous C# and .NET SDK for AILabTools AI image APIs.</Description>
+    <PackageTags>ailabtools;ai;image-processing;background-removal;portrait-api;dotnet-sdk</PackageTags>
+    <PackageProjectUrl>https://www.ailabtools.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ailabtools/ailabtools-sdk</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Title>AILabTools .NET SDK</Title>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

@@ -16,6 +16,7 @@ The following **93 generated methods** are available in every language SDK: **87
 | Dart / Flutter | `client.<module>.<method>()` |
 | PHP | `$client-><module>-><method>()` |
 | Java | `client.<module>().<method>()` |
+| C# / .NET | `client.<Module>.<Method>Async()` |
 
 ### Common Methods
 
@@ -193,6 +194,16 @@ Only the five frequently used operations below currently provide convenience ali
 | Remove Objects | `client.image().imageRemoveObjects()` | `client.image().removeObjects()` |
 | Hairstyle Changer Pro | `client.portrait().portraitHairstyleEditingPro()` | `client.portrait().changeHairstyle()` |
 | Smart Beauty | `client.portrait().portraitIntelligentBeautification()` | `client.portrait().retouch()` |
+
+### C# / .NET
+
+| API | Full method | Recommended alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.Cutout.CutoutUniversalBackgroundRemovalAsync()` | `client.Background.RemoveAsync()` |
+| Image Upscaler | `client.Image.ImageLosslessEnlargementAsync()` | `client.Image.UpscaleAsync()` |
+| Remove Objects | `client.Image.ImageRemoveObjectsAsync()` | `client.Image.RemoveObjectsAsync()` |
+| Hairstyle Changer Pro | `client.Portrait.PortraitHairstyleEditingProAsync()` | `client.Portrait.ChangeHairstyleAsync()` |
+| Smart Beauty | `client.Portrait.PortraitIntelligentBeautificationAsync()` | `client.Portrait.RetouchAsync()` |
 
 ## Related Documentation
 

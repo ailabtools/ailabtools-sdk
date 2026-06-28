@@ -1,6 +1,6 @@
 # Official AILabTools SDK Packages
 
-AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flutter, PHP, and Java. Every SDK covers the same AI image APIs for background removal, image enhancement, object removal, portrait editing, hairstyle changes, skin analysis, and virtual try-on.
+AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flutter, PHP, Java, and C#/.NET. Every SDK covers the same AI image APIs for background removal, image enhancement, object removal, portrait editing, hairstyle changes, skin analysis, and virtual try-on.
 
 ## Package Directory
 
@@ -12,6 +12,7 @@ AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flu
 | Dart / Flutter | [AILabTools Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools) | `flutter pub add ailabtools` |
 | PHP | [AILabTools PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools) | `composer require ailabtools/ailabtools` |
 | Java | [AILabTools Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4) | `com.ailabtools:ailabtools-sdk:0.5.4` |
+| C# / .NET | NuGet package `AILabTools` | `dotnet add package AILabTools --version 0.5.4` |
 
 The current published package version is `0.5.4`. The Python distribution name is `ailabtools-sdk`, while its import name is `ailabtools`.
 
@@ -25,6 +26,7 @@ The current published package version is `0.5.4`. The Python distribution name i
 | Dart / Flutter | Dart 3.0 | `Future`-based async | cross-platform byte data | Call `client.close()` for the SDK-owned HTTP client |
 | PHP | PHP 8.1 | Blocking calls | path, byte string, or resource | Managed by Guzzle |
 | Java | Java 11 | Blocking calls | `Path`, byte array, or `InputStream` | Managed by Java `HttpClient` |
+| C# / .NET | .NET Standard 2.0 or .NET 8 | `Task<T>` async with cancellation | path, byte array, or `Stream` | Dispose the client only when it owns `HttpClient` |
 
 All SDKs use the same API paths and wire parameter names. Public identifiers
 follow each language's naming conventions.
@@ -39,6 +41,12 @@ follow each language's naming conventions.
 </dependency>
 ```
 
+## C#/.NET NuGet Dependency
+
+```bash
+dotnet add package AILabTools --version 0.5.4
+```
+
 ## API Coverage
 
 Each language SDK exposes **93 endpoints**: **87 current APIs** listed in the official API documentation and **6 legacy-compatible endpoints** retained for existing integrations. See the [complete SDK API index](README.md#api-index) for methods and HTTP paths.
@@ -47,7 +55,7 @@ Each language SDK exposes **93 endpoints**: **87 current APIs** listed in the of
 
 - [AILabTools API Documentation](https://www.ailabtools.com/docs) contains endpoint parameters and response schemas.
 - [AILabTools Developer Console](https://www.ailabtools.com/developer) creates and manages API keys.
-- [AILabTools SDK GitHub Repository](https://github.com/ailabtools/ailabtools-sdk) contains the Node.js, Python, Go, Dart, Flutter, PHP, and Java SDK source.
+- [AILabTools SDK GitHub Repository](https://github.com/ailabtools/ailabtools-sdk) contains the Node.js, Python, Go, Dart, Flutter, PHP, Java, and C#/.NET SDK source.
 - [AILabTools PHP SDK GitHub Repository](https://github.com/ailabtools/ailabtools-php) is the Packagist source repository for the standalone PHP package.
 
 ## Notes
@@ -55,6 +63,7 @@ Each language SDK exposes **93 endpoints**: **87 current APIs** listed in the of
 - The Node.js SDK is written in TypeScript and includes complete type definitions.
 - The Python SDK uses an asynchronous HTTP client and supports `async` / `await`.
 - The Dart package supports both standalone Dart and Flutter applications.
+- The C#/.NET SDK is asynchronous and accepts an application-managed `HttpClient`.
 - All SDKs authenticate with the `ailabapi-api-key` request header.
 - Result image URLs can expire; download and store generated files promptly.
 - See [Security and Data Handling](security.md) before processing user images.

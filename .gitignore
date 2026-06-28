@@ -46,3 +46,8 @@ image.jpg
 
 # Internal development scripts
 scripts/
+
+# .NET
+packages/dotnet/**/bin/
+packages/dotnet/**/obj/
+packages/dotnet/*.nupkg

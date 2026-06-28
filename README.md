@@ -1,6 +1,6 @@
-# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, and Java
+# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Java, and .NET
 
-Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, and Java SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Java, and C#/.NET SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
@@ -10,6 +10,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools): `flutter pub add ailabtools`
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools): `composer require ailabtools/ailabtools`
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4): `com.ailabtools:ailabtools-sdk:0.5.4`
+- C#/.NET SDK for NuGet: `dotnet add package AILabTools --version 0.5.4`
 - 87 current APIs plus 6 legacy-compatible endpoints
 - Supports file and in-memory uploads, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -25,6 +26,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - Cross-platform Dart and Flutter SDK with strongly typed models
 - PHP SDK with PSR-4 autoloading and strongly typed DTOs
 - Java 11 SDK with typed builders and Maven Central release metadata
+- Asynchronous C#/.NET SDK targeting .NET Standard 2.0 and .NET 8
 
 ## API Coverage
 
@@ -70,6 +72,12 @@ composer require ailabtools/ailabtools
   <artifactId>ailabtools-sdk</artifactId>
   <version>0.5.4</version>
 </dependency>
+```
+
+### C# / .NET
+
+```bash
+dotnet add package AILabTools --version 0.5.4
 ```
 
 Import it in Python as `ailabtools`:
@@ -226,7 +234,27 @@ var result = client.background().remove(
 System.out.println(result.getData().getImageUrl());
 ```
 
-The SDK uses camelCase parameters and maps them automatically to API field names. For example, `upscaleFactor` maps to `upscale_factor`, and `returnForm` maps to `return_form`.
+#### C# / .NET
+
+```csharp
+using AILabTools;
+using AILabTools.Generated.Params;
+using AILabTools.Http;
+
+using var client = new AILabToolsClient(
+    Environment.GetEnvironmentVariable("AILAB_API_KEY")!);
+
+var result = await client.Background.RemoveAsync(
+    new CutoutUniversalBackgroundRemovalParams
+    {
+        Image = FileInput.FromPath("./photo.jpg"),
+        ReturnForm = "whiteBK",
+    });
+
+Console.WriteLine(result.Data?.ImageUrl);
+```
+
+The SDKs use language-native property names and map them automatically to API field names. For example, `upscaleFactor` or `UpscaleFactor` maps to `upscale_factor`.
 
 ## Popular Use Cases
 
@@ -323,6 +351,7 @@ try {
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
+- C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](packages/dotnet)
 - [All official SDK package links](docs/sdk-packages.md)
 - [Complete method and alias reference](docs/method-aliases.md)
 - [Legacy API migration guide](docs/legacy-migration.md)

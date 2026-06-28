@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{66477D9C-5D2D-4756-B9CB-F6CD7541BA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AILabTools", "src\AILabTools\AILabTools.csproj", "{FE374223-D380-42D6-AEBB-9D87CCE6CC21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4B9B73B1-BF44-4D11-A607-BA0ADDABDA27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AILabTools.Tests", "tests\AILabTools.Tests\AILabTools.Tests.csproj", "{FBC402B2-0878-42B2-A2A1-C6D7119BEEF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE374223-D380-42D6-AEBB-9D87CCE6CC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE374223-D380-42D6-AEBB-9D87CCE6CC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE374223-D380-42D6-AEBB-9D87CCE6CC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE374223-D380-42D6-AEBB-9D87CCE6CC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC402B2-0878-42B2-A2A1-C6D7119BEEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC402B2-0878-42B2-A2A1-C6D7119BEEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC402B2-0878-42B2-A2A1-C6D7119BEEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC402B2-0878-42B2-A2A1-C6D7119BEEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE374223-D380-42D6-AEBB-9D87CCE6CC21} = {66477D9C-5D2D-4756-B9CB-F6CD7541BA47}
+		{FBC402B2-0878-42B2-A2A1-C6D7119BEEF2} = {4B9B73B1-BF44-4D11-A607-BA0ADDABDA27}
+	EndGlobalSection
+EndGlobal
