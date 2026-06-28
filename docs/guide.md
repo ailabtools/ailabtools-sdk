@@ -50,7 +50,7 @@ Java:
 <dependency>
   <groupId>com.ailabtools</groupId>
   <artifactId>ailabtools-sdk</artifactId>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
 </dependency>
 ```
 
@@ -330,7 +330,7 @@ See [`examples/`](../examples/) for Next.js, FastAPI, background removal, image 
 - [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go)
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
-- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3)
+- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - [All official SDK package links](sdk-packages.md)
 - [Complete method and alias reference](method-aliases.md)
 - [Legacy API migration guide](legacy-migration.md)

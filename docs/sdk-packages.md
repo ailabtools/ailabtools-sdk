@@ -11,9 +11,9 @@ AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flu
 | Go | [AILabTools Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go) | `go get github.com/ailabtools/ailabtools-sdk/packages/go` |
 | Dart / Flutter | [AILabTools Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools) | `flutter pub add ailabtools` |
 | PHP | [AILabTools PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools) | `composer require ailabtools/ailabtools` |
-| Java | [AILabTools Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3) | `com.ailabtools:ailabtools-sdk:0.5.3` |
+| Java | [AILabTools Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4) | `com.ailabtools:ailabtools-sdk:0.5.4` |
 
-The current published package version is `0.5.3`. The Python distribution name is `ailabtools-sdk`, while its import name is `ailabtools`.
+The current published package version is `0.5.4`. The Python distribution name is `ailabtools-sdk`, while its import name is `ailabtools`.
 
 ## Compatibility Matrix
 
@@ -35,7 +35,7 @@ follow each language's naming conventions.
 <dependency>
   <groupId>com.ailabtools</groupId>
   <artifactId>ailabtools-sdk</artifactId>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
 </dependency>
 ```
 

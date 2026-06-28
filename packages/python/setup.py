@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="ailabtools-sdk",
-    version="0.5.3",
+    version="0.5.4",
     description="Official async Python SDK for AILabTools AI image APIs",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",

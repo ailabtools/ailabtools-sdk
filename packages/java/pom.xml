@@ -6,7 +6,7 @@
 
   <groupId>com.ailabtools</groupId>
   <artifactId>ailabtools-sdk</artifactId>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
   <packaging>jar</packaging>
 
   <name>AILabTools Java SDK</name>

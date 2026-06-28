@@ -1,6 +1,6 @@
 name: ailabtools
 description: Official Dart and Flutter SDK for AILabTools AI image APIs, including background removal, image upscaling, portrait editing, and more.
-version: 0.5.3
+version: 0.5.4
 homepage: https://www.ailabtools.com/
 repository: https://github.com/ailabtools/ailabtools-sdk
 issue_tracker: https://github.com/ailabtools/ailabtools-sdk/issues

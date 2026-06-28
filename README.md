@@ -9,7 +9,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go): `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools): `flutter pub add ailabtools`
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools): `composer require ailabtools/ailabtools`
-- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3): `com.ailabtools:ailabtools-sdk:0.5.3`
+- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4): `com.ailabtools:ailabtools-sdk:0.5.4`
 - 87 current APIs plus 6 legacy-compatible endpoints
 - Supports file and in-memory uploads, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -68,7 +68,7 @@ composer require ailabtools/ailabtools
 <dependency>
   <groupId>com.ailabtools</groupId>
   <artifactId>ailabtools-sdk</artifactId>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
 </dependency>
 ```
 
@@ -322,7 +322,7 @@ try {
 - [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go)
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
-- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3)
+- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - [All official SDK package links](docs/sdk-packages.md)
 - [Complete method and alias reference](docs/method-aliases.md)
 - [Legacy API migration guide](docs/legacy-migration.md)

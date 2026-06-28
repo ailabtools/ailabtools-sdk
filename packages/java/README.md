@@ -2,7 +2,7 @@
 
 Official Java SDK for the [AILabTools AI image APIs](https://www.ailabtools.com/docs). Add background removal, image upscaling, object removal, portrait retouching, hairstyle changes, virtual try-on, and other AI photo features to Java applications.
 
-Install the [AILabTools Java SDK from Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3).
+Install the [AILabTools Java SDK from Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4).
 
 ## Requirements
 
@@ -15,7 +15,7 @@ Install the [AILabTools Java SDK from Maven Central](https://central.sonatype.co
 <dependency>
   <groupId>com.ailabtools</groupId>
   <artifactId>ailabtools-sdk</artifactId>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
 </dependency>
 ```
 
@@ -154,7 +154,7 @@ Automatic publishing is intentionally disabled in the release profile.
 
 - [Get an AILabTools API key](https://www.ailabtools.com/developer)
 - [AILabTools API documentation](https://www.ailabtools.com/docs)
-- [AILabTools Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3)
+- [AILabTools Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - [AILabTools SDK source code](https://github.com/ailabtools/ailabtools-sdk)
 - [Report an SDK issue](https://github.com/ailabtools/ailabtools-sdk/issues)
 

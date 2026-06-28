@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ailabtools-sdk"
-version = "0.5.3"
+version = "0.5.4"
 description = "Official async Python SDK for AILabTools AI image APIs: background removal, image upscaling, hairstyle changer, face retouching, object removal, and more."
 readme = "README.md"
 requires-python = ">=3.8"

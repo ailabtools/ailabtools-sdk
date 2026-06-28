@@ -1,6 +1,6 @@
 {
   "name": "ailabtools",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Official Node.js and TypeScript SDK for AILabTools AI image APIs: background removal, image upscaling, hairstyle changer, face retouching, object removal, and more.",
   "type": "commonjs",
   "main": "dist/index.js",

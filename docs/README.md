@@ -69,7 +69,7 @@ Java:
 <dependency>
   <groupId>com.ailabtools</groupId>
   <artifactId>ailabtools-sdk</artifactId>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
 </dependency>
 ```
 
@@ -296,7 +296,7 @@ Copy-ready Node.js and Python examples are available in [`examples/`](../example
 - [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go)
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
-- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.3)
+- [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 
