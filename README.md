@@ -1,6 +1,6 @@
-# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Java, Kotlin/Android, .NET, and Swift
+# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Ruby, Java, Kotlin/Android, .NET, and Swift
 
-Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Java, Kotlin/Android, C#/.NET, and Swift SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Ruby, Java, Kotlin/Android, C#/.NET, and Swift SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
@@ -9,6 +9,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go): `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools): `flutter pub add ailabtools`
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools): `composer require ailabtools/ailabtools`
+- Ruby SDK for RubyGems: `gem install ailabtools`
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4): `com.ailabtools:ailabtools-sdk:0.5.4`
 - Kotlin/Android SDK for Maven Central: `com.ailabtools:ailabtools-kotlin:0.5.4`
 - C#/.NET SDK for NuGet: `dotnet add package AILabTools --version 0.5.4`
@@ -27,6 +28,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - Async Python SDK for modern Python applications
 - Cross-platform Dart and Flutter SDK with strongly typed models
 - PHP SDK with PSR-4 autoloading and strongly typed DTOs
+- Ruby SDK with RubyGems packaging and typed parameter/response objects
 - Java 11 SDK with typed builders and Maven Central release metadata
 - Coroutine-based Kotlin/Android SDK with typed models and Maven Central release metadata
 - Asynchronous C#/.NET SDK targeting .NET Standard 2.0 and .NET 8
@@ -66,6 +68,12 @@ flutter pub add ailabtools
 
 ```bash
 composer require ailabtools/ailabtools
+```
+
+### Ruby
+
+```bash
+gem install ailabtools
 ```
 
 ### Java
@@ -245,6 +253,21 @@ $result = $client->background->remove(
 echo $result->data?->imageUrl;
 ```
 
+#### Ruby
+
+```ruby
+require "ailabtools"
+
+client = AILabTools::Client.new(api_key: ENV.fetch("AILAB_API_KEY"))
+params = AILabTools::Generated::Params::CutoutUniversalBackgroundRemovalParams.new(
+  image: AILabTools::FileInput.from_path("./photo.jpg", content_type: "image/jpeg"),
+  return_form: "whiteBK"
+)
+
+result = client.background.remove(params)
+puts result.data&.image_url
+```
+
 #### Java
 
 ```java
@@ -398,6 +421,7 @@ try {
 - [Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go)
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
+- Ruby SDK source and RubyGems metadata: [`packages/ruby`](packages/ruby)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - Kotlin/Android SDK source and Maven Central metadata: [`packages/kotlin`](packages/kotlin)
 - C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](packages/dotnet)

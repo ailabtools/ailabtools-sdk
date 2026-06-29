@@ -31,6 +31,9 @@ packages/python/*.egg-info/
 .dart_tool/
 packages/dart/pubspec.lock
 
+# Ruby / RubyGems
+packages/ruby/*.gem
+
 # PHP / Composer
 packages/php/vendor/
 packages/php/composer.lock

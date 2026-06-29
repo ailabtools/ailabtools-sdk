@@ -1,0 +1,36 @@
+# frozen_string_literal: true
+
+module AILabTools
+  module Generated
+    module Responses
+      class ImageRemoveObjectsAdvancedResponseData
+        include AILabTools::ResponseModel
+        fields({
+          :binary_data_base64 => "binary_data_base64",
+        }, {
+        })
+      end
+
+      class ImageRemoveObjectsAdvancedResponse
+        include AILabTools::ResponseModel
+        fields({
+          :request_id => "request_id",
+          :log_id => "log_id",
+          :error_code => "error_code",
+          :error_code_str => "error_code_str",
+          :error_msg => "error_msg",
+          :error_detail => "error_detail",
+          :data => "data",
+          :image => "image",
+          :ratio => "ratio",
+          :task_type => "task_type",
+          :task_id => "task_id",
+          :task_status => "task_status",
+          :binary_data_base64 => "binary_data_base64",
+        }, {
+          :data => ImageRemoveObjectsAdvancedResponseData,
+        })
+      end
+    end
+  end
+end

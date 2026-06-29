@@ -1,6 +1,6 @@
 # Official AILabTools SDK Packages
 
-AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flutter, PHP, Java, Kotlin/Android, C#/.NET, and Swift. Every SDK covers the same AI image APIs for background removal, image enhancement, object removal, portrait editing, hairstyle changes, skin analysis, and virtual try-on.
+AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flutter, PHP, Ruby, Java, Kotlin/Android, C#/.NET, and Swift. Every SDK covers the same AI image APIs for background removal, image enhancement, object removal, portrait editing, hairstyle changes, skin analysis, and virtual try-on.
 
 ## Package Directory
 
@@ -11,6 +11,7 @@ AILabTools provides official SDKs for Node.js, TypeScript, Python, Go, Dart, Flu
 | Go | [AILabTools Go SDK on pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go) | `go get github.com/ailabtools/ailabtools-sdk/packages/go` |
 | Dart / Flutter | [AILabTools Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools) | `flutter pub add ailabtools` |
 | PHP | [AILabTools PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools) | `composer require ailabtools/ailabtools` |
+| Ruby | RubyGems package `ailabtools` | `gem install ailabtools` |
 | Java | [AILabTools Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4) | `com.ailabtools:ailabtools-sdk:0.5.4` |
 | Kotlin / Android | Maven Central package `ailabtools-kotlin` | `com.ailabtools:ailabtools-kotlin:0.5.4` |
 | C# / .NET | NuGet package `AILabTools` | `dotnet add package AILabTools --version 0.5.4` |
@@ -27,6 +28,7 @@ The current published package version is `0.5.4`. The Python distribution name i
 | Go | Go 1.20 | Context-aware blocking calls | path, bytes, or `io.Reader` | Shared `http.Client`; no SDK close method |
 | Dart / Flutter | Dart 3.0 | `Future`-based async | cross-platform byte data | Call `client.close()` for the SDK-owned HTTP client |
 | PHP | PHP 8.1 | Blocking calls | path, byte string, or resource | Managed by Guzzle |
+| Ruby | Ruby 2.6 | Blocking calls | path, byte string, or IO | No explicit close method |
 | Java | Java 11 | Blocking calls | `Path`, byte array, or `InputStream` | Managed by Java `HttpClient` |
 | Kotlin / Android | Android API 21 or Java 8 | Coroutine `suspend` calls | `File`, byte array, or `InputStream` | Call `client.close()` to cancel active SDK calls |
 | C# / .NET | .NET Standard 2.0 or .NET 8 | `Task<T>` async with cancellation | path, byte array, or `Stream` | Dispose the client only when it owns `HttpClient` |
@@ -34,6 +36,12 @@ The current published package version is `0.5.4`. The Python distribution name i
 
 All SDKs use the same API paths and wire parameter names. Public identifiers
 follow each language's naming conventions.
+
+## RubyGems Dependency
+
+```bash
+gem install ailabtools
+```
 
 ## Java Maven Dependency
 
@@ -82,7 +90,7 @@ Each language SDK exposes **93 endpoints**: **87 current APIs** listed in the of
 
 - [AILabTools API Documentation](https://www.ailabtools.com/docs) contains endpoint parameters and response schemas.
 - [AILabTools Developer Console](https://www.ailabtools.com/developer) creates and manages API keys.
-- [AILabTools SDK GitHub Repository](https://github.com/ailabtools/ailabtools-sdk) contains the Node.js, Python, Go, Dart, Flutter, PHP, Java, Kotlin/Android, C#/.NET, and Swift SDK source.
+- [AILabTools SDK GitHub Repository](https://github.com/ailabtools/ailabtools-sdk) contains the Node.js, Python, Go, Dart, Flutter, PHP, Ruby, Java, Kotlin/Android, C#/.NET, and Swift SDK source.
 - [AILabTools PHP SDK GitHub Repository](https://github.com/ailabtools/ailabtools-php) is the Packagist source repository for the standalone PHP package.
 
 ## Notes
@@ -90,6 +98,7 @@ Each language SDK exposes **93 endpoints**: **87 current APIs** listed in the of
 - The Node.js SDK is written in TypeScript and includes complete type definitions.
 - The Python SDK uses an asynchronous HTTP client and supports `async` / `await`.
 - The Dart package supports both standalone Dart and Flutter applications.
+- The Ruby SDK uses Ruby standard-library `net/http` and has no runtime gem dependencies.
 - The Kotlin/Android SDK uses coroutine `suspend` methods and OkHttp.
 - The C#/.NET SDK is asynchronous and accepts an application-managed `HttpClient`.
 - The Swift SDK supports both Swift Package Manager and CocoaPods and accepts an application-managed `URLSession`.

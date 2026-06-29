@@ -7,6 +7,7 @@ Copy these examples into your application after installing the SDK.
 - Go: `go get github.com/ailabtools/ailabtools-sdk/packages/go`
 - Dart / Flutter: `flutter pub add ailabtools`
 - PHP: `composer require ailabtools/ailabtools`
+- Ruby: `gem install ailabtools`
 - Java: `com.ailabtools:ailabtools-sdk`
 - Kotlin / Android: `com.ailabtools:ailabtools-kotlin`
 - C# / .NET: `dotnet add package AILabTools`
@@ -40,6 +41,10 @@ Copy these examples into your application after installing the SDK.
 - `php/background_removal.php` - remove image backgrounds
 - `php/image_upscale.php` - upscale an image
 - `php/async_task.php` - submit and poll an async hairstyle task
+
+## Ruby
+
+- `ruby/background_removal.rb` - remove image backgrounds
 
 ## Java
 

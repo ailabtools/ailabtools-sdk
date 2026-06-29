@@ -14,6 +14,7 @@ The repository contains SDKs for:
 | Go | `github.com/ailabtools/ailabtools-sdk/packages/go` | Go 1.20 |
 | Dart / Flutter | `ailabtools` | Dart 3.0 |
 | PHP | `ailabtools/ailabtools-php` | PHP 8.1 |
+| Ruby | `ailabtools` | Ruby 2.6 |
 | Java | `com.ailabtools:ailabtools-sdk` | Java 11 |
 | Kotlin / Android | `com.ailabtools:ailabtools-kotlin` | Android API 21 or Java 8 |
 | C# / .NET | `AILabTools` | .NET Standard 2.0 or .NET 8 |
@@ -38,6 +39,7 @@ copy of all endpoint fields in this document.
 | `packages/go/` | Go module |
 | `packages/dart/` | Dart and Flutter package |
 | `packages/php/` | Composer package source |
+| `packages/ruby/` | RubyGems package source |
 | `packages/java/` | Maven package source |
 | `packages/kotlin/` | Kotlin and Android Maven package source |
 | `packages/dotnet/` | NuGet package source |
@@ -65,6 +67,7 @@ Language naming follows native conventions:
 | Go | exported fields | `UpscaleFactor` |
 | Dart | `camelCase` | `upscaleFactor` |
 | PHP | `camelCase` | `$upscaleFactor` |
+| Ruby | `snake_case` | `upscale_factor` |
 | Java | builder methods | `.upscaleFactor(...)` |
 | Kotlin / Android | `camelCase` | `upscaleFactor` |
 | C# / .NET | PascalCase properties | `UpscaleFactor` |
