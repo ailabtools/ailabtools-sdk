@@ -16,6 +16,7 @@ The following **93 generated methods** are available in every language SDK: **87
 | Dart / Flutter | `client.<module>.<method>()` |
 | PHP | `$client-><module>-><method>()` |
 | Java | `client.<module>().<method>()` |
+| Kotlin / Android | `client.<module>.<method>()` with `suspend` |
 | C# / .NET | `client.<Module>.<Method>Async()` |
 | Swift | `client.<module>.<method>()` with `try await` |
 
@@ -195,6 +196,16 @@ Only the five frequently used operations below currently provide convenience ali
 | Remove Objects | `client.image().imageRemoveObjects()` | `client.image().removeObjects()` |
 | Hairstyle Changer Pro | `client.portrait().portraitHairstyleEditingPro()` | `client.portrait().changeHairstyle()` |
 | Smart Beauty | `client.portrait().portraitIntelligentBeautification()` | `client.portrait().retouch()` |
+
+### Kotlin / Android
+
+| API | Full method | Recommended alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` | `client.background.remove()` |
+| Image Upscaler | `client.image.imageLosslessEnlargement()` | `client.image.upscale()` |
+| Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` |
+| Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` |
+| Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
 
 ### C# / .NET
 

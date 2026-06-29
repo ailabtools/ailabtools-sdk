@@ -1,0 +1,19 @@
+package com.ailabtools.sdk.generated.params
+
+import com.ailabtools.sdk.FileInput
+import com.ailabtools.sdk.RequestParams
+
+/** Parameters for AI Face Swap API. */
+public data class PortraitAIFaceSwapParams(
+    /** The image to be modified. The face in this image will be replaced. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px. */
+    public val imageTarget: FileInput,
+    /** The image that provides the face to use. - Image format: `JPEG` `JPG` `PNG` - Image size: No more than 5 MB. - Image resolution: Less than 4096x4096px. */
+    public val imageTemplate: FileInput,
+) : RequestParams {
+    override fun queryFields(): Map<String, Any?> = emptyMap()
+
+    override fun bodyFields(): Map<String, Any?> = mapOf(
+        "image_target" to imageTarget,
+        "image_template" to imageTemplate,
+    )
+}

@@ -1,6 +1,6 @@
-# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Java, .NET, and Swift
+# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Java, Kotlin/Android, .NET, and Swift
 
-Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Java, C#/.NET, and Swift SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Java, Kotlin/Android, C#/.NET, and Swift SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
@@ -10,6 +10,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools): `flutter pub add ailabtools`
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools): `composer require ailabtools/ailabtools`
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4): `com.ailabtools:ailabtools-sdk:0.5.4`
+- Kotlin/Android SDK for Maven Central: `com.ailabtools:ailabtools-kotlin:0.5.4`
 - C#/.NET SDK for NuGet: `dotnet add package AILabTools --version 0.5.4`
 - Swift SDK for SwiftPM and CocoaPods: `.package(url: "https://github.com/ailabtools/ailabtools-sdk.git", from: "0.5.4")`
 - 87 current APIs plus 6 legacy-compatible endpoints
@@ -27,6 +28,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - Cross-platform Dart and Flutter SDK with strongly typed models
 - PHP SDK with PSR-4 autoloading and strongly typed DTOs
 - Java 11 SDK with typed builders and Maven Central release metadata
+- Coroutine-based Kotlin/Android SDK with typed models and Maven Central release metadata
 - Asynchronous C#/.NET SDK targeting .NET Standard 2.0 and .NET 8
 - Native asynchronous Swift SDK supporting Swift Package Manager and CocoaPods
 
@@ -74,6 +76,14 @@ composer require ailabtools/ailabtools
   <artifactId>ailabtools-sdk</artifactId>
   <version>0.5.4</version>
 </dependency>
+```
+
+### Kotlin / Android
+
+```kotlin
+dependencies {
+    implementation("com.ailabtools:ailabtools-kotlin:0.5.4")
+}
 ```
 
 ### C# / .NET
@@ -389,6 +399,7 @@ try {
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
+- Kotlin/Android SDK source and Maven Central metadata: [`packages/kotlin`](packages/kotlin)
 - C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](packages/dotnet)
 - Swift SDK source, SwiftPM manifest, and CocoaPods podspec: [`packages/swift`](packages/swift)
 - [All official SDK package links](docs/sdk-packages.md)

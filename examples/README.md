@@ -8,6 +8,7 @@ Copy these examples into your application after installing the SDK.
 - Dart / Flutter: `flutter pub add ailabtools`
 - PHP: `composer require ailabtools/ailabtools`
 - Java: `com.ailabtools:ailabtools-sdk`
+- Kotlin / Android: `com.ailabtools:ailabtools-kotlin`
 - C# / .NET: `dotnet add package AILabTools`
 - Swift Package Manager / CocoaPods: package `AILabTools`
 - API key: [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -45,6 +46,10 @@ Copy these examples into your application after installing the SDK.
 - `java/BackgroundRemoval.java` - remove image backgrounds
 - `java/ImageUpscale.java` - upscale an image
 - `java/AsyncTaskPolling.java` - submit and poll an async hairstyle task
+
+## Kotlin / Android
+
+- `kotlin/BackgroundRemoval.kt` - remove image backgrounds with coroutine APIs
 
 ## C# / .NET
 

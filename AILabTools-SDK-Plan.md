@@ -15,6 +15,7 @@ The repository contains SDKs for:
 | Dart / Flutter | `ailabtools` | Dart 3.0 |
 | PHP | `ailabtools/ailabtools-php` | PHP 8.1 |
 | Java | `com.ailabtools:ailabtools-sdk` | Java 11 |
+| Kotlin / Android | `com.ailabtools:ailabtools-kotlin` | Android API 21 or Java 8 |
 | C# / .NET | `AILabTools` | .NET Standard 2.0 or .NET 8 |
 | Swift | `AILabTools` | Swift 5.8 |
 
@@ -38,6 +39,7 @@ copy of all endpoint fields in this document.
 | `packages/dart/` | Dart and Flutter package |
 | `packages/php/` | Composer package source |
 | `packages/java/` | Maven package source |
+| `packages/kotlin/` | Kotlin and Android Maven package source |
 | `packages/dotnet/` | NuGet package source |
 | `packages/swift/` | Swift Package Manager and CocoaPods source |
 | `docs/` | Shared API reference, guides, and tutorials |
@@ -64,6 +66,7 @@ Language naming follows native conventions:
 | Dart | `camelCase` | `upscaleFactor` |
 | PHP | `camelCase` | `$upscaleFactor` |
 | Java | builder methods | `.upscaleFactor(...)` |
+| Kotlin / Android | `camelCase` | `upscaleFactor` |
 | C# / .NET | PascalCase properties | `UpscaleFactor` |
 | Swift | `camelCase` | `upscaleFactor` |
 

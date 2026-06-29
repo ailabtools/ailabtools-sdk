@@ -39,6 +39,7 @@ packages/php/.phpstan/
 
 # Java / Maven
 packages/java/target/
+packages/kotlin/target/
 
 # Local integration assets and generated reports
 test-assets/
