@@ -51,3 +51,9 @@ scripts/
 packages/dotnet/**/bin/
 packages/dotnet/**/obj/
 packages/dotnet/*.nupkg
+
+# Swift
+.build/
+packages/swift/.build/
+.swiftpm/
+packages/swift/.swiftpm/

@@ -1,6 +1,6 @@
 # AILabTools SDK Documentation
 
-Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, Java, and C#/.NET examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, Java, C#/.NET, and Swift examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
@@ -77,6 +77,21 @@ C# / .NET:
 
 ```bash
 dotnet add package AILabTools --version 0.5.4
+```
+
+Swift Package Manager:
+
+```swift
+.package(
+  url: "https://github.com/ailabtools/ailabtools-sdk.git",
+  from: "0.5.4"
+)
+```
+
+CocoaPods:
+
+```ruby
+pod 'AILabTools', '~> 0.5.4'
 ```
 
 > Python package name is `ailabtools-sdk`, while the import name is `ailabtools`.
@@ -280,6 +295,7 @@ print(result.get("data"))
 - PHP file fields use `FileInput::fromPath`, `FileInput::fromBytes`, or `FileInput::fromResource`.
 - Java file fields use `FileInput.fromPath`, `FileInput.fromBytes`, or `FileInput.fromInputStream`.
 - C#/.NET file fields use `FileInput.FromPath`, `FileInput.FromBytes`, or `FileInput.FromStream`.
+- Swift file fields use `FileInput.fileURL` or `FileInput.data`.
 
 ## Examples
 
@@ -305,6 +321,7 @@ Copy-ready Node.js and Python examples are available in [`examples/`](../example
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](../packages/dotnet)
+- Swift SDK source, SwiftPM manifest, and CocoaPods podspec: [`packages/swift`](../packages/swift)
 - [AILabTools SDK on GitHub](https://github.com/ailabtools/ailabtools-sdk)
 - [SDK examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples)
 

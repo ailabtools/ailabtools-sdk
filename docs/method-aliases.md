@@ -17,6 +17,7 @@ The following **93 generated methods** are available in every language SDK: **87
 | PHP | `$client-><module>-><method>()` |
 | Java | `client.<module>().<method>()` |
 | C# / .NET | `client.<Module>.<Method>Async()` |
+| Swift | `client.<module>.<method>()` with `try await` |
 
 ### Common Methods
 
@@ -204,6 +205,16 @@ Only the five frequently used operations below currently provide convenience ali
 | Remove Objects | `client.Image.ImageRemoveObjectsAsync()` | `client.Image.RemoveObjectsAsync()` |
 | Hairstyle Changer Pro | `client.Portrait.PortraitHairstyleEditingProAsync()` | `client.Portrait.ChangeHairstyleAsync()` |
 | Smart Beauty | `client.Portrait.PortraitIntelligentBeautificationAsync()` | `client.Portrait.RetouchAsync()` |
+
+### Swift
+
+| API | Full method | Recommended alias |
+| --- | --- | --- |
+| Universal Background Removal | `client.cutout.cutoutUniversalBackgroundRemoval()` | `client.background.remove()` |
+| Image Upscaler | `client.image.imageLosslessEnlargement()` | `client.image.upscale()` |
+| Remove Objects | `client.image.imageRemoveObjects()` | `client.image.removeObjects()` |
+| Hairstyle Changer Pro | `client.portrait.portraitHairstyleEditingPro()` | `client.portrait.changeHairstyle()` |
+| Smart Beauty | `client.portrait.portraitIntelligentBeautification()` | `client.portrait.retouch()` |
 
 ## Related Documentation
 

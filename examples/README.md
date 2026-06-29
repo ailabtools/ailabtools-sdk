@@ -9,6 +9,7 @@ Copy these examples into your application after installing the SDK.
 - PHP: `composer require ailabtools/ailabtools`
 - Java: `com.ailabtools:ailabtools-sdk`
 - C# / .NET: `dotnet add package AILabTools`
+- Swift Package Manager / CocoaPods: package `AILabTools`
 - API key: [AILabTools Developer Console](https://www.ailabtools.com/developer)
 - API docs: [AILabTools API Documentation](https://www.ailabtools.com/docs)
 
@@ -50,6 +51,12 @@ Copy these examples into your application after installing the SDK.
 - `dotnet/BackgroundRemoval.cs` - remove image backgrounds asynchronously
 - `dotnet/ImageUpscale.cs` - upscale an image asynchronously
 - `dotnet/AsyncTaskPolling.cs` - submit and poll an async hairstyle task
+
+## Swift
+
+- `swift/BackgroundRemoval.swift` - remove image backgrounds asynchronously
+- `swift/ImageUpscale.swift` - upscale an image asynchronously
+- `swift/AsyncTaskPolling.swift` - submit and poll an async hairstyle task
 
 ## Python
 

@@ -1,6 +1,6 @@
-# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Java, and .NET
+# AILabTools SDK - AI Image API for Node.js, Python, Go, Dart, Flutter, PHP, Java, .NET, and Swift
 
-Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Java, and C#/.NET SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
+Official Node.js, TypeScript, async Python, Go, Dart, Flutter, PHP, Java, C#/.NET, and Swift SDKs for [AILabTools AI Image APIs](https://www.ailabtools.com/docs).
 
 Build AI-powered photo editing features with simple API calls: background removal, image upscaling, object removal, face retouching, hairstyle changer, age and gender swap, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
@@ -11,6 +11,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools): `composer require ailabtools/ailabtools`
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4): `com.ailabtools:ailabtools-sdk:0.5.4`
 - C#/.NET SDK for NuGet: `dotnet add package AILabTools --version 0.5.4`
+- Swift SDK for SwiftPM and CocoaPods: `.package(url: "https://github.com/ailabtools/ailabtools-sdk.git", from: "0.5.4")`
 - 87 current APIs plus 6 legacy-compatible endpoints
 - Supports file and in-memory uploads, async tasks, and temporary result URLs
 - Get started with the [AILabTools Developer Console](https://www.ailabtools.com/developer)
@@ -27,6 +28,7 @@ Build AI-powered photo editing features with simple API calls: background remova
 - PHP SDK with PSR-4 autoloading and strongly typed DTOs
 - Java 11 SDK with typed builders and Maven Central release metadata
 - Asynchronous C#/.NET SDK targeting .NET Standard 2.0 and .NET 8
+- Native asynchronous Swift SDK supporting Swift Package Manager and CocoaPods
 
 ## API Coverage
 
@@ -78,6 +80,23 @@ composer require ailabtools/ailabtools
 
 ```bash
 dotnet add package AILabTools --version 0.5.4
+```
+
+### Swift
+
+Swift Package Manager:
+
+```swift
+.package(
+  url: "https://github.com/ailabtools/ailabtools-sdk.git",
+  from: "0.5.4"
+)
+```
+
+CocoaPods:
+
+```ruby
+pod 'AILabTools', '~> 0.5.4'
 ```
 
 Import it in Python as `ailabtools`:
@@ -254,6 +273,25 @@ var result = await client.Background.RemoveAsync(
 Console.WriteLine(result.Data?.ImageUrl);
 ```
 
+#### Swift
+
+```swift
+import AILabTools
+
+let client = try AILabToolsClient(
+    apiKey: ProcessInfo.processInfo.environment["AILAB_API_KEY"]!
+)
+let result = try await client.background.remove(
+    CutoutUniversalBackgroundRemovalParams(
+        image: .fileURL(URL(fileURLWithPath: "./photo.jpg")),
+        returnForm: "whiteBK"
+    )
+)
+
+print(result.data?.imageUrl ?? "")
+client.close()
+```
+
 The SDKs use language-native property names and map them automatically to API field names. For example, `upscaleFactor` or `UpscaleFactor` maps to `upscale_factor`.
 
 ## Popular Use Cases
@@ -352,6 +390,7 @@ try {
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](packages/dotnet)
+- Swift SDK source, SwiftPM manifest, and CocoaPods podspec: [`packages/swift`](packages/swift)
 - [All official SDK package links](docs/sdk-packages.md)
 - [Complete method and alias reference](docs/method-aliases.md)
 - [Legacy API migration guide](docs/legacy-migration.md)

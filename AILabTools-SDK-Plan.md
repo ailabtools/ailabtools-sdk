@@ -16,6 +16,7 @@ The repository contains SDKs for:
 | PHP | `ailabtools/ailabtools-php` | PHP 8.1 |
 | Java | `com.ailabtools:ailabtools-sdk` | Java 11 |
 | C# / .NET | `AILabTools` | .NET Standard 2.0 or .NET 8 |
+| Swift | `AILabTools` | Swift 5.8 |
 
 Every SDK exposes the same 93 endpoints:
 
@@ -38,6 +39,7 @@ copy of all endpoint fields in this document.
 | `packages/php/` | Composer package source |
 | `packages/java/` | Maven package source |
 | `packages/dotnet/` | NuGet package source |
+| `packages/swift/` | Swift Package Manager and CocoaPods source |
 | `docs/` | Shared API reference, guides, and tutorials |
 | `examples/` | Executable examples for each language |
 
@@ -63,6 +65,7 @@ Language naming follows native conventions:
 | PHP | `camelCase` | `$upscaleFactor` |
 | Java | builder methods | `.upscaleFactor(...)` |
 | C# / .NET | PascalCase properties | `UpscaleFactor` |
+| Swift | `camelCase` | `upscaleFactor` |
 
 Wire names always match the API documentation, such as `upscale_factor`.
 
@@ -114,7 +117,7 @@ can be detected locally.
 
 1. Compare the official API documentation with `packages/spec.json`.
 2. Update the canonical schema for added, changed, or retired endpoints.
-3. Regenerate or update all seven SDK packages from the same schema.
+3. Regenerate or update all eight SDK packages from the same schema.
 4. Regenerate shared API and method documentation.
 5. Run unit tests and schema parity checks for every SDK.
 6. Run live API smoke tests only with explicit approval because they consume
