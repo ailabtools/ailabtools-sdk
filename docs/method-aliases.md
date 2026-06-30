@@ -6,7 +6,7 @@ This page contains the complete set of **93 generated API methods** and the comp
 
 ## Complete Generated API Methods
 
-The following **93 generated methods** are available in every language SDK: **87 current APIs** and **6 legacy-compatible endpoints**. Use the method identifier with the language-specific invocation style below.
+The following **93 generated methods** are available in every language SDK: **87 current APIs** and **6 legacy-compatible endpoints**. Use the method identifier with the language-specific invocation style below. Rust method names use `snake_case` variants of the generated identifiers.
 
 | SDK | Invocation style |
 | --- | --- |
@@ -16,6 +16,7 @@ The following **93 generated methods** are available in every language SDK: **87
 | Dart / Flutter | `client.<module>.<method>()` |
 | PHP | `$client-><module>-><method>()` |
 | Ruby | `client.<module>.<method>()` |
+| Rust | `client.<module>.<method>().await` |
 | Java | `client.<module>().<method>()` |
 | Kotlin / Android | `client.<module>.<method>()` with `suspend` |
 | C# / .NET | `client.<Module>.<Method>Async()` |

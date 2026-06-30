@@ -8,6 +8,7 @@ Copy these examples into your application after installing the SDK.
 - Dart / Flutter: `flutter pub add ailabtools`
 - PHP: `composer require ailabtools/ailabtools`
 - Ruby: `gem install ailabtools`
+- Rust: `cargo add ailabtools`
 - Java: `com.ailabtools:ailabtools-sdk`
 - Kotlin / Android: `com.ailabtools:ailabtools-kotlin`
 - C# / .NET: `dotnet add package AILabTools`
@@ -45,6 +46,10 @@ Copy these examples into your application after installing the SDK.
 ## Ruby
 
 - `ruby/background_removal.rb` - remove image backgrounds
+
+## Rust
+
+- `rust/background_removal.rs` - remove image backgrounds asynchronously
 
 ## Java
 

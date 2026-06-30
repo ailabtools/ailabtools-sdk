@@ -34,6 +34,9 @@ packages/dart/pubspec.lock
 # Ruby / RubyGems
 packages/ruby/*.gem
 
+# Rust / Cargo
+packages/rust/target/
+
 # PHP / Composer
 packages/php/vendor/
 packages/php/composer.lock

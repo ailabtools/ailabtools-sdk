@@ -1,6 +1,6 @@
 # AILabTools SDK Full Usage Guide
 
-This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, Flutter, PHP, Ruby, Java, Kotlin/Android, C#/.NET, and Swift to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+This guide helps developers use the AILabTools SDKs for Node.js, Python, Go, Dart, Flutter, PHP, Ruby, Rust, Java, Kotlin/Android, C#/.NET, and Swift to build AI image editing features such as background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Quick Start
 
@@ -48,6 +48,12 @@ Ruby:
 
 ```bash
 gem install ailabtools
+```
+
+Rust:
+
+```bash
+cargo add ailabtools
 ```
 
 Java:
@@ -235,6 +241,8 @@ Both full API method names and short aliases are supported. The full names map d
 - Go: `FileFromPath`, `FileFromBytes`, or `FileFromReader`
 - Dart / Flutter: `AILabFile.fromBytes`
 - PHP: `FileInput::fromPath`, `FileInput::fromBytes`, or `FileInput::fromResource`
+- Ruby: `FileInput.from_path`, `FileInput.from_bytes`, or `FileInput.from_io`
+- Rust: `FileInput::from_path` or `FileInput::from_bytes`
 - Java: `FileInput.fromPath`, `FileInput.fromBytes`, or `FileInput.fromInputStream`
 
 ## Async Task Example

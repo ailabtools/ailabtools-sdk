@@ -1,6 +1,6 @@
 # AILabTools SDK Documentation
 
-Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, Ruby, Java, Kotlin/Android, C#/.NET, and Swift examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
+Official SDK documentation for AILabTools AI image and portrait APIs, including Node.js TypeScript, async Python, Go, Dart, Flutter, PHP, Ruby, Rust, Java, Kotlin/Android, C#/.NET, and Swift examples for background removal, image upscaling, object removal, face retouching, hairstyle changer, cartoon avatar generation, skin analysis, virtual try-on, and more.
 
 ## Contents
 
@@ -67,6 +67,12 @@ Ruby:
 
 ```bash
 gem install ailabtools
+```
+
+Rust:
+
+```bash
+cargo add ailabtools
 ```
 
 Java:
@@ -300,6 +306,7 @@ print(result.get("data"))
 - Dart and Flutter file fields use `AILabFile.fromBytes`.
 - PHP file fields use `FileInput::fromPath`, `FileInput::fromBytes`, or `FileInput::fromResource`.
 - Ruby file fields use `FileInput.from_path`, `FileInput.from_bytes`, or `FileInput.from_io`.
+- Rust file fields use `FileInput::from_path` or `FileInput::from_bytes`.
 - Java file fields use `FileInput.fromPath`, `FileInput.fromBytes`, or `FileInput.fromInputStream`.
 - Kotlin/Android file fields use `FileInput.fromFile`, `FileInput.fromBytes`, or `FileInput.fromStream`.
 - C#/.NET file fields use `FileInput.FromPath`, `FileInput.FromBytes`, or `FileInput.FromStream`.
@@ -328,6 +335,7 @@ Copy-ready Node.js and Python examples are available in [`examples/`](../example
 - [Dart and Flutter SDK on pub.dev](https://pub.dev/packages/ailabtools)
 - [PHP SDK on Packagist](https://packagist.org/packages/ailabtools/ailabtools)
 - Ruby SDK source and RubyGems metadata: [`packages/ruby`](../packages/ruby)
+- Rust SDK source and crates.io metadata: [`packages/rust`](../packages/rust)
 - [Java SDK on Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk/0.5.4)
 - Kotlin/Android SDK source and Maven Central metadata: [`packages/kotlin`](../packages/kotlin)
 - C#/.NET SDK source and NuGet metadata: [`packages/dotnet`](../packages/dotnet)
